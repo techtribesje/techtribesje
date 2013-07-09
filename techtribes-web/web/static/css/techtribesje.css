@@ -1,5 +1,5 @@
 body {
-    font-family: Lucida Grande;
+    font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;
 }
 a {
     color: #000000;
@@ -12,7 +12,7 @@ h1, h3, h4 {
     color: #000000;
 }
 .sectionHeading {
-    color: white;
+    color: #ffffff;
     padding: 12px;
     margin-top: 32px;
     font-size: 32px;
@@ -21,7 +21,7 @@ h1, h3, h4 {
     border-radius: 6px 6px 6px 6px;
 }
 .subSectionHeading {
-    color: white;
+    color: #ffffff;
     padding: 12px;
     margin-top: 32px;
     font-size: 20px;
@@ -34,7 +34,7 @@ h1, h3, h4 {
     margin-top: 8px;
 }
 .sectionHeading .nav-pills a {
-    color: white;
+    color: #ffffff;
 }
 .sectionHeading .nav-pills a:hover {
     background-color: #ffffff;
@@ -58,13 +58,13 @@ h1, h3, h4 {
 .profileImageSmall {
     width: 24px;
     height: 24px;
-    border: gray solid 1px;
+    border: 1px solid #808080;
     border-radius: 6px 6px 6px 6px;
 }
 .profileImage {
     width: 48px;
     height: 48px;
-    border: gray solid 1px;
+    border: 1px solid #808080;
     border-radius: 6px 6px 6px 6px;
 }
 .faded {
@@ -74,16 +74,16 @@ h1, h3, h4 {
 .metadata {
     font-size: 11px;
     text-align: right;
-    color: gray;
+    color: #808080;
 }
 .tweet, .newsFeedEntry, .newsEntry, .talk, .job, .event, .book {
-    border: white solid 1px;
+    border: 1px solid #ffffff;
     padding: 8px;
     margin-bottom: 16px;
     border-radius: 6px 6px 6px 6px;
 }
 .bookCover {
-    border: gray solid 1px;
+    border: 1px solid #808080;
 }
 .person, .tribe {
     margin-bottom: 48px;
@@ -102,7 +102,7 @@ h1, h3, h4 {
 footer {
     text-align: center;
     margin-bottom: 32px;
-    color: gray;
+    color: #808080;
 }
 .bannerAd {
     text-align: center;
@@ -110,10 +110,10 @@ footer {
 }
 .eventMetadata {
     font-size: 13px;
-    color: gray;
+    color: #808080;
 }
 footer a {
-    color: gray;
+    color: #808080;
 }
 #infographics {
     text-align: center;
@@ -124,7 +124,7 @@ footer a {
 #infographics .banner {
     font-size: 80px;
     line-height: 1.0em;
-    color: black;
+    color: #000000;
     margin-bottom: 16px;
     margin-top: 32px;
     padding: 32px;
@@ -161,7 +161,7 @@ footer a {
     background: linear-gradient(to bottom, #888888, #555555);
     background: -webkit-linear-gradient(top, #888888, #555555);
     border-radius: 0px 0px 6px 6px;
-    color: white;
+    color: #ffffff;
     margin-bottom: 32px;
     clear: both;
     position: relative;
@@ -169,7 +169,7 @@ footer a {
 }
 .siteHeaderImage {
     border-radius: 6px 6px 6px 6px;
-    border: gray solid 1px;
+    border: 1px solid #808080;
 }
 .siteHeaderTagLine1 {
     font-size: 28px;
