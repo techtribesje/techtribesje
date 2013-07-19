@@ -38,7 +38,7 @@ public class NewsController extends AbstractController {
         model.addAttribute("currentPage", page);
         model.addAttribute("maxPage", maxPage);
         addCommonAttributes(model);
-        setPageTitle(model, "News", "" + page);
+        setPageTitle(model, "News", "Page " + page);
 
         return "news";
 	}

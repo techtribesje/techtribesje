@@ -36,7 +36,7 @@ public class ContentController extends AbstractController {
         model.addAttribute("newsFeedEntries", newsFeedEntries);
         model.addAttribute("currentPage", page);
         model.addAttribute("maxPage", maxPage);
-        setPageTitle(model, "Content", "" + page);
+        setPageTitle(model, "Content", "Page " + page);
         addCommonAttributes(model);
 
 		return "content";

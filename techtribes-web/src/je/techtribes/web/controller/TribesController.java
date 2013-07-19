@@ -154,22 +154,25 @@ public class TribesController extends AbstractController {
 
             List<Tweet> tweets = new LinkedList<>();
             long numberOfTweets = tweetComponent.getNumberOfTweets(contentSources);
-            int maxPage = PageSize.calculateNumberOfPages(numberOfTweets, PageSize.RECENT_TWEETS);
-            page = PageSize.validatePage(page, maxPage);
 
             if (numberOfTweets > 0) {
+                int maxPage = PageSize.calculateNumberOfPages(numberOfTweets, PageSize.RECENT_TWEETS);
+                page = PageSize.validatePage(page, maxPage);
+
                 try {
                     tweets = tweetComponent.getRecentTweets(contentSources, page, PageSize.RECENT_TWEETS);
                 } catch (TweetException tse) {
                     loggingComponent.warn(this, "Couldn't retrieve tweets for " + shortName, tse);
                 }
-            }
+                model.addAttribute("tweets", tweets);
+                model.addAttribute("currentPage", page);
+                model.addAttribute("maxPage", maxPage);
+                model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(tweets).getStatistics());
+                setPageTitle(model, tribe.getName(), "Tweets", "Page " + page);
 
-            model.addAttribute("tweets", tweets);
-            model.addAttribute("currentPage", page);
-            model.addAttribute("maxPage", maxPage);
-            model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(tweets).getStatistics());
-            setPageTitle(model, tribe.getName(), "Tweets", "" + page);
+            } else {
+                setPageTitle(model, tribe.getName(), "Tweets");
+            }
 
             return "tribe-tweets";
         }
@@ -206,22 +209,25 @@ public class TribesController extends AbstractController {
 
             List<NewsFeedEntry> newsFeedEntries = new LinkedList<>();
             long numberOfNewsFeedEntries = newsFeedEntryComponent.getNumberOfNewsFeedEntries(contentSources);
-            int maxPage = PageSize.calculateNumberOfPages(numberOfNewsFeedEntries, PageSize.RECENT_NEWS_FEED_ENTRIES);
-            page = PageSize.validatePage(page, maxPage);
 
             if (numberOfNewsFeedEntries > 0) {
+                int maxPage = PageSize.calculateNumberOfPages(numberOfNewsFeedEntries, PageSize.RECENT_NEWS_FEED_ENTRIES);
+                page = PageSize.validatePage(page, maxPage);
+
                 try {
                     newsFeedEntries = newsFeedEntryComponent.getRecentNewsFeedEntries(contentSources, page, PageSize.RECENT_NEWS_FEED_ENTRIES);
                 } catch (NewsFeedEntryException nfse) {
                     loggingComponent.warn(this, "Couldn't retrieve content for " + shortName, nfse);
                 }
-            }
+                setPageTitle(model, contentSource.getName(), "Content", "Page " + page);
+                model.addAttribute("newsFeedEntries", newsFeedEntries);
+                model.addAttribute("currentPage", page);
+                model.addAttribute("maxPage", maxPage);
+                model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(newsFeedEntries).getStatistics());
 
-            model.addAttribute("newsFeedEntries", newsFeedEntries);
-            model.addAttribute("currentPage", page);
-            model.addAttribute("maxPage", maxPage);
-            model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(newsFeedEntries).getStatistics());
-            setPageTitle(model, contentSource.getName(), "Content", "" + page);
+            } else {
+                setPageTitle(model, contentSource.getName(), "Content");
+            }
 
             return "tribe-content";
         }

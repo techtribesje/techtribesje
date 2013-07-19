@@ -139,24 +139,28 @@ public class PeopleController extends AbstractController {
 
         List<Tweet> tweets = new LinkedList<>();
         long numberOfTweets = tweetComponent.getNumberOfTweets(contentSources);
-        int maxPage = PageSize.calculateNumberOfPages(numberOfTweets, PageSize.RECENT_TWEETS);
-        page = PageSize.validatePage(page, maxPage);
 
         if (numberOfTweets > 0) {
+            int maxPage = PageSize.calculateNumberOfPages(numberOfTweets, PageSize.RECENT_TWEETS);
+            page = PageSize.validatePage(page, maxPage);
+
             try {
                 tweets = tweetComponent.getRecentTweets(contentSources, page, PageSize.RECENT_TWEETS);
             } catch (TweetException tse) {
                 loggingComponent.warn(this, "Couldn't retrieve tweets for " + shortName, tse);
             }
+
+            model.addAttribute("tweets", tweets);
+            model.addAttribute("currentPage", page);
+            model.addAttribute("maxPage", maxPage);
+            setPageTitle(model, contentSource.getName(), "Tweets", "Page " + page);
+        } else {
+            setPageTitle(model, contentSource.getName(), "Tweets");
         }
 
         model.addAttribute("person", contentSource);
-        model.addAttribute("tweets", tweets);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("maxPage", maxPage);
         model.addAttribute("activeNav", "tweets");
         addCommonAttributes(model);
-        setPageTitle(model, contentSource.getName(), "Tweets", "" + page);
 
         return "person-tweets";
 	}
@@ -168,30 +172,34 @@ public class PeopleController extends AbstractController {
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/content/{page:[\\d]+}", method = RequestMethod.GET)
 	public String viewContent(@PathVariable("name")String shortName, @PathVariable("page")int page, ModelMap model) {
-        List<ContentSource> contentSources = new LinkedList<ContentSource>();
+        List<ContentSource> contentSources = new LinkedList<>();
         ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
         contentSources.add(contentSource);
 
-        List<NewsFeedEntry> newsFeedEntries = new LinkedList<NewsFeedEntry>();
+        List<NewsFeedEntry> newsFeedEntries = new LinkedList<>();
         long numberOfNewsFeedEntries = newsFeedEntryComponent.getNumberOfNewsFeedEntries(contentSources);
-        int maxPage = PageSize.calculateNumberOfPages(numberOfNewsFeedEntries, PageSize.RECENT_NEWS_FEED_ENTRIES);
-        page = PageSize.validatePage(page, maxPage);
 
         if (numberOfNewsFeedEntries > 0) {
+            int maxPage = PageSize.calculateNumberOfPages(numberOfNewsFeedEntries, PageSize.RECENT_NEWS_FEED_ENTRIES);
+            page = PageSize.validatePage(page, maxPage);
+
             try {
                 newsFeedEntries = newsFeedEntryComponent.getRecentNewsFeedEntries(contentSources, page, PageSize.RECENT_NEWS_FEED_ENTRIES);
             } catch (NewsFeedEntryException nfse) {
                 loggingComponent.warn(this, "Couldn't retrieve content for " + shortName, nfse);
             }
+
+            model.addAttribute("newsFeedEntries", newsFeedEntries);
+            model.addAttribute("currentPage", page);
+            model.addAttribute("maxPage", maxPage);
+            setPageTitle(model, contentSource.getName(), "Content", "Page " + page);
+        } else {
+            setPageTitle(model, contentSource.getName(), "Content");
         }
 
         model.addAttribute("person", contentSource);
-        model.addAttribute("newsFeedEntries", newsFeedEntries);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("maxPage", maxPage);
         model.addAttribute("activeNav", "content");
         addCommonAttributes(model);
-        setPageTitle(model, contentSource.getName(), "Content", "" + page);
 
         return "person-content";
 	}

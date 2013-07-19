@@ -37,7 +37,7 @@ public class TweetsController extends AbstractController {
         model.addAttribute("currentPage", page);
         model.addAttribute("maxPage", maxPage);
         addCommonAttributes(model);
-        setPageTitle(model, "Tweets", "" + page);
+        setPageTitle(model, "Tweets", "Page " + page);
 
 		return "tweets";
 	}
