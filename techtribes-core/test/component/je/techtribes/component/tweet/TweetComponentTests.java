@@ -3,7 +3,6 @@ package je.techtribes.component.tweet;
 import com.mongodb.Mongo;
 import je.techtribes.AbstractComponentTestsBase;
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.Tweet;
 import je.techtribes.util.DateUtils;
 import org.junit.After;
 import org.junit.Test;

@@ -12,7 +12,7 @@ import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.job.JobComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.talk.TalkComponent;
-import je.techtribes.domain.Tweet;
+import je.techtribes.component.tweet.Tweet;
 import je.techtribes.util.PageSize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
 package je.techtribes.connector.twitter;
 
-import je.techtribes.domain.Tweet;
+import je.techtribes.component.tweet.Tweet;
 
 public interface StreamingTweetListener {
 

@@ -13,6 +13,7 @@ import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.search.SearchResult;
 import je.techtribes.component.talk.Talk;
 import je.techtribes.component.talk.TalkComponent;
+import je.techtribes.component.tweet.Tweet;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.tweet.TweetException;
 import je.techtribes.domain.*;

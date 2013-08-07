@@ -84,8 +84,34 @@ public class DateUtilsTests {
    }
 
     @Test
+    public void test_getXDaysAgoInUTC_WhereXIsZero() {
+        Date date = DateUtils.getXDaysAgoInUTC(0);
+
+        Calendar today = Calendar.getInstance(TimeZone.getTimeZone(DateUtils.UTC_TIME_ZONE));
+        today.add(Calendar.DAY_OF_MONTH, 0);
+        today.set(Calendar.HOUR_OF_DAY, 0);
+        today.set(Calendar.MINUTE, 0);
+        today.set(Calendar.SECOND, 0);
+        today.set(Calendar.MILLISECOND, 0);
+        assertEquals(dateFormat.format(today.getTime()), dateFormat.format(date));
+   }
+
+    @Test
+    public void test_getXDaysAgoInUTC_WhereXIsOne() {
+        Date date = DateUtils.getXDaysAgoInUTC(1);
+
+        Calendar today = Calendar.getInstance(TimeZone.getTimeZone(DateUtils.UTC_TIME_ZONE));
+        today.add(Calendar.DAY_OF_MONTH, -1);
+        today.set(Calendar.HOUR_OF_DAY, 0);
+        today.set(Calendar.MINUTE, 0);
+        today.set(Calendar.SECOND, 0);
+        today.set(Calendar.MILLISECOND, 0);
+        assertEquals(dateFormat.format(today.getTime()), dateFormat.format(date));
+   }
+
+    @Test
     public void test_getDate() {
-        Date date = DateUtils.getDate(2013, 07, 01, 17, 30);
+        Date date = DateUtils.getDate(2013, 7, 1, 17, 30);
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss:SSS");
         sdf.setTimeZone(TimeZone.getTimeZone(DateUtils.UTC_TIME_ZONE));
         assertEquals("01-Jul-2013 16:30:00:000", sdf.format(date));

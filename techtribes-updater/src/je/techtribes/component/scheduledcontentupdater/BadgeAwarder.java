@@ -3,6 +3,7 @@ package je.techtribes.component.scheduledcontentupdater;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.badge.BadgeException;
 import je.techtribes.component.talk.Talk;
+import je.techtribes.component.tweet.Tweet;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.*;
 

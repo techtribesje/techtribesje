@@ -7,7 +7,7 @@ import je.techtribes.component.scheduledcontentupdater.ScheduledContentUpdater;
 import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.domain.NewsFeedEntry;
-import je.techtribes.domain.Tweet;
+import je.techtribes.component.tweet.Tweet;
 import je.techtribes.util.DateUtils;
 import je.techtribes.util.PageSize;
 import je.techtribes.util.Version;
