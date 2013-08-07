@@ -1,7 +1,4 @@
-package je.techtribes.component.tweet;
-
-import je.techtribes.domain.ContentItem;
-import je.techtribes.domain.ContentSource;
+package je.techtribes.domain;
 
 import java.util.Date;
 

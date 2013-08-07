@@ -1,9 +1,9 @@
 package je.techtribes.web.controller;
 
 import je.techtribes.component.activity.ActivityComponent;
-import je.techtribes.component.event.Event;
-import je.techtribes.component.job.Job;
-import je.techtribes.component.talk.Talk;
+import je.techtribes.domain.Event;
+import je.techtribes.domain.Job;
+import je.techtribes.domain.Talk;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.Badge;
 import je.techtribes.domain.badge.Badges;
@@ -12,7 +12,7 @@ import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.job.JobComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.talk.TalkComponent;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 import je.techtribes.util.PageSize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

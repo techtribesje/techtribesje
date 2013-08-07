@@ -1,7 +1,7 @@
 package je.techtribes.domain.badge;
 
 import je.techtribes.domain.ContentSource;
-import je.techtribes.component.talk.Talk;
+import je.techtribes.domain.Talk;
 
 import java.util.Date;
 

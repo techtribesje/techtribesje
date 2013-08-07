@@ -1,5 +1,6 @@
 package je.techtribes.component.github;
 
+import je.techtribes.domain.GitHubRepository;
 import je.techtribes.domain.Person;
 import org.junit.Before;
 import org.junit.Test;

@@ -2,6 +2,7 @@ package je.techtribes.component.github;
 
 import je.techtribes.AbstractComponentTestsBase;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.GitHubRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

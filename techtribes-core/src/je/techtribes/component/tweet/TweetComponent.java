@@ -2,6 +2,7 @@ package je.techtribes.component.tweet;
 
 import com.codingthearchitecture.seos.element.Component;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.Tweet;
 
 import java.util.Collection;
 import java.util.Date;

@@ -1,5 +1,6 @@
 package je.techtribes.component.talk;
 
+import je.techtribes.domain.Talk;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

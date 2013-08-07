@@ -1,6 +1,6 @@
 package je.techtribes.web.controller;
 
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.util.PageSize;
 import org.springframework.beans.factory.annotation.Autowired;

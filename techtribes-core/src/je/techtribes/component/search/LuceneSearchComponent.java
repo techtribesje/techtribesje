@@ -4,7 +4,7 @@ import je.techtribes.component.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.NewsFeedEntry;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;

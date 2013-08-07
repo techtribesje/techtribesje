@@ -6,7 +6,7 @@ import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.talk.TalkComponent;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.domain.*;
 import je.techtribes.util.DateUtils;

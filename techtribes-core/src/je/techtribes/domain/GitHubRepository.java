@@ -1,6 +1,4 @@
-package je.techtribes.component.github;
-
-import je.techtribes.domain.ContentSource;
+package je.techtribes.domain;
 
 public class GitHubRepository {
 
@@ -26,7 +24,7 @@ public class GitHubRepository {
         return contentSourceId;
     }
 
-    void setContentSourceId(int contentSourceId) {
+    public void setContentSourceId(int contentSourceId) {
         this.contentSourceId = contentSourceId;
     }
 
@@ -34,7 +32,7 @@ public class GitHubRepository {
         return contentSource;
     }
 
-    void setContentSource(ContentSource contentSource) {
+    public void setContentSource(ContentSource contentSource) {
         this.contentSource = contentSource;
     }
 

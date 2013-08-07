@@ -2,7 +2,7 @@ package je.techtribes.connector.github;
 
 import je.techtribes.component.AbstractComponent;
 import je.techtribes.domain.ContentSource;
-import je.techtribes.component.github.GitHubRepository;
+import je.techtribes.domain.GitHubRepository;
 import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.service.RepositoryService;
 

@@ -1,5 +1,6 @@
 package je.techtribes.component.github;
 
+import je.techtribes.domain.GitHubRepository;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

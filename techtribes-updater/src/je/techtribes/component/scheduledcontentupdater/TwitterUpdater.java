@@ -7,7 +7,7 @@ import je.techtribes.component.tweet.TweetException;
 import je.techtribes.connector.twitter.StreamingTweetListener;
 import je.techtribes.connector.twitter.TwitterConnector;
 import je.techtribes.domain.ContentSource;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 import je.techtribes.connector.twitter.TwitterProfile;
 
 import java.util.LinkedList;

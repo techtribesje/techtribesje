@@ -1,6 +1,6 @@
 package je.techtribes.domain.badge;
 
-import je.techtribes.component.talk.Talk;
+import je.techtribes.domain.Talk;
 import je.techtribes.util.DateUtils;
 import org.junit.Test;
 

@@ -2,7 +2,7 @@ package je.techtribes.web.controller;
 
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.domain.ContentSourceStatistics;
-import je.techtribes.component.talk.Talk;
+import je.techtribes.domain.Talk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

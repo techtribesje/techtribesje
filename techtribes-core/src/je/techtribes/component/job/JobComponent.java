@@ -2,6 +2,7 @@ package je.techtribes.component.job;
 
 import com.codingthearchitecture.seos.element.Component;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.Job;
 
 import java.util.List;
 

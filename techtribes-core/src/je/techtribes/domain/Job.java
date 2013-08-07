@@ -1,4 +1,4 @@
-package je.techtribes.component.job;
+package je.techtribes.domain;
 
 import je.techtribes.domain.ContentItem;
 import je.techtribes.domain.Island;
@@ -17,7 +17,7 @@ public class Job extends ContentItem {
     private URL url;
     private Date datePosted;
 
-    Job(int id) {
+    public Job(int id) {
         this.id = id;
     }
 
@@ -34,7 +34,7 @@ public class Job extends ContentItem {
         return getDescription();
     }
 
-    void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -46,7 +46,7 @@ public class Job extends ContentItem {
         return datePosted;
     }
 
-    void setDatePosted(Date datePosted) {
+    public void setDatePosted(Date datePosted) {
         this.datePosted = datePosted;
     }
 
@@ -54,7 +54,7 @@ public class Job extends ContentItem {
         return island;
     }
 
-    void setIsland(Island island) {
+    public void setIsland(Island island) {
         this.island = island;
     }
 
@@ -62,7 +62,7 @@ public class Job extends ContentItem {
         return url;
     }
 
-    void setUrl(URL url) {
+    public void setUrl(URL url) {
         this.url = url;
     }
 

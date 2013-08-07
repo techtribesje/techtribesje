@@ -1,7 +1,7 @@
 package je.techtribes.domain.badge;
 
 import je.techtribes.domain.ContentSource;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 
 import java.util.Collection;
 import java.util.HashSet;

@@ -1,7 +1,7 @@
 package je.techtribes.connector.twitter;
 
 import com.codingthearchitecture.seos.element.Component;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 
 import java.util.List;
 

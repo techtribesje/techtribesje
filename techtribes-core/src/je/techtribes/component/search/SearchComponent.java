@@ -2,7 +2,7 @@ package je.techtribes.component.search;
 
 import com.codingthearchitecture.seos.element.Component;
 import je.techtribes.domain.NewsFeedEntry;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 
 import java.util.List;
 

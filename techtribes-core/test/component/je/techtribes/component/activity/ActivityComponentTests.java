@@ -1,7 +1,7 @@
 package je.techtribes.component.activity;
 
 import je.techtribes.AbstractComponentTestsBase;
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 import je.techtribes.domain.*;
 import je.techtribes.util.DateUtils;
 import org.junit.After;

@@ -1,6 +1,6 @@
 package je.techtribes.util.comparator;
 
-import je.techtribes.component.github.GitHubRepository;
+import je.techtribes.domain.GitHubRepository;
 
 import java.util.Comparator;
 

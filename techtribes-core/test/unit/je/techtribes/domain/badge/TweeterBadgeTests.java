@@ -1,6 +1,6 @@
 package je.techtribes.domain.badge;
 
-import je.techtribes.component.tweet.Tweet;
+import je.techtribes.domain.Tweet;
 import org.junit.Test;
 
 import java.util.Collection;

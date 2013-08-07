@@ -1,6 +1,7 @@
 package je.techtribes.component.job;
 
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.Job;
 import je.techtribes.util.DateUtils;
 import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;

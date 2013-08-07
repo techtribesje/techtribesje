@@ -2,6 +2,7 @@ package je.techtribes.component.talk;
 
 import je.techtribes.AbstractComponentTestsBase;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.Talk;
 import je.techtribes.util.DateUtils;
 import org.junit.After;
 import org.junit.Before;

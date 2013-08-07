@@ -2,6 +2,7 @@ package je.techtribes.component.tweet;
 
 import com.mongodb.*;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.Tweet;
 import je.techtribes.util.ContentSourceToIdConverter;
 import je.techtribes.util.MongoDatabaseConfiguration;
 

@@ -5,7 +5,7 @@ import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.ContentSourceType;
-import je.techtribes.component.talk.Talk;
+import je.techtribes.domain.Talk;
 import je.techtribes.domain.Tribe;
 import je.techtribes.util.comparator.ContentSourceByNameComparator;
 import org.springframework.beans.factory.annotation.Autowired;

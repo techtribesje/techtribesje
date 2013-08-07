@@ -2,6 +2,7 @@ package je.techtribes.component.event;
 
 import com.codingthearchitecture.seos.element.Component;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.Event;
 
 import java.util.Date;
 import java.util.List;
