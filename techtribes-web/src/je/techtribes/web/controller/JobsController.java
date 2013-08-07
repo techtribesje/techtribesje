@@ -2,7 +2,7 @@ package je.techtribes.web.controller;
 
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.component.job.JobComponent;
-import je.techtribes.domain.Job;
+import je.techtribes.component.job.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

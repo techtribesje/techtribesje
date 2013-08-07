@@ -1,6 +1,5 @@
 package je.techtribes.component.job;
 
-import je.techtribes.domain.Job;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

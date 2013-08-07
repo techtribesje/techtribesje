@@ -2,7 +2,6 @@ package je.techtribes.component.job;
 
 import je.techtribes.AbstractComponentTestsBase;
 import je.techtribes.domain.Island;
-import je.techtribes.domain.Job;
 import je.techtribes.util.DateUtils;
 import org.junit.After;
 import org.junit.Before;

@@ -3,7 +3,6 @@ package je.techtribes.component.job;
 import je.techtribes.component.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.Job;
 import je.techtribes.util.ContentItemFilter;
 import je.techtribes.util.JdbcDatabaseConfiguration;
 

@@ -4,6 +4,7 @@ import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.github.GitHubComponent;
+import je.techtribes.component.job.Job;
 import je.techtribes.component.job.JobComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryException;

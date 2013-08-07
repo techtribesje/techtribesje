@@ -2,7 +2,6 @@ package je.techtribes.component.job;
 
 import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.domain.Island;
-import je.techtribes.domain.Job;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
 import java.net.MalformedURLException;

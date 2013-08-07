@@ -1,6 +1,7 @@
 package je.techtribes.web.controller;
 
 import je.techtribes.component.activity.ActivityComponent;
+import je.techtribes.component.job.Job;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.Badge;
 import je.techtribes.domain.badge.Badges;
@@ -24,19 +25,19 @@ import java.util.List;
 public class HomePageController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;
-    private TweetComponent twitterService;
-    private TalkComponent talksService;
-    private JobComponent jobService;
-    private EventComponent eventService;
+    private TweetComponent tweetComponent;
+    private TalkComponent talkComponent;
+    private JobComponent jobComponent;
+    private EventComponent eventComponent;
     private ActivityComponent activityComponent;
 
     @Autowired
-    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent twitterService, TalkComponent talksService, JobComponent jobService, EventComponent eventService, ActivityComponent activityComponent) {
+    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, JobComponent jobComponent, EventComponent eventComponent, ActivityComponent activityComponent) {
         this.newsFeedEntryComponent = newsFeedEntryComponent;
-        this.twitterService = twitterService;
-        this.talksService = talksService;
-        this.jobService = jobService;
-        this.eventService = eventService;
+        this.tweetComponent = tweetComponent;
+        this.talkComponent = talkComponent;
+        this.jobComponent = jobComponent;
+        this.eventComponent = eventComponent;
         this.activityComponent = activityComponent;
     }
 
@@ -45,15 +46,15 @@ public class HomePageController extends AbstractController {
         List<? extends ContentItem> newsFeedEntries = newsFeedEntryComponent.getRecentNewsFeedEntries(1, 6);
         List<ContentSource> mediaTribes = contentSourceComponent.getContentSources(ContentSourceType.Media);
         List<? extends ContentItem> newsEntries = newsFeedEntryComponent.getRecentNewsFeedEntries(mediaTribes, 1, 3);
-        List<Tweet> tweets = twitterService.getRecentTweets(1, 12);
+        List<Tweet> tweets = tweetComponent.getRecentTweets(1, 12);
 
-        List<Talk> talks = talksService.getRecentTalks();
+        List<Talk> talks = talkComponent.getRecentTalks();
         if (talks.size() > PageSize.RECENT_TALKS) {
             talks = talks.subList(0, PageSize.RECENT_TALKS);
         }
 
-        List<Job> jobs = jobService.getRecentJobs(PageSize.RECENT_JOBS);
-        List<Event> events = eventService.getFutureEvents(PageSize.RECENT_EVENTS);
+        List<Job> jobs = jobComponent.getRecentJobs(PageSize.RECENT_JOBS);
+        List<Event> events = eventComponent.getFutureEvents(PageSize.RECENT_EVENTS);
 
         model.addAttribute("newsFeedEntries", newsFeedEntries);
         model.addAttribute("newsEntries", newsEntries);
