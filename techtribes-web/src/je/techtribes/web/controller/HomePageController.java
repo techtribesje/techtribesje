@@ -2,6 +2,7 @@ package je.techtribes.web.controller;
 
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.job.Job;
+import je.techtribes.component.talk.Talk;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.Badge;
 import je.techtribes.domain.badge.Badges;

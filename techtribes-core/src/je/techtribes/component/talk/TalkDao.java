@@ -1,7 +1,6 @@
 package je.techtribes.component.talk;
 
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.Talk;
 
 import java.util.Collection;
 import java.util.Date;

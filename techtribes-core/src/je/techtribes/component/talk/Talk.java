@@ -1,5 +1,6 @@
-package je.techtribes.domain;
+package je.techtribes.component.talk;
 
+import je.techtribes.domain.ContentItem;
 import je.techtribes.util.StringUtils;
 
 import java.net.URL;

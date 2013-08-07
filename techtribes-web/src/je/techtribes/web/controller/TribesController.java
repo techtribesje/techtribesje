@@ -10,6 +10,7 @@ import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryException;
 import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.search.SearchResult;
+import je.techtribes.component.talk.Talk;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.tweet.TweetException;

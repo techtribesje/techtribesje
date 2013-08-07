@@ -1,8 +1,6 @@
 package je.techtribes.component.talk;
 
 import je.techtribes.component.log.LoggingComponentFactory;
-import je.techtribes.domain.Talk;
-import je.techtribes.domain.TalkType;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
 import java.net.MalformedURLException;

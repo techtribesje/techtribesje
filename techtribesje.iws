@@ -7,21 +7,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2386faa0-5294-492e-ac82-b70a8e302643" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/GitHubRepository.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/GitHubRepositoryTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/component/github/GitHubRepositoryTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/CodeController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/CodeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/viewmodel/ContentSourceAndGitHubRepositories.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/viewmodel/ContentSourceAndGitHubRepositories.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/connector/github/EclipseMylynGitHubConnector.java" afterPath="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/connector/github/EclipseMylynGitHubConnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubComponent.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubComponentImpl.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubComponentImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/component/je/techtribes/component/github/GitHubComponentTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/component/je/techtribes/component/github/GitHubComponentTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/connector/github/GitHubConnector.java" afterPath="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/connector/github/GitHubConnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/comparator/GitHubRepositoryByNameComparator.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/comparator/GitHubRepositoryByNameComparator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/util/comparator/GitHubRepositoryByNameComparatorTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/util/comparator/GitHubRepositoryByNameComparatorTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepositoryDao.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepositoryDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepositoryResultExtractor.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepositoryResultExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepositoryRowMapper.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepositoryRowMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/JdbcGitHubRepositoryDao.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/JdbcGitHubRepositoryDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/Talk.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/Talk.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/TalkType.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AboutPageController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AboutPageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/AbstractHowlerBadge.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/AbstractHowlerBadge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/AbstractJetsetterBadge.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/AbstractJetsetterBadge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/component/scheduledcontentupdater/BadgeAwarder.java" afterPath="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/component/scheduledcontentupdater/BadgeAwarder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/HomePageController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/HomePageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/HowlerBadgeTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/HowlerBadgeTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/JdbcTalkDao.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/JdbcTalkDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/JetsetterBadgeTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/JetsetterBadgeTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/JetsetterExtraordinaireBadgeTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/JetsetterExtraordinaireBadgeTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/PeopleController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/PeopleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/RockhopperBadge.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/RockhopperBadge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/RockhopperBadgeTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/RockhopperBadgeTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/SuperHowlerBadgeTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/SuperHowlerBadgeTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/TalkBadge.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/badge/TalkBadge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TalkBadgeTestsSupport.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TalkBadgeTestsSupport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkComponent.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkComponentImpl.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkComponentImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/component/je/techtribes/component/talk/TalkComponentTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/component/je/techtribes/component/talk/TalkComponentTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkDao.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkResultExtractor.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkResultExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkRowMapper.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkRowMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/TalksController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/TalksController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/TribesController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/TribesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TripleHowlerBadgeTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TripleHowlerBadgeTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TripleJetsetterBadgeTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TripleJetsetterBadgeTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.number" afterPath="$PROJECT_DIR$/build.number" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/build.properties" afterPath="$PROJECT_DIR$/etc/build.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribesje.iws" afterPath="$PROJECT_DIR$/techtribesje.iws" />
@@ -70,7 +82,7 @@
     <file path="/badges.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371323953699" ignored="false" />
     <file path="/admin-status.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371324234731" ignored="false" />
     <file path="/admin-add.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371324276993" ignored="false" />
-    <file path="/fragment.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375914312254" ignored="false" />
+    <file path="/fragment.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375914667440" ignored="false" />
     <file path="/BadgeComparator.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371325302161" ignored="false" />
     <file path="/AwardedBadgeComparator.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372014975447" ignored="false" />
     <file path="/GitHubRepositoryByNameComparatorTest.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371325555662" ignored="false" />
@@ -447,10 +459,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GitHubRepository.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GitHubRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="9" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.8508604">
+            <state line="61" column="9" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TalkType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="12" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Talk.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/Talk.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="41" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.8035714">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TalkBadgeTestsSupport.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TalkBadgeTestsSupport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="12" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -501,7 +540,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/JdbcGitHubRepositoryDao.java" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/job/component.xml" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/job/JobComponentImpl.java" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/job/JdbcJobDao.java" />
@@ -517,6 +555,7 @@
         <option value="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/component/github/GitHubRepositoryTests.java" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepository.java" />
         <option value="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/connector/github/EclipseMylynGitHubConnector.java" />
+        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/Talk.java" />
       </list>
     </option>
   </component>
@@ -836,6 +875,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="talk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="je" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="github" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -958,14 +1031,14 @@
       <recent name="$PROJECT_DIR$/techtribes-core" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="je.techtribes.component.talk" />
       <recent name="je.techtribes.component.github" />
       <recent name="je.techtribes.component.job" />
       <recent name="je.techtribes.domain.badge" />
       <recent name="je.techtribes.component.tweet" />
-      <recent name="je.techtribes.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.techtribes-web">
+  <component name="RunManager" selected="JUnit.Component tests in techtribes-core">
     <configuration default="false" name="Component tests in techtribes-core" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea" />
       <module name="techtribes-core" />
@@ -1422,7 +1495,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="22" width="1392" height="878" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1431,18 +1504,18 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987398" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39973614" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43931398" sideWeight="0.670126" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43931398" sideWeight="0.5728083" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27308708" sideWeight="0.49962935" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27308708" sideWeight="0.42644873" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24943988" sideWeight="0.34078947" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29799852" sideWeight="0.43139842" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25928676" sideWeight="0.7269129" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41556728" sideWeight="0.32962963" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25928676" sideWeight="0.5844327" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41556728" sideWeight="0.32962963" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41842106" sideWeight="0.6703704" order="14" side_tool="true" content_ui="tabs" x="382" y="525" width="383" height="157" />
       <window_info id="Byte Code Viewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="145" y="122" width="1195" height="678" />
@@ -1521,27 +1594,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/badge/BadgeComponentImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/HomePageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="38" selection-start="2949" selection-end="2949" vertical-scroll-proportion="0.7117647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/ContentItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/job/JdbcJobDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="6" selection-start="305" selection-end="305" vertical-scroll-proportion="0.11764706">
@@ -1628,7 +1680,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="9" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.8508604">
+        <state line="61" column="9" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="12" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/badge/TalkBadgeTestsSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="12" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/Talk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="41" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.8035714">
           <folding />
         </state>
       </provider>

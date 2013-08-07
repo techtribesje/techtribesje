@@ -2,7 +2,7 @@ package je.techtribes.domain.badge;
 
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Island;
-import je.techtribes.domain.Talk;
+import je.techtribes.component.talk.Talk;
 
 import java.util.Collection;
 import java.util.HashSet;
