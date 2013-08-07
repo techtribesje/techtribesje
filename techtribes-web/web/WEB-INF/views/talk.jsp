@@ -16,7 +16,7 @@
     </p>
 
     <c:if test="${not empty talk.videoUrl}">
-    <div style="text-align: center;">
+    <div class="embeddedVideo">
         <techtribesje:embedVideo url="${talk.videoUrl}" />
     </div>
     </c:if>
