@@ -1,7 +1,6 @@
 package je.techtribes.component.event;
 
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.Event;
 
 import java.util.Date;
 import java.util.List;

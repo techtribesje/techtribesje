@@ -1,7 +1,6 @@
 package je.techtribes.component.event;
 
 import je.techtribes.component.log.LoggingComponentFactory;
-import je.techtribes.domain.Event;
 import je.techtribes.domain.Island;
 import org.springframework.jdbc.core.ResultSetExtractor;
 

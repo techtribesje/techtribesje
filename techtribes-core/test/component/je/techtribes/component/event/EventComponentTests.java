@@ -1,7 +1,6 @@
 package je.techtribes.component.event;
 
 import je.techtribes.AbstractComponentTestsBase;
-import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.domain.*;
 import je.techtribes.util.DateUtils;
 import org.junit.After;
@@ -9,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;

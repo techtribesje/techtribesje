@@ -1,6 +1,5 @@
 package je.techtribes.component.event;
 
-import je.techtribes.domain.Event;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

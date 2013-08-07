@@ -1,5 +1,7 @@
-package je.techtribes.domain;
+package je.techtribes.component.event;
 
+import je.techtribes.domain.ContentItem;
+import je.techtribes.domain.Island;
 import je.techtribes.util.StringUtils;
 
 import java.net.URL;
@@ -10,14 +12,10 @@ public class Event extends ContentItem {
     private int id;
     private String description;
     private Island island;
-    private int contentSourceId;
     private URL url;
     private Date date;
 
-    public Event() {
-    }
-
-    public Event(int id) {
+    Event(int id) {
         this.id = id;
     }
 
@@ -34,7 +32,7 @@ public class Event extends ContentItem {
         return getDescription();
     }
 
-    public void setDescription(String description) {
+    void setDescription(String description) {
         this.description = description;
     }
 
@@ -46,7 +44,7 @@ public class Event extends ContentItem {
         return date;
     }
 
-    public void setDate(Date date) {
+    void setDate(Date date) {
         this.date = date;
     }
 
@@ -54,23 +52,15 @@ public class Event extends ContentItem {
         return island;
     }
 
-    public void setIsland(Island island) {
+    void setIsland(Island island) {
         this.island = island;
-    }
-
-    public int getContentSourceId() {
-        return contentSourceId;
-    }
-
-    public void setContentSourceId(int contentSourceId) {
-        this.contentSourceId = contentSourceId;
     }
 
     public URL getUrl() {
         return url;
     }
 
-    public void setUrl(URL url) {
+    void setUrl(URL url) {
         this.url = url;
     }
 

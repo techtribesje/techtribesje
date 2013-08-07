@@ -1,7 +1,6 @@
 package je.techtribes.component.event;
 
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.Event;
 import je.techtribes.util.DateUtils;
 import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;

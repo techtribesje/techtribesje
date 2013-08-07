@@ -1,10 +1,8 @@
 package je.techtribes.web.controller;
 
-import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.domain.ContentSourceStatistics;
-import je.techtribes.domain.Event;
+import je.techtribes.component.event.Event;
 import je.techtribes.component.event.EventComponent;
-import je.techtribes.util.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
