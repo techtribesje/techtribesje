@@ -7,27 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2386faa0-5294-492e-ac82-b70a8e302643" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/AbstractControllerTestsBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentControllerTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentSourceComponentStub.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/NewsFeedEntryComponentStub.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/AbstractControllerTests.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/RecentSummaryPageController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/HomePageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AboutPageController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AboutPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AbstractController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AbstractController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/ContentController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/ContentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/NewsController.java" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/NewsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/RssControllerTests.java" afterPath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/RssControllerTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp" afterPath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-web/web/static/img/youtube.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/tagext/EmbedVideoTag.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/Video.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/VideoTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentControllerTests.java" afterPath="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentControllerTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/newsfeedentry/NewsFeedEntryComponent.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/newsfeedentry/NewsFeedEntryComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/search/SearchComponent.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/search/SearchComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.number" afterPath="$PROJECT_DIR$/build.number" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/build.properties" afterPath="$PROJECT_DIR$/etc/build.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/coda.jspf" afterPath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/coda.jspf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/prelude.jspf" afterPath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/prelude.jspf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/talk.jsp" afterPath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/talk.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribesje.iws" afterPath="$PROJECT_DIR$/techtribesje.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/etc/techtribesje.tld" afterPath="$PROJECT_DIR$/techtribes-web/etc/techtribesje.tld" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/tweets.jsp" afterPath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/tweets.jsp" />
     </list>
     <ignored path="techtribesje.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372965510148" ignored="false" />
-    <file path="/techtribesje.css" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372335364908" ignored="false" />
+    <file path="/Dummy.txt" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375879304473" ignored="false" />
+    <file path="/techtribesje.css" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375627200693" ignored="false" />
     <file path="/prelude.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372601878780" ignored="false" />
     <file path="/tweet.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371415208473" ignored="false" />
     <file path="/home.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372149198475" ignored="false" />
@@ -37,7 +36,7 @@
     <file path="/news.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372371423300" ignored="false" />
     <file path="/talks.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372245243501" ignored="false" />
     <file path="/content.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371389771607" ignored="false" />
-    <file path="/tweets.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371415088041" ignored="false" />
+    <file path="/tweets.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375627170068" ignored="false" />
     <file path="/code.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372283884488" ignored="false" />
     <file path="/books.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371310447034" ignored="false" />
     <file path="/people.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371418577162" ignored="false" />
@@ -68,7 +67,7 @@
     <file path="/badges.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371323953699" ignored="false" />
     <file path="/admin-status.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371324234731" ignored="false" />
     <file path="/admin-add.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371324276993" ignored="false" />
-    <file path="/fragment.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372965510148" ignored="false" />
+    <file path="/fragment.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375628469438" ignored="false" />
     <file path="/BadgeComparator.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371325302161" ignored="false" />
     <file path="/AwardedBadgeComparator.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372014975447" ignored="false" />
     <file path="/GitHubRepositoryByNameComparatorTest.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371325555662" ignored="false" />
@@ -82,13 +81,13 @@
     <file path="/MongoDbTweetDao.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372331122592" ignored="false" />
     <file path="/TweetDao.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371337404392" ignored="false" />
     <file path="/TweetComponentImpl.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372410848914" ignored="false" />
-    <file path="/TribesController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372939856328" ignored="false" />
-    <file path="/PeopleController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372939653662" ignored="false" />
+    <file path="/TribesController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1374256487706" ignored="false" />
+    <file path="/PeopleController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1374256272523" ignored="false" />
     <file path="/TweetComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372086042417" ignored="false" />
     <file path="/Main.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372940496434" ignored="false" />
     <file path="/Tweet.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372350956917" ignored="false" />
     <file path="/mongo-commands.txt" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371342526966" ignored="false" />
-    <file path="/NewsFeedEntryComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372329744375" ignored="false" />
+    <file path="/NewsFeedEntryComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375632675125" ignored="false" />
     <file path="/MongoDbNewsFeedEntryDao.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372940129317" ignored="false" />
     <file path="/NewsFeedEntryComponentImpl.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372414029881" ignored="false" />
     <file path="/ContentItem.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372087183053" ignored="false" />
@@ -97,7 +96,7 @@
     <file path="/NewsFeedEntryDao.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371377935833" ignored="false" />
     <file path="/Talk.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372354523479" ignored="false" />
     <file path="/content-source-statistics.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371390285688" ignored="false" />
-    <file path="/talk.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372354460404" ignored="false" />
+    <file path="/talk.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375619976278" ignored="false" />
     <file path="/activity.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372148964664" ignored="false" />
     <file path="/tribes.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371418604733" ignored="false" />
     <file path="/JdbcContentSourceDao.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372526212762" ignored="false" />
@@ -146,8 +145,8 @@
     <file path="/PeopleServiceTag.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372142039971" ignored="false" />
     <file path="/AbstractController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372969073282" ignored="false" />
     <file path="/GotoPersonOrTribeTag.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372142743402" ignored="false" />
-    <file path="/techtribesje.tld" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372142613747" ignored="false" />
-    <file path="/EventComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372158497450" ignored="false" />
+    <file path="/techtribesje.tld" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375619727970" ignored="false" />
+    <file path="/EventComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375634397591" ignored="false" />
     <file path="/ContentSourceComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372150028795" ignored="false" />
     <file path="/AbstractComponentTestsBase.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372525946712" ignored="false" />
     <file path="/EventComponentTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372236255497" ignored="false" />
@@ -234,7 +233,7 @@
     <file path="/rss.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372369499535" ignored="false" />
     <file path="/BadgeComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372416160608" ignored="false" />
     <file path="/NewsController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372371442878" ignored="false" />
-    <file path="/ContentController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372371232777" ignored="false" />
+    <file path="/ContentController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372970715298" ignored="false" />
     <file path="/PageSizeTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372372323182" ignored="false" />
     <file path="/PageSize.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372410883325" ignored="false" />
     <file path="/NewsFeedEntryComponentTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372415298966" ignored="false" />
@@ -259,8 +258,16 @@
     <file path="/AbstractControllerTestsBase.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372964543208" ignored="false" />
     <file path="/MockContentSourceComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372964809606" ignored="false" />
     <file path="/MockNewsFeedEntryComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372965714681" ignored="false" />
-    <file path="/ContentControllerTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372969781364" ignored="false" />
+    <file path="/ContentControllerTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372971195311" ignored="false" />
     <file path="/HomePageController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372969130149" ignored="false" />
+    <file path="$PROJECT_DIR$/../presentations/training/web/index.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1374393388545" ignored="false" />
+    <file path="/index.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1374393381572" ignored="false" />
+    <file path="/locate.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375608069251" ignored="false" />
+    <file path="/EmbedVideoTag.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375619690470" ignored="false" />
+    <file path="/Video.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375618973931" ignored="false" />
+    <file path="/VideoTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375619590044" ignored="false" />
+    <file path="/coda.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375628589053" ignored="false" />
+    <file path="/join-us.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375628917207" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,6 +369,7 @@
     <SUITE FILE_PATH="coverage/techtribesje$Unit_tests_in_techtribes_core.coverage" NAME="Unit tests in techtribes-core Coverage Results" MODIFIED="1372358255693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/techtribesje$All_in_techtribes_web.coverage" NAME="All in techtribes-web Coverage Results" MODIFIED="1371324919909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/techtribesje$All_in_techtribes_core.coverage" NAME="All in techtribes-core Coverage Results" MODIFIED="1372016360444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/techtribesje$Unit_tests_in_techtribes_web.coverage" NAME="Unit tests in techtribes-web Coverage Results" MODIFIED="1372970525728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
   </component>
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="0" />
@@ -431,37 +439,26 @@
       <file leaf-file-name="ContentControllerTests.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentControllerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="39" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+            <state line="40" column="23" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePageController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/HomePageController.java">
+      <file leaf-file-name="coda.jspf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/coda.jspf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="31" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.76987445">
+            <state line="19" column="0" selection-start="789" selection-end="789" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/ContentController.java">
+      <file leaf-file-name="tweets.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/tweets.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="19" selection-start="1798" selection-end="1798" vertical-scroll-proportion="0.0">
+            <state line="1" column="38" selection-start="66" selection-end="66" vertical-scroll-proportion="0.021186441">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AbstractController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="46" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -484,22 +481,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/TribesController.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/UserProfileController.java" />
-        <option value="$PROJECT_DIR$/techtribes-updater/src/je/techtribes/updater/Main.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp" />
-        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AboutPageController.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/MockContentSourceComponent.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/AbstractControllerTestsBase.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/MockNewsFeedEntryComponent.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/RssControllerTests.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/NewsController.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/NewsFeedEntryComponentStub.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/ContentController.java" />
+        <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/locate.jsp" />
+        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/Video.java" />
+        <option value="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/domain/VideoTests.java" />
+        <option value="$PROJECT_DIR$/techtribes-web/etc/techtribesje.tld" />
+        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/tagext/EmbedVideoTag.java" />
+        <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/talk.jsp" />
+        <option value="$PROJECT_DIR$/techtribes-web/web/static/css/techtribesje.css" />
         <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/prelude.jspf" />
-        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AbstractController.java" />
-        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/HomePageController.java" />
+        <option value="$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/JoinUsPageController.java" />
+        <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/join-us.jsp" />
+        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/newsfeedentry/NewsFeedEntryComponent.java" />
+        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/search/SearchComponent.java" />
+        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/event/EventComponent.java" />
         <option value="$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentControllerTests.java" />
+        <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/coda.jspf" />
+        <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/tweets.jsp" />
       </list>
     </option>
   </component>
@@ -518,9 +515,9 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
+    <option name="x" value="48" />
     <option name="y" value="22" />
-    <option name="width" value="1396" />
+    <option name="width" value="1392" />
     <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -549,7 +546,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -689,19 +685,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="unit" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="je" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribes" />
+              <option name="myItemId" value="techtribes-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -709,7 +711,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -740,6 +746,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="je" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tagext" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -849,6 +889,194 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="je" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="je" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="je" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="je" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="je" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribesje" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtribes-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -917,71 +1145,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribes-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="je" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribes-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="je" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newsfeedentry" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1019,42 +1183,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribes-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="je" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -1083,14 +1214,14 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="je.techtribes.web.controller" />
+      <recent name="je.techtribes.domain" />
+      <recent name="je.techtribes.web.tagext" />
       <recent name="je.techtribes.component.badge" />
       <recent name="je.techtribes.component.newsfeedentry" />
-      <recent name="je.techtribes.domain.badge" />
-      <recent name="je.techtribes.component.activity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/log" />
       <recent name="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/log" />
       <recent name="$PROJECT_DIR$/techtribes-core/sql/schema" />
       <recent name="$PROJECT_DIR$/techtribes-core/test/component" />
       <recent name="$PROJECT_DIR$/techtribes-web/src/je/techtribes/component/social" />
@@ -1130,36 +1261,6 @@
       </option>
       <envs />
       <dir value="$PROJECT_DIR$/techtribes-core/test/component" />
-      <patterns />
-      <RunnerSettings RunnerId="Cover" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Cover" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="NewsFeedEntryComponentTests" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="je.techtribes.component.newsfeedentry.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="techtribes-core" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="je.techtribes.component.newsfeedentry" />
-      <option name="MAIN_CLASS_NAME" value="je.techtribes.component.newsfeedentry.NewsFeedEntryComponentTests" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
       <patterns />
       <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Run" />
@@ -1246,6 +1347,36 @@
       </option>
       <envs />
       <dir value="$PROJECT_DIR$/techtribes-web/test/unit" />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="VideoTests" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="je.techtribes.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="techtribes-core" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="je.techtribes.domain" />
+      <option name="MAIN_CLASS_NAME" value="je.techtribes.domain.VideoTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
       <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -1489,20 +1620,20 @@
     <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Application.techtribes-updater" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.Unit tests in techtribes-core" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.Component tests in techtribes-core" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NewsFeedEntryComponentTests" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.techtribes-web" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Component tests in techtribes-core" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.BadgeComponentTests" />
       <item index="5" class="java.lang.String" itemvalue="JUnit.RssControllerTests" />
       <item index="6" class="java.lang.String" itemvalue="JUnit.Unit tests in techtribes-web" />
-      <item index="7" class="java.lang.String" itemvalue="Tomcat Server.techtribes-web" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.VideoTests" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.Unit tests in techtribes-web" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RssControllerTests" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Component tests in techtribes-core" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BadgeComponentTests" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.NewsFeedEntryComponentTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.VideoTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RssControllerTests" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Component tests in techtribes-core" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BadgeComponentTests" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1566,12 +1697,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="22" width="1396" height="878" extended-state="6" />
+    <frame x="48" y="22" width="1392" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31134564" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987398" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39973614" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1580,21 +1710,22 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27308708" sideWeight="0.49962935" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41842106" sideWeight="0.6703704" order="14" side_tool="true" content_ui="tabs" x="382" y="525" width="383" height="157" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24943988" sideWeight="0.34078947" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29799852" sideWeight="0.43139842" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26518518" sideWeight="0.58311343" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41688654" sideWeight="0.32962963" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2600297" sideWeight="0.5844327" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41556728" sideWeight="0.32962963" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41842106" sideWeight="0.6703704" order="14" side_tool="true" content_ui="tabs" x="382" y="525" width="383" height="157" />
       <window_info id="Byte Code Viewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="145" y="122" width="1195" height="678" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Test Runs" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3105263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27308708" sideWeight="0.49962935" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1666,124 +1797,90 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp">
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/contentsource/ContentSourceComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="48" selection-start="4725" selection-end="4725" vertical-scroll-proportion="-6.375">
+        <state line="11" column="58" selection-start="298" selection-end="353" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/badge/BadgeComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="66" selection-start="220" selection-end="283" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github/GitHubComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="79" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/job/JobComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="61" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/tweet/TweetComponentImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="73" selection-start="528" selection-end="528" vertical-scroll-proportion="0.08344924" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/tweet/TweetComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="64" selection-start="289" selection-end="289" vertical-scroll-proportion="0.12295082" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/newsfeedentry/NewsFeedEntryComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="44" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/search/SearchComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="54" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk/TalkComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="64" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/event/EventComponentImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="17" selection-start="2448" selection-end="2448" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/event/EventComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="3" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/activity/ActivityComponentImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="33" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/log/LoggingComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="46" selection-start="146" selection-end="146" vertical-scroll-proportion="0.10245901">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AboutPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="43" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/contentsource/ContentSourceResultExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/Tribe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="69" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/comparator/ContentSourceByNameComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentSourceComponentStub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/AbstractControllerTestsBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/RssControllerTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="85" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/NewsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/NewsFeedEntryComponentStub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="17" selection-start="1210" selection-end="1210" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/content.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/prelude.jspf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="477" selection-end="477" vertical-scroll-proportion="-6.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/ContentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="19" selection-start="1798" selection-end="1798" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/AbstractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="46" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/techtribes-web/test/unit/je/techtribes/web/controller/ContentControllerTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="39" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+        <state line="40" column="23" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-web/src/je/techtribes/web/controller/HomePageController.java">
+    <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/fragments/coda.jspf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="31" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.76987445">
+        <state line="19" column="0" selection-start="789" selection-end="789" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/tweets.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="38" selection-start="66" selection-end="66" vertical-scroll-proportion="0.021186441">
           <folding />
         </state>
       </provider>

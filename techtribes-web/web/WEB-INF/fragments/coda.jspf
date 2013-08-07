@@ -13,9 +13,11 @@
             |
             <a href="/rss.xml"><img src="/static/img/feed-icon-32x32.png" alt="Feed icon" /></a>
             |
-            <a href="/activity">Most active</a>
-            |
-            <a href="/about">About techtribes.je</a>
+            <a href="http://youtube.com/channel/UC8X5oFK7-ARLQsxDHE1FX2Q?feature=watch" target="_blank"><img src="/static/img/youtube.png" alt="YouTube" /></a>
+            </p>
+
+            <p>
+                <a href="/about">About techtribes.je</a>
             </p>
         </footer>
 

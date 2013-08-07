@@ -60,7 +60,7 @@ public class ContentControllerTests extends AbstractControllerTestsBase {
 
         assertEquals(page, model.get("currentPage"));
         assertEquals(100, model.get("maxPage"));
-        assertEquals("techtribes.je - Content - " + page, model.get("pageTitle"));
+        assertEquals("techtribes.je - Content - Page " + page, model.get("pageTitle"));
         assertEquals(100, ((Collection<ContentSource>) model.get("peopleAndTribes")).size());
         assertEquals("content", view);
     }

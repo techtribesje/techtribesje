@@ -8,6 +8,9 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Provides access to blog entries and news.
+ */
 @Component
 public interface NewsFeedEntryComponent {
 

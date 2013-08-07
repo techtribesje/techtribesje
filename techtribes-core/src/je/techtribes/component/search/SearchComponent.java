@@ -7,7 +7,7 @@ import je.techtribes.domain.Tweet;
 import java.util.List;
 
 /**
- * Search facilities for for news feed entries and tweets.
+ * Search facilities for news feed entries and tweets.
  */
 @Component
 public interface SearchComponent {

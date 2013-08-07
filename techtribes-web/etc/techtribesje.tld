@@ -69,4 +69,16 @@
         </attribute>
     </tag>
 
+    <tag>
+        <name>embedVideo</name>
+        <tag-class>je.techtribes.web.tagext.EmbedVideoTag</tag-class>
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>url</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
 </taglib>

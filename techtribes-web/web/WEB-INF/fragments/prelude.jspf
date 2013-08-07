@@ -137,9 +137,3 @@
     </div>
 
     <div class="container">
-
-            <c:if test="${empty user}">
-            <div style="text-align: center; margin-bottom: 16px;">
-                <a href="http://www.jerseyfinance.je/events/delivering-the-digital-difference--how-to-be-a-digital-winner" target="_blank"><img src="/static/img/ads/20130711-jerseyfinance.png" alt="Delivering the digital difference: How to be a digital winner" style="border: gray solid 1px;" class="img-rounded"/></a>
-            </div>
-            </c:if>

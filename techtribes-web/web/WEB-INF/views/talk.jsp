@@ -15,6 +15,12 @@
         <a href="${talk.url}" target="_blank">Read more...</a>
     </p>
 
+    <c:if test="${not empty talk.videoUrl}">
+    <div style="text-align: center;">
+        <techtribesje:embedVideo url="${talk.videoUrl}" />
+    </div>
+    </c:if>
+
     <div class="eventMetadata">
         <p>
             <c:set var="person" value="${talk.contentSource}" />
