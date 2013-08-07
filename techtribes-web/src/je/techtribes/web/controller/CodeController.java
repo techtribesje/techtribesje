@@ -2,7 +2,7 @@ package je.techtribes.web.controller;
 
 import je.techtribes.component.github.GitHubComponent;
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.GitHubRepository;
+import je.techtribes.component.github.GitHubRepository;
 import je.techtribes.util.comparator.ContentSourceByNameComparator;
 import je.techtribes.web.viewmodel.ContentSourceAndGitHubRepositories;
 import org.springframework.beans.factory.annotation.Autowired;

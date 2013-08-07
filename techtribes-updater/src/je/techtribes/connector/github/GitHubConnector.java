@@ -2,7 +2,7 @@ package je.techtribes.connector.github;
 
 import com.codingthearchitecture.seos.element.Component;
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.GitHubRepository;
+import je.techtribes.component.github.GitHubRepository;
 
 import java.util.List;
 

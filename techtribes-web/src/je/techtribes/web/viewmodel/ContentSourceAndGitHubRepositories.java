@@ -1,7 +1,7 @@
 package je.techtribes.web.viewmodel;
 
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.GitHubRepository;
+import je.techtribes.component.github.GitHubRepository;
 import je.techtribes.util.comparator.GitHubRepositoryByNameComparator;
 
 import java.util.Collection;

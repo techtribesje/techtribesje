@@ -2,7 +2,7 @@ package je.techtribes.connector.github;
 
 import je.techtribes.component.AbstractComponent;
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.GitHubRepository;
+import je.techtribes.component.github.GitHubRepository;
 import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.service.RepositoryService;
 
@@ -27,8 +27,7 @@ class EclipseMylynGitHubConnector extends AbstractComponent implements GitHubCon
             service.getClient().setOAuth2Token(oAuth2);
 
             for (Repository repo : service.getRepositories(contentSource.getGitHubId())) {
-                GitHubRepository gitHubRepository = new GitHubRepository(repo.getName(), repo.getDescription(), repo.getHtmlUrl());
-                gitHubRepository.setContentSource(contentSource);
+                GitHubRepository gitHubRepository = new GitHubRepository(repo.getName(), repo.getDescription(), repo.getHtmlUrl(), contentSource);
                 repos.add(gitHubRepository);
             }
 

@@ -1,7 +1,6 @@
 package je.techtribes.component.github;
 
 import je.techtribes.domain.ContentSource;
-import je.techtribes.domain.GitHubRepository;
 import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 

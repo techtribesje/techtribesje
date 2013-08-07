@@ -1,7 +1,6 @@
 package je.techtribes.util.comparator;
 
-import je.techtribes.domain.GitHubRepository;
-import je.techtribes.util.comparator.GitHubRepositoryByNameComparator;
+import je.techtribes.component.github.GitHubRepository;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
