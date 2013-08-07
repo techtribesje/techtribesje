@@ -81,6 +81,15 @@
             </classpath>
         </javac>
 
+        <javac srcdir="${updater.dir}/test/unit" destdir="${updater.build.dir}/test-classes" debug="yes">
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${test.lib.dir}" includes="*.jar" />
+                <pathelement location="${core.build.dir}/production-classes" />
+                <pathelement location="${updater.build.dir}/production-classes" />
+            </classpath>
+        </javac>
+
         <javac srcdir="${web.dir}/src" destdir="${web.build.dir}/production-classes" debug="yes">
             <classpath>
                 <fileset dir="${env.TOMCAT_HOME}/lib/">
@@ -130,7 +139,6 @@
                 <fileset dir="${production.lib.dir}" includes="*.jar" />
                 <fileset dir="${test.lib.dir}" includes="*.jar" />
                 <pathelement location="${core.build.dir}/production-classes" />
-                <pathelement location="${core.build.dir}/test-classes"/>
                 <pathelement location="${web.build.dir}/production-classes" />
                 <pathelement location="${web.build.dir}/test-classes"/>
                 <fileset dir="${env.TOMCAT_HOME}/lib/">
@@ -142,6 +150,24 @@
 
             <batchtest fork="no" todir="${build.dir}">
                 <fileset dir="${web.dir}/test/unit">
+                    <include name="**/*Tests.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+
+        <junit printsummary="yes" haltonfailure="yes">
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${test.lib.dir}" includes="*.jar" />
+                <pathelement location="${core.build.dir}/production-classes" />
+                <pathelement location="${updater.build.dir}/production-classes" />
+                <pathelement location="${updater.build.dir}/test-classes"/>
+            </classpath>
+
+            <formatter type="plain"/>
+
+            <batchtest fork="no" todir="${build.dir}">
+                <fileset dir="${updater.dir}/test/unit">
                     <include name="**/*Tests.java"/>
                 </fileset>
             </batchtest>

@@ -1,4 +1,4 @@
-package je.techtribes.domain;
+package je.techtribes.connector.twitter;
 
 import java.net.URL;
 
@@ -13,8 +13,12 @@ public class TwitterProfile {
     private URL url;
     private int followersCount;
 
-    public TwitterProfile(String twitterId) {
+    public TwitterProfile(String twitterId, String description, URL imageUrl, URL url, int followersCount) {
         this.twitterId = twitterId;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.url = url;
+        this.followersCount = followersCount;
     }
 
     public String getTwitterId() {
@@ -25,32 +29,16 @@ public class TwitterProfile {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public URL getImageUrl() {
         return imageUrl;
-    }
-
-    public void setImageUrl(URL imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public URL getUrl() {
         return url;
     }
 
-    public void setUrl(URL url) {
-        this.url = url;
-    }
-
     public int getFollowersCount() {
         return followersCount;
-    }
-
-    public void setFollowersCount(int followersCount) {
-        this.followersCount = followersCount;
     }
 
     @Override

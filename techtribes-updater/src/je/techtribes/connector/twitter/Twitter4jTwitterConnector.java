@@ -2,7 +2,6 @@ package je.techtribes.connector.twitter;
 
 import je.techtribes.component.AbstractComponent;
 import je.techtribes.domain.Tweet;
-import je.techtribes.domain.TwitterProfile;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -240,24 +239,28 @@ class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConn
     }
 
     private TwitterProfile toTwitterProfile(User user) {
-        TwitterProfile profile = new TwitterProfile(user.getScreenName());
+        URL imageURL = null;
+        URL url = null;
 
-        profile.setDescription(user.getDescription());
-        profile.setFollowersCount(user.getFollowersCount());
         try {
-            profile.setImageUrl(user.getProfileImageURL() != null ? new URL(user.getProfileImageURL()) : null);
+            imageURL = user.getProfileImageURL() != null ? new URL(user.getProfileImageURL()) : null;
         } catch (MalformedURLException e) {
             TwitterException te = new TwitterException("Error with image URL", e);
             logWarn(te);
         }
         try {
-            profile.setUrl(user.getURLEntity() != null && user.getURLEntity().getExpandedURL() != null && user.getURLEntity().getExpandedURL().length() > 0 ? new URL(user.getURLEntity().getExpandedURL()) : null);
+            url = user.getURLEntity() != null && user.getURLEntity().getExpandedURL() != null && user.getURLEntity().getExpandedURL().length() > 0 ? new URL(user.getURLEntity().getExpandedURL()) : null;
         } catch (MalformedURLException e) {
             TwitterException te = new TwitterException("Error with profile URL", e);
             logWarn(te);
         }
 
-        return profile;
+        return new TwitterProfile(
+            user.getScreenName(),
+            user.getDescription(),
+            imageURL,
+            url,
+            user.getFollowersCount());
     }
 
 }

@@ -8,7 +8,7 @@ import je.techtribes.connector.twitter.StreamingTweetListener;
 import je.techtribes.connector.twitter.TwitterConnector;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
-import je.techtribes.domain.TwitterProfile;
+import je.techtribes.connector.twitter.TwitterProfile;
 
 import java.util.LinkedList;
 import java.util.List;
