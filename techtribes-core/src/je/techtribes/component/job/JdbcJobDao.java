@@ -3,6 +3,7 @@ package je.techtribes.component.job;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Job;
 import je.techtribes.util.DateUtils;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -13,8 +14,8 @@ class JdbcJobDao implements JobDao {
 
     private DataSource dataSource;
 
-    JdbcJobDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    JdbcJobDao(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
     @Override

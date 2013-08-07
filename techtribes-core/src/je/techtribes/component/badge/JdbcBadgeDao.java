@@ -2,6 +2,7 @@ package je.techtribes.component.badge;
 
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.badge.AwardedBadge;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -12,8 +13,8 @@ class JdbcBadgeDao implements BadgeDao {
 
     private DataSource dataSource;
 
-    JdbcBadgeDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    JdbcBadgeDao(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
     @Override

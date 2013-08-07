@@ -5,6 +5,7 @@ import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.Person;
 import je.techtribes.domain.Tribe;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.*;
 
@@ -18,9 +19,9 @@ class ContentSourceComponentImpl extends AbstractComponent implements ContentSou
     private Map<String, ContentSource> peopleMapByShortName;
     private Map<String, ContentSource> peopleMapByTwitterId;
 
-    ContentSourceComponentImpl(ContentSourceDao contentSourceDao, UserConnectionDao userConnectionDao) {
-        this.contentSourceDao = contentSourceDao;
-        this.userConnectionDao = userConnectionDao;
+    ContentSourceComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.contentSourceDao = new JdbcContentSourceDao(jdbcDatabaseConfiguration);
+        this.userConnectionDao = new JdbcUserConnectionDao(jdbcDatabaseConfiguration);
 
         peopleAndTribes = new LinkedList<>();
         peopleMapById = new HashMap<>();

@@ -4,6 +4,7 @@ import je.techtribes.component.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.badge.AwardedBadge;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import je.techtribes.util.PageSize;
 
 import java.util.List;
@@ -13,8 +14,8 @@ class BadgeComponentImpl extends AbstractComponent implements BadgeComponent {
     private BadgeDao badgeDao;
     private ContentSourceComponent contentSourceComponent;
 
-    BadgeComponentImpl(BadgeDao badgeDao, ContentSourceComponent contentSourceComponent) {
-        this.badgeDao = badgeDao;
+    BadgeComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
+        this.badgeDao = new JdbcBadgeDao(jdbcDatabaseConfiguration);
         this.contentSourceComponent = contentSourceComponent;
     }
 

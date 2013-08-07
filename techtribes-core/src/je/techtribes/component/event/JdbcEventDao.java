@@ -3,6 +3,7 @@ package je.techtribes.component.event;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Event;
 import je.techtribes.util.DateUtils;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -14,8 +15,8 @@ class JdbcEventDao implements EventDao {
 
     private DataSource dataSource;
 
-    JdbcEventDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    JdbcEventDao(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
     @Override

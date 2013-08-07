@@ -4,6 +4,7 @@ import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Person;
 import je.techtribes.domain.Tribe;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -16,8 +17,8 @@ class JdbcContentSourceDao implements ContentSourceDao {
 
     private DataSource dataSource;
 
-    JdbcContentSourceDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    JdbcContentSourceDao(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
     @Override

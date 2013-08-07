@@ -4,6 +4,7 @@ import com.mongodb.*;
 import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.NewsFeedEntry;
+import je.techtribes.util.MongoDatabaseConfiguration;
 
 import java.util.*;
 
@@ -22,9 +23,9 @@ class MongoDbNewsFeedEntryDao implements NewsFeedEntryDao {
     private static final String CONTENT_SOURCE_ID_KEY = "contentSourceId";
     private static final String TIMESTAMP_KEY = "timestamp";
 
-    MongoDbNewsFeedEntryDao(Mongo mongo, String database, LoggingComponent loggingComponent) {
-        this.mongo = mongo;
-        this.database = database;
+    MongoDbNewsFeedEntryDao(MongoDatabaseConfiguration mongoDatabaseConfiguration, LoggingComponent loggingComponent) {
+        this.mongo = mongoDatabaseConfiguration.getMongo();
+        this.database = mongoDatabaseConfiguration.getDatabase();
         this.loggingComponent = loggingComponent;
     }
 

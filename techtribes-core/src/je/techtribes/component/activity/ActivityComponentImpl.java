@@ -9,6 +9,7 @@ import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.domain.*;
 import je.techtribes.util.DateUtils;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import je.techtribes.util.comparator.ActivityByScoreComparator;
 
 import java.util.*;
@@ -28,13 +29,13 @@ class ActivityComponentImpl extends AbstractComponent implements ActivityCompone
     private List<Activity> activityListForBusinessTribes = new LinkedList<>();
     private List<Activity> activityListForCommunityTribes = new LinkedList<>();
 
-    ActivityComponentImpl(ContentSourceComponent contentSourceComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent, ActivityDao activityDao) {
+    ActivityComponentImpl(ContentSourceComponent contentSourceComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent, JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
         this.contentSourceComponent = contentSourceComponent;
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
         this.talkComponent = talkComponent;
         this.eventComponent = eventComponent;
-        this.activityDao = activityDao;
+        this.activityDao = new JdbcActivityDao(jdbcDatabaseConfiguration);
     }
 
     @Override

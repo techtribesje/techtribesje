@@ -5,14 +5,8 @@
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="newsFeedEntryComponent" class="je.techtribes.component.newsfeedentry.NewsFeedEntryComponentImpl">
-        <constructor-arg name="newsFeedEntryDao" ref="newsFeedEntryDao" />
+        <constructor-arg name="mongoDatabaseConfiguration" ref="mongoDatabaseConfiguration" />
         <constructor-arg name="contentSourceComponent" ref="contentSourceComponent" />
-    </bean>
-
-    <bean id="newsFeedEntryDao" class="je.techtribes.component.newsfeedentry.MongoDbNewsFeedEntryDao">
-        <constructor-arg name="mongo" ref="mongo" />
-        <constructor-arg name="database" value="${mongodb.database}" />
-        <constructor-arg name="loggingComponent" ref="loggingComponent" />
     </bean>
 
 </beans>

@@ -10,11 +10,7 @@
         <constructor-arg name="tweetComponent" ref="tweetComponent" />
         <constructor-arg name="talkComponent" ref="talkComponent" />
         <constructor-arg name="eventComponent" ref="eventComponent" />
-        <constructor-arg name="activityDao" ref="activityDao" />
-    </bean>
-
-    <bean id="activityDao" class="je.techtribes.component.activity.JdbcActivityDao">
-        <constructor-arg name="dataSource" ref="dataSource" />
+        <constructor-arg name="jdbcDatabaseConfiguration" ref="jdbcDatabaseConfiguration" />
     </bean>
 
 </beans>

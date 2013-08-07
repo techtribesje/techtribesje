@@ -7,6 +7,7 @@ import je.techtribes.domain.Talk;
 import je.techtribes.util.ContentItemFilter;
 import je.techtribes.util.ContentSourceCollectionFormatter;
 import je.techtribes.util.DateUtils;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.Collection;
 import java.util.Date;
@@ -18,8 +19,8 @@ class TalkComponentImpl extends AbstractComponent implements TalkComponent {
     private TalkDao talkDao;
     private ContentSourceComponent contentSourceComponent;
 
-    TalkComponentImpl(TalkDao talkDao, ContentSourceComponent contentSourceComponent) {
-        this.talkDao = talkDao;
+    TalkComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
+        this.talkDao = new JdbcTalkDao(jdbcDatabaseConfiguration);
         this.contentSourceComponent = contentSourceComponent;
     }
 

@@ -2,6 +2,7 @@ package je.techtribes.component.github;
 
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.GitHubRepository;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -11,8 +12,8 @@ class JdbcGitHubRepositoryDao implements GitHubRepositoryDao {
 
     private DataSource dataSource;
 
-    JdbcGitHubRepositoryDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    JdbcGitHubRepositoryDao(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.mongodb.*;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
 import je.techtribes.util.ContentSourceToIdConverter;
+import je.techtribes.util.MongoDatabaseConfiguration;
 
 import java.util.Collection;
 import java.util.Date;
@@ -23,9 +24,9 @@ class MongoDbTweetDao implements TweetDao {
     private static final String TWITTER_ID_KEY = "twitterId";
     private static final String TIMESTAMP_KEY = "timestamp";
 
-    MongoDbTweetDao(Mongo mongo, String database) {
-        this.mongo = mongo;
-        this.database = database;
+    MongoDbTweetDao(MongoDatabaseConfiguration mongoDatabaseConfiguration) {
+        this.mongo = mongoDatabaseConfiguration.getMongo();
+        this.database = mongoDatabaseConfiguration.getDatabase();
     }
 
     @Override

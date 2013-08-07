@@ -1,5 +1,6 @@
 package je.techtribes.component.contentsource;
 
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -9,8 +10,8 @@ class JdbcUserConnectionDao implements UserConnectionDao {
 
     private DataSource dataSource;
 
-    JdbcUserConnectionDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    JdbcUserConnectionDao(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
     @Override

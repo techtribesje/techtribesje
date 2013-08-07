@@ -7,11 +7,7 @@
 
     <bean name="gitHubComponent" class="je.techtribes.component.github.GitHubComponentImpl">
         <constructor-arg name="contentSourceComponent" ref="contentSourceComponent" />
-        <constructor-arg name="gitHubRepositoryDao" ref="githubDao" />
-    </bean>
-
-    <bean id="githubDao" class="je.techtribes.component.github.JdbcGitHubRepositoryDao">
-        <constructor-arg name="dataSource" ref="dataSource" />
+        <constructor-arg name="jdbcDatabaseConfiguration" ref="jdbcDatabaseConfiguration" />
     </bean>
 
 </beans>

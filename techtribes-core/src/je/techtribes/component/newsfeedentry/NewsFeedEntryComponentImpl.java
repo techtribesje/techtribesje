@@ -2,10 +2,12 @@ package je.techtribes.component.newsfeedentry;
 
 import je.techtribes.component.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
+import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.NewsFeedEntry;
 import je.techtribes.util.ContentItemFilter;
 import je.techtribes.util.ContentSourceCollectionFormatter;
+import je.techtribes.util.MongoDatabaseConfiguration;
 import je.techtribes.util.PageSize;
 
 import java.util.Collection;
@@ -18,9 +20,9 @@ class NewsFeedEntryComponentImpl extends AbstractComponent implements NewsFeedEn
     private ContentSourceComponent contentSourceComponent;
     private NewsFeedEntryDao newsFeedEntryDao;
 
-    NewsFeedEntryComponentImpl(ContentSourceComponent contentSourceComponent, NewsFeedEntryDao newsFeedEntryDao) {
+    NewsFeedEntryComponentImpl(MongoDatabaseConfiguration mongoDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
         this.contentSourceComponent = contentSourceComponent;
-        this.newsFeedEntryDao = newsFeedEntryDao;
+        this.newsFeedEntryDao = new MongoDbNewsFeedEntryDao(mongoDatabaseConfiguration, LoggingComponentFactory.create());
     }
 
     public List<NewsFeedEntry> getRecentNewsFeedEntries(int page, int pageSize) {

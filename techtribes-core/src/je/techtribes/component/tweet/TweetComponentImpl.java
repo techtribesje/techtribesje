@@ -6,6 +6,7 @@ import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
 import je.techtribes.util.ContentItemFilter;
 import je.techtribes.util.ContentSourceCollectionFormatter;
+import je.techtribes.util.MongoDatabaseConfiguration;
 import je.techtribes.util.PageSize;
 
 import java.util.Collection;
@@ -17,8 +18,8 @@ class TweetComponentImpl extends AbstractComponent implements TweetComponent {
     private ContentSourceComponent contentSourceComponent;
     private TweetDao tweetDao;
 
-    public TweetComponentImpl(TweetDao tweetDao, ContentSourceComponent contentSourceComponent) {
-        this.tweetDao = tweetDao;
+    public TweetComponentImpl(MongoDatabaseConfiguration mongoDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
+        this.tweetDao = new MongoDbTweetDao(mongoDatabaseConfiguration);
         this.contentSourceComponent = contentSourceComponent;
     }
 

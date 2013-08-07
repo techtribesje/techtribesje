@@ -4,6 +4,7 @@ import je.techtribes.component.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.GitHubRepository;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.List;
 
@@ -12,9 +13,9 @@ class GitHubComponentImpl extends AbstractComponent implements GitHubComponent {
     private ContentSourceComponent contentSourceComponent;
     private GitHubRepositoryDao gitHubRepositoryDao;
 
-    GitHubComponentImpl(ContentSourceComponent contentSourceComponent, GitHubRepositoryDao gitHubRepositoryDao) {
+    GitHubComponentImpl(ContentSourceComponent contentSourceComponent, JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
         this.contentSourceComponent = contentSourceComponent;
-        this.gitHubRepositoryDao = gitHubRepositoryDao;
+        this.gitHubRepositoryDao = new JdbcGitHubRepositoryDao(jdbcDatabaseConfiguration);
     }
 
     @Override

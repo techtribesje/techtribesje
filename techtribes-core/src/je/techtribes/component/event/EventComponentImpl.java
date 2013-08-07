@@ -5,6 +5,7 @@ import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Event;
 import je.techtribes.util.ContentItemFilter;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.Date;
 import java.util.List;
@@ -14,8 +15,8 @@ class EventComponentImpl extends AbstractComponent implements EventComponent {
     private EventDao eventDao;
     private ContentSourceComponent contentSourceComponent;
 
-    EventComponentImpl(EventDao eventDao, ContentSourceComponent contentSourceComponent) {
-        this.eventDao = eventDao;
+    EventComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
+        this.eventDao = new JdbcEventDao(jdbcDatabaseConfiguration);
         this.contentSourceComponent = contentSourceComponent;
     }
 

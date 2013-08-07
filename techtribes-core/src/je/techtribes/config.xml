@@ -9,6 +9,11 @@
         <constructor-arg name="port" value="${mongodb.port}" />
     </bean>
 
+    <bean id="mongoDatabaseConfiguration" class="je.techtribes.util.MongoDatabaseConfiguration">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="database" value="${mongodb.database}" />
+    </bean>
+
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://${mysql.host}:${mysql.port}/${mysql.database}" />
@@ -17,5 +22,9 @@
         <property name="initialSize" value="5" />
         <property name="maxActive" value="10" />
 	</bean>
+
+    <bean id="jdbcDatabaseConfiguration" class="je.techtribes.util.JdbcDatabaseConfiguration">
+        <constructor-arg name="dataSource" ref="dataSource" />
+    </bean>
 
 </beans>

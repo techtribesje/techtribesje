@@ -2,6 +2,7 @@ package je.techtribes.component.activity;
 
 import je.techtribes.domain.Activity;
 import je.techtribes.util.DateUtils;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -12,8 +13,8 @@ public class JdbcActivityDao implements ActivityDao {
 
     private DataSource dataSource;
 
-    public JdbcActivityDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public JdbcActivityDao(JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+        this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
     @Override

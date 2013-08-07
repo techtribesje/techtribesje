@@ -6,11 +6,7 @@
 
     <bean name="badgeComponent" class="je.techtribes.component.badge.BadgeComponentImpl">
         <constructor-arg name="contentSourceComponent" ref="contentSourceComponent" />
-        <constructor-arg name="badgeDao" ref="badgeDao" />
-    </bean>
-
-    <bean id="badgeDao" class="je.techtribes.component.badge.JdbcBadgeDao">
-        <constructor-arg name="dataSource" ref="dataSource" />
+        <constructor-arg name="jdbcDatabaseConfiguration" ref="jdbcDatabaseConfiguration" />
     </bean>
 
 </beans>

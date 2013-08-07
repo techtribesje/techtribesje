@@ -5,6 +5,7 @@ import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Job;
 import je.techtribes.util.ContentItemFilter;
+import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.List;
 
@@ -13,8 +14,8 @@ class JobComponentImpl extends AbstractComponent implements JobComponent {
     private JobDao jobDao;
     private ContentSourceComponent contentSourceComponent;
 
-    JobComponentImpl(JobDao jobDao, ContentSourceComponent contentSourceComponent) {
-        this.jobDao = jobDao;
+    JobComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
+        this.jobDao = new JdbcJobDao(jdbcDatabaseConfiguration);
         this.contentSourceComponent = contentSourceComponent;
     }
 

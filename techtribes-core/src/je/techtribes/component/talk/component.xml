@@ -5,12 +5,8 @@
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="talkComponent" class="je.techtribes.component.talk.TalkComponentImpl">
-        <constructor-arg name="talkDao" ref="talkDao" />
+        <constructor-arg name="jdbcDatabaseConfiguration" ref="jdbcDatabaseConfiguration" />
         <constructor-arg name="contentSourceComponent" ref="contentSourceComponent" />
-    </bean>
-
-    <bean id="talkDao" class="je.techtribes.component.talk.JdbcTalkDao">
-        <constructor-arg name="dataSource" ref="dataSource" />
     </bean>
 
 </beans>

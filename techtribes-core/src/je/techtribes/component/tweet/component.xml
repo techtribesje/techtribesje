@@ -5,13 +5,8 @@
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="tweetComponent" class="je.techtribes.component.tweet.TweetComponentImpl">
-        <constructor-arg name="tweetDao" ref="tweetDao" />
+        <constructor-arg name="mongoDatabaseConfiguration" ref="mongoDatabaseConfiguration" />
         <constructor-arg name="contentSourceComponent" ref="contentSourceComponent" />
-    </bean>
-
-    <bean id="tweetDao" class="je.techtribes.component.tweet.MongoDbTweetDao">
-        <constructor-arg name="mongo" ref="mongo" />
-        <constructor-arg name="database" value="${mongodb.database}" />
     </bean>
 
 </beans>
