@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Tahoma', Helvetica, Verdana, Arial, sans-serif;
 }
 a {
     color: #000000;
@@ -89,7 +89,7 @@ h1, h3, h4 {
     margin-bottom: 48px;
 }
 .newsFeedEntry .title, .newsEntry .title, .talk .title, .event .title, .job .title {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 4px;
 }
 .pagingLinks {
