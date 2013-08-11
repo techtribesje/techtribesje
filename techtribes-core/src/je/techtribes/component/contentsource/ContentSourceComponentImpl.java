@@ -30,7 +30,11 @@ class ContentSourceComponentImpl extends AbstractComponent implements ContentSou
     }
 
     public void init() {
+        try {
         refreshContentSources();
+        } catch (Exception e) {
+            logError(new ContentSourceException("Could not initialise component", e));
+        }
     }
 
     @Override
