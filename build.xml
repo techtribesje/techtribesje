@@ -19,6 +19,7 @@
 
     <property name="production.lib.dir" value="${basedir}/lib/production"/>
     <property name="test.lib.dir" value="${basedir}/lib/test"/>
+    <property name="runtime.lib.dir" value="${basedir}/lib/runtime"/>
 
     <property environment="env"/>
 
@@ -92,7 +93,7 @@
 
         <javac srcdir="${web.dir}/src" destdir="${web.build.dir}/production-classes" debug="yes">
             <classpath>
-                <fileset dir="${env.TOMCAT_HOME}/lib/">
+                <fileset dir="${runtime.lib.dir}">
                     <include name="*.jar"/>
                 </fileset>
                 <fileset dir="${production.lib.dir}">
@@ -104,9 +105,6 @@
 
         <javac srcdir="${web.dir}/test/unit" destdir="${web.build.dir}/test-classes" debug="yes">
             <classpath>
-                <fileset dir="${env.TOMCAT_HOME}/lib/">
-                    <include name="*.jar"/>
-                </fileset>
                 <fileset dir="${production.lib.dir}" includes="*.jar" />
                 <fileset dir="${test.lib.dir}" includes="*.jar" />
                 <pathelement location="${core.build.dir}/production-classes" />
@@ -141,7 +139,7 @@
                 <pathelement location="${core.build.dir}/production-classes" />
                 <pathelement location="${web.build.dir}/production-classes" />
                 <pathelement location="${web.build.dir}/test-classes"/>
-                <fileset dir="${env.TOMCAT_HOME}/lib/">
+                <fileset dir="${runtime.lib.dir}">
                     <include name="*.jar"/>
                 </fileset>
             </classpath>
