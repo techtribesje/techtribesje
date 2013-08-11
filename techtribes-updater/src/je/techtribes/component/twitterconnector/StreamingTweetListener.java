@@ -1,4 +1,4 @@
-package je.techtribes.connector.twitter;
+package je.techtribes.component.twitterconnector;
 
 import je.techtribes.domain.Tweet;
 

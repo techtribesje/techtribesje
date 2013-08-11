@@ -1,4 +1,4 @@
-package je.techtribes.connector.github;
+package je.techtribes.component.githubconnector;
 
 import je.techtribes.component.AbstractComponent;
 import je.techtribes.domain.ContentSource;

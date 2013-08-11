@@ -4,11 +4,11 @@ import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.tweet.TweetException;
-import je.techtribes.connector.twitter.StreamingTweetListener;
-import je.techtribes.connector.twitter.TwitterConnector;
+import je.techtribes.component.twitterconnector.StreamingTweetListener;
+import je.techtribes.component.twitterconnector.TwitterConnector;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
-import je.techtribes.connector.twitter.TwitterProfile;
+import je.techtribes.component.twitterconnector.TwitterProfile;
 
 import java.util.LinkedList;
 import java.util.List;

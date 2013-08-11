@@ -1,4 +1,4 @@
-package je.techtribes.connector.newsfeed;
+package je.techtribes.component.newsfeedconnector;
 
 import je.techtribes.component.ComponentException;
 

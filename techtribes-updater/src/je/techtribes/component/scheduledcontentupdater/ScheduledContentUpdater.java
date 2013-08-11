@@ -10,9 +10,9 @@ import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
-import je.techtribes.connector.github.GitHubConnector;
-import je.techtribes.connector.newsfeed.NewsFeedConnector;
-import je.techtribes.connector.twitter.TwitterConnector;
+import je.techtribes.component.githubconnector.GitHubConnector;
+import je.techtribes.component.newsfeedconnector.NewsFeedConnector;
+import je.techtribes.component.twitterconnector.TwitterConnector;
 import org.springframework.scheduling.annotation.Scheduled;
 
 @Component

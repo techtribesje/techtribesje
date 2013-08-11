@@ -4,8 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean name="gitHubConnector" class="je.techtribes.connector.github.EclipseMylynGitHubConnector">
-        <constructor-arg name="oAuth2" value="${github.oauth2}" />
-    </bean>
+    <bean id="newsFeedConnector" class="je.techtribes.component.newsfeedconnector.RomeNewsFeedConnector" />
 
 </beans>

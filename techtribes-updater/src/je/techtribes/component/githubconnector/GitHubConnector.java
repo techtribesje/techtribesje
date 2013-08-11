@@ -1,4 +1,4 @@
-package je.techtribes.connector.github;
+package je.techtribes.component.githubconnector;
 
 import com.codingthearchitecture.seos.element.Component;
 import je.techtribes.domain.ContentSource;

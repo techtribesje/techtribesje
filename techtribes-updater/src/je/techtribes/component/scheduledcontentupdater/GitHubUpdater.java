@@ -2,7 +2,7 @@ package je.techtribes.component.scheduledcontentupdater;
 
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.github.GitHubComponent;
-import je.techtribes.connector.github.GitHubConnector;
+import je.techtribes.component.githubconnector.GitHubConnector;
 import je.techtribes.domain.ContentSource;
 
 class GitHubUpdater {

@@ -1,4 +1,4 @@
-package je.techtribes.connector.twitter;
+package je.techtribes.component.twitterconnector;
 
 import je.techtribes.component.AbstractComponent;
 import je.techtribes.domain.Tweet;
@@ -58,7 +58,7 @@ class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConn
      *
      * @return      a List of TwitterProfile objects, one for every Twitter ID being followed
      */
-    public List<TwitterProfile> getTwitterProfiles() throws TwitterException {
+    public List<TwitterProfile> getTwitterProfiles() throws je.techtribes.component.twitterconnector.TwitterException {
         List<TwitterProfile> profiles = new LinkedList<>();
 
         try {
@@ -100,7 +100,7 @@ class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConn
             ResponseList<User> users = twitter.lookupUsers(new String[] { twitterId });
             profiles.add(toTwitterProfile(users.get(0)));
         } catch (Exception e) {
-            TwitterException te = new TwitterException("Could not get profile information from Twitter", e);
+            je.techtribes.component.twitterconnector.TwitterException te = new je.techtribes.component.twitterconnector.TwitterException("Could not get profile information from Twitter", e);
             logError(te);
             throw te;
         }
@@ -108,7 +108,7 @@ class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConn
         return profiles;
     }
 
-    public List<Tweet> getRecentTweets() throws TwitterException {
+    public List<Tweet> getRecentTweets() throws je.techtribes.component.twitterconnector.TwitterException {
         List<Tweet> tweets = new LinkedList<>();
 
         try {
@@ -120,7 +120,7 @@ class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConn
                 tweets.add(tweet);
             }
         } catch (Exception e) {
-            TwitterException te = new TwitterException("Could not get home timeline from Twitter", e);
+            je.techtribes.component.twitterconnector.TwitterException te = new je.techtribes.component.twitterconnector.TwitterException("Could not get home timeline from Twitter", e);
             logError(te);
             throw te;
         }
@@ -221,7 +221,7 @@ class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConn
 
             @Override
             public void onException(Exception e) {
-                TwitterException te = new TwitterException("Received exception from Twitter4j", e);
+                je.techtribes.component.twitterconnector.TwitterException te = new je.techtribes.component.twitterconnector.TwitterException("Received exception from Twitter4j", e);
                 logError(te);
             }
         };
@@ -245,13 +245,13 @@ class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConn
         try {
             imageURL = user.getProfileImageURL() != null ? new URL(user.getProfileImageURL()) : null;
         } catch (MalformedURLException e) {
-            TwitterException te = new TwitterException("Error with image URL", e);
+            je.techtribes.component.twitterconnector.TwitterException te = new je.techtribes.component.twitterconnector.TwitterException("Error with image URL", e);
             logWarn(te);
         }
         try {
             url = user.getURLEntity() != null && user.getURLEntity().getExpandedURL() != null && user.getURLEntity().getExpandedURL().length() > 0 ? new URL(user.getURLEntity().getExpandedURL()) : null;
         } catch (MalformedURLException e) {
-            TwitterException te = new TwitterException("Error with profile URL", e);
+            je.techtribes.component.twitterconnector.TwitterException te = new je.techtribes.component.twitterconnector.TwitterException("Error with profile URL", e);
             logWarn(te);
         }
 

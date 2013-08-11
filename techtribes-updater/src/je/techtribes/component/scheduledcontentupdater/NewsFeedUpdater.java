@@ -3,7 +3,7 @@ package je.techtribes.component.scheduledcontentupdater;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.search.SearchComponent;
-import je.techtribes.connector.newsfeed.NewsFeedConnector;
+import je.techtribes.component.newsfeedconnector.NewsFeedConnector;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.NewsFeed;
 import je.techtribes.domain.NewsFeedEntry;

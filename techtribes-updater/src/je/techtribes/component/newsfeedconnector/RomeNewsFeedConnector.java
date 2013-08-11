@@ -1,4 +1,4 @@
-package je.techtribes.connector.newsfeed;
+package je.techtribes.component.newsfeedconnector;
 
 import com.sun.syndication.feed.WireFeed;
 import com.sun.syndication.feed.atom.Content;
