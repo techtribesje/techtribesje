@@ -202,7 +202,7 @@
 
             <formatter type="plain"/>
 
-            <batchtest fork="no" todir="${build.dir}">
+            <batchtest fork="yes" todir="${build.dir}">
                 <fileset dir="${core.dir}/test/component">
                     <include name="**/*Tests.java"/>
                 </fileset>
