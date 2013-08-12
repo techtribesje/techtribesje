@@ -51,7 +51,7 @@ public class Tweet extends ContentItem {
 
     @Override
     public String getPermalink() {
-        return "http://twitter.com/" + getTwitterId() + "/status/" + getId();
+        return "http://twitter.com/" + getContentSource().getTwitterId() + "/status/" + getId();
     }
 
     @Override
