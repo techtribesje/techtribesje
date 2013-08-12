@@ -1,4 +1,4 @@
-package je.techtribes.component.github;
+package je.techtribes.domain;
 
 import je.techtribes.domain.GitHubRepository;
 import je.techtribes.domain.Person;
