@@ -21,6 +21,8 @@
     <property name="test.lib.dir" value="${basedir}/lib/test"/>
     <property name="runtime.lib.dir" value="${basedir}/lib/runtime"/>
 
+    <property name="techtribesje.user" value="" />
+
     <property environment="env"/>
 
     <target name="init" depends="clean">
@@ -250,10 +252,10 @@
         <delete dir="${build.dir}"/>
     </target>
 
-    <target name="upload">
+    <target name="publish" depends="dist">
         <exec executable="scp">
             <arg value="${build.dir}/${project.name}-${build.number}.zip"/>
-            <arg value="simon@techtribes.je:/tmp/"/>
+            <arg value="${techtribesje.user}@techtribes.je:/tmp/"/>
         </exec>
     </target>
 
