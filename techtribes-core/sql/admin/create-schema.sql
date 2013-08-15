@@ -1,1 +1,0 @@
-CREATE SCHEMA `techtribesje` DEFAULT CHARACTER SET utf8;
