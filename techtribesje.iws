@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2386faa0-5294-492e-ac82-b70a8e302643" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/etc/build.properties" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.number" afterPath="$PROJECT_DIR$/build.number" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/build.properties" afterPath="$PROJECT_DIR$/etc/build.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribesje.iws" afterPath="$PROJECT_DIR$/techtribesje.iws" />
     </list>
     <ignored path="techtribesje.iws" />
@@ -218,7 +217,7 @@
     <file path="/talks.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372357371063" ignored="false" />
     <file path="/users.properties" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372357787211" ignored="false" />
     <file path="/RomeNewsFeedConnector.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372358878815" ignored="false" />
-    <file path="/.gitignore" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1376554583779" ignored="false" />
+    <file path="/.gitignore" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1376554692358" ignored="false" />
     <file path="/rss.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372369499535" ignored="false" />
     <file path="/BadgeComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372416160608" ignored="false" />
     <file path="/NewsController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372371442878" ignored="false" />
@@ -464,15 +463,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/etc/build.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="51" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Version.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/Version.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -512,7 +502,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="12" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08486563">
+            <state line="5" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.10273973">
               <folding />
             </state>
           </provider>
@@ -795,20 +785,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="techtribesje" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="etc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1535,13 +1511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/etc/build.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="51" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="69" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
@@ -1572,7 +1541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="12" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08486563">
+        <state line="5" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.10273973">
           <folding />
         </state>
       </provider>
