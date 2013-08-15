@@ -19,14 +19,12 @@ You'll need the following in order to build and run the techtribes.je website:
 
 ## Building techtribes.je
 
-There is an Ant build script (build.xml) in the top-level directory of the repo, which can be used to compile, build and test the code. To use this script, the following environment variables must be set:
+There is an Ant build script (build.xml) in the top-level directory of the repo, which can be used to compile, build and test the code.
 
- - TOMCAT_HOME (set this to the root of your Apache Tomcat installation)
- 
 ### Compile and run unit tests
 
 ````
-ant
+ant unit-tests
 ````
 
 ### Compile, run unit and component (integration) tests
