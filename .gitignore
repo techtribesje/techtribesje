@@ -2,3 +2,4 @@ out
 build
 *.log
 *.class
+build.number

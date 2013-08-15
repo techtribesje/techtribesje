@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2386faa0-5294-492e-ac82-b70a8e302643" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/Version.java" afterPath="$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/Version.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp" afterPath="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.number" afterPath="$PROJECT_DIR$/build.number" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/build.properties" afterPath="$PROJECT_DIR$/etc/build.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribesje.iws" afterPath="$PROJECT_DIR$/techtribesje.iws" />
     </list>
     <ignored path="techtribesje.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -219,7 +218,7 @@
     <file path="/talks.jspf" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372357371063" ignored="false" />
     <file path="/users.properties" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372357787211" ignored="false" />
     <file path="/RomeNewsFeedConnector.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372358878815" ignored="false" />
-    <file path="/.gitignore" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372420926878" ignored="false" />
+    <file path="/.gitignore" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1376554583779" ignored="false" />
     <file path="/rss.jsp" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372369499535" ignored="false" />
     <file path="/BadgeComponent.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372416160608" ignored="false" />
     <file path="/NewsController.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372371442878" ignored="false" />
@@ -492,10 +491,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="about.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="96" selection-start="7187" selection-end="7187" vertical-scroll-proportion="0.64285713">
+            <state line="167" column="96" selection-start="7187" selection-end="7187" vertical-scroll-proportion="-23.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.number" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.number">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="12" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08486563">
               <folding />
             </state>
           </provider>
@@ -519,7 +536,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/GitHubRepository.java" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/Event.java" />
         <option value="$PROJECT_DIR$/techtribes-web/web/static/css/techtribesje.css" />
         <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/home.jsp" />
@@ -535,6 +551,7 @@
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/Version.java" />
         <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -1362,7 +1379,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.256315" sideWeight="0.5844327" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41556728" sideWeight="0.32962963" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41556728" sideWeight="0.32962963" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41842106" sideWeight="0.6703704" order="14" side_tool="true" content_ui="tabs" x="382" y="525" width="383" height="157" />
       <window_info id="Byte Code Viewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="145" y="122" width="1195" height="678" />
@@ -1442,16 +1459,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/techtribes-core/test/component/je/techtribes/component/talk/TalkComponentTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-core/test/component/techtribesje-test.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="47" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/techtribes-core/sql/schema/UserConnection.sql">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -1551,7 +1558,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="96" selection-start="7187" selection-end="7187" vertical-scroll-proportion="0.64285713">
+        <state line="167" column="96" selection-start="7187" selection-end="7187" vertical-scroll-proportion="-23.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.number">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="12" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08486563">
           <folding />
         </state>
       </provider>
