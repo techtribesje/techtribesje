@@ -10,6 +10,7 @@ public class VersionTests {
     public void testVersionInformationIsLoadable() {
         assertNotNull(Version.getBuildNumber());
         assertNotNull(Version.getBuildTimestamp());
+        assertNotNull(Version.getGitCommit());
    }
 
 }

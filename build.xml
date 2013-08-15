@@ -2,7 +2,6 @@
 
     <property name="project.name" value="techtribesje"/>
 
-    <property name="etc.dir" value="${basedir}/etc"/>
     <property name="build.dir" value="${basedir}/build"/>
     <property name="dist.dir" value="${build.dir}/dist"/>
 
@@ -26,24 +25,25 @@
     <property environment="env"/>
 
     <target name="init" depends="clean">
-        <buildnumber />
-        <exec dir="${basedir}" executable="git" outputproperty="git.commit">
-            <arg line=" rev-parse HEAD" />
-        </exec>
-        <propertyfile file="${etc.dir}/build.properties" comment="Build information">
-            <entry key="build.timestamp" type="date" value="now" pattern="dd MMMM yyyy HH:mm:ss z"/>
-            <entry key="build.number" type="int" value="${build.number}" />
-            <entry key="git.commit" type="string" value="${git.commit}" />
-        </propertyfile>
-        <loadproperties srcFile="${etc.dir}/build.properties"/>
-
-        <echo message="Build number: ${build.number}" />
-
         <mkdir dir="${build.dir}"/>
 
         <mkdir dir="${core.build.dir}"/>
         <mkdir dir="${core.build.dir}/production-classes"/>
         <mkdir dir="${core.build.dir}/test-classes"/>
+
+        <buildnumber />
+        <exec dir="${basedir}" executable="git" outputproperty="git.commit">
+            <arg line=" rev-parse HEAD" />
+        </exec>
+        <touch file="${core.build.dir}/production-classes/build.properties" />
+        <propertyfile file="${core.build.dir}/production-classes/build.properties" comment="Build information">
+            <entry key="build.timestamp" type="date" value="now" pattern="dd MMMM yyyy HH:mm:ss z"/>
+            <entry key="build.number" type="int" value="${build.number}" />
+            <entry key="git.commit" type="string" value="${git.commit}" />
+        </propertyfile>
+        <loadproperties srcFile="${core.build.dir}/production-classes/build.properties"/>
+
+        <echo message="Build number: ${build.number}" />
 
         <mkdir dir="${updater.build.dir}"/>
         <mkdir dir="${updater.build.dir}/production-classes"/>
@@ -123,7 +123,6 @@
         <junit printsummary="yes" haltonfailure="yes">
             <classpath>
                 <fileset dir="${production.lib.dir}" includes="*.jar" />
-                <pathelement location="${etc.dir}" />
                 <fileset dir="${test.lib.dir}" includes="*.jar" />
                 <pathelement location="${core.build.dir}/production-classes" />
                 <pathelement location="${core.build.dir}/test-classes"/>
@@ -181,7 +180,6 @@
     <target name="build" depends="unit-tests">
         <jar jarfile="${build.dir}/techtribes-core.jar">
             <fileset dir="${core.build.dir}/production-classes"/>
-            <fileset file="${etc.dir}/build.properties"/>
             <fileset dir="${core.dir}/src" includes="**/*.xml" />
         </jar>
 

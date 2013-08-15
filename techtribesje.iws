@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2386faa0-5294-492e-ac82-b70a8e302643" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/etc/build.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribesje.iws" afterPath="$PROJECT_DIR$/techtribesje.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/util/VersionTests.java" afterPath="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/util/VersionTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
     </list>
     <ignored path="techtribesje.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,10 +61,10 @@
     <file path="/PageSizeTest.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371325814904" ignored="false" />
     <file path="/StringUtilsTest.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371328907341" ignored="false" />
     <file path="/StringUtils.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1372015763314" ignored="false" />
-    <file path="/VersionTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371329469523" ignored="false" />
+    <file path="/VersionTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1376555013782" ignored="false" />
     <file path="/DateUtilsTests.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375917612107" ignored="false" />
     <file path="/ActivityComponentImpl.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375891786091" ignored="false" />
-    <file path="/build.xml" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1376554037511" ignored="false" />
+    <file path="/build.xml" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1376554898456" ignored="false" />
     <file path="/MongoDbTweetDao.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375891325954" ignored="false" />
     <file path="/TweetDao.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1371337404392" ignored="false" />
     <file path="/TweetComponentImpl.java" changelist="2386faa0-5294-492e-ac82-b70a8e302643" time="1375891304106" ignored="false" />
@@ -472,10 +471,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="69" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
+            <state line="38" column="81" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.44554454">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VersionTests.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/util/VersionTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="44" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -499,10 +507,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.10273973">
+            <state line="5" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -526,7 +534,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/domain/Event.java" />
         <option value="$PROJECT_DIR$/techtribes-web/web/static/css/techtribesje.css" />
         <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/home.jsp" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/contentsource/ContentSourceComponentImpl.java" />
@@ -538,10 +545,11 @@
         <option value="$PROJECT_DIR$/techtribes-core/sql/admin/schema-and-user-test.sql" />
         <option value="$PROJECT_DIR$/techtribes-core/sql/admin/schema-and-user.sql" />
         <option value="$PROJECT_DIR$/etc/build.properties" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/Version.java" />
         <option value="$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/util/VersionTests.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -1511,20 +1519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="69" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/Version.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="25" selection-start="1577" selection-end="1577" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/techtribes-web/web/WEB-INF/views/about.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="167" column="96" selection-start="7187" selection-end="7187" vertical-scroll-proportion="-23.25">
@@ -1541,7 +1535,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.10273973">
+        <state line="5" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/test/unit/je/techtribes/util/VersionTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="44" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/util/Version.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="25" selection-start="1577" selection-end="1577" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="81" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.44554454">
           <folding />
         </state>
       </provider>
