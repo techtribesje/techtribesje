@@ -27,9 +27,13 @@
 
     <target name="init" depends="clean">
         <buildnumber />
+        <exec dir="${basedir}" executable="git" outputproperty="git.commit">
+            <arg line=" rev-parse HEAD" />
+        </exec>
         <propertyfile file="${etc.dir}/build.properties" comment="Build information">
             <entry key="build.timestamp" type="date" value="now" pattern="dd MMMM yyyy HH:mm:ss z"/>
             <entry key="build.number" type="int" value="${build.number}" />
+            <entry key="git.commit" type="string" value="${git.commit}" />
         </propertyfile>
         <loadproperties srcFile="${etc.dir}/build.properties"/>
 

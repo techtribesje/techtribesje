@@ -165,7 +165,7 @@
             You can validate <a href="http://validator.w3.org/check?uri=http%3A%2F%2Ftechtribes.je%2F" target="_blank">the HTML</a> and <a href="http://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Ftechtribes.je%2Frss.xml" target="_blank">the RSS feed</a>.
         </p>
         <p>
-            This is build number <%= je.techtribes.util.Version.getBuildNumber() %> ... in case you were interested. :-)
+            This is build number <%= je.techtribes.util.Version.getBuildNumber() %> from commit <a href="https://github.com/techtribesje/techtribesje/tree/<%= je.techtribes.util.Version.getGitCommit() %>" target="_blank"><%= je.techtribes.util.Version.getGitCommit() %></a> ... in case you were interested. :-)
         </p>
     </div>
 </div>

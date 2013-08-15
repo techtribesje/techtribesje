@@ -12,9 +12,11 @@ public class Version {
 
     private static final String BUILD_VERSION_KEY = "build.number";
     private static final String BUILD_TIMESTAMP_KEY = "build.timestamp";
+    private static final String GIT_COMMIT_KEY = "git.commit";
 
     private static String version;
     private static Date buildTimestamp;
+    private static String gitCommit;
 
     static {
         try {
@@ -25,6 +27,7 @@ public class Version {
                 buildProperties.load(in);
                 version = buildProperties.getProperty(BUILD_VERSION_KEY);
                 buildTimestamp = format.parse(buildProperties.getProperty(BUILD_TIMESTAMP_KEY));
+                gitCommit = buildProperties.getProperty(GIT_COMMIT_KEY);
                 in.close();
             }
         } catch (Exception e) {
@@ -38,6 +41,10 @@ public class Version {
 
     public static Date getBuildTimestamp() {
         return buildTimestamp;
+    }
+
+    public static String getGitCommit() {
+        return gitCommit;
     }
 
 }
