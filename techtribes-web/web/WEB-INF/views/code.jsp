@@ -9,10 +9,10 @@
 <c:forEach var="reposForCoder" items="${reposByCoder}">
     <div class="row person">
         <div class="span1">
-            <a href="/people/${reposForCoder.contentSource.shortName}"><img src="${reposForCoder.contentSource.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
+            <a href="<techtribesje:goto contentSource="${reposForCoder.contentSource}"/>"><img src="${reposForCoder.contentSource.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
         </div>
         <div class="span10">
-            <a href="/people/${reposForCoder.contentSource.shortName}">${reposForCoder.contentSource.name}</a>
+            <a href="<techtribesje:goto contentSource="${reposForCoder.contentSource}"/>">${reposForCoder.contentSource.name}</a>
             <c:if test="${not empty reposForCoder.contentSource.profile}">
             <p>
                 ${reposForCoder.contentSource.profile}
