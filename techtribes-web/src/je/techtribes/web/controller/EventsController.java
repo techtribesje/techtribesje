@@ -1,5 +1,6 @@
 package je.techtribes.web.controller;
 
+import je.techtribes.component.event.EventException;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Event;
 import je.techtribes.component.event.EventComponent;
@@ -44,11 +45,21 @@ public class EventsController extends AbstractController {
 
     @RequestMapping(value = "/events/{id:[\\d]+}", method = RequestMethod.GET)
 	public View downloadICalendarFileForEventWithId(@PathVariable("id")int id, ModelMap model) {
-        Event event = eventService.getEvent(id);
-        ICalendarFormatter formatter = new ICalendarFormatter();
-        model.addAttribute("iCalendar", formatter.format(event));
+        Event event = null;
+        try {
+            event = eventService.getEvent(id);
+        } catch (EventException ee) {
+            loggingComponent.error(this, "Error serving up iCalendar for event with ID " + id, ee);
+        }
 
-        return new InternalResourceView("/WEB-INF/views-other/icalendar.jsp");
+        if (event != null) {
+            ICalendarFormatter formatter = new ICalendarFormatter();
+            model.addAttribute("iCalendar", formatter.format(event));
+
+            return new InternalResourceView("/WEB-INF/views-other/icalendar.jsp");
+        } else {
+            return new InternalResourceView("/WEB-INF/views/404.jsp");
+        }
 	}
 
     private void prepareModel(ModelMap model, List<Event> events) {
