@@ -30,10 +30,10 @@ public class ICalendarFormatterTests {
                 "UID:123@techtribes.je\r\n" +
                 "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
                 "DTEND;TZID=Europe/London:20130829T190000\r\n" +
-                "SUMMARY:Tech Tribes meetup 17\r\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\r\n" +
+                "SUMMARY;CHARSET=utf-8:Tech Tribes meetup 17\r\n" +
+                "DESCRIPTION;CHARSET=utf-8:Tech talk and beer (or wine or a soft drink \r\n or two) with Jersey's techy community.\r\n" +
                 "URL:http://lanyrd.com/2013/tech-tribes-meetup-17/\r\n" +
-                "LOCATION:Ha'Penny Bridge\\, St Helier\\, Jersey\r\n" +
+                "LOCATION;CHARSET=utf-8:Ha'Penny Bridge\\, St Helier\\, Jersey\r\n" +
                 "END:VEVENT\r\n" +
                 "END:VCALENDAR\r\n", formatter.format(event));
    }
@@ -56,10 +56,10 @@ public class ICalendarFormatterTests {
                 "BEGIN:VEVENT\r\n" +
                 "UID:123@techtribes.je\r\n" +
                 "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
-                "SUMMARY:Tech Tribes meetup 17\r\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\r\n" +
+                "SUMMARY;CHARSET=utf-8:Tech Tribes meetup 17\r\n" +
+                "DESCRIPTION;CHARSET=utf-8:Tech talk and beer (or wine or a soft drink \r\n or two) with Jersey's techy community.\r\n" +
                 "URL:http://lanyrd.com/2013/tech-tribes-meetup-17/\r\n" +
-                "LOCATION:Ha'Penny Bridge\\, St Helier\\, Jersey\r\n" +
+                "LOCATION;CHARSET=utf-8:Ha'Penny Bridge\\, St Helier\\, Jersey\r\n" +
                 "END:VEVENT\r\n" +
                 "END:VCALENDAR\r\n", formatter.format(event));
    }
@@ -83,8 +83,8 @@ public class ICalendarFormatterTests {
                 "UID:123@techtribes.je\r\n" +
                 "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
                 "DTEND;TZID=Europe/London:20130829T190000\r\n" +
-                "SUMMARY:Tech Tribes meetup 17\r\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\r\n" +
+                "SUMMARY;CHARSET=utf-8:Tech Tribes meetup 17\r\n" +
+                "DESCRIPTION;CHARSET=utf-8:Tech talk and beer (or wine or a soft drink \r\n or two) with Jersey's techy community.\r\n" +
                 "URL:http://lanyrd.com/2013/tech-tribes-meetup-17/\r\n" +
                 "END:VEVENT\r\n" +
                 "END:VCALENDAR\r\n", formatter.format(event));

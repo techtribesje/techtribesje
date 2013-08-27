@@ -9,5 +9,5 @@ CREATE TABLE event (
     url varchar(256),
     start_datetime DATETIME not null,
     end_datetime DATETIME,
-    location varchar(128),
+    location varchar(128) character set utf8,
     primary key (id));

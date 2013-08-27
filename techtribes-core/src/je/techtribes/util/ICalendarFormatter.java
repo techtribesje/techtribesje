@@ -28,12 +28,12 @@ public class ICalendarFormatter {
             addContentLine(buf, "DTEND;TZID=Europe/London", sdf.format(event.getEndDate()));
         }
 
-        addContentLine(buf, "SUMMARY", event.getTitle());
-        addContentLine(buf, "DESCRIPTION", event.getDescription());
+        addContentLine(buf, "SUMMARY;CHARSET=utf-8", event.getTitle());
+        addContentLine(buf, "DESCRIPTION;CHARSET=utf-8", event.getDescription());
         addContentLine(buf, "URL", event.getUrl().toString());
 
         if (event.getLocation() != null) {
-            addContentLine(buf, "LOCATION", (event.getLocation() + ", " + event.getIsland()).replace(",", "\\,"));
+            addContentLine(buf, "LOCATION;CHARSET=utf-8", (event.getLocation() + ", " + event.getIsland()).replace(",", "\\,"));
         }
 
         addContentLine(buf, "END", "VEVENT");
