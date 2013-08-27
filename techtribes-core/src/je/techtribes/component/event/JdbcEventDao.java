@@ -51,6 +51,14 @@ class JdbcEventDao implements EventDao {
     }
 
     @Override
+    public Event getEvent(int id) {
+        JdbcTemplate select = new JdbcTemplate(dataSource);
+        return select.queryForObject("select id, title, description, island, location, content_source_id, url, start_datetime, end_datetime from event where id = ?",
+            new Object[] { id },
+            new EventRowMapper());
+    }
+
+    @Override
     public long getNumberOfEvents(ContentSource contentSource, Date start, Date end) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
         return select.queryForLong(

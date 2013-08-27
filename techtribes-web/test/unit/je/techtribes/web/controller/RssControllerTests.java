@@ -24,7 +24,7 @@ public class RssControllerTests extends AbstractControllerTestsBase {
         assertEquals(12, newsFeedEntries.size());
 
         assertTrue(view instanceof InternalResourceView);
-        assertEquals("/WEB-INF/views-xml/rss.jsp", ((InternalResourceView)view).getUrl());
+        assertEquals("/WEB-INF/views-other/rss.jsp", ((InternalResourceView)view).getUrl());
     }
 
 }

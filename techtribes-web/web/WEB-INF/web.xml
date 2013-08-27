@@ -75,7 +75,7 @@
 
     <servlet-mapping>
         <servlet-name>jsp</servlet-name>
-        <url-pattern>/WEB-INF/views-xml/*</url-pattern>
+        <url-pattern>/WEB-INF/views-other/*</url-pattern>
     </servlet-mapping>
 
     <listener>

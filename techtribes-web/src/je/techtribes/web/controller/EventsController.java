@@ -3,12 +3,15 @@ package je.techtribes.web.controller;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Event;
 import je.techtribes.component.event.EventComponent;
+import je.techtribes.util.ICalendarFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.view.InternalResourceView;
 
 import java.util.Calendar;
 import java.util.List;
@@ -37,6 +40,15 @@ public class EventsController extends AbstractController {
         model.addAttribute("activeNav", "" + year);
 
         return "events";
+	}
+
+    @RequestMapping(value = "/events/{id:[\\d]+}", method = RequestMethod.GET)
+	public View downloadICalendarFileForEventWithId(@PathVariable("id")int id, ModelMap model) {
+        Event event = eventService.getEvent(id);
+        ICalendarFormatter formatter = new ICalendarFormatter();
+        model.addAttribute("iCalendar", formatter.format(event));
+
+        return new InternalResourceView("/WEB-INF/views-other/icalendar.jsp");
 	}
 
     private void prepareModel(ModelMap model, List<Event> events) {

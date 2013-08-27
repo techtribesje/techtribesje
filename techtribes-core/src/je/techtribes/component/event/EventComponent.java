@@ -29,6 +29,11 @@ public interface EventComponent {
     List<Event> getEvents(ContentSource contentSource, int pageSize);
 
     /**
+     * Gets an event by ID.
+     */
+    Event getEvent(int id);
+
+    /**
      * Gets the number of events for a given ContentSource, between the specified dates, ordered by latest first.
      */
     long getNumberOfEvents(ContentSource contentSource, Date start, Date end);

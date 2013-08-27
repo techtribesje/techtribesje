@@ -29,7 +29,7 @@ public class RssController extends AbstractController {
 
         model.addAttribute("newsFeedEntries", newsFeedEntries);
 
-        return new InternalResourceView("/WEB-INF/views-xml/rss.jsp");
+        return new InternalResourceView("/WEB-INF/views-other/rss.jsp");
 	}
 
 }

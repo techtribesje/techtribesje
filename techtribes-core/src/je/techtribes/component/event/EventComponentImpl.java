@@ -8,6 +8,7 @@ import je.techtribes.util.ContentItemFilter;
 import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 class EventComponentImpl extends AbstractComponent implements EventComponent {
@@ -57,6 +58,22 @@ class EventComponentImpl extends AbstractComponent implements EventComponent {
             return events;
         } catch (Exception e) {
             EventException ee = new EventException("Error getting events for content source with ID " + contentSource, e);
+            logError(ee);
+            throw ee;
+        }
+    }
+
+    @Override
+    public Event getEvent(int id) {
+        try {
+            List<Event> events = new LinkedList<>();
+            Event event = eventDao.getEvent(id);
+            events.add(event);
+            filterAndEnrich(events);
+
+            return event;
+        } catch (Exception e) {
+            EventException ee = new EventException("Error getting event with ID " + id, e);
             logError(ee);
             throw ee;
         }

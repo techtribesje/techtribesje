@@ -14,6 +14,8 @@ interface EventDao {
 
     List<Event> getEvents(ContentSource contentSource, int pageSize);
 
+    Event getEvent(int id);
+
     long getNumberOfEvents(ContentSource contentSource, Date start, Date end);
 
 }
