@@ -23,18 +23,18 @@ public class ICalendarFormatterTests {
         event.setEndDate(DateUtils.getDate(2013, 8, 29, 19, 00));
 
         assertEquals(
-                "BEGIN:VCALENDAR\n" +
-                "VERSION:2.0\n" +
-                "PRODID:techtribes.je\n" +
-                "BEGIN:VEVENT\n" +
-                "UID:123@techtribes.je\n" +
-                "DTSTART;TZID=Europe/London:20130829T163000\n" +
-                "DTEND;TZID=Europe/London:20130829T190000\n" +
-                "SUMMARY:Tech Tribes meetup 17\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with Jersey's techy community. See http://lanyrd.com/2013/tech-tribes-meetup-17/ for more information.\n" +
-                "LOCATION:Ha'Penny Bridge, St Helier, Jersey\n" +
-                "END:VEVENT\n" +
-                "END:VCALENDAR", formatter.format(event));
+                "BEGIN:VCALENDAR\r\n" +
+                "VERSION:2.0\r\n" +
+                "PRODID:techtribes.je\r\n" +
+                "BEGIN:VEVENT\r\n" +
+                "UID:123@techtribes.je\r\n" +
+                "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
+                "DTEND;TZID=Europe/London:20130829T190000\r\n" +
+                "SUMMARY:Tech Tribes meetup 17\r\n" +
+                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community. See http://lanyrd.com/2013/tech-tribes-meetup\r\n -17/ for more information.\r\n" +
+                "LOCATION:Ha'Penny Bridge, St Helier, Jersey\r\n" +
+                "END:VEVENT\r\n" +
+                "END:VCALENDAR\r\n", formatter.format(event));
    }
 
     @Test
@@ -49,21 +49,21 @@ public class ICalendarFormatterTests {
         event.setStartDate(DateUtils.getDate(2013, 8, 29, 16, 30));
 
         assertEquals(
-                "BEGIN:VCALENDAR\n" +
-                "VERSION:2.0\n" +
-                "PRODID:techtribes.je\n" +
-                "BEGIN:VEVENT\n" +
-                "UID:123@techtribes.je\n" +
-                "DTSTART;TZID=Europe/London:20130829T163000\n" +
-                "SUMMARY:Tech Tribes meetup 17\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with Jersey's techy community. See http://lanyrd.com/2013/tech-tribes-meetup-17/ for more information.\n" +
-                "LOCATION:Ha'Penny Bridge, St Helier, Jersey\n" +
-                "END:VEVENT\n" +
-                "END:VCALENDAR", formatter.format(event));
+                "BEGIN:VCALENDAR\r\n" +
+                "VERSION:2.0\r\n" +
+                "PRODID:techtribes.je\r\n" +
+                "BEGIN:VEVENT\r\n" +
+                "UID:123@techtribes.je\r\n" +
+                "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
+                "SUMMARY:Tech Tribes meetup 17\r\n" +
+                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community. See http://lanyrd.com/2013/tech-tribes-meetup\r\n -17/ for more information.\r\n" +
+                "LOCATION:Ha'Penny Bridge, St Helier, Jersey\r\n" +
+                "END:VEVENT\r\n" +
+                "END:VCALENDAR\r\n", formatter.format(event));
    }
 
     @Test
-    public void test_format_ReturnsAnICalendarRecordWithoutFullLocation_WhenEventLocationIsntPopulated() throws Exception {
+    public void test_format_ReturnsAnICalendarRecordWithoutLocation_WhenEventLocationIsntPopulated() throws Exception {
         ICalendarFormatter formatter = new ICalendarFormatter();
         Event event = new Event(123);
         event.setTitle("Tech Tribes meetup 17");
@@ -74,18 +74,17 @@ public class ICalendarFormatterTests {
         event.setEndDate(DateUtils.getDate(2013, 8, 29, 19, 00));
 
         assertEquals(
-                "BEGIN:VCALENDAR\n" +
-                "VERSION:2.0\n" +
-                "PRODID:techtribes.je\n" +
-                "BEGIN:VEVENT\n" +
-                "UID:123@techtribes.je\n" +
-                "DTSTART;TZID=Europe/London:20130829T163000\n" +
-                "DTEND;TZID=Europe/London:20130829T190000\n" +
-                "SUMMARY:Tech Tribes meetup 17\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with Jersey's techy community. See http://lanyrd.com/2013/tech-tribes-meetup-17/ for more information.\n" +
-                "LOCATION:Jersey\n" +
-                "END:VEVENT\n" +
-                "END:VCALENDAR", formatter.format(event));
+                "BEGIN:VCALENDAR\r\n" +
+                "VERSION:2.0\r\n" +
+                "PRODID:techtribes.je\r\n" +
+                "BEGIN:VEVENT\r\n" +
+                "UID:123@techtribes.je\r\n" +
+                "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
+                "DTEND;TZID=Europe/London:20130829T190000\r\n" +
+                "SUMMARY:Tech Tribes meetup 17\r\n" +
+                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community. See http://lanyrd.com/2013/tech-tribes-meetup\r\n -17/ for more information.\r\n" +
+                "END:VEVENT\r\n" +
+                "END:VCALENDAR\r\n", formatter.format(event));
    }
 
 }
