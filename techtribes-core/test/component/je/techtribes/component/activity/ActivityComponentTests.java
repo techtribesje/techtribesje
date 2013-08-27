@@ -79,6 +79,8 @@ public class ActivityComponentTests extends AbstractComponentTestsBase {
     {
         ContentSource contentSource = getContentSourceComponent().findByShortName("chrisclark");
         int id = contentSource.getId();
+        getActivityComponent().refreshRecentActivity();
+
         Activity activity = getActivityComponent().getActivity(contentSource);
         assertEquals("Chris Clark", activity.getContentSource().getName());
         assertEquals(id*1, activity.getNumberOfInternationalTalks());
