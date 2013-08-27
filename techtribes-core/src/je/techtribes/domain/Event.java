@@ -1,7 +1,5 @@
 package je.techtribes.domain;
 
-import je.techtribes.domain.ContentItem;
-import je.techtribes.domain.Island;
 import je.techtribes.util.StringUtils;
 
 import java.net.URL;
@@ -11,9 +9,11 @@ public class Event extends ContentItem {
 
     private int id;
     private String description;
+    private String location;
     private Island island;
     private URL url;
-    private Date date;
+    private Date startDate;
+    private Date endDate;
 
     public Event(int id) {
         this.id = id;
@@ -40,12 +40,28 @@ public class Event extends ContentItem {
         return StringUtils.filterHtmlAndTruncate(getDescription());
     }
 
-    public Date getDate() {
-        return date;
+    public String getLocation() {
+        return location;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public Island getIsland() {

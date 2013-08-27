@@ -23,7 +23,7 @@ class JdbcEventDao implements EventDao {
     public List<Event> getFutureEvents(int pageSize) {
         Date today = DateUtils.getToday();
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        List<Event> events = select.query("select event.id, event.title, event.description, event.island, event.content_source_id, event.url, event.event_datetime from event, content_source where event.event_datetime > ? and event.content_source_id = content_source.id order by event_datetime asc limit 0,?",
+        List<Event> events = select.query("select event.id, event.title, event.description, event.island, event.location, event.content_source_id, event.url, event.start_datetime, event.end_datetime from event, content_source where event.start_datetime > ? and event.content_source_id = content_source.id order by start_datetime asc limit 0,?",
                 new Object[] { today, pageSize },
                 new EventRowMapper());
 
@@ -37,7 +37,7 @@ class JdbcEventDao implements EventDao {
         Date start = DateUtils.getStartOfYear(year);
         Date end = DateUtils.getEndOfYear(year);
 
-        return select.query("select event.id, event.title, event.description, event.island, event.content_source_id, event.url, event.event_datetime from event, content_source where event_datetime between ? and ? and event.content_source_id = content_source.id order by event_datetime desc",
+        return select.query("select event.id, event.title, event.description, event.island, event.location, event.content_source_id, event.url, event.start_datetime, event.end_datetime from event, content_source where start_datetime between ? and ? and event.content_source_id = content_source.id order by start_datetime desc",
                 new Object[]{start, end},
                 new EventRowMapper());
     }
@@ -45,7 +45,7 @@ class JdbcEventDao implements EventDao {
     @Override
     public List<Event> getEvents(ContentSource contentSource, int pageSize) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        return select.query("select id, title, description, island, content_source_id, url, event_datetime from event where content_source_id = ? order by event_datetime desc limit 0,?",
+        return select.query("select id, title, description, island, location, content_source_id, url, start_datetime, end_datetime from event where content_source_id = ? order by start_datetime desc limit 0,?",
             new Object[] { contentSource.getId(), pageSize },
             new EventRowMapper());
     }
@@ -54,7 +54,7 @@ class JdbcEventDao implements EventDao {
     public long getNumberOfEvents(ContentSource contentSource, Date start, Date end) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
         return select.queryForLong(
-                "select count(*) from event where content_source_id = ? and event_datetime between ? and ?",
+                "select count(*) from event where content_source_id = ? and start_datetime between ? and ?",
                 contentSource.getId(), start, end);
     }
 

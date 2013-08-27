@@ -10,6 +10,12 @@
             <img src="<techtribesje:flag name="${event.island}" />" alt="${job.island}" title="${event.island}" />
         </div>
         <a href="<techtribesje:goto contentSource="${event.contentSource}"/>">${event.contentSource.name}</a><br />
-        <techtribesje:date date="${event.date}" />
+        <c:if test="${not empty event.location}">
+            <c:url var="googleMapsUrl" value="http://maps.google.co.uk">
+                <c:param name="q" value="${event.location}, ${event.island}" />
+            </c:url>
+            <a href="${googleMapsUrl}" target="_blank">${event.location}</a><br />
+        </c:if>
+        <techtribesje:date date="${event.startDate}" />
     </div>
 </div>

@@ -183,7 +183,7 @@ public class ActivityComponentTests extends AbstractComponentTestsBase {
         tweets.add(tweet);
         getTweetComponent().storeTweets(tweets);
 
-        template.update("insert into event (title, description, island, content_source_id, url, event_datetime) values (?, ?, ?, ?, ?, ?)",
+        template.update("insert into event (title, description, island, content_source_id, url, start_datetime) values (?, ?, ?, ?, ?, ?)",
                 "Event",
                 "Description",
                 "j",

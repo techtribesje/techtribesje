@@ -19,6 +19,7 @@ class EventResultExtractor implements ResultSetExtractor<Event> {
         event.setTitle(rs.getString("title"));
         event.setDescription(rs.getString("description"));
         event.setIsland(Island.lookupByChar(rs.getString("island")));
+        event.setLocation(rs.getString("location"));
 
         try {
             event.setUrl(new URL(rs.getString("url")));
@@ -27,7 +28,8 @@ class EventResultExtractor implements ResultSetExtractor<Event> {
         }
 
         event.setContentSourceId(rs.getInt("content_source_id"));
-        event.setDate(rs.getTimestamp("event_datetime"));
+        event.setStartDate(rs.getTimestamp("start_datetime"));
+        event.setEndDate(rs.getTimestamp("end_datetime"));
 
         return event;
     }

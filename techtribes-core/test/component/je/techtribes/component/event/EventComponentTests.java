@@ -30,16 +30,19 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         sdf.setTimeZone(TimeZone.getTimeZone(DateUtils.UTC_TIME_ZONE));
 
         for (int i = 1; i <= 12; i++) {
-            template.update("insert into event (title, description, island, content_source_id, url, event_datetime) values (?, ?, ?, ?, ?, ?)",
+            template.update("insert into event (title, description, island, location, content_source_id, url, start_datetime, end_datetime) values (?, ?, ?, ?, ?, ?, ?, ?)",
                     "Event " + i,
                     "Here is a description for event " + i,
                     "j",
+                    "Ha'Penny Bridge",
                     4,
                     "http://techtribes.je/event" + i,
-                    sdf.format(DateUtils.getDate(currentYear - 1, i, 1, 17, 30)));
+                    sdf.format(DateUtils.getDate(currentYear - 1, i, 1, 17, 30)),
+                    sdf.format(DateUtils.getDate(currentYear - 1, i, 1, 20, 30))
+                    );
         }
         for (int i = 1; i <= 12; i++) {
-            template.update("insert into event (title, description, island, content_source_id, url, event_datetime) values (?, ?, ?, ?, ?, ?)",
+            template.update("insert into event (title, description, island, content_source_id, url, start_datetime) values (?, ?, ?, ?, ?, ?)",
                     "Event " + (12+i),
                     "Here is a description for event " + (12+i),
                     "g",
@@ -49,7 +52,7 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         }
 
         // and add an orphaned event (missing content source, so will be filtered)
-        template.update("insert into event (title, description, island, content_source_id, url, event_datetime) values (?, ?, ?, ?, ?, ?)",
+        template.update("insert into event (title, description, island, content_source_id, url, start_datetime) values (?, ?, ?, ?, ?, ?)",
                 "Event X",
                 "Here is a description for event X",
                 "j",
@@ -84,9 +87,11 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         assertEquals("Event 1", event.getTitle());
         assertEquals("Here is a description for event 1", event.getBody());
         assertEquals(Island.Jersey, event.getIsland());
+        assertEquals("Ha'Penny Bridge", event.getLocation());
         assertEquals("techtribes.je", event.getContentSource().getName());
         assertEquals("http://techtribes.je/event1", event.getUrl().toString());
-        assertEquals("01-Jan-" + (currentYear-1) + " 17:30:00:000", sdf.format(event.getDate()));
+        assertEquals("01-Jan-" + (currentYear-1) + " 17:30:00:000", sdf.format(event.getStartDate()));
+        assertEquals("01-Jan-" + (currentYear-1) + " 20:30:00:000", sdf.format(event.getEndDate()));
 
         event = events.get(0);
         assertEquals("Event 24", event.getTitle());
@@ -94,7 +99,7 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         assertEquals(Island.Guernsey, event.getIsland());
         assertEquals("techtribes.je", event.getContentSource().getName());
         assertEquals("http://techtribes.je/event24", event.getUrl().toString());
-        assertEquals("01-Dec-" + (currentYear+1) + " 17:30:00:000", sdf.format(event.getDate()));
+        assertEquals("01-Dec-" + (currentYear+1) + " 17:30:00:000", sdf.format(event.getStartDate()));
     }
 
     @Test
