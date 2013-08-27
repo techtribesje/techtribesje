@@ -8,7 +8,7 @@
         <div style="float: left;">
             <a href="<techtribesje:goto contentSource="${event.contentSource}"/>"><img src="${event.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
             <img src="<techtribesje:flag name="${event.island}" />" alt="${job.island}" title="${event.island}" />
-            <a href="/events/${event.id}/ical"><img src="/static/img/add-to-calendar.png" alt="Add to calendar"></a>
+            <a href="/events/${event.id}/icalendar"><img src="/static/img/add-to-calendar.png" alt="Add to calendar"></a>
         </div>
         <a href="<techtribesje:goto contentSource="${event.contentSource}"/>">${event.contentSource.name}</a><br />
         <c:if test="${not empty event.location}">

@@ -43,7 +43,7 @@ public class EventsController extends AbstractController {
         return "events";
 	}
 
-    @RequestMapping(value = "/events/{id:[\\d]+}/ical", method = RequestMethod.GET)
+    @RequestMapping(value = "/events/{id:[\\d]+}/icalendar", method = RequestMethod.GET)
 	public View downloadICalendarFileForEventWithId(@PathVariable("id")int id, ModelMap model) {
         Event event = null;
         try {
