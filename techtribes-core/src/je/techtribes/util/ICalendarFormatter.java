@@ -33,7 +33,7 @@ public class ICalendarFormatter {
         addContentLine(buf, "URL", event.getUrl().toString());
 
         if (event.getLocation() != null) {
-            addContentLine(buf, "LOCATION", event.getLocation() + ", " + event.getIsland());
+            addContentLine(buf, "LOCATION", (event.getLocation() + ", " + event.getIsland()).replace(",", "\\,"));
         }
 
         addContentLine(buf, "END", "VEVENT");
