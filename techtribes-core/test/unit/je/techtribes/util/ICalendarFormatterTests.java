@@ -31,7 +31,8 @@ public class ICalendarFormatterTests {
                 "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
                 "DTEND;TZID=Europe/London:20130829T190000\r\n" +
                 "SUMMARY:Tech Tribes meetup 17\r\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\n\nSee http://lanyrd.com/2013/tech-tribes-meetu\r\n p-17/ for more information.\r\n" +
+                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\r\n" +
+                "URL:http://lanyrd.com/2013/tech-tribes-meetup-17/\r\n" +
                 "LOCATION:Ha'Penny Bridge, St Helier, Jersey\r\n" +
                 "END:VEVENT\r\n" +
                 "END:VCALENDAR\r\n", formatter.format(event));
@@ -56,7 +57,8 @@ public class ICalendarFormatterTests {
                 "UID:123@techtribes.je\r\n" +
                 "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
                 "SUMMARY:Tech Tribes meetup 17\r\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\n\nSee http://lanyrd.com/2013/tech-tribes-meetu\r\n p-17/ for more information.\r\n" +
+                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\r\n" +
+                "URL:http://lanyrd.com/2013/tech-tribes-meetup-17/\r\n" +
                 "LOCATION:Ha'Penny Bridge, St Helier, Jersey\r\n" +
                 "END:VEVENT\r\n" +
                 "END:VCALENDAR\r\n", formatter.format(event));
@@ -82,7 +84,8 @@ public class ICalendarFormatterTests {
                 "DTSTART;TZID=Europe/London:20130829T163000\r\n" +
                 "DTEND;TZID=Europe/London:20130829T190000\r\n" +
                 "SUMMARY:Tech Tribes meetup 17\r\n" +
-                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\n\nSee http://lanyrd.com/2013/tech-tribes-meetu\r\n p-17/ for more information.\r\n" +
+                "DESCRIPTION:Tech talk and beer (or wine or a soft drink or two) with J\r\n ersey's techy community.\r\n" +
+                "URL:http://lanyrd.com/2013/tech-tribes-meetup-17/\r\n" +
                 "END:VEVENT\r\n" +
                 "END:VCALENDAR\r\n", formatter.format(event));
    }
