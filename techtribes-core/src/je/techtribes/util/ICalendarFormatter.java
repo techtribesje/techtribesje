@@ -29,7 +29,7 @@ public class ICalendarFormatter {
         }
 
         addContentLine(buf, "SUMMARY", event.getTitle());
-        addContentLine(buf, "DESCRIPTION", event.getDescription() + " See " + event.getUrl() + " for more information.");
+        addContentLine(buf, "DESCRIPTION", event.getDescription() + "\n\nSee " + event.getUrl() + " for more information.");
 
         if (event.getLocation() != null) {
             addContentLine(buf, "LOCATION", event.getLocation() + ", " + event.getIsland());
