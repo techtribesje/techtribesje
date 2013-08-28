@@ -29,7 +29,7 @@ public class ICalendarFormatter {
         }
 
         addContentLine(buf, "SUMMARY;CHARSET=utf-8", event.getTitle());
-        addContentLine(buf, "DESCRIPTION;CHARSET=utf-8", event.getDescription());
+        addContentLine(buf, "DESCRIPTION;CHARSET=utf-8", StringUtils.filterHtmlAndRetainLineBreaks(event.getDescription()));
         addContentLine(buf, "URL", event.getUrl().toString());
 
         if (event.getLocation() != null) {

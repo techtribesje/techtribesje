@@ -3,6 +3,7 @@ package je.techtribes.util;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests for the utilities in the StringUtils class.
@@ -35,6 +36,21 @@ public class StringUtilsTests {
     @Test
     public void test_filterHtmlAndTruncate_ReturnsATruncatedString_WhenItIsLongerThanTheMaxLength() {
         assertEquals("123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 12...", StringUtils.filterHtmlAndTruncate("123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456"));
+    }
+
+    @Test
+    public void test_filterHtmlAndRetainLineBreaks_ReturnsNull_WhenNullIsPassed() {
+        assertNull(StringUtils.filterHtmlAndRetainLineBreaks(null));
+    }
+
+    @Test
+    public void test_filterHtmlAndRetainLineBreaks_RemovesHtmlTagsAndKeepsLineBreaks_WhenASimpleHtmlParagraphIsPassed() {
+        assertEquals("Here is a parapgraph.\n\n", StringUtils.filterHtmlAndRetainLineBreaks("<p>Here is a parapgraph.</p>"));
+    }
+
+    @Test
+    public void test_filterHtmlAndRetainLineBreaks_RemovesHtmlTagsAndKeepsLineBreaks_WhenASimpleHtmlListIsPassed() {
+        assertEquals("Item 1\nItem 2\n\n", StringUtils.filterHtmlAndRetainLineBreaks("<ul><li>Item 1</li><li>Item 2</li></ul>"));
     }
 
 }

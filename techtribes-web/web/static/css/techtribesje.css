@@ -266,7 +266,7 @@ footer a {
 .newsSection a {
     color: #000000;
 }
-.embeddedVideo {
+.embeddedVideo, .embeddedMap {
     padding: 8px;
     text-align: center;
 }

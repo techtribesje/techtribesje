@@ -36,4 +36,17 @@ public final class StringUtils {
         }
     }
 
+    public static String filterHtmlAndRetainLineBreaks(String s) {
+        if (s == null) {
+            return null;
+        }
+
+        s = s.replaceAll("</p>", "\n\n");
+        s = s.replaceAll("</ul>", "\n");
+        s = s.replace("</li>", "\n");
+        s = filterHtml(s);
+
+        return s;
+    }
+
 }

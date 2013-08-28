@@ -43,6 +43,26 @@ public class EventsController extends AbstractController {
         return "events";
 	}
 
+    @RequestMapping(value = "/events/{id:[\\d]+}", method = RequestMethod.GET)
+	public String viewEvent(@PathVariable("id")int id, ModelMap model) {
+        Event event = null;
+        try {
+            event = eventService.getEvent(id);
+        } catch (EventException ee) {
+            loggingComponent.error(this, "Error finding event with ID " + id, ee);
+        }
+
+        if (event != null) {
+            model.addAttribute("event", event);
+            addCommonAttributes(model);
+            setPageTitle(model, "Event", event.getTitle());
+
+            return "event";
+        } else {
+            return "404";
+        }
+	}
+
     @RequestMapping(value = "/events/{id:[\\d]+}/icalendar", method = RequestMethod.GET)
 	public View downloadICalendarFileForEventWithId(@PathVariable("id")int id, ModelMap model) {
         Event event = null;
