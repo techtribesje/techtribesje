@@ -24,7 +24,8 @@
     <div class="eventMetadata">
         <p>
             <c:set var="person" value="${talk.contentSource}" />
-            <a href="<techtribesje:goto contentSource="${talk.contentSource}"/>"><img src="${talk.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a> <a href="/people/${talk.contentSource.shortName}">${talk.contentSource.name}</a>
+            <a href="<techtribesje:goto contentSource="${talk.contentSource}"/>"><img src="${talk.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
+            <a href="<techtribesje:goto contentSource="${talk.contentSource}"/>">${talk.contentSource.name}</a>
             |
             ${talk.eventName}
             |
