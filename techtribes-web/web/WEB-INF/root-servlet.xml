@@ -9,7 +9,7 @@
     <task:executor id="executor" pool-size="5"/>
     <task:scheduler id="scheduler" pool-size="10"/>
 
-    <context:property-placeholder location="file:/etc/techtribesje.properties"/>
+    <context:property-placeholder location="file:/etc/techtribesje-web.properties"/>
 
     <import resource="classpath*:je/techtribes/**/config.xml" />
     <import resource="classpath*:je/techtribes/**/component.xml" />
