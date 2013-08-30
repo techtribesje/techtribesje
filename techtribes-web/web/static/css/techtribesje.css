@@ -1,5 +1,6 @@
 body {
     font-family: 'Trebuchet MS', 'Tahoma', Helvetica, Verdana, Arial, sans-serif;
+    background: #ffffff;
 }
 a {
     color: #000000;
@@ -156,32 +157,23 @@ footer a {
     font-weight: bold;
 }
 .siteHeader {
-    padding: 40px 64px 64px 64px;
-    background: #888888;
-    background: linear-gradient(to bottom, #888888, #555555);
-    background: -webkit-linear-gradient(top, #888888, #555555);
-    border-radius: 0px 0px 6px 6px;
-    color: #ffffff;
+    color: #000000;
+    margin-top: 40px;
     margin-bottom: 32px;
     clear: both;
     position: relative;
-    margin-top: 40px;
 }
 .siteHeaderImage {
     border-radius: 6px 6px 6px 6px;
     border: 1px solid #808080;
 }
-.siteHeaderTagLine1 {
+.siteHeaderTagLine {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 16px;
+    padding-top: 32px;
     text-align: center;
     line-height: 1.2;
-}
-.siteHeaderTagLine2 {
-    font-size: 14px;
-    margin-bottom: 32px;
-    text-align: center;
 }
 
 .sectionHeading, .subSectionHeading, .progress .bar {
@@ -269,4 +261,9 @@ footer a {
 .embeddedVideo, .embeddedMap {
     padding: 8px;
     text-align: center;
+}
+.forkMe {
+    position: absolute;
+    top: 0;
+    right: 0;
 }

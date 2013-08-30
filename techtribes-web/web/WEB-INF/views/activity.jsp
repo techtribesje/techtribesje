@@ -63,7 +63,7 @@
 
 <hr />
 
-<h3>People</h3>
+<a name="people"></a><h3>People</h3>
 <p>
     Here are the most active people.
 </p>
@@ -74,7 +74,7 @@
 
 <hr />
 
-<h3>Business tribes</h3>
+<a name="business"></a><h3>Business tribes</h3>
 <p>
     These are the most active business tribes, based upon the average of all activity by them and their members.
 </p>
@@ -85,7 +85,7 @@
 
 <hr />
 
-<h3>Community tribes</h3>
+<a name="community"></a><h3>Community tribes</h3>
 <p>
     And finally these are the most active community tribes, based upon their activity.
 </p>

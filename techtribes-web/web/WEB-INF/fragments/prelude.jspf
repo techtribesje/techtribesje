@@ -104,10 +104,23 @@
                         </li>
                     </ul>
                     </c:if>
-                    <form class="navbar-search pull-right" action="/search">
-                        <input name="q" type="text" value="${param['q']}" class="search-query input-small" placeholder="Search">
-                    </form>
                 </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="siteHeader">
+        <div class="forkMe">
+            <a href="https://github.com/techtribesje/techtribesje" target="_blank"><img src="/static/img/github-forkme.png" alt="Fork me on GitHub"></a>
+        </div>
+
+        <div class="siteHeaderTagLine">
+            <a href="/"><img src="/static/img/siteHeaderMonkey.png" alt="Monkey" /></a>
+            tech tribe: a group of people with a common technology interest
+            <div>
+                <form class="form-search" action="/search">
+                    <input name="q" type="text" value="${param['q']}" class="search-query input-xlarge" placeholder="Search">
+                </form>
             </div>
         </div>
     </div>
@@ -116,24 +129,5 @@
         // todo: hack to get Twitter Boostrap dropdowns working on mobile devices ... remove when fixed!
         $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
     </script>
-
-    <div class="siteHeader">
-        <a href="https://github.com/techtribesje/techtribesje" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/static/img/github-forkme.png" alt="Fork me on GitHub"></a>
-
-        <div>
-            <div class="siteHeaderTagLine1">
-                <a href="/"><img src="/static/img/siteHeaderMonkey.png" alt="Monkey" class="siteHeaderImage" /></a>
-                tech tribe: a group of people with a common technology interest
-                <div class="siteHeaderTagLine2">
-                    The only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands
-                </div>
-            </div>
-        </div>
-        <div class="hidden-phone">
-            <c:forEach var="contentSource" items="${peopleAndTribes}">
-                <a href="<techtribesje:goto contentSource="${contentSource}" />"><img src="${contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" style="margin: 1px;" title="${contentSource.name}" /></a>
-            </c:forEach>
-        </div>
-    </div>
 
     <div class="container">
