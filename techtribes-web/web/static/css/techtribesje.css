@@ -225,8 +225,8 @@ footer a {
 .selected {
     border: #dddddd solid 1px;
     background: #FAFAFA;
-    background: linear-gradient(to bottom, #FAFAFA, #DADADA);
-    background: -webkit-linear-gradient(top, #FAFAFA, #DADADA);
+    background: linear-gradient(to bottom, #FAFAFA, #EAEAEA);
+    background: -webkit-linear-gradient(top, #FAFAFA, #EAEAEA);
     color: black;
 }
 
