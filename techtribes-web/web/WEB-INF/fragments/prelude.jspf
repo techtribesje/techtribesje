@@ -110,7 +110,7 @@
     </div>
 
     <div class="siteHeader">
-        <div class="forkMe">
+        <div class="forkMe hidden-phone">
             <a href="https://github.com/techtribesje/techtribesje" target="_blank"><img src="/static/img/github-forkme.png" alt="Fork me on GitHub"></a>
         </div>
 
