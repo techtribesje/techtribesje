@@ -2,7 +2,7 @@ body {
     font-family: 'Trebuchet MS', 'Tahoma', Helvetica, Verdana, Arial, sans-serif;
     background: #ffffff;
 }
-a {
+a, a:hover {
     color: #000000;
     font-weight: bold;
 }
@@ -183,32 +183,52 @@ footer a {
 }
 .eventsSection .sectionHeading, .eventsSection .subSectionHeading, .eventsSection .progress .bar, .progress .bar-events {
     background: #FFAA00;
-    background: linear-gradient(to bottom, #FFAA00, #DD9300);
-    background: -webkit-linear-gradient(top, #FFAA00, #DD9300);
+}
+.eventsSection .sectionHeading {
+    background: url('/static/img/headers/events.png'), linear-gradient(to bottom, #FFAA00, #DD9300);
+    background: url('/static/img/headers/events.png'), -webkit-linear-gradient(top, #FFAA00, #DD9300);
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 80px;
 }
 .eventsSection a {
     color: #FFAA00;
 }
 .talksSection .sectionHeading, .talksSection .subSectionHeading, .talksSection .progress .bar, .progress .bar-talks {
     background: #BE0000;
-    background: linear-gradient(to bottom, #BE0000, #A80000);
-    background: -webkit-linear-gradient(top, #BE0000, #A80000);
+}
+.talksSection .sectionHeading {
+    background: url('/static/img/headers/talks.png'), linear-gradient(to bottom, #BE0000, #A80000) ;
+    background: url('/static/img/headers/talks.png'), -webkit-linear-gradient(top, #BE0000, #A80000);
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 80px;
 }
 .talksSection a {
     color: #BE0000;
 }
 .contentSection .sectionHeading, .contentSection .subSectionHeading, .contentSection .progress .bar, .progress .bar-content {
     background: #019201;
-    background: linear-gradient(to bottom, #019201, #027602);
-    background: -webkit-linear-gradient(top, #019201, #027602);
+}
+.contentSection .sectionHeading {
+    background: url('/static/img/headers/content.png'), linear-gradient(to bottom, #019201, #027602);
+    background: url('/static/img/headers/content.png'), -webkit-linear-gradient(top, #019201, #027602);
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 80px;
 }
 .contentSection a, .newsFeedEntry a {
     color: #019201;
 }
 .tweetsSection .sectionHeading, .tweetsSection .subSectionHeading, .tweetsSection .progress .bar, .progress .bar-tweets {
     background: #0776A0;
-    background: linear-gradient(to bottom, #0776A0, #044E6B);
-    background: -webkit-linear-gradient(top, #0776A0, #044E6B);
+}
+.tweetsSection .sectionHeading {
+    background: url('/static/img/headers/tweets.png'), linear-gradient(to bottom, #0776A0, #044E6B);
+    background: url('/static/img/headers/tweets.png'), -webkit-linear-gradient(top, #0776A0, #044E6B);
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 80px;
 }
 .tweetsSection a, .tweet a {
     color: #0776A0;
@@ -251,9 +271,14 @@ footer a {
     background: -webkit-linear-gradient(top, #000000, #000000);
 }
 .newsSection .sectionHeading, .newsSection .subSectionHeading, .newsSection .progress .bar {
-    background: #333333;
-    background: linear-gradient(to bottom, #333333, #000000);
-    background: -webkit-linear-gradient(top, #333333, #000000);
+    background: #000000;
+}
+.newsSection .sectionHeading {
+    background: url('/static/img/headers/news.png'), linear-gradient(to bottom, #333333, #000000);
+    background: url('/static/img/headers/news.png'), -webkit-linear-gradient(top, #333333, #000000);
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 80px;
 }
 .newsSection a {
     color: #000000;
