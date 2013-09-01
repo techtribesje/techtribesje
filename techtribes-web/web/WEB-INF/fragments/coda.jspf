@@ -17,7 +17,7 @@
             </p>
 
             <p>
-                <a href="/about">About techtribes.je</a>
+                <a href="/about">About techtribes.je</a> (build <%= je.techtribes.util.Version.getBuildNumber() %>)
             </p>
         </footer>
 
