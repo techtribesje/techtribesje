@@ -1,33 +1,36 @@
-<div class="row hidden-phone">
-    <div class="span4" style="text-align: center;">
-        <h4><a href="/activity#people">Most active people</a></h4>
-        <c:forEach var="activity" items="${activityListForPeople}" end="2">
-            <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImage <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
-        </c:forEach>
-        <br /><br />
-        <c:forEach var="activity" items="${activityListForPeople}" begin="3" end="9">
-            <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImageSmall <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
-        </c:forEach>
-    </div>
-    <div class="span4" style="text-align: center;">
-        <h4><a href="/activity#business">Most active business tribes</a></h4>
-        <c:forEach var="activity" items="${activityListForBusinessTribes}" end="2">
-            <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImage <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
-        </c:forEach>
-        <br /><br />
-        <c:forEach var="activity" items="${activityListForBusinessTribes}" begin="3" end="9">
-            <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImageSmall <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
-        </c:forEach>
-    </div>
-    <div class="span4" style="text-align: center;">
-        <h4><a href="/activity#community">Most active community tribes</a></h4>
-        <c:forEach var="activity" items="${activityListForCommunityTribes}" end="2">
-            <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImage <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
-        </c:forEach>
-        <br /><br />
-        <c:forEach var="activity" items="${activityListForCommunityTribes}" begin="3" end="9">
-            <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImageSmall <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
-        </c:forEach>
+<div class="hidden-phone">
+    <hr />
+    <div class="row">
+        <div class="span4" style="text-align: center;">
+            <h4><a href="/activity#people">Most active people</a></h4>
+            <c:forEach var="activity" items="${activityListForPeople}" end="2">
+                <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImage <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
+            </c:forEach>
+            <br /><br />
+            <c:forEach var="activity" items="${activityListForPeople}" begin="3" end="9">
+                <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImageSmall <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
+            </c:forEach>
+        </div>
+        <div class="span4" style="text-align: center;">
+            <h4><a href="/activity#business">Most active business tribes</a></h4>
+            <c:forEach var="activity" items="${activityListForBusinessTribes}" end="2">
+                <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImage <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
+            </c:forEach>
+            <br /><br />
+            <c:forEach var="activity" items="${activityListForBusinessTribes}" begin="3" end="9">
+                <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImageSmall <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
+            </c:forEach>
+        </div>
+        <div class="span4" style="text-align: center;">
+            <h4><a href="/activity#community">Most active community tribes</a></h4>
+            <c:forEach var="activity" items="${activityListForCommunityTribes}" end="2">
+                <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImage <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
+            </c:forEach>
+            <br /><br />
+            <c:forEach var="activity" items="${activityListForCommunityTribes}" begin="3" end="9">
+                <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" title="${activity.contentSource.name} (${activity.score} points)" class="profileImageSmall <c:if test="${not activity.contentSource.active}">faded</c:if>" /></a>
+            </c:forEach>
+        </div>
     </div>
 </div>
 

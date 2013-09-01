@@ -158,10 +158,11 @@ footer a {
 }
 .siteHeader {
     color: #000000;
-    margin-top: 40px;
-    margin-bottom: 32px;
+    margin-top: 80px;
+    margin-bottom: 50px;
     clear: both;
     position: relative;
+    margin-left: auto;
 }
 .siteHeaderImage {
     border-radius: 6px 6px 6px 6px;
@@ -170,7 +171,7 @@ footer a {
 .siteHeaderTagLine {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: 4px;
     padding-top: 32px;
     text-align: center;
     line-height: 1.2;
@@ -289,6 +290,7 @@ footer a {
 }
 .forkMe {
     position: absolute;
+    margin-top: 40px;
     top: 0;
     right: 0;
 }

@@ -109,25 +109,30 @@
         </div>
     </div>
 
-    <div class="siteHeader">
-        <div class="forkMe hidden-phone">
-            <a href="https://github.com/techtribesje/techtribesje" target="_blank"><img src="/static/img/github-forkme.png" alt="Fork me on GitHub"></a>
-        </div>
-
-        <div class="siteHeaderTagLine">
-            <a href="/"><img src="/static/img/siteHeaderMonkey.png" alt="Monkey" /></a>
-            tech tribe: a group of people with a common technology interest
-            <div>
-                <form class="form-search" action="/search">
-                    <input name="q" type="text" value="${param['q']}" class="search-query input-xlarge" placeholder="Search">
-                </form>
-            </div>
-        </div>
+    <div class="forkMe hidden-phone">
+        <a href="https://github.com/techtribesje/techtribesje" target="_blank"><img src="/static/img/github-forkme.png" alt="Fork me on GitHub"></a>
     </div>
 
-    <script>
-        // todo: hack to get Twitter Boostrap dropdowns working on mobile devices ... remove when fixed!
-        $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-    </script>
-
     <div class="container">
+
+        <div class="siteHeader">
+            <a href="/"><img src="/static/img/siteHeaderMonkey.png" alt="Monkey" style="float: left;"/></a>
+            <div style="text-align: center;">
+                <div class="siteHeaderTagLine">
+                    tech tribe: a group of people with a common technology interest
+                </div>
+                <p>
+                    techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands
+                </p>
+                <div>
+                    <form class="form-search" action="/search">
+                        <input name="q" type="text" value="${param['q']}" class="search-query input-xlarge" placeholder="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // todo: hack to get Twitter Boostrap dropdowns working on mobile devices ... remove when fixed!
+            $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+        </script>
