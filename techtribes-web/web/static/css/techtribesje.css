@@ -67,6 +67,7 @@ h1, h3, h4 {
     height: 48px;
     border: 1px solid #808080;
     border-radius: 6px 6px 6px 6px;
+    background: #ffffff;
 }
 .faded {
     opacity:0.2;

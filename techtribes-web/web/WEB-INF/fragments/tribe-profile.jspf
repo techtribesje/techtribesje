@@ -134,46 +134,39 @@
         </c:choose>
     </c:if>
 
-    ${tribe.name}
+    <a href="/tribes/${tribe.shortName}"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImage" /></a> ${tribe.name}
 </div>
 
-<div class="row">
-    <div class="span1">
-        <a href="/tribes/${tribe.shortName}"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
-    </div>
-    <div class="span11">
-        <c:if test="${not empty tribe.profile}">
-        <p>
-            ${tribe.profile}
-        </p>
-        </c:if>
-        <c:if test="${not empty tribe.url}">
-        <p>
-            <a href="${tribe.url}" target="_blank">${tribe.url}</a>
-        </p>
-        </c:if>
+<c:if test="${not empty tribe.profile}">
+<p>
+    ${tribe.profile}
+</p>
+</c:if>
+<c:if test="${not empty tribe.url}">
+<p>
+    <a href="${tribe.url}" target="_blank">${tribe.url}</a>
+</p>
+</c:if>
 
-        <c:if test="${not empty tribe.twitterId}">
-            <p>
-            <a href="https://twitter.com/${tribe.twitterId}" class="twitter-follow-button" data-show-count="true">Follow @${tribe.twitterId}</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </p>
-        </c:if>
+<c:if test="${not empty tribe.twitterId}">
+    <p>
+    <a href="https://twitter.com/${tribe.twitterId}" class="twitter-follow-button" data-show-count="true">Follow @${tribe.twitterId}</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </p>
+</c:if>
 
-        <c:if test="${not empty tribe.members}">
-            <c:choose>
-                <c:when test="${tribe.type eq 'Community'}">
-                    <h4>Run by <span class="badge">${tribe.numberOfMembers}</span></h4>
-                </c:when>
-                <c:otherwise>
-                    <h4>Members <span class="badge">${tribe.numberOfMembers}</span></h4>
-                </c:otherwise>
-            </c:choose>
-            <p>
-            <c:forEach var="person" items="${tribe.members}">
-                <a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImageSmall <c:if test="${not person.active}">faded</c:if>" title="${person.name}" /></a>
-            </c:forEach>
-           </p>
-        </c:if>
-    </div>
-</div>
+<c:if test="${not empty tribe.members}">
+    <c:choose>
+        <c:when test="${tribe.type eq 'Community'}">
+            <h4>Run by <span class="badge">${tribe.numberOfMembers}</span></h4>
+        </c:when>
+        <c:otherwise>
+            <h4>Members <span class="badge">${tribe.numberOfMembers}</span></h4>
+        </c:otherwise>
+    </c:choose>
+    <p>
+    <c:forEach var="person" items="${tribe.members}">
+        <a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImageSmall <c:if test="${not person.active}">faded</c:if>" title="${person.name}" /></a>
+    </c:forEach>
+   </p>
+</c:if>
