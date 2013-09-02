@@ -70,20 +70,27 @@ public class ScheduledContentUpdater extends AbstractComponent {
 
     @Scheduled(cron="0 15,30,45 * * * ?")
     public void updateContentSourcesAndNews() {
-        logInfo("Updating content sources, profiles and news");
+        logInfo("Updating content sources from database");
         contentSourceComponent.refreshContentSources();
+
+        logInfo("Refreshing profiles from Twitter");
         twitterUpdater.refreshProfiles();
+
+        logInfo("Refreshing repos from GitHub");
         gitHubUpdater.refreshGitHubRepositories();
+
+        logInfo("Refreshing news feed entries");
         newsFeedUpdater.refreshNews();
     }
 
     @Scheduled(cron="0 0 * * * ?")
     public void updateAndAwardBadges() {
-        logInfo("Updating activity rankings and awarding badges");
         updateContentSourcesAndNews();
 
+        logInfo("Calculating activity rankings");
         activityComponent.calculateActivityForLastSevenDays();
 
+        logInfo("Awarding badges");
         badgeAwarder.awardBadgesForActivity(activityComponent.getActivityListForPeople());
         badgeAwarder.awardBadgesForActivity(activityComponent.getActivityListForBusinessTribes());
         badgeAwarder.awardBadgesForActivity(activityComponent.getActivityListForCommunityTribes());
