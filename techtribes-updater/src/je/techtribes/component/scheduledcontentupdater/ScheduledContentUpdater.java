@@ -58,9 +58,13 @@ public class ScheduledContentUpdater extends AbstractComponent {
         badgeAwarder = new BadgeAwarder(this, badgeComponent);
 
         // this is the initial content update following startup of this component
-        updateContentSourcesAndNews();
+        logInfo("Updating content sources from database");
+        contentSourceComponent.refreshContentSources();
 
+        logInfo("Refreshing previous tweets");
         twitterUpdater.refreshRecentTweets();
+
+        logInfo("Starting tweet streaming");
         twitterUpdater.startStreaming();
     }
 
