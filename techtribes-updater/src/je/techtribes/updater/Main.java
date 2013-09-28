@@ -35,31 +35,6 @@ public class Main {
 
             rebuildSearchIndexes(applicationContext);
             System.exit(0);
-        } else if (args.length > 0 && "migrate".equals(args[0])) {
-            NewsFeedEntryComponent newsFeedEntryComponent = (NewsFeedEntryComponent)applicationContext.getBean("newsFeedEntryComponent");
-            TweetComponent tweetComponent = (TweetComponent)applicationContext.getBean("tweetComponent");
-            ContentSourceComponent contentSourceComponent = (ContentSourceComponent)applicationContext.getBean("contentSourceComponent");
-            contentSourceComponent.refreshContentSources();
-
-            long numberOfNewsFeedEntries = newsFeedEntryComponent.getNumberOfNewsFeedEntries();
-            loggingComponent.info(Main.class, "Number of NFEs: " + numberOfNewsFeedEntries);
-            int numberOfPages = PageSize.calculateNumberOfPages(numberOfNewsFeedEntries, PageSize.RECENT_NEWS_FEED_ENTRIES);
-            for (int page = 1; page <= numberOfPages; page++) {
-                loggingComponent.info(Main.class, "Migrating NFEs; page " + page + " of " + numberOfPages);
-                List<NewsFeedEntry> nfes = newsFeedEntryComponent.getRecentNewsFeedEntries(page, PageSize.RECENT_NEWS_FEED_ENTRIES);
-                newsFeedEntryComponent.storeNewsFeedEntries(nfes);
-            }
-
-            long numberOfTweets = tweetComponent.getNumberOfTweets();
-            loggingComponent.info(Main.class, "Number of tweets: " + numberOfTweets);
-            numberOfPages = PageSize.calculateNumberOfPages(numberOfTweets, PageSize.RECENT_TWEETS);
-            for (int page = 1; page <= numberOfPages; page++) {
-                loggingComponent.info(Main.class, "Migrating tweets; page " + page + " of " + numberOfPages);
-                List<Tweet> tweets = tweetComponent.getRecentTweets(page, PageSize.RECENT_TWEETS);
-                tweetComponent.storeTweets(tweets);
-            }
-
-            System.exit(0);
         }
 
         ScheduledContentUpdater scu = (ScheduledContentUpdater)applicationContext.getBean("contentUpdater");
