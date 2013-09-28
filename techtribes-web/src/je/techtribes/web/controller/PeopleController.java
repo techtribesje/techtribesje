@@ -206,4 +206,16 @@ public class PeopleController extends AbstractController {
         return "person-content";
 	}
 
+    @RequestMapping(value="/twitter/{twitterId:^[a-zA-Z0-9_]*$}", method = RequestMethod.GET)
+	public String findPersonOrTribeByTwitterId(@PathVariable("twitterId")String twitterId, ModelMap model) {
+        ContentSource contentSource = contentSourceComponent.findByTwitterId(twitterId);
+        if (contentSource == null) {
+            return "redirect:https://twitter.com/" + twitterId;
+        } else {
+            return contentSource.isTribe() ?
+                    "redirect:/tribes/" + contentSource.getShortName():
+                    "redirect:/people/" + contentSource.getShortName();
+        }
+    }
+
 }
