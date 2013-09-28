@@ -48,6 +48,17 @@ public abstract class ContentItem {
         return this.body;
     }
 
+    public String getBodyAsHtml() {
+        if (getBody() == null) {
+            return null;
+        }
+
+        String s = getBody().replaceAll("http://\\S*", "<a href=\"$0\" target=\"_blank\">$0</a>");
+        s = s.replaceAll("(#)(\\S*)", "<a href=\"/search?q=%23$2\">$0</a>");
+
+        return s;
+    }
+
     public String getTruncatedBody() {
         return StringUtils.filterHtmlAndTruncate(getBody());
     }

@@ -1,6 +1,6 @@
 <c:set var="person" value="${tweet.contentSource}" />
 <div class="${tweet.contentSource.shortName} highlightableContent tweet">
-    <c:out value="${tweet.body}" escapeXml="true" /> <a href="${tweet.permalink}" target="_blank">#</a>
+    <c:out value="${tweet.bodyAsHtml}" escapeXml="false" /> <a href="${tweet.permalink}" target="_blank">#</a>
     <br /><br />
       <div class="metadata">
           <div style="float: left;">
