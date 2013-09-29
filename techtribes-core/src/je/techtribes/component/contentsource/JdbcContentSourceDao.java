@@ -8,10 +8,7 @@ import je.techtribes.util.JdbcDatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 class JdbcContentSourceDao implements ContentSourceDao {
 
@@ -84,7 +81,7 @@ class JdbcContentSourceDao implements ContentSourceDao {
     }
 
     @Override
-    public void updateTribeMembers(ContentSource tribe, List<Integer> personIds) {
+    public void updateTribeMembers(ContentSource tribe, Set<Integer> personIds) {
         JdbcTemplate template = new JdbcTemplate(dataSource);
         template.update("delete from tribe_member where tribe_id = ?",
                 tribe.getId());
@@ -96,7 +93,7 @@ class JdbcContentSourceDao implements ContentSourceDao {
     }
 
     @Override
-    public void updateTribeMembershipsForPerson(ContentSource person, List<Integer> tribeIds) {
+    public void updateTribeMembershipsForPerson(ContentSource person, Set<Integer> tribeIds) {
         JdbcTemplate template = new JdbcTemplate(dataSource);
         template.update("delete from tribe_member where person_id = ?",
                 person.getId());

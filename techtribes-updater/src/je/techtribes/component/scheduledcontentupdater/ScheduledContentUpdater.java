@@ -119,4 +119,9 @@ public class ScheduledContentUpdater extends AbstractComponent {
     }
 
 
+    public void updateTT() {
+        techTribeMembershipUpdater = new TechTribeMembershipUpdater(this, contentSourceComponent, searchComponent);
+        techTribeMembershipUpdater.update();
+    }
+
 }

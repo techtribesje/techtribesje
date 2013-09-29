@@ -7,6 +7,7 @@ import je.techtribes.domain.Person;
 import je.techtribes.domain.Tribe;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Provides access to information about people and tribes.
@@ -34,8 +35,8 @@ public interface ContentSourceComponent {
 
     void update(ContentSource contentSource);
 
-    void updateTribeMembers(Tribe tribe, List<Integer> personIds);
+    void updateTribeMembers(Tribe tribe, Set<Integer> personIds);
 
-    void updateTribeMembershipsForPerson(Person person, List<Integer> tribeIds);
+    void updateTribeMembershipsForPerson(Person person, Set<Integer> tribeIds);
 
 }

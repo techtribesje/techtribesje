@@ -5,6 +5,7 @@ import je.techtribes.domain.*;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class ContentSourceComponentStub implements ContentSourceComponent {
 
@@ -124,11 +125,11 @@ public class ContentSourceComponentStub implements ContentSourceComponent {
     }
 
     @Override
-    public void updateTribeMembers(Tribe tribe, List<Integer> personIds) {
+    public void updateTribeMembers(Tribe tribe, Set<Integer> personIds) {
     }
 
     @Override
-    public void updateTribeMembershipsForPerson(Person person, List<Integer> tribeIds) {
+    public void updateTribeMembershipsForPerson(Person person, Set<Integer> tribeIds) {
     }
 
 }

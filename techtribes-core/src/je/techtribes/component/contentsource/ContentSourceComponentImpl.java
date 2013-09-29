@@ -177,7 +177,7 @@ class ContentSourceComponentImpl extends AbstractComponent implements ContentSou
     }
 
     @Override
-    public void updateTribeMembers(Tribe tribe, List<Integer> personIds) {
+    public void updateTribeMembers(Tribe tribe, Set<Integer> personIds) {
         try {
             contentSourceDao.updateTribeMembers(tribe, personIds);
             refreshContentSources();
@@ -189,7 +189,7 @@ class ContentSourceComponentImpl extends AbstractComponent implements ContentSou
     }
 
     @Override
-    public void updateTribeMembershipsForPerson(Person person, List<Integer> tribeIds) {
+    public void updateTribeMembershipsForPerson(Person person, Set<Integer> tribeIds) {
         try {
             contentSourceDao.updateTribeMembershipsForPerson(person, tribeIds);
             refreshContentSources();

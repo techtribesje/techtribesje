@@ -6,8 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.net.URL;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
@@ -66,7 +68,7 @@ public class ReadWriteContentSourceComponentTests extends AbstractComponentTests
         assertEquals(0, chrisclark.getNumberOfTribes());
         assertEquals(0, p247.getNumberOfMembers());
 
-        List<Integer> personIds = new LinkedList<>();
+        Set<Integer> personIds = new HashSet<>();
         personIds.add(chrisclark.getId());
         getContentSourceComponent().updateTribeMembers(p247, personIds);
 
@@ -88,7 +90,7 @@ public class ReadWriteContentSourceComponentTests extends AbstractComponentTests
         assertEquals(0, simonbrown.getNumberOfTribes());
         assertEquals(0, techtribesje.getNumberOfMembers());
 
-        List<Integer> tribeIds = new LinkedList<>();
+        Set<Integer> tribeIds = new HashSet<>();
         tribeIds.add(techtribesje.getId());
         getContentSourceComponent().updateTribeMembershipsForPerson(simonbrown, tribeIds);
 

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class AdminController extends AbstractController {
@@ -61,7 +63,7 @@ public class AdminController extends AbstractController {
         }
         Tribe tribe = (Tribe)contentSource;
 
-        List<Integer> personIds = new LinkedList<>();
+        Set<Integer> personIds = new HashSet<>();
         String[] parameters = request.getParameterValues("person");
         if (parameters != null) {
             for (String param : parameters) {

@@ -10,10 +10,7 @@ import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.text.SimpleDateFormat;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -111,7 +108,7 @@ public class ActivityComponentTests extends AbstractComponentTestsBase {
         assertEquals(12, activityForP247.getNumberOfTweets());
         assertEquals(15, activityForP247.getNumberOfEvents());
 
-        List<Integer> personIds = new LinkedList<>();
+        Set<Integer> personIds = new HashSet<>();
         personIds.add(chrisclark.getId());
         getContentSourceComponent().updateTribeMembers(p247, personIds);
 

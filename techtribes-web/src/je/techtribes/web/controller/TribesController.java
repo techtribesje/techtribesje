@@ -146,11 +146,20 @@ public class TribesController extends AbstractController {
 
         if (tribe.getType() == ContentSourceType.Tech) {
             String query = tribe.getSearchTerms();
-            List<SearchResult> searchResults = searchComponent.searchForTweets(query, 30);
-            model.addAttribute("query", query);
-            model.addAttribute("searchResults", searchResults);
+            int maxPage = Integer.MAX_VALUE;
+            page = PageSize.validatePage(page, maxPage);
+
+            List<SearchResult> searchResults = searchComponent.searchForTweets(query, PageSize.RECENT_TWEETS, page);
+            model.addAttribute("tweets", searchResults);
             model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(searchResults).getStatistics());
-            setPageTitle(model, contentSource.getName(), "Tweets");
+            setPageTitle(model, contentSource.getName(), "Tweets", "Page " + page);
+
+            model.addAttribute("currentPage", page);
+            if (searchResults.size() < PageSize.RECENT_TWEETS) {
+                model.addAttribute("maxPage", page);
+            } else {
+                model.addAttribute("maxPage", maxPage);
+            }
 
             return "tribe-tweets-search";
         } else {
@@ -204,14 +213,13 @@ public class TribesController extends AbstractController {
             int maxPage = Integer.MAX_VALUE;
             page = PageSize.validatePage(page, maxPage);
 
-            List<SearchResult> searchResults = searchComponent.searchForNewsFeedEntries(query, PageSize.SEARCH_RESULTS_CONTENT, page);
-            model.addAttribute("query", query);
-            model.addAttribute("searchResults", searchResults);
+            List<SearchResult> searchResults = searchComponent.searchForNewsFeedEntries(query, PageSize.RECENT_NEWS_FEED_ENTRIES, page);
+            model.addAttribute("newsFeedEntries", searchResults);
             model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(searchResults).getStatistics());
             setPageTitle(model, contentSource.getName(), "Content", "Page " + page);
 
             model.addAttribute("currentPage", page);
-            if (searchResults.size() < PageSize.SEARCH_RESULTS_CONTENT) {
+            if (searchResults.size() < PageSize.RECENT_NEWS_FEED_ENTRIES) {
                 model.addAttribute("maxPage", page);
             } else {
                 model.addAttribute("maxPage", maxPage);

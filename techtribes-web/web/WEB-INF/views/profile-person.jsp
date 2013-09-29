@@ -11,43 +11,38 @@
         </div>
     </div>
 
-    <div class="row">
 
-        <div class="span6">
-            <h3>You're a member</h3>
-            <h4>Community tribes</h4>
-            <c:forEach var="tribe" items="${memberOfSocial}">
-                <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
-            </c:forEach>
+    <div class="subSectionHeading">Tribes</div>
+    <p>
+        You're a member of the following tribes.
+    </p>
 
-            <h4>Tech tribes</h4>
-            <c:forEach var="tribe" items="${memberOfTech}">
-                    <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
-            </c:forEach>
+    <h4>Community tribes</h4>
+    <c:forEach var="tribe" items="${memberOfSocial}">
+        <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
+        <br />
+    </c:forEach>
 
-            <h4>Business tribes</h4>
-            <c:forEach var="tribe" items="${memberOfBusiness}">
-                <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
-            </c:forEach>
-        </div>
+    <h4>Tech tribes</h4>
+    <p>
+        Membership of tech tribes is based upon the content that you publish. If you want to join a specific tech tribe, you'll need to write some related content!
+    </p>
+    <c:forEach var="tribe" items="${memberOfTech}">
+        <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
+        <br />
+    </c:forEach>
 
-        <div class="span6">
-            <h3>You're not a member</h3>
-
-            <h4>Tech tribes</h4>
-            <p>
-                Membership of tech tribes is based upon the content that you publish. If you want to join a specific tech tribe, you'll need to write some related content!
-            </p>
-
-            <h4>Business tribes</h4>
-            <p>
-                If you work for or help a business tribe, they will need to add you ... just ask the tribal leader to sign-in with the tribe's Twitter ID to manage its profile.
-            </p>
-        </div>
-
-    </div>
+    <h4>Business tribes</h4>
+    <p>
+        If you work for or help a business tribe, they will need to add you ... just ask the tribal leader to sign-in with the tribe's Twitter ID to manage its profile.
+    </p>
+    <c:forEach var="tribe" items="${memberOfBusiness}">
+        <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
+        <br />
+    </c:forEach>
 
     <p>
+        <br />
         <input type="submit" class="btn" value="Update" />
     </p>
 </form>

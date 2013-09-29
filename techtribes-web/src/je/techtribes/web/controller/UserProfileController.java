@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class UserProfileController extends AbstractController {
@@ -121,7 +123,7 @@ public class UserProfileController extends AbstractController {
                 }
             }
 
-            List<Integer> validatedPersonIds = new LinkedList<>();
+            Set<Integer> validatedPersonIds = new HashSet<>();
             for (Integer personId : personIds) {
                 ContentSource cs = contentSourceComponent.findById(personId);
                 if (cs.isPerson()) {

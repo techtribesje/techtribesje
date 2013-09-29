@@ -3,6 +3,7 @@ package je.techtribes.component.contentsource;
 import je.techtribes.domain.ContentSource;
 
 import java.util.List;
+import java.util.Set;
 
 interface ContentSourceDao {
 
@@ -12,8 +13,8 @@ interface ContentSourceDao {
 
     public void update(ContentSource contentSource);
 
-    public void updateTribeMembers(ContentSource tribe, List<Integer> personIds);
+    public void updateTribeMembers(ContentSource tribe, Set<Integer> personIds);
 
-    public void updateTribeMembershipsForPerson(ContentSource person, List<Integer> tribeIds);
+    public void updateTribeMembershipsForPerson(ContentSource person, Set<Integer> tribeIds);
 
 }

@@ -20,9 +20,9 @@ public interface SearchComponent {
 
     List<SearchResult> searchForNewsFeedEntries(String query, int hitsPerPage, int page);
 
-    List<SearchResult> searchForTweets(String query, int hitsPerPage);
+    List<SearchResult> searchForTweets(String query, int hitsPerPage, int page);
 
-    List<SearchResult> searchForAll(String query, int hitsPerPage);
+    List<SearchResult> searchForAll(String query, int hitsPerPage, int page);
 
     void clearSearchIndex();
 

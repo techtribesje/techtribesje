@@ -6,7 +6,7 @@
 
 <div class="contentSection">
     <div class="subSectionHeading">Blog entries, etc</div>
-    <%@ include file="/WEB-INF/fragments/searchResults.jspf" %>
+    <%@ include file="/WEB-INF/fragments/newsFeedEntries.jspf" %>
     </div>
 
     <c:if test="${not empty currentPage}">

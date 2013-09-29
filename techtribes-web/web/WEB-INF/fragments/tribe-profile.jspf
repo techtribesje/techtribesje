@@ -160,6 +160,9 @@
         <c:when test="${tribe.type eq 'Community'}">
             <h4>Run by <span class="badge">${tribe.numberOfMembers}</span></h4>
         </c:when>
+        <c:when test="${tribe.type eq 'Tech'}">
+            <h4>Members (based upon content and tweets) <span class="badge">${tribe.numberOfMembers}</span></h4>
+        </c:when>
         <c:otherwise>
             <h4>Members <span class="badge">${tribe.numberOfMembers}</span></h4>
         </c:otherwise>

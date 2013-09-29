@@ -200,12 +200,12 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
         return search(query, hitsPerPage, SearchResultType.NewsFeedEntry, page);
     }
 
-    public List<SearchResult> searchForTweets(String query, int hitsPerPage) {
-        return search(query, hitsPerPage, SearchResultType.Tweet, 1);
+    public List<SearchResult> searchForTweets(String query, int hitsPerPage, int page) {
+        return search(query, hitsPerPage, SearchResultType.Tweet, page);
     }
 
-    public List<SearchResult> searchForAll(String query, int hitsPerPage) {
-        return search(query, hitsPerPage, SearchResultType.All, 1);
+    public List<SearchResult> searchForAll(String query, int hitsPerPage, int page) {
+        return search(query, hitsPerPage, SearchResultType.All, page);
     }
 
     private List<SearchResult> search(String queryAsString, int hitsPerPage, SearchResultType type, int page) {
@@ -242,17 +242,19 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
                 case Tweet:
                 case All:
                     Sort sort = new Sort(new SortField[] { new SortField(TIMESTAMP, SortField.STRING, true) });
-                    hits = searcher.search(query, hitsPerPage, sort).scoreDocs;
+                    hits = searcher.search(query, hitsPerPage * page, sort).scoreDocs;
                     break;
                 default:
                     hits = searcher.search(query, hitsPerPage * page).scoreDocs;
-                    int offset = hitsPerPage * (page - 1);
-                    if (hits.length > offset) {
-                        hits = Arrays.copyOfRange(hits, offset, hits.length);
-                    } else {
-                        hits = new ScoreDoc[0];
-                    }
                     break;
+            }
+
+            // pagination of search results
+            int offset = hitsPerPage * (page - 1);
+            if (hits.length > offset) {
+                hits = Arrays.copyOfRange(hits, offset, hits.length);
+            } else {
+                hits = new ScoreDoc[0];
             }
 
             for (ScoreDoc hit : hits) {

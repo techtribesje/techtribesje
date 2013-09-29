@@ -55,11 +55,6 @@
                                 <li><a href="/search?q=%23digitaljersey">#digitaljersey</a></li>
                                 <li><a href="/search?q=%23bcsjersey">#bcsjersey</a></li>
                                 <li class="divider"></li>
-                                <li class="nav-header">Tweets by user</li>
-                                <li><a href="/search?q=@digitaljersey">@digitaljersey</a></li>
-                                <li><a href="/search?q=@bcsjersey">@bcsjersey</a></li>
-                                <li><a href="/search?q=@techtribesje">@techtribesje</a></li>
-                                <li class="divider"></li>
                                 <li class="nav-header">Content</li>
                                 <li><a href="/search?q=agile">Agile</a></li>
                                 <li><a href="/search?q=cloud">Cloud</a></li>
@@ -75,9 +70,6 @@
                                 <li><a href="/search?q=%22software%20architecture%22">Software architecture</a></li>
                                 <li><a href="/search?q=%22software%20development%22">Software development</a></li>
                                 <li><a href="/search?q=%22windows%20server%22">Windows Server</a></li>
-                                <li class="divider"></li>
-                                <li class="nav-header">Content and Tweets</li>
-                                <li><a href="/search?q=!gigabit">Gigabit</a></li>
                             </ul>
                         </li>
                     </ul>
