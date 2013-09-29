@@ -6,6 +6,7 @@ public class PageSize {
     public static final int RECENT_NEWS = 12;
     public static final int RECENT_TWEETS = 28;
     public static final int SEARCH_RESULTS = 99;
+    public static final int SEARCH_RESULTS_CONTENT = 12;
     public static final int RECENT_TALKS = 3;
     public static final int RECENT_JOBS = 6;
     public static final int RECENT_EVENTS = 3;

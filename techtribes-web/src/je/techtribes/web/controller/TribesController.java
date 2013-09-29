@@ -201,11 +201,21 @@ public class TribesController extends AbstractController {
 
         if (tribe.getType() == ContentSourceType.Tech) {
             String query = tribe.getSearchTerms();
-            List<SearchResult> searchResults = searchComponent.searchForNewsFeedEntries(query, 30);
+            int maxPage = Integer.MAX_VALUE;
+            page = PageSize.validatePage(page, maxPage);
+
+            List<SearchResult> searchResults = searchComponent.searchForNewsFeedEntries(query, PageSize.SEARCH_RESULTS_CONTENT, page);
             model.addAttribute("query", query);
             model.addAttribute("searchResults", searchResults);
             model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(searchResults).getStatistics());
-            setPageTitle(model, contentSource.getName(), "Content");
+            setPageTitle(model, contentSource.getName(), "Content", "Page " + page);
+
+            model.addAttribute("currentPage", page);
+            if (searchResults.size() < PageSize.SEARCH_RESULTS_CONTENT) {
+                model.addAttribute("maxPage", page);
+            } else {
+                model.addAttribute("maxPage", maxPage);
+            }
 
             return "tribe-content-search";
         } else {

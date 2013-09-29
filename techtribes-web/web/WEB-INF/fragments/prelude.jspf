@@ -58,11 +58,11 @@
                                 <li class="nav-header">Tweets by user</li>
                                 <li><a href="/search?q=@digitaljersey">@digitaljersey</a></li>
                                 <li><a href="/search?q=@bcsjersey">@bcsjersey</a></li>
+                                <li><a href="/search?q=@techtribesje">@techtribesje</a></li>
                                 <li class="divider"></li>
                                 <li class="nav-header">Content</li>
-                                <li><a href="/search?q=agile">agile</a></li>
-                                <li><a href="/search?q=architecture">architecture</a></li>
-                                <li><a href="/search?q=cloud">cloud</a></li>
+                                <li><a href="/search?q=agile">Agile</a></li>
+                                <li><a href="/search?q=cloud">Cloud</a></li>
                                 <li><a href="/search?q=crm">CRM</a></li>
                                 <li><a href="/search?q=%22digital%20jersey%22">Digital Jersey</a></li>
                                 <li><a href="/search?q=fatca">FATCA</a></li>
@@ -72,7 +72,8 @@
                                 <li><a href="/search?q=sharepoint">SharePoint</a></li>
                                 <li><a href="/search?q=sharepoint%20AND%20crm">SharePoint and CRM</a></li>
                                 <li><a href="/search?q=%22social%20media%22">Social Media</a></li>
-                                <li><a href="/search?q=software">software</a></li>
+                                <li><a href="/search?q=%22software%20architecture%22">Software architecture</a></li>
+                                <li><a href="/search?q=%22software%20development%22">Software development</a></li>
                                 <li><a href="/search?q=%22windows%20server%22">Windows Server</a></li>
                                 <li class="divider"></li>
                                 <li class="nav-header">Content and Tweets</li>
@@ -126,7 +127,14 @@
                 </p>
                 <div>
                     <form class="form-search" action="/search">
-                        <input name="q" type="text" value="${param['q']}" class="search-query input-xlarge" placeholder="Search">
+                        <select id="findExpertsDropDown" class="input-xlarge">
+                            <option value="">Find me people who know about...</option>
+                            <c:forEach var="techTribe" items="${techTribes}">
+                                <option value="${techTribe.shortName}">${techTribe.name}</option>
+                            </c:forEach>
+                        </select>
+                        &nbsp;or&nbsp;
+                        <input name="q" type="text" value="${param['q']}" class="search-query input-xlarge" placeholder="Search...">
                     </form>
                 </div>
             </div>
@@ -135,4 +143,9 @@
         <script>
             // todo: hack to get Twitter Boostrap dropdowns working on mobile devices ... remove when fixed!
             $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+
+
+            $("#findExpertsDropDown").change(function() {
+                window.location.href = "/tribes/" + $("#findExpertsDropDown option:selected").val();
+            });
         </script>

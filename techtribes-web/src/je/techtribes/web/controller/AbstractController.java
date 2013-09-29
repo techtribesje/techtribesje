@@ -3,6 +3,7 @@ package je.techtribes.web.controller;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.ContentSourceType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.ModelMap;
@@ -24,6 +25,7 @@ public class AbstractController {
 
     protected void addCommonAttributes(ModelMap model) {
         model.addAttribute("peopleAndTribes", contentSourceComponent.getPeopleAndTribes());
+        model.addAttribute("techTribes", contentSourceComponent.getContentSources(ContentSourceType.Tech));
 
         if (SecurityContextHolder.getContext().getAuthentication() != null) {
             model.addAttribute("user", lookupContentSourceBySignedInTwitterId());

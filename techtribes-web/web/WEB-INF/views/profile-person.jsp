@@ -17,23 +17,17 @@
             <h3>You're a member</h3>
             <h4>Community tribes</h4>
             <c:forEach var="tribe" items="${memberOfSocial}">
-                <label class="checkbox">
-                    <input type="checkbox" name="tribe" value="${tribe.id}" checked="true" /> <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
-                </label>
+                <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
             </c:forEach>
 
             <h4>Tech tribes</h4>
             <c:forEach var="tribe" items="${memberOfTech}">
-                <label class="checkbox">
-                    <input type="checkbox" name="tribe" value="${tribe.id}" checked="true" /> <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
-                </label>
+                    <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
             </c:forEach>
 
             <h4>Business tribes</h4>
             <c:forEach var="tribe" items="${memberOfBusiness}">
-                <label class="checkbox">
-                    <input type="checkbox" name="tribe" value="${tribe.id}" checked="true" /> <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
-                </label>
+                <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
             </c:forEach>
         </div>
 
@@ -41,11 +35,9 @@
             <h3>You're not a member</h3>
 
             <h4>Tech tribes</h4>
-            <c:forEach var="tribe" items="${notMemberOfTech}">
-                <label class="checkbox">
-                    <input type="checkbox" name="tribe" value="${tribe.id}" /> <img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" /> ${tribe.name}
-                </label>
-            </c:forEach>
+            <p>
+                Membership of tech tribes is based upon the content that you publish. If you want to join a specific tech tribe, you'll need to write some related content!
+            </p>
 
             <h4>Business tribes</h4>
             <p>

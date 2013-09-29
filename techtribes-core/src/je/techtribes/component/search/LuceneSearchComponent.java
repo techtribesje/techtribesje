@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -195,19 +196,19 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
         return doc;
     }
 
-    public List<SearchResult> searchForNewsFeedEntries(String query, int hitsPerPage) {
-        return search(query, hitsPerPage, SearchResultType.NewsFeedEntry);
+    public List<SearchResult> searchForNewsFeedEntries(String query, int hitsPerPage, int page) {
+        return search(query, hitsPerPage, SearchResultType.NewsFeedEntry, page);
     }
 
     public List<SearchResult> searchForTweets(String query, int hitsPerPage) {
-        return search(query, hitsPerPage, SearchResultType.Tweet);
+        return search(query, hitsPerPage, SearchResultType.Tweet, 1);
     }
 
     public List<SearchResult> searchForAll(String query, int hitsPerPage) {
-        return search(query, hitsPerPage, SearchResultType.All);
+        return search(query, hitsPerPage, SearchResultType.All, 1);
     }
 
-    private List<SearchResult> search(String queryAsString, int hitsPerPage, SearchResultType type) {
+    private List<SearchResult> search(String queryAsString, int hitsPerPage, SearchResultType type, int page) {
         logDebug("Seaching for " + queryAsString);
         List<SearchResult> contentResults = new LinkedList<>();
 
@@ -244,7 +245,13 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
                     hits = searcher.search(query, hitsPerPage, sort).scoreDocs;
                     break;
                 default:
-                    hits = searcher.search(query, hitsPerPage).scoreDocs;
+                    hits = searcher.search(query, hitsPerPage * page).scoreDocs;
+                    int offset = hitsPerPage * (page - 1);
+                    if (hits.length > offset) {
+                        hits = Arrays.copyOfRange(hits, offset, hits.length);
+                    } else {
+                        hits = new ScoreDoc[0];
+                    }
                     break;
             }
 

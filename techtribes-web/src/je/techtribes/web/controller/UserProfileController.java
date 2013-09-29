@@ -130,29 +130,6 @@ public class UserProfileController extends AbstractController {
             }
 
             contentSourceComponent.updateTribeMembers(tribe, validatedPersonIds);
-        } else {
-            Person person = (Person)contentSource;
-            List<Integer> tribeIds = new LinkedList<>();
-            String[] parameters = request.getParameterValues("tribe");
-            if (parameters != null) {
-                for (String param : parameters) {
-                    try {
-                        tribeIds.add(Integer.parseInt(param));
-                    } catch (NumberFormatException e) {
-                        // do nothing
-                    }
-                }
-            }
-
-            List<Integer> validatedTribeIds = new LinkedList<>();
-            for (Integer tribeId : tribeIds) {
-                ContentSource cs = contentSourceComponent.findById(tribeId);
-                if (cs.isTribe()) {
-                    validatedTribeIds.add(tribeId);
-                }
-            }
-
-            contentSourceComponent.updateTribeMembershipsForPerson(person, validatedTribeIds);
         }
 
         return "redirect:/user/profile";
