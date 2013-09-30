@@ -19,6 +19,7 @@
                             <a href="<techtribesje:goto contentSource="${talk.contentSource}"/>"><img src="${talk.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${talk.contentSource.name}" /></a> <img src="<techtribesje:flag name="${talk.country}" />" alt="${talk.country}" title="${talk.country}" />
                         </div>
                         ${talk.eventName}<br />
+                        ${talk.city}, ${talk.country}<br />
                         ${talk.type} | <techtribesje:date date="${talk.date}" showTime="false" />
                     </div>
                 </div>
