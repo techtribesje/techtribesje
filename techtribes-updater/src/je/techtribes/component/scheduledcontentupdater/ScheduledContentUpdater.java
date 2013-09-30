@@ -118,10 +118,4 @@ public class ScheduledContentUpdater extends AbstractComponent {
         badgeAwarder.awardBadgesForContentSource(contentSourceComponent.getPeopleAndTribes());
     }
 
-
-    public void updateTT() {
-        techTribeMembershipUpdater = new TechTribeMembershipUpdater(this, contentSourceComponent, searchComponent);
-        techTribeMembershipUpdater.update();
-    }
-
 }
