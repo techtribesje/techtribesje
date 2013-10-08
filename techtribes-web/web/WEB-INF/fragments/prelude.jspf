@@ -126,7 +126,7 @@
                             </c:forEach>
                         </select>
                         &nbsp;or&nbsp;
-                        <input name="q" type="text" value="${param['q']}" class="search-query input-xlarge" placeholder="Search...">
+                        <input name="q" type="text" value="<c:out value='${param["q"]}' escapeXml='true' />" class="search-query input-xlarge" placeholder="Search...">
                     </form>
                 </div>
             </div>
