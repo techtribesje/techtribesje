@@ -11,7 +11,7 @@ import java.util.*;
 
 class ContentSourceComponentImpl extends AbstractComponent implements ContentSourceComponent {
 
-    private ContentSourceDao contentSourceDao;
+    private JdbcContentSourceDao contentSourceDao;
     private UserConnectionDao userConnectionDao;
 
     private List<ContentSource> peopleAndTribes;

@@ -11,7 +11,7 @@ import java.util.List;
 
 class BadgeComponentImpl extends AbstractComponent implements BadgeComponent {
 
-    private BadgeDao badgeDao;
+    private JdbcBadgeDao badgeDao;
     private ContentSourceComponent contentSourceComponent;
 
     BadgeComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {

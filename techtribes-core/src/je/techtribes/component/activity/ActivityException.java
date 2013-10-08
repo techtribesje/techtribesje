@@ -7,4 +7,5 @@ public class ActivityException extends ComponentException {
     public ActivityException(String message, Throwable cause) {
         super(message, cause);
     }
+
 }

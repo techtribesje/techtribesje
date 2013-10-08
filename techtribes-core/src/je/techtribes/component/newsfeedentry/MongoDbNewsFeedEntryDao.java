@@ -8,7 +8,7 @@ import je.techtribes.util.MongoDatabaseConfiguration;
 
 import java.util.*;
 
-class MongoDbNewsFeedEntryDao implements NewsFeedEntryDao {
+class MongoDbNewsFeedEntryDao {
 
     private Mongo mongo;
     private String database;
@@ -29,7 +29,7 @@ class MongoDbNewsFeedEntryDao implements NewsFeedEntryDao {
         this.loggingComponent = loggingComponent;
     }
 
-    public void storeNewsFeedEntries(Collection<NewsFeedEntry> newsFeedEntries) {
+    void storeNewsFeedEntries(Collection<NewsFeedEntry> newsFeedEntries) {
         if (newsFeedEntries == null) {
             return;
         }
@@ -94,13 +94,13 @@ class MongoDbNewsFeedEntryDao implements NewsFeedEntryDao {
         return false;
     }
 
-    public List<NewsFeedEntry> getRecentNewsFeedEntries(int page, int pageSize) {
+    List<NewsFeedEntry> getRecentNewsFeedEntries(int page, int pageSize) {
         List<DBObject> dbos = getDBCollection().find().sort(new BasicDBObject(TIMESTAMP_KEY, -1)).skip((page - 1) * pageSize).limit(pageSize).toArray();
 
         return toListOfNewsFeedEntry(dbos);
     }
 
-    public List<NewsFeedEntry> getRecentNewsFeedEntries(ContentSource contentSource, int pageSize) {
+    List<NewsFeedEntry> getRecentNewsFeedEntries(ContentSource contentSource, int pageSize) {
         if (contentSource != null) {
             List<DBObject> dbos = getDBCollection().find(new BasicDBObject(CONTENT_SOURCE_ID_KEY, contentSource.getId())).sort(new BasicDBObject(TIMESTAMP_KEY, -1)).limit(pageSize).toArray();
 
@@ -110,15 +110,13 @@ class MongoDbNewsFeedEntryDao implements NewsFeedEntryDao {
         }
     }
 
-    @Override
-    public List<NewsFeedEntry> getRecentNewsFeedEntries(Collection<ContentSource> contentSources, int page, int pageSize) {
+    List<NewsFeedEntry> getRecentNewsFeedEntries(Collection<ContentSource> contentSources, int page, int pageSize) {
         List<DBObject> dbos = getDBCollection().find(new BasicDBObject(CONTENT_SOURCE_ID_KEY, new BasicDBObject("$in", getIds(contentSources)))).sort(new BasicDBObject(TIMESTAMP_KEY, -1)).skip((page - 1) * pageSize).limit(pageSize).toArray();
 
         return toListOfNewsFeedEntry(dbos);
     }
 
-    @Override
-    public long getNumberOfNewsFeedEntries(ContentSource contentSource, Date start, Date end) {
+    long getNumberOfNewsFeedEntries(ContentSource contentSource, Date start, Date end) {
         if (contentSource != null) {
             BasicDBObject query = new BasicDBObject();
             query.put(CONTENT_SOURCE_ID_KEY, contentSource.getId());
@@ -130,13 +128,11 @@ class MongoDbNewsFeedEntryDao implements NewsFeedEntryDao {
         }
     }
 
-    @Override
-    public long getNumberOfNewsFeedEntries() {
+    long getNumberOfNewsFeedEntries() {
         return getDBCollection().count();
     }
 
-    @Override
-    public long getNumberOfNewsFeedEntries(Collection<ContentSource> contentSources) {
+    long getNumberOfNewsFeedEntries(Collection<ContentSource> contentSources) {
         if (contentSources != null && contentSources.size() > 0) {
             return getDBCollection().find(new BasicDBObject(CONTENT_SOURCE_ID_KEY, new BasicDBObject("$in", getIds(contentSources)))).count();
         } else {

@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-class MongoDbTweetDao implements TweetDao {
+class MongoDbTweetDao {
 
     private Mongo mongo;
     private String database;
@@ -29,14 +29,12 @@ class MongoDbTweetDao implements TweetDao {
         this.database = mongoDatabaseConfiguration.getDatabase();
     }
 
-    @Override
-    public List<Tweet> getRecentTweets(int page, int pageSize) {
+    List<Tweet> getRecentTweets(int page, int pageSize) {
         List<DBObject> dbObjects = getDBCollection().find().sort(new BasicDBObject(TWEET_ID_KEY, -1)).skip((page - 1) * pageSize).limit(pageSize).toArray();
         return toTweets(dbObjects);
     }
 
-    @Override
-    public List<Tweet> getRecentTweets(ContentSource contentSource, int pageSize) {
+    List<Tweet> getRecentTweets(ContentSource contentSource, int pageSize) {
         if (contentSource != null) {
             List<DBObject> dbObjects = getDBCollection().find(new BasicDBObject(CONTENT_SOURCE_ID_KEY, contentSource.getId())).sort(new BasicDBObject(TWEET_ID_KEY, -1)).limit(pageSize).toArray();
             return toTweets(dbObjects);
@@ -45,8 +43,7 @@ class MongoDbTweetDao implements TweetDao {
         }
     }
 
-    @Override
-    public List<Tweet> getRecentTweets(Collection<ContentSource> contentSources, int page, int pageSize) {
+    List<Tweet> getRecentTweets(Collection<ContentSource> contentSources, int page, int pageSize) {
         if (contentSources != null && contentSources.size() > 0) {
             Collection<Integer> contentSourceIds = new ContentSourceToIdConverter().getIds(contentSources);
             List<DBObject> dbObjects = getDBCollection().find(new BasicDBObject(CONTENT_SOURCE_ID_KEY, new BasicDBObject("$in", contentSourceIds))).sort(new BasicDBObject(TWEET_ID_KEY, -1)).skip((page - 1) * pageSize).limit(pageSize).toArray();
@@ -56,13 +53,11 @@ class MongoDbTweetDao implements TweetDao {
         }
     }
 
-    @Override
-    public long getNumberOfTweets() {
+    long getNumberOfTweets() {
         return getDBCollection().count();
     }
 
-    @Override
-    public long getNumberOfTweets(ContentSource contentSource, Date start, Date end) {
+    long getNumberOfTweets(ContentSource contentSource, Date start, Date end) {
         if (contentSource != null) {
             BasicDBObject query = new BasicDBObject();
             query.put(CONTENT_SOURCE_ID_KEY, contentSource.getId());
@@ -73,8 +68,7 @@ class MongoDbTweetDao implements TweetDao {
         }
     }
 
-    @Override
-    public long getNumberOfTweets(Collection<ContentSource> contentSources) {
+    long getNumberOfTweets(Collection<ContentSource> contentSources) {
         if (contentSources != null && contentSources.size() > 0) {
             Collection<Integer> contentSourceIds = new ContentSourceToIdConverter().getIds(contentSources);
             return getDBCollection().find(new BasicDBObject(CONTENT_SOURCE_ID_KEY, new BasicDBObject("$in", contentSourceIds))).count();
@@ -83,13 +77,11 @@ class MongoDbTweetDao implements TweetDao {
         }
     }
 
-    @Override
-    public void removeTweet(long tweetId) {
+    void removeTweet(long tweetId) {
         getDBCollection().findAndRemove(new BasicDBObject(TWEET_ID_KEY, tweetId));
     }
 
-    @Override
-    public void storeTweets(Collection<Tweet> tweets) {
+    void storeTweets(Collection<Tweet> tweets) {
         if (tweets != null && tweets.size() > 0) {
             DBCollection coll = getDBCollection();
 

@@ -11,7 +11,7 @@ import java.util.List;
 
 class JobComponentImpl extends AbstractComponent implements JobComponent {
 
-    private JobDao jobDao;
+    private JdbcJobDao jobDao;
     private ContentSourceComponent contentSourceComponent;
 
     JobComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {

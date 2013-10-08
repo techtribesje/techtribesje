@@ -13,7 +13,7 @@ import java.util.List;
 
 class EventComponentImpl extends AbstractComponent implements EventComponent {
 
-    private EventDao eventDao;
+    private JdbcEventDao eventDao;
     private ContentSourceComponent contentSourceComponent;
 
     EventComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {

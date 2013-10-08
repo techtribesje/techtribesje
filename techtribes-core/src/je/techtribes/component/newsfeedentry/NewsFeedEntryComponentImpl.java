@@ -18,7 +18,7 @@ import java.util.List;
 class NewsFeedEntryComponentImpl extends AbstractComponent implements NewsFeedEntryComponent {
 
     private ContentSourceComponent contentSourceComponent;
-    private NewsFeedEntryDao newsFeedEntryDao;
+    private MongoDbNewsFeedEntryDao newsFeedEntryDao;
 
     NewsFeedEntryComponentImpl(MongoDatabaseConfiguration mongoDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
         this.contentSourceComponent = contentSourceComponent;

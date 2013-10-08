@@ -16,7 +16,7 @@ import java.util.List;
 
 class TalkComponentImpl extends AbstractComponent implements TalkComponent {
 
-    private TalkDao talkDao;
+    private JdbcTalkDao talkDao;
     private ContentSourceComponent contentSourceComponent;
 
     TalkComponentImpl(JdbcDatabaseConfiguration jdbcDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {

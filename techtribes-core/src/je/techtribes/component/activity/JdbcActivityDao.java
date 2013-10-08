@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 import java.util.Collection;
 import java.util.Date;
 
-public class JdbcActivityDao implements ActivityDao {
+public class JdbcActivityDao {
 
     private DataSource dataSource;
 
@@ -17,8 +17,7 @@ public class JdbcActivityDao implements ActivityDao {
         this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
-    @Override
-    public void storeActivity(Collection<Activity> activityCollection) {
+    void storeActivity(Collection<Activity> activityCollection) {
         Date now = DateUtils.getNow();
         for (Activity activity : activityCollection) {
             JdbcTemplate template = new JdbcTemplate(dataSource);
@@ -35,8 +34,7 @@ public class JdbcActivityDao implements ActivityDao {
         }
     }
 
-    @Override
-    public Collection<Activity> getRecentActivity() {
+    Collection<Activity> getRecentActivity() {
         JdbcTemplate select = new JdbcTemplate(dataSource);
         return select.query("select content_source_id, international_talks, local_talks, content, tweets, events, last_activity_datetime, activity_datetime from activity where activity_datetime = (select max(activity_datetime) from activity)",
                 new ActivityRowMapper());

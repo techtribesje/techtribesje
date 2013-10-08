@@ -23,7 +23,7 @@ class ActivityComponentImpl extends AbstractComponent implements ActivityCompone
     private TalkComponent talkComponent;
     private EventComponent eventComponent;
 
-    private ActivityDao activityDao;
+    private JdbcActivityDao activityDao;
 
     private Map<ContentSource, Activity> activitiesByContentSource = new HashMap<>();
     private List<Activity> activityListForPeople = new LinkedList<>();

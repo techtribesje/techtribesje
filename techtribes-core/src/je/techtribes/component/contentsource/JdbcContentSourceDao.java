@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 import java.util.*;
 
-class JdbcContentSourceDao implements ContentSourceDao {
+class JdbcContentSourceDao {
 
     private DataSource dataSource;
 
@@ -18,8 +18,7 @@ class JdbcContentSourceDao implements ContentSourceDao {
         this.dataSource = jdbcDatabaseConfiguration.getDataSource();
     }
 
-    @Override
-    public List<ContentSource> loadContentSources() {
+    List<ContentSource> loadContentSources() {
         JdbcTemplate select = new JdbcTemplate(dataSource);
         List<ContentSource> contentSources = select.query("select id, name, twitter_id, github_id, island, type, feed_url1, feed_url2, feed_url3, profile_text, profile_image_url, url, content_aggregated, twitter_followers, search_terms from content_source order by name asc",
                 new ContentSourceRowMapper());
@@ -49,8 +48,7 @@ class JdbcContentSourceDao implements ContentSourceDao {
         return contentSources;
     }
 
-    @Override
-    public void add(ContentSource contentSource) {
+    void add(ContentSource contentSource) {
         JdbcTemplate insert = new JdbcTemplate(dataSource);
         insert.update("insert into content_source (name, twitter_id, github_id, island, type, profile_text, profile_image_url, url, feed_url1, feed_url2, feed_url3, content_aggregated, search_terms) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             contentSource.getName(),
@@ -68,8 +66,7 @@ class JdbcContentSourceDao implements ContentSourceDao {
             contentSource.getSearchTerms());
     }
 
-    @Override
-    public void update(ContentSource contentSource) {
+    void update(ContentSource contentSource) {
         JdbcTemplate update = new JdbcTemplate(dataSource);
         update.update("update content_source set profile_text = ?, profile_image_url = ?, url = ?, twitter_followers = ?, github_id = ? where id = ?",
             contentSource.getProfile(),
@@ -80,8 +77,7 @@ class JdbcContentSourceDao implements ContentSourceDao {
             contentSource.getId());
     }
 
-    @Override
-    public void updateTribeMembers(ContentSource tribe, Set<Integer> personIds) {
+    void updateTribeMembers(ContentSource tribe, Set<Integer> personIds) {
         JdbcTemplate template = new JdbcTemplate(dataSource);
         template.update("delete from tribe_member where tribe_id = ?",
                 tribe.getId());
@@ -92,8 +88,7 @@ class JdbcContentSourceDao implements ContentSourceDao {
         }
     }
 
-    @Override
-    public void updateTribeMembershipsForPerson(ContentSource person, Set<Integer> tribeIds) {
+    void updateTribeMembershipsForPerson(ContentSource person, Set<Integer> tribeIds) {
         JdbcTemplate template = new JdbcTemplate(dataSource);
         template.update("delete from tribe_member where person_id = ?",
                 person.getId());

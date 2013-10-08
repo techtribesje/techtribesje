@@ -11,7 +11,7 @@ import java.util.List;
 class GitHubComponentImpl extends AbstractComponent implements GitHubComponent {
 
     private ContentSourceComponent contentSourceComponent;
-    private GitHubRepositoryDao gitHubRepositoryDao;
+    private JdbcGitHubRepositoryDao gitHubRepositoryDao;
 
     GitHubComponentImpl(ContentSourceComponent contentSourceComponent, JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
         this.contentSourceComponent = contentSourceComponent;

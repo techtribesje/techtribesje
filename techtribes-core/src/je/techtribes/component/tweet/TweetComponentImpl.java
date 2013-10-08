@@ -16,7 +16,7 @@ import java.util.List;
 class TweetComponentImpl extends AbstractComponent implements TweetComponent {
 
     private ContentSourceComponent contentSourceComponent;
-    private TweetDao tweetDao;
+    private MongoDbTweetDao tweetDao;
 
     public TweetComponentImpl(MongoDatabaseConfiguration mongoDatabaseConfiguration, ContentSourceComponent contentSourceComponent) {
         this.tweetDao = new MongoDbTweetDao(mongoDatabaseConfiguration);
