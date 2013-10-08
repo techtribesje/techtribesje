@@ -3,5 +3,4 @@ build
 *.log
 *.class
 build.number
-etc/build.properties
 techtribesje.iws
