@@ -262,14 +262,34 @@
     </target>
 
     <target name="structure" depends="init">
-        <javac srcdir="${core.dir}/src" destdir="${core.build.dir}/production-classes" debug="yes">
+        <javac srcdir="${core.dir}/src" debug="yes">
             <compilerarg value="-proc:only"/>
-            <compilerarg line="-processorpath /Users/simon/sandbox/structural-elements-of-software/java/out/production/elements"/>
+            <compilerarg line="-processorpath ${production.lib.dir}/seos.jar"/>
             <compilerarg line="-processor com.codingthearchitecture.seos.AnnotationProcessor"/>
             <classpath>
                 <fileset dir="${production.lib.dir}">
                     <include name="*.jar"/>
                 </fileset>
+            </classpath>
+        </javac>
+
+        <javac srcdir="${core.dir}/src" destdir="${core.build.dir}/production-classes" debug="yes">
+            <classpath>
+                <fileset dir="${production.lib.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+
+        <javac srcdir="${updater.dir}/src" debug="yes" includeantruntime="false">
+            <compilerarg value="-proc:only"/>
+            <compilerarg line="-processorpath ${production.lib.dir}/seos.jar"/>
+            <compilerarg line="-processor com.codingthearchitecture.seos.AnnotationProcessor"/>
+            <classpath>
+                <fileset dir="${production.lib.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+                <pathelement location="${core.build.dir}/production-classes" />
             </classpath>
         </javac>
     </target>

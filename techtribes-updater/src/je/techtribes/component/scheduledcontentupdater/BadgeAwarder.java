@@ -10,13 +10,13 @@ import je.techtribes.domain.badge.*;
 import java.util.List;
 import java.util.Set;
 
-public class BadgeAwarder {
+class BadgeAwarder {
 
-    private final ScheduledContentUpdater scheduledContentUpdater;
+    private final ScheduledContentUpdaterImpl scheduledContentUpdater;
 
     private BadgeComponent badgeComponent;
 
-    public BadgeAwarder(ScheduledContentUpdater scheduledContentUpdater, BadgeComponent badgeComponent) {
+    public BadgeAwarder(ScheduledContentUpdaterImpl scheduledContentUpdater, BadgeComponent badgeComponent) {
         this.scheduledContentUpdater = scheduledContentUpdater;
         this.badgeComponent = badgeComponent;
     }

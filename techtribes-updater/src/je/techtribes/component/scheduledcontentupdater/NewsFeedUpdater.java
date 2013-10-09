@@ -12,7 +12,7 @@ import java.util.List;
 
 class NewsFeedUpdater {
 
-    private final ScheduledContentUpdater scheduledContentUpdater;
+    private final ScheduledContentUpdaterImpl scheduledContentUpdater;
 
     private final ContentSourceComponent contentSourceComponent;
     private final NewsFeedEntryComponent newsFeedEntryComponent;
@@ -20,7 +20,7 @@ class NewsFeedUpdater {
 
     private final NewsFeedConnector newsFeedConnector;
 
-    NewsFeedUpdater(ScheduledContentUpdater scheduledContentUpdater, ContentSourceComponent contentSourceComponent, NewsFeedConnector newsFeedConnector, NewsFeedEntryComponent newsFeedEntryComponent, SearchComponent searchComponent) {
+    NewsFeedUpdater(ScheduledContentUpdaterImpl scheduledContentUpdater, ContentSourceComponent contentSourceComponent, NewsFeedConnector newsFeedConnector, NewsFeedEntryComponent newsFeedEntryComponent, SearchComponent searchComponent) {
         this.scheduledContentUpdater = scheduledContentUpdater;
         this.contentSourceComponent = contentSourceComponent;
         this.newsFeedConnector = newsFeedConnector;

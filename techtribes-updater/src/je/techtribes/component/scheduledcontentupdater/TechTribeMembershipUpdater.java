@@ -9,15 +9,15 @@ import je.techtribes.domain.Tribe;
 
 import java.util.*;
 
-public class TechTribeMembershipUpdater {
+class TechTribeMembershipUpdater {
 
     private static final int PAGE_SIZE = 100;
 
-    private final ScheduledContentUpdater scheduledContentUpdater;
+    private final ScheduledContentUpdaterImpl scheduledContentUpdater;
     private final ContentSourceComponent contentSourceComponent;
     private final SearchComponent searchComponent;
 
-    TechTribeMembershipUpdater(ScheduledContentUpdater scheduledContentUpdater, ContentSourceComponent contentSourceComponent, SearchComponent searchComponent) {
+    TechTribeMembershipUpdater(ScheduledContentUpdaterImpl scheduledContentUpdater, ContentSourceComponent contentSourceComponent, SearchComponent searchComponent) {
         this.scheduledContentUpdater = scheduledContentUpdater;
         this.contentSourceComponent = contentSourceComponent;
         this.searchComponent = searchComponent;

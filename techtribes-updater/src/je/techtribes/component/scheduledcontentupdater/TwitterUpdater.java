@@ -15,7 +15,7 @@ import java.util.List;
 
 class TwitterUpdater {
 
-    private final ScheduledContentUpdater scheduledContentUpdater;
+    private final ScheduledContentUpdaterImpl scheduledContentUpdater;
 
     private final ContentSourceComponent contentSourceComponent;
     private final TweetComponent tweetComponent;
@@ -23,7 +23,7 @@ class TwitterUpdater {
 
     private TwitterConnector twitterConnector;
 
-    TwitterUpdater(ScheduledContentUpdater scheduledContentUpdater, ContentSourceComponent contentSourceComponent, TweetComponent tweetComponent, SearchComponent searchComponent, TwitterConnector twitterConnector) {
+    TwitterUpdater(ScheduledContentUpdaterImpl scheduledContentUpdater, ContentSourceComponent contentSourceComponent, TweetComponent tweetComponent, SearchComponent searchComponent, TwitterConnector twitterConnector) {
         this.scheduledContentUpdater = scheduledContentUpdater;
         this.contentSourceComponent = contentSourceComponent;
         this.tweetComponent = tweetComponent;

@@ -37,7 +37,14 @@ public class Main {
             System.exit(0);
         }
 
-        ScheduledContentUpdater scu = (ScheduledContentUpdater)applicationContext.getBean("contentUpdater");
+        final ScheduledContentUpdater scu = (ScheduledContentUpdater)applicationContext.getBean("contentUpdater");
+
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+                 public void run() {
+                     scu.stop();
+                 }
+             });
+
         scu.start();
     }
 

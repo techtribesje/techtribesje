@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="contentUpdater" class="je.techtribes.component.scheduledcontentupdater.ScheduledContentUpdater" destroy-method="stop" scope="singleton">
+    <bean id="contentUpdater" class="je.techtribes.component.scheduledcontentupdater.ScheduledContentUpdaterImpl" destroy-method="stop" scope="singleton">
         <constructor-arg name="contentSourceComponent" ref="contentSourceComponent" />
         <constructor-arg name="gitHubComponent" ref="gitHubComponent" />
         <constructor-arg name="tweetComponent" ref="tweetComponent" />

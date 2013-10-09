@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 import java.util.Collection;
 import java.util.Date;
 
-public class JdbcActivityDao {
+class JdbcActivityDao {
 
     private DataSource dataSource;
 

@@ -7,14 +7,14 @@ import je.techtribes.domain.ContentSource;
 
 class GitHubUpdater {
 
-    private final ScheduledContentUpdater scheduledContentUpdater;
+    private final ScheduledContentUpdaterImpl scheduledContentUpdater;
 
     private final ContentSourceComponent contentSourceComponent;
     private final GitHubComponent gitHubComponent;
 
     private final GitHubConnector gitHubConnector;
 
-    GitHubUpdater(ScheduledContentUpdater scheduledContentUpdater, ContentSourceComponent contentSourceComponent, GitHubComponent gitHubComponent, GitHubConnector gitHubConnector) {
+    GitHubUpdater(ScheduledContentUpdaterImpl scheduledContentUpdater, ContentSourceComponent contentSourceComponent, GitHubComponent gitHubComponent, GitHubConnector gitHubConnector) {
         this.scheduledContentUpdater = scheduledContentUpdater;
         this.contentSourceComponent = contentSourceComponent;
         this.gitHubComponent = gitHubComponent;
