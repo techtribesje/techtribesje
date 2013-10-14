@@ -1,4 +1,4 @@
-package je.techtribes.component.talk;
+package je.techtribes.domain;
 
 public enum TalkType {
 

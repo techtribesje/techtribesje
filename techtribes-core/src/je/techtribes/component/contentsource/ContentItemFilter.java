@@ -1,4 +1,4 @@
-package je.techtribes.util;
+package je.techtribes.component.contentsource;
 
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.log.LoggingComponentFactory;

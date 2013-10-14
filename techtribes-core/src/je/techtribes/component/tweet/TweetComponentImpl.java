@@ -4,7 +4,7 @@ import je.techtribes.component.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
-import je.techtribes.util.ContentItemFilter;
+import je.techtribes.component.contentsource.ContentItemFilter;
 import je.techtribes.util.ContentSourceCollectionFormatter;
 import je.techtribes.util.MongoDatabaseConfiguration;
 import je.techtribes.util.PageSize;
