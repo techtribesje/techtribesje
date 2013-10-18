@@ -1,7 +1,8 @@
-
-        <hr />
-
         <footer>
+            <h4>
+                techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands
+            </h4>
+
             <c:if test="${empty pageContext.request.userPrincipal}">
                 <form action="/signin/twitter" method="POST">
                     <input type="image" src="/static/img/sign-in-with-twitter-gray.png" alt="Sign in with Twitter" />

@@ -1,15 +1,13 @@
 <div class="${job.contentSource.shortName} highlightableContent job">
-    <div class="title">
+    <h3>
+        <a href="<techtribesje:goto contentSource="${job.contentSource}"/>"><img src="${job.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
         <a href="${job.url}" target="_blank">${job.title}</a>
-    </div>
+    </h3>
     ${job.truncatedDescription}
-    <br /><br />
+    <br />
     <div class="metadata">
-        <div style="float: left;">
-            <a href="<techtribesje:goto contentSource="${job.contentSource}"/>"><img src="${job.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
-            <img src="<techtribesje:flag name="${job.island}" />" alt="${job.island}" title="${job.island}" />
-        </div>
-        <a href="<techtribesje:goto contentSource="${job.contentSource}"/>">${job.contentSource.name}</a><br />
+        <img src="<techtribesje:flag name="${job.island}" />" alt="${job.island}" title="${job.island}" />
+        &nbsp;
         Posted <techtribesje:date date="${job.datePosted}" showTime="false" />
     </div>
 </div>

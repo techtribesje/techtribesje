@@ -1,41 +1,18 @@
 <c:forEach var="tribe" items="${tribes}" varStatus="status">
-    <div class="row tribe <c:if test="${not tribe.active}">faded</c:if>">
-        <div class="span1">
-            <a href="/tribes/${tribe.shortName}"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
+    <c:if test="${status.index % 3 == 0}">
+        <div class="row">
+    </c:if>
+            <div class="span4">
+                <%@ include file="/WEB-INF/fragments/tribe-summary.jspf" %>
+            </div>
+    <c:if test="${status.index % 3 == 2}">
         </div>
-        <div class="span11">
-            <a href="/tribes/${tribe.shortName}">${tribe.name}</a>
+    </c:if>
 
-            <c:if test="${not empty tribe.twitterId}">
-                - <a href="http://twitter.com/${tribe.twitterId}" target="_blank">@${tribe.twitterId}</a>
-                <c:choose>
-                    <c:when test="${tribe.twitterFollowersCount >= 1000}">
-                        <a href="http://twitter.com/${tribe.twitterId}" target="_blank"><span class="badge badge-followersover1000">${tribe.twitterFollowersCount} followers</span></a>
-                    </c:when>
-                    <c:when test="${tribe.twitterFollowersCount >= 500}">
-                        <a href="http://twitter.com/${tribe.twitterId}" target="_blank"><span class="badge badge-followersover500">${tribe.twitterFollowersCount} followers</span></a>
-                    </c:when>
-                    <c:when test="${tribe.twitterFollowersCount == 0}">
-                        <a href="http://twitter.com/${tribe.twitterId}" target="_blank"><span class="badge badge-followers0">${tribe.twitterFollowersCount} followers</span></a>
-                    </c:when>
-                    <c:otherwise>
-                        <a href="http://twitter.com/${tribe.twitterId}" target="_blank"><span class="badge badge-followersunder500">${tribe.twitterFollowersCount} followers</span></a>
-                    </c:otherwise>
-                </c:choose>
-            </c:if>
-
-
-            <c:if test="${not empty tribe.members}"><a href="/tribes/${tribe.shortName}"></a></c:if>
-            <c:if test="${not empty tribe.profile}">
-            <p>
-                ${tribe.profile}
-            </p>
-            </c:if>
-            <p>
-                <c:forEach var="person" items="${tribe.members}">
-                    <a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImageSmall <c:if test="${not person.active}">faded</c:if>" title="${person.name}" /></a>
-                </c:forEach>
-            </p>
+    <c:if test="${status.last and status.index % 3 ne 2}">
+        <c:forEach begin="1" end="${2-(status.index % 3)}">
+            <div class="span4">&nbsp;</div>
+        </c:forEach>
         </div>
-    </div>
+    </c:if>
 </c:forEach>

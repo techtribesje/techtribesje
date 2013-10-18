@@ -1,15 +1,12 @@
 <c:set var="person" value="${newsFeedEntry.contentSource}" />
 <div class="${newsFeedEntry.contentSource.shortName} highlightableContent newsFeedEntry">
-    <div class="title">
+    <h3>
+        <a href="<techtribesje:goto contentSource="${newsFeedEntry.contentSource}"/>"><img src="${newsFeedEntry.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
         <a href="${newsFeedEntry.permalink}" target="_blank">${newsFeedEntry.title}</a>
-    </div>
+    </h3>
     ${newsFeedEntry.truncatedBody}
     <br /><br />
     <div class="metadata">
-        <div style="float: left;">
-            <a href="<techtribesje:goto contentSource="${newsFeedEntry.contentSource}"/>"><img src="${newsFeedEntry.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
-        </div>
-        <a href="<techtribesje:goto contentSource="${newsFeedEntry.contentSource}"/>">${newsFeedEntry.contentSource.name}</a><br />
-        <techtribesje:date date="${newsFeedEntry.timestamp}"/>
+        Posted <techtribesje:date date="${newsFeedEntry.timestamp}"/>
     </div>
 </div>

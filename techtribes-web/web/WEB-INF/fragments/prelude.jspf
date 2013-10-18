@@ -27,117 +27,82 @@
 
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <!-- <a class="brand" href="/">techtribes.je</a> -->
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li><a href="/"><i class="icon-home icon-white"></i></a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/events/year/2013">Events</a></li>
-                        <li><a href="/talks/year/2013">Talks</a></li>
-                        <li><a href="/content">Content</a></li>
-                        <li><a href="/tweets">Tweets</a></li>
-                        <li><a href="/code">Code</a></li>
-                        <li><a href="/people">People</a></li>
-                        <li><a href="/tribes">Tribes</a></li>
-                        <li><a href="/jobs">Jobs</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Find <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-header">Tweets by hashtag</li>
-                                <li><a href="/search?q=%23digitaljersey">#digitaljersey</a></li>
-                                <li><a href="/search?q=%23bcsjersey">#bcsjersey</a></li>
-                                <li class="divider"></li>
-                                <li class="nav-header">Content</li>
-                                <li><a href="/search?q=agile">Agile</a></li>
-                                <li><a href="/search?q=cloud">Cloud</a></li>
-                                <li><a href="/search?q=crm">CRM</a></li>
-                                <li><a href="/search?q=%22digital%20jersey%22">Digital Jersey</a></li>
-                                <li><a href="/search?q=fatca">FATCA</a></li>
-                                <li><a href="/search?q=microsoft">Microsoft</a></li>
-                                <li><a href="/search?q=%22open%20source%22">Open Source</a></li>
-                                <li><a href="/search?q=security">Security</a></li>
-                                <li><a href="/search?q=sharepoint">SharePoint</a></li>
-                                <li><a href="/search?q=sharepoint%20AND%20crm">SharePoint and CRM</a></li>
-                                <li><a href="/search?q=%22social%20media%22">Social Media</a></li>
-                                <li><a href="/search?q=%22software%20architecture%22">Software architecture</a></li>
-                                <li><a href="/search?q=%22software%20development%22">Software development</a></li>
-                                <li><a href="/search?q=%22windows%20server%22">Windows Server</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <c:if test="${not empty user}">
-                    <ul class="nav pull-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="${user.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${user.name}" /> ${user.name} <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-header">User</li>
-                                <li><a href="<techtribesje:goto contentSource="${user}" />">View Profile</a></li>
-                                <li><a href="/user/profile">Edit Profile</a></li>
-                                <%
-                                    if (request.isUserInRole("admin")) {
-                                %>
-                                <li class="divider"></li>
-                                <li class="nav-header">Admin</li>
-                                <li><a href="/admin/add">Add person/tribe</a></li>
-                                <li><a href="/admin/status">Status</a></li>
-                                <%
-                                    }
-                                %>
-                                <li class="divider"></li>
-                                <li><a href="/signout">Sign out</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    </c:if>
-                </div><!--/.nav-collapse -->
+    <c:if test="${not empty user}">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <!-- <a class="brand" href="/">techtribes.je</a> -->
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="/"><i class="icon-home icon-white"></i></a></li>
+                        <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="${user.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${user.name}" /> ${user.name} <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-header">User</li>
+                                    <li><a href="<techtribesje:goto contentSource="${user}" />">View Profile</a></li>
+                                    <li><a href="/user/profile">Edit Profile</a></li>
+                                    <%
+                                        if (request.isUserInRole("admin")) {
+                                    %>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Admin</li>
+                                    <li><a href="/admin/add">Add person/tribe</a></li>
+                                    <li><a href="/admin/status">Status</a></li>
+                                    <%
+                                        }
+                                    %>
+                                    <li class="divider"></li>
+                                    <li><a href="/signout">Sign out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
             </div>
         </div>
-    </div>
+    </c:if>
 
     <div class="forkMe hidden-phone">
         <a href="https://github.com/techtribesje/techtribesje" target="_blank"><img src="/static/img/github-forkme.png" alt="Fork me on GitHub"></a>
     </div>
 
-    <div class="container">
+    <div>
 
         <div class="siteHeader">
-            <a href="/"><img src="/static/img/siteHeaderMonkey.png" alt="Monkey" style="float: left;"/></a>
-            <div style="text-align: center;">
-                <div class="siteHeaderTagLine">
-                    tech tribe: a group of people with a common technology interest
+            <div class="container">
+                <a href="/"><img src="/static/img/siteHeaderMonkey.png" alt="Monkey" style="float: left;"/></a>
+                <div style="text-align: center;">
+                    <div id="headerNavigation">
+                        <a href="/news" class="newsLink">News</a>
+                        <a href="/events/year/2013" class="eventsLink">Events</a>
+                        <a href="/talks/year/2013" class="talksLink">Talks</a>
+                        <a href="/content" class="contentLink">Content</a>
+                        <a href="/tweets" class="tweetsLink">Tweets</a>
+                        <a href="/code">Code</a>
+                        <a href="/people">People</a>
+                        <a href="/tribes">Tribes</a>
+                        <a href="/jobs" class="jobsLink">Jobs</a>
+                    </div>
+                    <div>
+                        <form class="form-search" action="/search">
+                            <select id="findExpertsDropDown" class="input-xlarge">
+                                <option value="">Find me people who know about...</option>
+                                <c:forEach var="techTribe" items="${techTribes}">
+                                    <option value="${techTribe.shortName}">${techTribe.name}</option>
+                                </c:forEach>
+                            </select>
+                            &nbsp;or&nbsp;
+                            <input name="q" type="text" value="<c:out value='${param["q"]}' escapeXml='true' />" class="search-query input-xlarge" placeholder="Search...">
+                        </form>
+                    </div>
                 </div>
-                <p>
-                    techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands
-                </p>
-                <div>
-                    <form class="form-search" action="/search">
-                        <select id="findExpertsDropDown" class="input-xlarge">
-                            <option value="">Find me people who know about...</option>
-                            <c:forEach var="techTribe" items="${techTribes}">
-                                <option value="${techTribe.shortName}">${techTribe.name}</option>
-                            </c:forEach>
-                        </select>
-                        &nbsp;or&nbsp;
-                        <input name="q" type="text" value="<c:out value='${param["q"]}' escapeXml='true' />" class="search-query input-xlarge" placeholder="Search...">
-                    </form>
-                </div>
+
+                <%@ include file="/WEB-INF/fragments/mostActive.jspf" %>
             </div>
         </div>
-
-        <script>
-            // todo: hack to get Twitter Boostrap dropdowns working on mobile devices ... remove when fixed!
-            $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-
-
-            $("#findExpertsDropDown").change(function() {
-                window.location.href = "/tribes/" + $("#findExpertsDropDown option:selected").val();
-            });
-        </script>

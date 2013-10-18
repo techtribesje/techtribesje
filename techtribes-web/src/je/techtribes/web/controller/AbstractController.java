@@ -1,5 +1,6 @@
 package je.techtribes.web.controller;
 
+import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.domain.ContentSource;
@@ -12,10 +13,16 @@ public class AbstractController {
 
     protected LoggingComponent loggingComponent;
     protected ContentSourceComponent contentSourceComponent;
+    protected ActivityComponent activityComponent;
 
     @Autowired
     public void setContentSourceComponent(ContentSourceComponent contentSourceComponent) {
         this.contentSourceComponent = contentSourceComponent;
+    }
+
+    @Autowired
+    public void setActivityComponent(ActivityComponent activityComponent) {
+        this.activityComponent = activityComponent;
     }
 
     @Autowired
@@ -26,6 +33,10 @@ public class AbstractController {
     protected void addCommonAttributes(ModelMap model) {
         model.addAttribute("peopleAndTribes", contentSourceComponent.getPeopleAndTribes());
         model.addAttribute("techTribes", contentSourceComponent.getContentSources(ContentSourceType.Tech));
+
+        model.addAttribute("activityListForPeople", activityComponent.getActivityListForPeople());
+        model.addAttribute("activityListForBusinessTribes", activityComponent.getActivityListForBusinessTribes());
+        model.addAttribute("activityListForCommunityTribes", activityComponent.getActivityListForCommunityTribes());
 
         if (SecurityContextHolder.getContext().getAuthentication() != null) {
             model.addAttribute("user", lookupContentSourceBySignedInTwitterId());

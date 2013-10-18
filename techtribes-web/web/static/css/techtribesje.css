@@ -1,6 +1,8 @@
 body {
     font-family: 'Trebuchet MS', 'Tahoma', Helvetica, Verdana, Arial, sans-serif;
     background: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
 }
 a, a:hover {
     color: #000000;
@@ -8,27 +10,6 @@ a, a:hover {
 }
 a img {
     border: 0;
-}
-h1, h3, h4 {
-    color: #000000;
-}
-.sectionHeading {
-    color: #ffffff;
-    padding: 12px;
-    margin-top: 32px;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    border-radius: 6px 6px 6px 6px;
-}
-.subSectionHeading {
-    color: #ffffff;
-    padding: 12px;
-    margin-top: 32px;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    border-radius: 6px 6px 6px 6px;
 }
 .sectionHeading .nav-pills {
     font-size: 14px;
@@ -53,58 +34,52 @@ h1, h3, h4 {
     background-color: #ffffff;
     color: #000000;
 }
-.container {
-    line-height: 1.5;
-}
 .profileImageSmall {
     width: 24px;
     height: 24px;
-    border: 1px solid #808080;
     border-radius: 6px 6px 6px 6px;
+    border: 1px solid #808080;
+    background: white;
 }
 .profileImage {
     width: 48px;
     height: 48px;
-    border: 1px solid #808080;
     border-radius: 6px 6px 6px 6px;
-    background: #ffffff;
+    border: 1px solid #808080;
+    background: white;
 }
 .faded {
     opacity:0.2;
     filter:alpha(opacity=20);
 }
 .metadata {
-    font-size: 11px;
-    text-align: right;
-    color: #808080;
+    font-size: 12px;
+    color: white;
 }
-.tweet, .newsFeedEntry, .newsEntry, .talk, .job, .event, .book {
-    border: 1px solid #ffffff;
-    padding: 8px;
-    margin-bottom: 16px;
-    border-radius: 6px 6px 6px 6px;
+.tweet, .newsFeedEntry, .newsEntry, .talk, .job, .event, .person, .tribe {
+    padding: 16px;
+    margin-bottom: 20px;
+    color: white;
 }
-.bookCover {
-    border: 1px solid #808080;
-}
-.person, .tribe {
-    margin-bottom: 48px;
-}
-.newsFeedEntry .title, .newsEntry .title, .talk .title, .event .title, .job .title {
-    font-size: 20px;
-    margin-bottom: 4px;
-}
+
 .pagingLinks {
     text-align: center;
+    color: white;
 }
 
 .hover {
     border: #eeeeee solid 1px;
 }
 footer {
+    background: #aaaaaa;
     text-align: center;
-    margin-bottom: 32px;
-    color: #808080;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border-top: gray solid 10px;
+    color: #444444;
+}
+footer a {
+    color: #444444;
 }
 .bannerAd {
     text-align: center;
@@ -112,9 +87,6 @@ footer {
 }
 .eventMetadata {
     font-size: 13px;
-    color: #808080;
-}
-footer a {
     color: #808080;
 }
 #infographics {
@@ -159,11 +131,11 @@ footer a {
 }
 .siteHeader {
     color: #000000;
-    margin-top: 80px;
-    margin-bottom: 50px;
-    clear: both;
-    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
     margin-left: auto;
+    margin-bottom: 0;
+    border-bottom: #444444 solid 5px;
 }
 .siteHeaderImage {
     border-radius: 6px 6px 6px 6px;
@@ -176,72 +148,6 @@ footer a {
     padding-top: 32px;
     text-align: center;
     line-height: 1.2;
-}
-
-.sectionHeading, .subSectionHeading, .progress .bar {
-    background: #888888;
-    background: linear-gradient(to bottom, #888888, #555555);
-    background: -webkit-linear-gradient(top, #888888, #555555);
-}
-.eventsSection .sectionHeading, .eventsSection .subSectionHeading, .eventsSection .progress .bar, .progress .bar-events {
-    background: #FFAA00;
-}
-.eventsSection .sectionHeading {
-    background: url('/static/img/headers/events.png'), linear-gradient(to bottom, #FFAA00, #DD9300);
-    background: url('/static/img/headers/events.png'), -webkit-linear-gradient(top, #FFAA00, #DD9300);
-    background-position: left;
-    background-repeat: no-repeat;
-    padding-left: 80px;
-}
-.eventsSection a {
-    color: #FFAA00;
-}
-.talksSection .sectionHeading, .talksSection .subSectionHeading, .talksSection .progress .bar, .progress .bar-talks {
-    background: #BE0000;
-}
-.talksSection .sectionHeading {
-    background: url('/static/img/headers/talks.png'), linear-gradient(to bottom, #BE0000, #A80000) ;
-    background: url('/static/img/headers/talks.png'), -webkit-linear-gradient(top, #BE0000, #A80000);
-    background-position: left;
-    background-repeat: no-repeat;
-    padding-left: 80px;
-}
-.talksSection a {
-    color: #BE0000;
-}
-.contentSection .sectionHeading, .contentSection .subSectionHeading, .contentSection .progress .bar, .progress .bar-content {
-    background: #019201;
-}
-.contentSection .sectionHeading {
-    background: url('/static/img/headers/content.png'), linear-gradient(to bottom, #019201, #027602);
-    background: url('/static/img/headers/content.png'), -webkit-linear-gradient(top, #019201, #027602);
-    background-position: left;
-    background-repeat: no-repeat;
-    padding-left: 80px;
-}
-.contentSection a, .newsFeedEntry a {
-    color: #019201;
-}
-.tweetsSection .sectionHeading, .tweetsSection .subSectionHeading, .tweetsSection .progress .bar, .progress .bar-tweets {
-    background: #0776A0;
-}
-.tweetsSection .sectionHeading {
-    background: url('/static/img/headers/tweets.png'), linear-gradient(to bottom, #0776A0, #044E6B);
-    background: url('/static/img/headers/tweets.png'), -webkit-linear-gradient(top, #0776A0, #044E6B);
-    background-position: left;
-    background-repeat: no-repeat;
-    padding-left: 80px;
-}
-.tweetsSection a, .tweet a {
-    color: #0776A0;
-}
-.jobsSection .sectionHeading, .jobsSection .subSectionHeading, .jobsSection .progress .bar {
-    background: #48036F;
-    background: linear-gradient(to bottom, #48036F, #390258);
-    background: -webkit-linear-gradient(top, #48036F, #390258);
-}
-.jobsSection a {
-    color: #48036F;
 }
 
 .selected {
@@ -272,26 +178,152 @@ footer a {
     background: linear-gradient(to bottom, #000000, #000000);
     background: -webkit-linear-gradient(top, #000000, #000000);
 }
-.newsSection .sectionHeading, .newsSection .subSectionHeading, .newsSection .progress .bar {
-    background: #000000;
+
+.section {
+    background: linear-gradient(to bottom, #555555, #888888);
+    background: -webkit-linear-gradient(top, #555555, #888888);
+    color: white;
 }
-.newsSection .sectionHeading {
-    background: url('/static/img/headers/news.png'), linear-gradient(to bottom, #333333, #000000);
-    background: url('/static/img/headers/news.png'), -webkit-linear-gradient(top, #333333, #000000);
+.section .sectionHeading h1 {
+}
+.section .subSectionHeading, .section .progress .bar {
+    background: #888888;
+}
+.section h1 {
+    padding-left: 0px;
+}
+
+.newsSection {
+    background: linear-gradient(to bottom, #000000, #333333);
+    background: -webkit-linear-gradient(top, #000000, #333333);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.newsSection .sectionHeading h1 {
+    background: url('/static/img/headers/news.png');
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 80px;
+    color: white;
+    height: 64px;
+}
+.newsSection .subSectionHeading, .newsSection .progress .bar {
+    background: #000000;
 }
 .newsSection a {
-    color: #000000;
+    color: white;
 }
+
+.section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.section h1 {
+    color: white;
+    height: 64px;
+}
+.section a {
+    color: white;
+}
+
+.contentSection {
+    background: linear-gradient(to bottom, #027602, #019201);
+    background: -webkit-linear-gradient(top, #027602, #019201);
+}
+.contentSection .sectionHeading h1 {
+    background: url('/static/img/headers/content.png') left no-repeat;
+    padding-left: 80px;
+}
+.contentSection .subSectionHeading, .contentSection .progress .bar {
+    background: #019201;
+}
+
+.eventsSection {
+    background: linear-gradient(to bottom, #DD9300, #FFAA00);
+    background: -webkit-linear-gradient(top, #DD9300, #FFAA00);
+}
+.eventsSection .sectionHeading h1 {
+    background: url('/static/img/headers/events.png') left no-repeat;
+    padding-left: 80px;
+}
+.eventsSection .subSectionHeading, .contentSection .progress .bar {
+    background: #FFAA00;
+}
+
+.talksSection {
+    background: linear-gradient(to bottom, #A80000, #BE0000);
+    background: -webkit-linear-gradient(top, #A80000, #BE0000);
+}
+.talksSection .sectionHeading h1 {
+    background: url('/static/img/headers/talks.png') left no-repeat;
+    padding-left: 80px;
+}
+.talksSection .subSectionHeading, .contentSection .progress .bar {
+    background: #BE0000;
+}
+
+.tweetsSection {
+    background: linear-gradient(to bottom, #044E6B, #0776A0);
+    background: -webkit-linear-gradient(top, #044E6B, #0776A0);
+}
+.tweetsSection .sectionHeading h1 {
+    background: url('/static/img/headers/tweets.png') left no-repeat;
+    padding-left: 80px;
+}
+.tweetsSection .subSectionHeading, .contentSection .progress .bar {
+    background: #0776A0;
+}
+
+.jobsSection {
+    background: linear-gradient(to bottom, #390258, #48036F);
+    background: -webkit-linear-gradient(top, #390258, #48036F);
+}
+.jobsSection .sectionHeading h1 {
+}
+.jobsSection .subSectionHeading, .contentSection .progress .bar {
+    background: #48036F;
+}
+
 .embeddedVideo, .embeddedMap {
     padding: 8px;
     text-align: center;
 }
 .forkMe {
     position: absolute;
-    margin-top: 40px;
     top: 0;
     right: 0;
+}
+
+.mostActive {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    clear: both;
+}
+
+#headerNavigation {
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#headerNavigation a {
+    color: #888888;
+    padding: 10px;
+}
+#headerNavigation .newsLink {
+    color: #000000;
+}
+#headerNavigation .eventsLink {
+    color: #FFAA00;
+}
+#headerNavigation .talksLink {
+    color: #BE0000;
+}
+#headerNavigation .contentLink {
+    color: #019201;
+}
+#headerNavigation .tweetsLink {
+    color: #0776A0;
+}
+#headerNavigation .jobsLink {
+    color: #48036F;
 }

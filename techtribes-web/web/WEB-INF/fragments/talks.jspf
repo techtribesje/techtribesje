@@ -5,9 +5,10 @@
             <div class="span4">
 
                 <div class="${talk.contentSource.shortName} talk highlightableContent">
-                    <div class="title">
+                    <h3>
+                        <a href="<techtribesje:goto contentSource="${talk.contentSource}"/>"><img src="${talk.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${talk.contentSource.name}" /></a>
                         <a href="/talks/${talk.id}">${talk.title}</a>
-                    </div>
+                    </h3>
                     ${talk.truncatedDescription}
                     <div style="float: right;">
                     <c:if test="${not empty talk.slidesUrl}"><a href="${talk.slidesUrl}" target="_blank"><i class="icon-th-large"></i></a></c:if>
@@ -16,10 +17,10 @@
                     <br /><br />
                     <div class="metadata">
                         <div style="float: left;">
-                            <a href="<techtribesje:goto contentSource="${talk.contentSource}"/>"><img src="${talk.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${talk.contentSource.name}" /></a> <img src="<techtribesje:flag name="${talk.country}" />" alt="${talk.country}" title="${talk.country}" />
+                            <img src="<techtribesje:flag name="${talk.country}" />" alt="${talk.country}" title="${talk.country}" />
+                            &nbsp;
                         </div>
                         ${talk.eventName}<br />
-                        ${talk.city}, ${talk.country}<br />
                         ${talk.type} | <techtribesje:date date="${talk.date}" showTime="false" />
                     </div>
                 </div>

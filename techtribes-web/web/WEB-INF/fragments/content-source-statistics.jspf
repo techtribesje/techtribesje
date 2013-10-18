@@ -7,7 +7,7 @@
     </div>
     <div class="span9">
         <div class="progress" style="margin-bottom: 16px;">
-            <div class="bar" style="width: ${contentSourceStatistic.percentage}%">${contentSourceStatistic.score}</div>
+            <div class="bar " style="width: ${contentSourceStatistic.percentage}%">${contentSourceStatistic.score}</div>
         </div>
     </div>
 </div>

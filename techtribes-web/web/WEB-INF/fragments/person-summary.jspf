@@ -1,0 +1,36 @@
+<div class="person <c:if test="${not person.active}">faded</c:if>">
+    <h3>
+        <a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
+        <a href="/people/${person.shortName}">${person.name}</a>
+    </h3>
+    <c:if test="${not empty person.profile}">
+    <p>
+        ${person.profile}
+    </p>
+    </c:if>
+
+    <c:if test="${not empty person.twitterId}">
+        <c:choose>
+            <c:when test="${person.twitterFollowersCount >= 1000}">
+                <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followersover1000">${person.twitterFollowersCount} followers</span></a>
+            </c:when>
+            <c:when test="${person.twitterFollowersCount >= 500}">
+                <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followerover500">${person.twitterFollowersCount} followers</span></a>
+            </c:when>
+            <c:when test="${person.twitterFollowersCount == 0}">
+                <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followers0">${person.twitterFollowersCount} followers</span></a>
+            </c:when>
+            <c:otherwise>
+                <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followersunder500">${person.twitterFollowersCount} followers</span></a>
+            </c:otherwise>
+        </c:choose>
+        <a href="http://twitter.com/${person.twitterId}" target="_blank">@${person.twitterId}</a>
+    </c:if>
+
+    <p>
+        <img src="<techtribesje:flag name="${person.island}" />" alt="${job.island}" title="${person.island}" />
+        <c:forEach var="tribe" items="${person.tribes}">
+            <a href="/tribes/${tribe.shortName}"><img src="${tribe.profileImageUrl}" alt="${tribe.name}" class="profileImageSmall" title="${tribe.name}" /></a>
+        </c:forEach>
+    </p>
+</div>
