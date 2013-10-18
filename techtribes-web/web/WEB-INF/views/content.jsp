@@ -17,7 +17,5 @@
                 | <a href="/content/${currentPage+1}">Older &gt;</a>
             </c:if>
         </div>
-
-        <script src="/static/js/highlight-content-by-same-author.js"></script>
     </div>
 </div>

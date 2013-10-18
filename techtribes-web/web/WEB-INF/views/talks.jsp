@@ -37,7 +37,5 @@
         </p>
 
         <%@ include file="/WEB-INF/fragments/talks.jspf" %>
-
-        <script src="/static/js/highlight-content-by-same-author.js"></script>
     </div>
 </div>

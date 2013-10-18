@@ -33,7 +33,5 @@
 
     <div class="container">
         <%@ include file="/WEB-INF/fragments/events.jspf" %>
-
-        <script src="/static/js/highlight-content-by-same-author.js"></script>
     </div>
 </div>

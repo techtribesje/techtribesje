@@ -21,6 +21,4 @@
     The monkeys couldn't find any content by this tribe. :-(
     </c:otherwise>
     </c:choose>
-
-    <script src="/static/js/highlight-content-by-same-author.js"></script>
 </div>

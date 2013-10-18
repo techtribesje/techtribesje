@@ -21,5 +21,3 @@
     </div>
     </c:if>
 </div>
-
-<script src="/static/js/highlight-content-by-same-author.js"></script>

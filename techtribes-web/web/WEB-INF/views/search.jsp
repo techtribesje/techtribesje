@@ -30,7 +30,5 @@
             </c:if>
         </div>
         </c:if>
-
-        <script src="/static/js/highlight-content-by-same-author.js"></script>
     </div>
 </div>
