@@ -180,10 +180,12 @@ footer a {
     background: -webkit-linear-gradient(top, #555555, #888888);
     color: white;
 }
-.section .sectionHeading h1 {
-}
 .section h1 {
     padding-left: 0px;
+    font-size: 50px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .newsSection {
@@ -192,7 +194,7 @@ footer a {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.newsSection .sectionHeading h1 {
+.newsSection h1 {
     background: url('/static/img/headers/news.png');
     background-position: left;
     background-repeat: no-repeat;
@@ -218,7 +220,7 @@ footer a {
     background: linear-gradient(to bottom, #027602, #019201);
     background: -webkit-linear-gradient(top, #027602, #019201);
 }
-.contentSection .sectionHeading h1 {
+.contentSection h1 {
     background: url('/static/img/headers/content.png') left no-repeat;
     padding-left: 80px;
 }
@@ -230,7 +232,7 @@ footer a {
     background: linear-gradient(to bottom, #DD9300, #FFAA00);
     background: -webkit-linear-gradient(top, #DD9300, #FFAA00);
 }
-.eventsSection .sectionHeading h1 {
+.eventsSection h1 {
     background: url('/static/img/headers/events.png') left no-repeat;
     padding-left: 80px;
 }
@@ -242,7 +244,7 @@ footer a {
     background: linear-gradient(to bottom, #A80000, #BE0000);
     background: -webkit-linear-gradient(top, #A80000, #BE0000);
 }
-.talksSection .sectionHeading h1 {
+.talksSection h1 {
     background: url('/static/img/headers/talks.png') left no-repeat;
     padding-left: 80px;
 }
@@ -254,11 +256,11 @@ footer a {
     background: linear-gradient(to bottom, #044E6B, #0776A0);
     background: -webkit-linear-gradient(top, #044E6B, #0776A0);
 }
-.tweetsSection .sectionHeading h1 {
+.tweetsSection h1 {
     background: url('/static/img/headers/tweets.png') left no-repeat;
     padding-left: 80px;
 }
-.tweetsSection .subSectionHeading, .progress .bar-tweets {
+.progress .bar-tweets {
     background: #0776A0;
 }
 
@@ -266,7 +268,7 @@ footer a {
     background: linear-gradient(to bottom, #390258, #48036F);
     background: -webkit-linear-gradient(top, #390258, #48036F);
 }
-.jobsSection .sectionHeading h1 {
+.jobsSection h1 {
 }
 
 .embeddedVideo, .embeddedMap {

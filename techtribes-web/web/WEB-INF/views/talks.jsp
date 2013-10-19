@@ -28,10 +28,12 @@
         </div>
         <h1>Talks by local speakers</h1>
 
+        <c:if test="${not empty countries}">
         <p style="text-align: center;">
             <c:forEach var="country" items="${countries}"><img src="<techtribesje:flag name="${country}" />" alt="${country}" title="${country}" /> </c:forEach>
             (talks ${fn:length(talks)}, countries ${fn:length(countries)})
         </p>
+        </c:if>
 
         <%@ include file="/WEB-INF/fragments/talks.jspf" %>
     </div>
