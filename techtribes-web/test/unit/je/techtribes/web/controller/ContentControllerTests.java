@@ -19,6 +19,7 @@ public class ContentControllerTests extends AbstractControllerTestsBase {
     public void setUp() {
         controller = new ContentController(new NewsFeedEntryComponentStub());
         controller.setContentSourceComponent(new ContentSourceComponentStub());
+        controller.setActivityComponent(new ActivityComponentStub());
     }
 
     @Test
