@@ -209,7 +209,7 @@ footer a {
 .section a {
     color: white;
 }
-.section .progress .bar {
+.progress .bar {
     background-color: #888888;
     background: linear-gradient(to bottom, #888888, #555555);
     background: -webkit-linear-gradient(top, #888888, #555555);
@@ -229,7 +229,7 @@ footer a {
     background: linear-gradient(to bottom, #DD9300, #FFAA00);
     background: -webkit-linear-gradient(top, #DD9300, #FFAA00);
 }
-.contentSection .progress .bar-events {
+.progress .bar-events {
     background-color: #FFAA00;
     background: linear-gradient(to bottom, #FFAA00, #DD9300);
     background: -webkit-linear-gradient(top, #FFAA00, #DD9300);

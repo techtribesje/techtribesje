@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="span3">
+        <span class="badge">#</span>
+        <img src="/static/img/default-profile-image.png" alt="Profile image" class="profileImageSmall" />
+        Name
+        <span style="font-size: 11px; color: gray;">(members)</span>
+    </div>
+    <div class="span8">
+        <div class="progress" style="margin-bottom: 16px;">
+            <div class="bar bar-talks" style="width: 25%">Talks</div>
+            <div class="bar bar-content" style="width: 25%">Content</div>
+            <div class="bar bar-tweets" style="width: 25%">Tweets</div>
+            <div class="bar bar-events" style="width: 25%">Events</div>
+        </div>
+    </div>
+    <div class="span1">
+        <span class="badge badge-inverse">Score</span>
+    </div>
+</div>
