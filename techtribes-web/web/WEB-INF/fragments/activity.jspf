@@ -5,7 +5,6 @@
                 <span class="badge">${status.index+1}</span>
                 <a href="<techtribesje:goto contentSource="${activity.contentSource}" />"><img src="${activity.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
                 <a href="<techtribesje:goto contentSource="${activity.contentSource}" />">${activity.contentSource.name}</a>
-                <c:if test="${activity.contentSource.tribe and activity.contentSource.type != 'Community'}"><span style="font-size: 11px; color: gray;">(${activity.contentSource.numberOfMembers})</span></c:if>
             </div>
             <div class="span8">
                 <div class="progress" style="margin-bottom: 16px;">

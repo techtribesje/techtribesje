@@ -3,7 +3,6 @@
         <span class="badge">#</span>
         <img src="/static/img/default-profile-image.png" alt="Profile image" class="profileImageSmall" />
         Name
-        <span style="font-size: 11px; color: gray;">(members)</span>
     </div>
     <div class="span8">
         <div class="progress" style="margin-bottom: 16px;">

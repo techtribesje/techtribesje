@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section codeSection">
     <div class="container">
         <h1>Code</h1>
 

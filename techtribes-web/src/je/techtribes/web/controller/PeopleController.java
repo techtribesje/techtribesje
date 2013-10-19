@@ -12,6 +12,8 @@ import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.tweet.TweetException;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.AwardedBadge;
+import je.techtribes.domain.badge.Badge;
+import je.techtribes.domain.badge.Badges;
 import je.techtribes.util.PageSize;
 import je.techtribes.util.comparator.AwardedBadgeComparator;
 import je.techtribes.util.comparator.ContentSourceByTwitterFollowersCountDescendingComparator;
@@ -78,6 +80,7 @@ public class PeopleController extends AbstractController {
 	public String viewPerson(@PathVariable("name")String shortName, ModelMap model) {
         ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
         List<AwardedBadge> badges = badgeComponent.getAwardedBadges(contentSource);
+        addUnawardedBadges(badges, Badges.getBadges(), contentSource);
         Collections.sort(badges, new AwardedBadgeComparator());
         Activity activity = activityComponent.getActivity(contentSource);
 
@@ -90,6 +93,17 @@ public class PeopleController extends AbstractController {
 
         return "person";
 	}
+
+    private void addUnawardedBadges(List<AwardedBadge> awardedBadges, List<Badge> badges, ContentSource contentSource) {
+        for (Badge badge : badges) {
+            AwardedBadge awardedBadge = new AwardedBadge(badge, contentSource);
+
+            if (!awardedBadges.contains(awardedBadge)) {
+                awardedBadge.setAwarded(false);
+                awardedBadges.add(awardedBadge);
+            }
+        }
+    }
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/talks", method = RequestMethod.GET)
 	public String viewTalksByPerson(@PathVariable("name")String shortName, ModelMap model) {

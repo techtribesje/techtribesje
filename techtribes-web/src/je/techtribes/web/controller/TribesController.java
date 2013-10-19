@@ -18,6 +18,8 @@ import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.tweet.TweetException;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.AwardedBadge;
+import je.techtribes.domain.badge.Badge;
+import je.techtribes.domain.badge.Badges;
 import je.techtribes.util.PageSize;
 import je.techtribes.util.comparator.AwardedBadgeComparator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,6 +116,7 @@ public class TribesController extends AbstractController {
 
         Activity activity = activityComponent.getActivity(contentSource);
         List<AwardedBadge> badges = badgeComponent.getAwardedBadges(contentSource);
+        addUnawardedBadges(badges, Badges.getBadges(), contentSource);
         Collections.sort(badges, new AwardedBadgeComparator());
 
         model.addAttribute("tribe", contentSource);
@@ -125,6 +128,17 @@ public class TribesController extends AbstractController {
 
         return "tribe";
 	}
+
+    private void addUnawardedBadges(List<AwardedBadge> awardedBadges, List<Badge> badges, ContentSource contentSource) {
+        for (Badge badge : badges) {
+            AwardedBadge awardedBadge = new AwardedBadge(badge, contentSource);
+
+            if (!awardedBadges.contains(awardedBadge)) {
+                awardedBadge.setAwarded(false);
+                awardedBadges.add(awardedBadge);
+            }
+        }
+    }
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/tweets", method = RequestMethod.GET)
 	public String viewTribeTweets(@PathVariable("name")String shortName, ModelMap model) {

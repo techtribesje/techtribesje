@@ -3,6 +3,8 @@
                 techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands
             </h4>
 
+            <br />
+
             <c:if test="${empty pageContext.request.userPrincipal}">
                 <form action="/signin/twitter" method="POST">
                     <a href="http://twitter.com/techtribesje" target="_blank"><img src="/static/img/twitter.png" alt="Twitter" /></a>

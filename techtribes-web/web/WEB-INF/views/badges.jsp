@@ -15,7 +15,7 @@
                     <techtribesje:badge id="${badge.id}" />
                 </div>
                 <div class="span8">
-                    <h4>${badge.name} <span class="badge">${fn:length(awardedBadges[badge])}</span></h4>
+                    <h3>${badge.name} <span class="badge">${fn:length(awardedBadges[badge])}</span></h3>
                     <p>
                         ${badge.description}
                     </p>

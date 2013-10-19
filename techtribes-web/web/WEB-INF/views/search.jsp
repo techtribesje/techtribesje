@@ -41,7 +41,7 @@
             </c:when>
             <c:otherwise>
                 <p>
-                    We couldn't find anything for you, sorry!
+                    We've tried hard, but we couldn't find anything for you. Sorry! :-(
                 </p>
             </c:otherwise>
         </c:choose>

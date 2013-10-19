@@ -16,7 +16,7 @@
 
     <div class="container">
         <p>
-            Our team of monkeys has created some tech tribes that group people with a common interest together. Membership is automatic, based upon the content published by local people but you won't become a member by writing a single blog entry! Please get in touch if you'd like more tech tribes adding to the site.
+            We've created some "tech tribes" that group people with a common interest together. Membership is automatic, based upon the content published by local people but you won't become a member by writing a single blog entry! Please get in touch if you'd like more tech tribes added to the site.
             <br /><br />
         </p>
 

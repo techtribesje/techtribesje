@@ -181,12 +181,12 @@ footer a {
     color: white;
 }
 .section h1 {
-    padding-left: 0px;
     font-size: 45px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: white;
 }
 
 .newsSection {
@@ -202,9 +202,6 @@ footer a {
 .section {
     padding-top: 20px;
     padding-bottom: 20px;
-}
-.section h1 {
-    color: white;
 }
 .section a {
     color: white;
@@ -255,11 +252,14 @@ footer a {
     background: -webkit-linear-gradient(top, #0776A0, #044E6B);
 }
 
+.codeSection {
+    background: linear-gradient(to bottom, #52A3CC, #66CCFF);
+    background: -webkit-linear-gradient(top, #52A3CC, #66CCFF);
+}
+
 .jobsSection {
     background: linear-gradient(to bottom, #390258, #48036F);
     background: -webkit-linear-gradient(top, #390258, #48036F);
-}
-.jobsSection h1 {
 }
 
 .embeddedVideo, .embeddedMap {
@@ -301,6 +301,9 @@ footer a {
 }
 #headerNavigation .tweetsLink {
     color: #0776A0;
+}
+#headerNavigation .codeLink {
+    color: #52A3CC;
 }
 #headerNavigation .jobsLink {
     color: #48036F;

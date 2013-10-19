@@ -1,3 +1,5 @@
 <c:forEach var="awardedBadge" items="${badges}">
-    <a href="/badges#${awardedBadge.badge.id}"><techtribesje:badge id="${awardedBadge.badge.id}" /></a>
+    <span class="<c:if test="${not awardedBadge.awarded}">faded</c:if>">
+        <a href="/badges#${awardedBadge.badge.id}"><techtribesje:badge id="${awardedBadge.badge.id}" /></a>
+    </span>
 </c:forEach>

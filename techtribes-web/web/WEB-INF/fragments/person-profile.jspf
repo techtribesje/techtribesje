@@ -11,6 +11,7 @@
     <a href="${person.url}" target="_blank">${person.url}</a>
     </c:if>
     <c:if test="${not empty person.twitterId}">
+        <br />
         <c:if test="${not empty person.twitterId}">
             <c:choose>
                 <c:when test="${person.twitterFollowersCount >= 1000}">
@@ -32,8 +33,11 @@
 </p>
 
 <c:if test="${not empty person.tribes}">
-<h4>Tribes <span class="badge">${person.numberOfTribes}</span></h4>
-<c:forEach var="tribe" items="${person.tribes}">
-    <a href="/tribes/${tribe.shortName}"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${tribe.name}" /></a>
-</c:forEach>
+<br /><br />
+<h2>Tribes <span class="badge">${person.numberOfTribes}</span></h2>
+    <p>
+        <c:forEach var="tribe" items="${person.tribes}">
+            <a href="/tribes/${tribe.shortName}"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${tribe.name}" /></a>
+        </c:forEach>
+    </p>
 </c:if>

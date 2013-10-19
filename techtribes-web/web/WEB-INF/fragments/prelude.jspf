@@ -84,7 +84,7 @@
                         <a href="/talks/year/2013" class="talksLink">Talks</a>
                         <a href="/content" class="contentLink">Content</a>
                         <a href="/tweets" class="tweetsLink">Tweets</a>
-                        <a href="/code">Code</a>
+                        <a href="/code" class="codeLink">Code</a>
                         <a href="/people">People</a>
                         <a href="/tribes">Tribes</a>
                         <a href="/jobs" class="jobsLink">Jobs</a>

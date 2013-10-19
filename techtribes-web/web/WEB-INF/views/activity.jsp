@@ -29,20 +29,6 @@
 
         <hr />
 
-        <h2>Badges</h2>
-        <p>
-            <a href="/badges">Badges</a> are awarded to people or tribes based upon their activity. These lucky monkeys have done something recently to earn themselves a badge.
-        </p>
-        <p>
-            <c:forEach var="awardedBadge" items="${recentAwardedBadges}">
-                <a href="<techtribesje:goto contentSource="${awardedBadge.contentSource}" />"><img src="${awardedBadge.contentSource.profileImageUrl}" alt="${awardedBadge.contentSource.name}" class="profileImageSmall" /></a>
-                <a href="/badges#${awardedBadge.badge.id}"><techtribesje:badge id="${awardedBadge.badge.id}" size="24" /></a>
-                &nbsp;
-            </c:forEach>
-        </p>
-
-        <br /><br />
-
         <a name="people"></a><h2>People</h2>
         <p>
             Here are the most active people.

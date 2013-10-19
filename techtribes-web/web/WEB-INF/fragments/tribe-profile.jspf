@@ -11,6 +11,7 @@
     <a href="${tribe.url}" target="_blank">${tribe.url}</a>
     </c:if>
     <c:if test="${not empty tribe.twitterId}">
+        <br />
         <c:if test="${not empty tribe.twitterId}">
             <c:choose>
                 <c:when test="${tribe.twitterFollowersCount >= 1000}">
@@ -32,20 +33,21 @@
 </p>
 
 <c:if test="${not empty tribe.members}">
+    <br /><br />
     <c:choose>
         <c:when test="${tribe.type eq 'Community'}">
-            <h4>Run by <span class="badge">${tribe.numberOfMembers}</span></h4>
+            <h2>Run by <span class="badge">${tribe.numberOfMembers}</span></h2>
         </c:when>
         <c:when test="${tribe.type eq 'Tech'}">
-            <h4>Members (based upon content and tweets) <span class="badge">${tribe.numberOfMembers}</span></h4>
+            <h2>Members (based upon content and tweets) <span class="badge">${tribe.numberOfMembers}</span></h2>
         </c:when>
         <c:otherwise>
-            <h4>Members <span class="badge">${tribe.numberOfMembers}</span></h4>
+            <h2>Members <span class="badge">${tribe.numberOfMembers}</span></h2>
         </c:otherwise>
     </c:choose>
     <p>
-    <c:forEach var="person" items="${tribe.members}">
-        <a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImageSmall <c:if test="${not person.active}">faded</c:if>" title="${person.name}" /></a>
-    </c:forEach>
-   </p>
+        <c:forEach var="person" items="${tribe.members}">
+            <a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImageSmall <c:if test="${not person.active}">faded</c:if>" title="${person.name}" /></a>
+        </c:forEach>
+    </p>
 </c:if>

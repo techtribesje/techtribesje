@@ -10,7 +10,6 @@
             Here's a summary of this person's activity over the past 7 days.
             <a href="/activity"><span class="badge"><fmt:formatNumber value="${activity.score}" minFractionDigits="1" maxFractionDigits="1" /> points</span></a>
         </p>
-
         <%@ include file="/WEB-INF/fragments/activity-summary.jspf" %>
         </c:if>
 

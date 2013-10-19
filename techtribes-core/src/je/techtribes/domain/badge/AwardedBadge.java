@@ -12,6 +12,8 @@ public class AwardedBadge {
     private int contentSourceId;
     private ContentSource contentSource;
 
+    private boolean awarded = true;
+
     public AwardedBadge(Badge badge, ContentSource contentSource) {
         this.badge = badge;
         this.contentSourceId = contentSource.getId();
@@ -43,6 +45,14 @@ public class AwardedBadge {
 
     public Date getDate() {
         return date;
+    }
+
+    public boolean isAwarded() {
+        return awarded;
+    }
+
+    public void setAwarded(boolean awarded) {
+        this.awarded = awarded;
     }
 
     @Override

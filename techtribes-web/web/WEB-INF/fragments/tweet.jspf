@@ -2,7 +2,7 @@
 <div class="${tweet.contentSource.shortName} highlightableContent tweet">
     <a href="<techtribesje:goto contentSource="${tweet.contentSource}"/>"><img src="${tweet.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
     <c:out value="${tweet.bodyAsHtml}" escapeXml="false" />
-    <br />
+    <br /><br />
       <div class="metadata">
           <a href="${tweet.permalink}" target="_blank">#</a> |
           Posted <techtribesje:date date="${tweet.timestamp}"/>
