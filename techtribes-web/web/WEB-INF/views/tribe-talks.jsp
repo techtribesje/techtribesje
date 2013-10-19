@@ -1,14 +1,17 @@
-<%@ include file="/WEB-INF/fragments/tribe-profile.jspf" %>
+<div class="section talksSection">
+    <div class="container">
+        <%@ include file="/WEB-INF/fragments/tribe-navigation.jspf" %>
+        <h1 class="noBackground"><a href="<techtribesje:goto contentSource="${tribe}"/>"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImage" /></a> Talks</h1>
 
-<div class="talksSection">
-    <div class="subSectionHeading">Talks by the tribe's members</div>
-
-    <c:choose>
-        <c:when test="${not empty talks}">
-            <%@ include file="/WEB-INF/fragments/talks.jspf" %>
-        </c:when>
-        <c:otherwise>
-            The monkeys couldn't find any talks by this tribe. :-(
-        </c:otherwise>
-    </c:choose>
+        <c:choose>
+            <c:when test="${not empty talks}">
+                <%@ include file="/WEB-INF/fragments/talks.jspf" %>
+            </c:when>
+            <c:otherwise>
+                <p>
+                We couldn't find any talks by this tribe. :-(
+                </p>
+            </c:otherwise>
+        </c:choose>
+    </div>
 </div>

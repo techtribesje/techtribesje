@@ -15,6 +15,7 @@
         </c:if>
 
         <c:if test="${not empty badges}">
+        <br /><br />
         <h2>Badges</h2>
         <c:set var="contentSource" value="${person}" />
         <%@ include file="/WEB-INF/fragments/badges.jspf" %>

@@ -1,0 +1,134 @@
+<c:if test="${tribe.contentAggregated}">
+    <c:choose>
+        <c:when test="${tribe.type == 'Community'}">
+            <div style="float: right;">
+                <ul class="nav nav-pills">
+                    <c:choose>
+                        <c:when test="${activeNav eq 'summary'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}">Summary</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}">Summary</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'content'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/content">Content</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/content">Content</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'tweets'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/tweets">Tweets</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/tweets">Tweets</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'jobs'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/jobs">Jobs</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/jobs">Jobs</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'events'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/events">Events</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/events">Events</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'code'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/code">Code</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/code">Code</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>
+            </div>
+        </c:when>
+        <c:when test="${tribe.type == 'Tech'}">
+            <div style="float: right;">
+                <ul class="nav nav-pills">
+                    <c:choose>
+                        <c:when test="${activeNav eq 'content'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/content">Content</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/content">Content</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'tweets'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/tweets">Tweets</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/tweets">Tweets</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div style="float: right;">
+                <ul class="nav nav-pills">
+                    <c:choose>
+                        <c:when test="${activeNav eq 'summary'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}">Summary</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}">Summary</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'talks'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/talks">Talks</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/talks">Talks</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'content'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/content">Content</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/content">Content</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'tweets'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/tweets">Tweets</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/tweets">Tweets</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'code'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/code">Code</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/code">Code</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${activeNav eq 'jobs'}">
+                            <li class="active"><a href="/tribes/${tribe.shortName}/jobs">Jobs</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/tribes/${tribe.shortName}/jobs">Jobs</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>
+            </div>
+        </c:otherwise>
+    </c:choose>
+</c:if>

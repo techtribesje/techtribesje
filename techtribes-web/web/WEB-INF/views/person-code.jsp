@@ -1,7 +1,7 @@
 <div class="section codeSection">
     <div class="container">
         <%@ include file="/WEB-INF/fragments/person-navigation.jspf" %>
-        <h1><a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a> Code</h1>
+        <h1><a href="<techtribesje:goto contentSource="${person}"/>"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a> Code</h1>
 
         <c:choose>
         <c:when test="${not empty person.gitHubId}">

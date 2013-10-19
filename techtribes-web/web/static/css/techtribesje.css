@@ -182,7 +182,8 @@ footer a {
 }
 .section h1 {
     padding-left: 0px;
-    font-size: 50px;
+    font-size: 45px;
+    margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -193,13 +194,6 @@ footer a {
     background: -webkit-linear-gradient(top, #000000, #333333);
     padding-top: 20px;
     padding-bottom: 20px;
-}
-.newsSection h1 {
-    background: url('/static/img/headers/news.png');
-    background-position: left;
-    background-repeat: no-repeat;
-    padding-left: 80px;
-    color: white;
 }
 .newsSection a {
     color: white;
@@ -215,53 +209,50 @@ footer a {
 .section a {
     color: white;
 }
+.section .progress .bar {
+    background-color: #888888;
+    background: linear-gradient(to bottom, #888888, #555555);
+    background: -webkit-linear-gradient(top, #888888, #555555);
+}
 
 .contentSection {
     background: linear-gradient(to bottom, #027602, #019201);
     background: -webkit-linear-gradient(top, #027602, #019201);
 }
-.contentSection h1 {
-    background: url('/static/img/headers/content.png') left no-repeat;
-    padding-left: 80px;
-}
-.progress .bar-content {
-    background: #019201;
+.progress .bar-content, .contentSection .progress .bar {
+    background-color: #019201;
+    background: linear-gradient(to bottom, #019201, #027602);
+    background: -webkit-linear-gradient(top, #019201, #027602);
 }
 
 .eventsSection {
     background: linear-gradient(to bottom, #DD9300, #FFAA00);
     background: -webkit-linear-gradient(top, #DD9300, #FFAA00);
 }
-.eventsSection h1 {
-    background: url('/static/img/headers/events.png') left no-repeat;
-    padding-left: 80px;
-}
 .contentSection .progress .bar-events {
-    background: #FFAA00;
+    background-color: #FFAA00;
+    background: linear-gradient(to bottom, #FFAA00, #DD9300);
+    background: -webkit-linear-gradient(top, #FFAA00, #DD9300);
 }
 
 .talksSection {
     background: linear-gradient(to bottom, #A80000, #BE0000);
     background: -webkit-linear-gradient(top, #A80000, #BE0000);
 }
-.talksSection h1 {
-    background: url('/static/img/headers/talks.png') left no-repeat;
-    padding-left: 80px;
-}
 .progress .bar-talks {
-    background: #BE0000;
+    background-color: #BE0000;
+    background: linear-gradient(to bottom, #BE0000, #A80000);
+    background: -webkit-linear-gradient(top, #BE0000, #A80000);
 }
 
 .tweetsSection {
     background: linear-gradient(to bottom, #044E6B, #0776A0);
     background: -webkit-linear-gradient(top, #044E6B, #0776A0);
 }
-.tweetsSection h1 {
-    background: url('/static/img/headers/tweets.png') left no-repeat;
-    padding-left: 80px;
-}
-.progress .bar-tweets {
-    background: #0776A0;
+.progress .bar-tweets, .tweetsSection .progress .bar {
+    background-color: #0776A0;
+    background: linear-gradient(to bottom, #0776A0, #044E6B);
+    background: -webkit-linear-gradient(top, #0776A0, #044E6B);
 }
 
 .jobsSection {
