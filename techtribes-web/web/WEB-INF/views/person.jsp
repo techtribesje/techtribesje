@@ -4,6 +4,7 @@
         <%@ include file="/WEB-INF/fragments/person-profile.jspf" %>
 
         <c:if test="${not empty activity && activity.score > 0}">
+        <br /><br />
         <h2>Activity</h2>
         <p>
             Here's a summary of this person's activity over the past 7 days.

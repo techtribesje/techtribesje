@@ -18,7 +18,9 @@
         </div>
         </c:when>
         <c:otherwise>
-        We couldn't find any content by this person. :-(
+            <p>
+                We couldn't find any content by this person. :-(
+            </p>
         </c:otherwise>
         </c:choose>
     </div>

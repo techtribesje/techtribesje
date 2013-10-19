@@ -85,10 +85,6 @@ footer a {
     text-align: center;
     margin: 16px 0 16px 0;
 }
-.eventMetadata {
-    font-size: 13px;
-    color: #808080;
-}
 #infographics {
     text-align: center;
 }
@@ -186,9 +182,6 @@ footer a {
 }
 .section .sectionHeading h1 {
 }
-.section .subSectionHeading, .section .progress .bar {
-    background: #888888;
-}
 .section h1 {
     padding-left: 0px;
 }
@@ -205,10 +198,6 @@ footer a {
     background-repeat: no-repeat;
     padding-left: 80px;
     color: white;
-    height: 64px;
-}
-.newsSection .subSectionHeading, .newsSection .progress .bar {
-    background: #000000;
 }
 .newsSection a {
     color: white;
@@ -220,7 +209,6 @@ footer a {
 }
 .section h1 {
     color: white;
-    height: 64px;
 }
 .section a {
     color: white;
@@ -234,7 +222,7 @@ footer a {
     background: url('/static/img/headers/content.png') left no-repeat;
     padding-left: 80px;
 }
-.contentSection .subSectionHeading, .contentSection .progress .bar {
+.progress .bar-content {
     background: #019201;
 }
 
@@ -246,7 +234,7 @@ footer a {
     background: url('/static/img/headers/events.png') left no-repeat;
     padding-left: 80px;
 }
-.eventsSection .subSectionHeading, .contentSection .progress .bar {
+.contentSection .progress .bar-events {
     background: #FFAA00;
 }
 
@@ -258,7 +246,7 @@ footer a {
     background: url('/static/img/headers/talks.png') left no-repeat;
     padding-left: 80px;
 }
-.talksSection .subSectionHeading, .contentSection .progress .bar {
+.progress .bar-talks {
     background: #BE0000;
 }
 
@@ -270,7 +258,7 @@ footer a {
     background: url('/static/img/headers/tweets.png') left no-repeat;
     padding-left: 80px;
 }
-.tweetsSection .subSectionHeading, .contentSection .progress .bar {
+.tweetsSection .subSectionHeading, .progress .bar-tweets {
     background: #0776A0;
 }
 
@@ -279,9 +267,6 @@ footer a {
     background: -webkit-linear-gradient(top, #390258, #48036F);
 }
 .jobsSection .sectionHeading h1 {
-}
-.jobsSection .subSectionHeading, .contentSection .progress .bar {
-    background: #48036F;
 }
 
 .embeddedVideo, .embeddedMap {

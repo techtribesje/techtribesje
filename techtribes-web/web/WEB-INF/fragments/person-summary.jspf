@@ -1,7 +1,7 @@
 <div class="person <c:if test="${not person.active}">faded</c:if>">
     <h3>
-        <a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
-        <a href="/people/${person.shortName}">${person.name}</a>
+        <a href="<techtribesje:goto contentSource="${person}"/>"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
+        <a href="<techtribesje:goto contentSource="${person}"/>">${person.name}</a>
     </h3>
     <c:if test="${not empty person.profile}">
     <p>

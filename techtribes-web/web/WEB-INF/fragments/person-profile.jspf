@@ -1,4 +1,4 @@
-<h1><a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a> ${person.name}</h1>
+<h1><a href="<techtribesje:goto contentSource="${person}"/>"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a> ${person.name}</h1>
 
 <c:if test="${not empty person.profile}">
 <p>
@@ -6,18 +6,30 @@
 </p>
 </c:if>
 
-<c:if test="${not empty person.url}">
 <p>
+    <c:if test="${not empty person.url}">
     <a href="${person.url}" target="_blank">${person.url}</a>
+    </c:if>
+    <c:if test="${not empty person.twitterId}">
+        <c:if test="${not empty person.twitterId}">
+            <c:choose>
+                <c:when test="${person.twitterFollowersCount >= 1000}">
+                    <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followersover1000">${person.twitterFollowersCount} followers</span></a>
+                </c:when>
+                <c:when test="${person.twitterFollowersCount >= 500}">
+                    <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followerover500">${person.twitterFollowersCount} followers</span></a>
+                </c:when>
+                <c:when test="${person.twitterFollowersCount == 0}">
+                    <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followers0">${person.twitterFollowersCount} followers</span></a>
+                </c:when>
+                <c:otherwise>
+                    <a href="http://twitter.com/${person.twitterId}" target="_blank"><span class="badge badge-followersunder500">${person.twitterFollowersCount} followers</span></a>
+                </c:otherwise>
+            </c:choose>
+            <a href="http://twitter.com/${person.twitterId}" target="_blank">@${person.twitterId}</a>
+        </c:if>
+    </c:if>
 </p>
-</c:if>
-
-<c:if test="${not empty person.twitterId}">
-    <p>
-    <a href="https://twitter.com/${person.twitterId}" class="twitter-follow-button" data-show-count="true">Follow @${person.twitterId}</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </p>
-</c:if>
 
 <c:if test="${not empty person.tribes}">
 <h4>Tribes <span class="badge">${person.numberOfTribes}</span></h4>
