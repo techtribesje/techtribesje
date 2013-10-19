@@ -1,11 +1,7 @@
 <div class="section">
-    <div class="sectionHeading">
-        <div class="container">
-            <h1>Search for <c:out value="${query}" escapeXml="true" /></h1>
-        </div>
-    </div>
-
     <div class="container">
+        <h1>Search for <c:out value="${query}" escapeXml="true" /></h1>
+
         <hr />
         <%@ include file="/WEB-INF/fragments/content-source-statistics.jspf" %>
         <hr />

@@ -1,11 +1,7 @@
 <div class="section jobsSection">
-    <div class="sectionHeading">
-        <div class="container">
-            <h1>Jobs</h1>
-        </div>
-    </div>
-
     <div class="container">
+        <h1>Jobs</h1>
+
         <c:choose>
             <c:when test="${not empty jobs}">
                 <%@ include file="/WEB-INF/fragments/jobs.jspf" %>

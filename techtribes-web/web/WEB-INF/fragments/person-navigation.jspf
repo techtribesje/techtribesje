@@ -1,0 +1,44 @@
+<div style="float: right;">
+    <ul class="nav nav-pills">
+        <c:choose>
+            <c:when test="${activeNav eq 'summary'}">
+                <li class="active"><a href="/people/${person.shortName}">Summary</a></li>
+            </c:when>
+            <c:otherwise>
+                <li><a href="/people/${person.shortName}">Summary</a></li>
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${activeNav eq 'talks'}">
+                <li class="active"><a href="/people/${person.shortName}/talks">Talks</a></li>
+            </c:when>
+            <c:otherwise>
+                <li><a href="/people/${person.shortName}/talks">Talks</a></li>
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${activeNav eq 'content'}">
+                <li class="active"><a href="/people/${person.shortName}/content">Content</a></li>
+            </c:when>
+            <c:otherwise>
+                <li><a href="/people/${person.shortName}/content">Content</a></li>
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${activeNav eq 'tweets'}">
+                <li class="active"><a href="/people/${person.shortName}/tweets">Tweets</a></li>
+            </c:when>
+            <c:otherwise>
+                <li><a href="/people/${person.shortName}/tweets">Tweets</a></li>
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${activeNav eq 'code'}">
+                <li class="active"><a href="/people/${person.shortName}/code">Code</a></li>
+            </c:when>
+            <c:otherwise>
+                <li><a href="/people/${person.shortName}/code">Code</a></li>
+            </c:otherwise>
+        </c:choose>
+    </ul>
+</div>

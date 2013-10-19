@@ -1,32 +1,28 @@
 <div class="section">
-    <div class="sectionHeading">
-        <div class="container">
-            <div style="float: right;">
-                <ul class="nav nav-pills">
-                    <c:choose>
-                        <c:when test="${sort eq 'followers'}">
-                            <li><a href="/people">Sort by name</a></li>
-                            <li class="active"><a href="/people?sort=followers">Sort by followers</a></li>
-                            <li><a href="/people?sort=activity">Sort by activity</a></li>
-                        </c:when>
-                        <c:when test="${sort eq 'activity'}">
-                            <li><a href="/people">Sort by name</a></li>
-                            <li><a href="/people?sort=followers">Sort by followers</a></li>
-                            <li class="active"><a href="/people?sort=activity">Sort by activity</a></li>
-                        </c:when>
-                        <c:otherwise>
-                            <li class="active"><a href="/people">Sort by name</a></li>
-                            <li><a href="/people?sort=followers">Sort by followers</a></li>
-                            <li><a href="/people?sort=activity">Sort by activity</a></li>
-                        </c:otherwise>
-                    </c:choose>
-                </ul>
-            </div>
-            <h1>People</h1>
-        </div>
-    </div>
-
     <div class="container">
+        <div style="float: right;">
+            <ul class="nav nav-pills">
+                <c:choose>
+                    <c:when test="${sort eq 'followers'}">
+                        <li><a href="/people">Sort by name</a></li>
+                        <li class="active"><a href="/people?sort=followers">Sort by followers</a></li>
+                        <li><a href="/people?sort=activity">Sort by activity</a></li>
+                    </c:when>
+                    <c:when test="${sort eq 'activity'}">
+                        <li><a href="/people">Sort by name</a></li>
+                        <li><a href="/people?sort=followers">Sort by followers</a></li>
+                        <li class="active"><a href="/people?sort=activity">Sort by activity</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="active"><a href="/people">Sort by name</a></li>
+                        <li><a href="/people?sort=followers">Sort by followers</a></li>
+                        <li><a href="/people?sort=activity">Sort by activity</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </ul>
+        </div>
+        <h1>People</h1>
+
         <c:forEach var="person" items="${people}" varStatus="status">
             <c:if test="${status.index % 3 == 0}">
                 <div class="row">

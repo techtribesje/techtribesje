@@ -1,11 +1,7 @@
 <div class="section tweetsSection">
-    <div class="sectionHeading">
-        <div class="container">
-            <h1>Tweets</h1>
-        </div>
-    </div>
-
     <div class="container">
+        <h1>Tweets</h1>
+
         <%@ include file="/WEB-INF/fragments/tweets.jspf" %>
 
         <div class="pagingLinks">

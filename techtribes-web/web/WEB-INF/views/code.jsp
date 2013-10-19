@@ -1,11 +1,7 @@
 <div class="section">
-    <div class="sectionHeading">
-        <div class="container">
-            <h1>Code</h1>
-        </div>
-    </div>
-
     <div class="container">
+        <h1>Code</h1>
+
         <p>
             Some of the locals like to get their hands dirty with a bit of coding but these aren't your typical 9-5'ers. Take a look at what they've been up to...
         </p>

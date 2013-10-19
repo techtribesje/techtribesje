@@ -1,11 +1,7 @@
 <div class="section">
-    <div class="sectionHeading">
-        <div class="container">
-            <h1>About techtribes.je</h1>
-        </div>
-    </div>
-
     <div class="container">
+        <h1>About techtribes.je</h1>
+
         <p>
             Our team of monkeys is constantly watching the smoke signals from the tech tribes around Jersey (Channel Islands)<sup>*</sup> so that you can keep
             up to date with what's happening from the comfort of wherever you're sitting.
