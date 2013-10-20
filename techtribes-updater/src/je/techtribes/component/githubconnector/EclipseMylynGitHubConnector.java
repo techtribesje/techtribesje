@@ -27,8 +27,10 @@ class EclipseMylynGitHubConnector extends AbstractComponent implements GitHubCon
             service.getClient().setOAuth2Token(oAuth2);
 
             for (Repository repo : service.getRepositories(contentSource.getGitHubId())) {
-                GitHubRepository gitHubRepository = new GitHubRepository(repo.getName(), repo.getDescription(), repo.getHtmlUrl(), contentSource);
-                repos.add(gitHubRepository);
+                if (!repo.isFork() && !repo.isPrivate()) {
+                    GitHubRepository gitHubRepository = new GitHubRepository(repo.getName(), repo.getDescription(), repo.getHtmlUrl(), contentSource);
+                    repos.add(gitHubRepository);
+                }
             }
 
             return repos;
