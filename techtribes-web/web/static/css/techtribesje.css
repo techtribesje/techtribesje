@@ -56,10 +56,11 @@ a img {
     font-size: 12px;
     color: white;
 }
-.tweet, .newsFeedEntry, .newsEntry, .talk, .job, .event, .person, .tribe {
+.tweet, .newsFeedEntry, .newsEntry, .talk, .job, .event, .person, .tribe, .codeRepo {
     padding: 16px;
     margin-bottom: 20px;
     color: white;
+    overflow: hidden;
 }
 
 .pagingLinks {
@@ -73,8 +74,7 @@ a img {
 footer {
     background: #aaaaaa;
     text-align: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 40px 20px 40px 20px;
     border-top: gray solid 10px;
     color: #444444;
 }

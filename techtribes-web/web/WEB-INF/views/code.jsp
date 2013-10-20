@@ -7,33 +7,36 @@
         </p>
 
         <c:forEach var="reposForCoder" items="${reposByCoder}">
-            <div class="row person">
-                <div class="span1">
-                    <a href="<techtribesje:goto contentSource="${reposForCoder.contentSource}"/>"><img src="${reposForCoder.contentSource.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
-                </div>
-                <div class="span10">
-                    <a href="<techtribesje:goto contentSource="${reposForCoder.contentSource}"/>">${reposForCoder.contentSource.name}</a>
-                    <c:if test="${not empty reposForCoder.contentSource.profile}">
-                    <p>
-                        ${reposForCoder.contentSource.profile}
-                    </p>
-                    </c:if>
+            <br /><br />
+            <h2>
+                <a href="<techtribesje:goto contentSource="${reposForCoder.contentSource}"/>"><img src="${reposForCoder.contentSource.profileImageUrl}" alt="Profile image" class="profileImage" /></a>
+                <a href="<techtribesje:goto contentSource="${reposForCoder.contentSource}"/>">${reposForCoder.contentSource.name}</a>
+            </h2>
 
-                    <table class="table" style="margin-top: 32px;">
-                    <tbody>
-                    <c:forEach var="repo" items="${reposForCoder.gitHubRepositories}">
-                    <tr>
-                        <td style="border-top: none;"><a href="${repo.url}" target="_blank"><img src="/static/img/techtribes/github.png" alt="GitHub" class="profileImageSmall" title="GitHub" /></a>&nbsp;<a href="${repo.url}" target="_blank">${repo.name}</a></td>
-                        <td style="border-top: none;" width="66%">${repo.description}</td>
-                    </tr>
+            <c:forEach var="repo" items="${reposForCoder.gitHubRepositories}" varStatus="status">
+                <c:if test="${status.index % 4 == 0}">
+                    <div class="row">
+                </c:if>
+                        <div class="span3">
+                            <div class="codeRepo">
+                                <a href="${repo.url}" target="_blank"><img src="/static/img/techtribes/github.png" alt="GitHub" class="profileImageSmall" title="GitHub" /></a> <a href="${repo.url}" target="_blank">${repo.name}</a>
+                                <p>
+                                ${repo.truncatedDescription}
+                                </p>
+                            </div>
+                        </div>
+                <c:if test="${status.index % 4 == 3}">
+                    </div>
+                </c:if>
+
+                <c:if test="${status.last and status.index % 4 ne 3}">
+                    <c:forEach begin="1" end="${3-(status.index % 4)}">
+                        <div class="span3">&nbsp;</div>
                     </c:forEach>
-                    </tbody>
-                    </table>
-                </div>
-                <div class="span1">
-                    &nbsp;
-                </div>
-            </div>
+                    </div>
+                </c:if>
+            </c:forEach>
+
         </c:forEach>
     </div>
 </div>

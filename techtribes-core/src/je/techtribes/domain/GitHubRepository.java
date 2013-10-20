@@ -1,5 +1,7 @@
 package je.techtribes.domain;
 
+import je.techtribes.util.StringUtils;
+
 public class GitHubRepository {
 
     private int contentSourceId;
@@ -42,6 +44,10 @@ public class GitHubRepository {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getTruncatedDescription() {
+        return StringUtils.filterHtmlAndTruncate(getDescription());
     }
 
     public String getUrl() {
