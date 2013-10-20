@@ -18,7 +18,7 @@
             </c:if>
 
             <p>
-                <a href="/about">About techtribes.je</a> (build <%= je.techtribes.util.Version.getBuildNumber() %>)
+                <a href="/about">About techtribes.je</a> (<a href="https://github.com/techtribesje/techtribesje/tree/build-<%= je.techtribes.util.Version.getBuildNumber() %>" target="_blank">build <%= je.techtribes.util.Version.getBuildNumber() %></a>)
             </p>
         </footer>
 
