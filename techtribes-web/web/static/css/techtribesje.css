@@ -253,8 +253,8 @@ footer a {
 }
 
 .codeSection {
-    background: linear-gradient(to bottom, #52A3CC, #66CCFF);
-    background: -webkit-linear-gradient(top, #52A3CC, #66CCFF);
+    background: linear-gradient(to bottom, #478FB2, #5CB8E6);
+    background: -webkit-linear-gradient(top, #478FB2, #5CB8E6);
 }
 
 .jobsSection {
@@ -303,7 +303,7 @@ footer a {
     color: #0776A0;
 }
 #headerNavigation .codeLink {
-    color: #52A3CC;
+    color: #478FB2;
 }
 #headerNavigation .jobsLink {
     color: #48036F;

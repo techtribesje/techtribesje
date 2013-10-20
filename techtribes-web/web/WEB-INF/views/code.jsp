@@ -3,7 +3,7 @@
         <h1>Code</h1>
 
         <p>
-            Some of the locals like to get their hands dirty with a bit of coding but these aren't your typical 9-5'ers. Take a look at what they've been up to...
+            Some of the locals like to get their hands dirty with a bit of coding, but these aren't your typical 9-5'ers. Take a look at what they've been up to...
         </p>
 
         <c:forEach var="reposForCoder" items="${reposByCoder}">
