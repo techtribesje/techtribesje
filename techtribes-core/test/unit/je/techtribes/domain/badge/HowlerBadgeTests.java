@@ -33,4 +33,10 @@ public class HowlerBadgeTests extends TalkBadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(talks).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new HowlerBadge();
+        assertTrue(badge.getType() == BadgeType.Person);
+    }
+
 }

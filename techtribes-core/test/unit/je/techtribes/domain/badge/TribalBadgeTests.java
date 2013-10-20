@@ -53,4 +53,10 @@ public class TribalBadgeTests extends BadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(contentSources).contains(tribe2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new TribalBadge();
+        assertTrue(badge.getType() == BadgeType.PersonAndTribe);
+    }
+
 }

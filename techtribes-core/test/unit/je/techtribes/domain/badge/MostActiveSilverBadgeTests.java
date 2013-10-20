@@ -31,4 +31,10 @@ public class MostActiveSilverBadgeTests extends ActivityBadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(activityList).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new MostActiveSilverBadge();
+        assertTrue(badge.getType() == BadgeType.PersonAndTribe);
+    }
+
 }

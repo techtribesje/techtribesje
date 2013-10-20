@@ -1,9 +1,5 @@
 package je.techtribes.domain.badge;
 
-import je.techtribes.domain.ContentSource;
-
-import java.util.Collection;
-
 public interface Badge {
 
     public int getId();
@@ -15,5 +11,7 @@ public interface Badge {
     public int getOrder();
 
     public void setOrder(int order);
+
+    public BadgeType getType();
 
 }

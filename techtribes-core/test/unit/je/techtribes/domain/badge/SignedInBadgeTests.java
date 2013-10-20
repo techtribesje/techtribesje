@@ -43,4 +43,10 @@ public class SignedInBadgeTests extends BadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(contentSources).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new SignedInBadge();
+        assertTrue(badge.getType() == BadgeType.PersonAndTribe);
+    }
+
 }

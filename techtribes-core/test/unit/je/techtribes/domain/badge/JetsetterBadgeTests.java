@@ -61,4 +61,10 @@ public class JetsetterBadgeTests extends TalkBadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(talks).contains(person1));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new JetsetterBadge();
+        assertTrue(badge.getType() == BadgeType.Person);
+    }
+
 }

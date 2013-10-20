@@ -67,4 +67,10 @@ public class CommunityHashtaggerBadgeTests extends BadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(tweets).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new CommunityHashtaggerBadge();
+        assertTrue(badge.getType() == BadgeType.PersonAndTribe);
+    }
+
 }

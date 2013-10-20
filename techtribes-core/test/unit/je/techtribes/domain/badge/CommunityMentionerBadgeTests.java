@@ -67,4 +67,10 @@ public class CommunityMentionerBadgeTests extends BadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(tweets).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new CommunityMentionerBadge();
+        assertTrue(badge.getType() == BadgeType.PersonAndTribe);
+    }
+
 }

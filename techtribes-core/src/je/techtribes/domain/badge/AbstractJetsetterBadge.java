@@ -40,4 +40,9 @@ public abstract class AbstractJetsetterBadge extends AbstractBadge implements Ta
 
     protected abstract int getThreshold();
 
+    @Override
+    public BadgeType getType() {
+        return BadgeType.Person;
+    }
+
 }

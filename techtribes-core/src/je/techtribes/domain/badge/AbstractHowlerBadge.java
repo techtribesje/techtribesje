@@ -41,4 +41,9 @@ public abstract class AbstractHowlerBadge extends AbstractBadge implements TalkB
 
     protected abstract int getThreshold();
 
+    @Override
+    public BadgeType getType() {
+        return BadgeType.Person;
+    }
+
 }

@@ -62,4 +62,10 @@ public class RockhopperBadgeTests extends TalkBadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(talks).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new RockhopperBadge();
+        assertTrue(badge.getType() == BadgeType.Person);
+    }
+
 }

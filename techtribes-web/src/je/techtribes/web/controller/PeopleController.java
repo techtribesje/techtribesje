@@ -13,6 +13,7 @@ import je.techtribes.component.tweet.TweetException;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.AwardedBadge;
 import je.techtribes.domain.badge.Badge;
+import je.techtribes.domain.badge.BadgeType;
 import je.techtribes.domain.badge.Badges;
 import je.techtribes.util.PageSize;
 import je.techtribes.util.comparator.AwardedBadgeComparator;
@@ -96,11 +97,13 @@ public class PeopleController extends AbstractController {
 
     private void addUnawardedBadges(List<AwardedBadge> awardedBadges, List<Badge> badges, ContentSource contentSource) {
         for (Badge badge : badges) {
-            AwardedBadge awardedBadge = new AwardedBadge(badge, contentSource);
+            if (badge.getType() == BadgeType.Person || badge.getType() == BadgeType.PersonAndTribe) {
+                AwardedBadge awardedBadge = new AwardedBadge(badge, contentSource);
 
-            if (!awardedBadges.contains(awardedBadge)) {
-                awardedBadge.setAwarded(false);
-                awardedBadges.add(awardedBadge);
+                if (!awardedBadges.contains(awardedBadge)) {
+                    awardedBadge.setAwarded(false);
+                    awardedBadges.add(awardedBadge);
+                }
             }
         }
     }

@@ -33,4 +33,9 @@ public class RockhopperBadge extends AbstractBadge implements TalkBadge {
         return contentSources;
     }
 
+    @Override
+    public BadgeType getType() {
+        return BadgeType.Person;
+    }
+
 }

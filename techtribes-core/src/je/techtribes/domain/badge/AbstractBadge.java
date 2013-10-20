@@ -34,4 +34,9 @@ abstract class AbstractBadge implements Badge {
         this.order = order;
     }
 
+    @Override
+    public BadgeType getType() {
+        return BadgeType.PersonAndTribe;
+    }
+
 }

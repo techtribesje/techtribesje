@@ -33,4 +33,10 @@ public class TweeterBadgeTests extends BadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(tweets).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new TweeterBadge();
+        assertTrue(badge.getType() == BadgeType.PersonAndTribe);
+    }
+
 }

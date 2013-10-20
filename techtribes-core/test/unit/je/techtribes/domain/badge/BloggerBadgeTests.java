@@ -36,4 +36,10 @@ public class BloggerBadgeTests {
         assertTrue(badge.findEligibleContentSources(newsFeedEntries).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new BloggerBadge();
+        assertTrue(badge.getType() == BadgeType.PersonAndTribe);
+    }
+
 }

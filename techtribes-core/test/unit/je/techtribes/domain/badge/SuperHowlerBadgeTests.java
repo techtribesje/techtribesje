@@ -60,4 +60,10 @@ public class SuperHowlerBadgeTests extends TalkBadgeTestsSupport {
         assertTrue(badge.findEligibleContentSources(talks).contains(person2));
     }
 
+    @Test
+    public void test_GetType() {
+        Badge badge = new SuperHowlerBadge();
+        assertTrue(badge.getType() == BadgeType.Person);
+    }
+
 }
