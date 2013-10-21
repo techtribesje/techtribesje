@@ -189,16 +189,6 @@ footer a {
     color: white;
 }
 
-.newsSection {
-    background: linear-gradient(to bottom, #000000, #333333);
-    background: -webkit-linear-gradient(top, #000000, #333333);
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.newsSection a {
-    color: white;
-}
-
 .section {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -210,6 +200,13 @@ footer a {
     background-color: #888888;
     background: linear-gradient(to bottom, #888888, #555555);
     background: -webkit-linear-gradient(top, #888888, #555555);
+}
+
+.newsSection {
+    background: linear-gradient(to bottom, #000000, #111111);
+    background: -webkit-linear-gradient(top, #000000, #111111);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .contentSection {
