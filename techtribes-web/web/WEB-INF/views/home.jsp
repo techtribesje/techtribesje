@@ -1,3 +1,5 @@
+<c:set var="showPagingLinks" value="false" />
+
 <c:if test="${not empty newsEntries}">
     <%@ include file="/WEB-INF/views/news.jsp" %>
 </c:if>
