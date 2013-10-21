@@ -60,4 +60,22 @@ public class TweetTests {
         assertEquals("RT <a href=\"/twitter/techtribesje\">@techtribesje</a>: blah blah blah <a href=\"/twitter/simonbrown\">@simonbrown</a>", tweet.getBodyAsHtml());
     }
 
+    @Test
+    public void test_getBodyAsHtml_IdentifiesAHashTag_WhenTheStringContainsAHashTag() {
+        tweet = new Tweet(contentSource, 1234567890, "This is a #hashtag", new Date());
+        assertEquals("This is a <a href=\"/search?q=%23hashtag\">#hashtag</a>", tweet.getBodyAsHtml());
+    }
+
+    @Test
+    public void test_getBodyAsHtml_IdentifiesAHashTag_WhenTheStringContainsAHashTagSurroundedByDisallowedCharacters() {
+        tweet = new Tweet(contentSource, 1234567890, "This is a (#hashtag)", new Date());
+        assertEquals("This is a (<a href=\"/search?q=%23hashtag\">#hashtag</a>)", tweet.getBodyAsHtml());
+
+        tweet = new Tweet(contentSource, 1234567890, "This is a #hashtag.", new Date());
+        assertEquals("This is a <a href=\"/search?q=%23hashtag\">#hashtag</a>.", tweet.getBodyAsHtml());
+
+        tweet = new Tweet(contentSource, 1234567890, "This is a ##hashtag.", new Date());
+        assertEquals("This is a #<a href=\"/search?q=%23hashtag\">#hashtag</a>.", tweet.getBodyAsHtml());
+    }
+
 }

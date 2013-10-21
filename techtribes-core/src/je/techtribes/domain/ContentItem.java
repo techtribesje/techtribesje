@@ -55,8 +55,8 @@ public abstract class ContentItem {
 
         String s = getBody().replaceAll("http://\\S*", "<a href=\"$0\" target=\"_blank\">$0</a>");
         s = s.replaceAll("https://\\S*", "<a href=\"$0\" target=\"_blank\">$0</a>");
-        s = s.replaceAll("(#)(\\S*)", "<a href=\"/search?q=%23$2\">$0</a>");
-        s = s.replaceAll("(@)([a-zA-Z0-9_]*)", "<a href=\"/twitter/$2\">$0</a>");
+        s = s.replaceAll("(#)([a-zA-Z0-9_]+)", "<a href=\"/search?q=%23$2\">$0</a>");
+        s = s.replaceAll("(@)([a-zA-Z0-9_]+)", "<a href=\"/twitter/$2\">$0</a>");
 
         return s;
     }
