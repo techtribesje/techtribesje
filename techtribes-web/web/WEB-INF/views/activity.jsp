@@ -21,19 +21,14 @@
             points allows anybody blogging to sneak ahead in the leaderboard.
         </p>
 
-        <h4>How are business tribes scored?</h4>
-        <p>
-            The score for business tribes is simply (the score for all members + the score for the tribe).
-            Again, there's a tweet cap of 25.
-        </p>
-
         <hr />
+
+        <%@ include file="/WEB-INF/fragments/activity-key.jspf" %>
 
         <a name="people"></a><h2>People</h2>
         <p>
             Here are the most active people.
         </p>
-        <%@ include file="/WEB-INF/fragments/activity-key.jspf" %>
         <c:set var="activityList" value="${activityListForPeople}" />
         <c:set var="topScore" value="${topScoreForPeople}" />
         <%@ include file="/WEB-INF/fragments/activity.jspf" %>
@@ -42,9 +37,8 @@
 
         <a name="business"></a><h2>Business tribes</h2>
         <p>
-            These are the most active business tribes, based upon the average of all activity by them and their members.
+            These are the most active business tribes, based upon their activity.
         </p>
-        <%@ include file="/WEB-INF/fragments/activity-key.jspf" %>
         <c:set var="activityList" value="${activityListForBusinessTribes}" />
         <c:set var="topScore" value="${topScoreForBusinessTribes}" />
         <%@ include file="/WEB-INF/fragments/activity.jspf" %>
@@ -55,7 +49,6 @@
         <p>
             And finally these are the most active community tribes, based upon their activity.
         </p>
-        <%@ include file="/WEB-INF/fragments/activity-key.jspf" %>
         <c:set var="activityList" value="${activityListForCommunityTribes}" />
         <c:set var="topScore" value="${topScoreForCommunityTribes}" />
         <%@ include file="/WEB-INF/fragments/activity.jspf" %>

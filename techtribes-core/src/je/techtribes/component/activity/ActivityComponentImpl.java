@@ -131,23 +131,6 @@ class ActivityComponentImpl extends AbstractComponent implements ActivityCompone
 
             Map<ContentSource,Activity> activityMap = toMap(activityCollection);
 
-            // do the tribal aggregation
-            List<ContentSource> contentSources = contentSourceComponent.getPeopleAndTribes();
-            for (ContentSource contentSource : contentSources) {
-                if (contentSource.isTribe()) {
-                    Tribe tribe = (Tribe)contentSource;
-                    Activity tribeActivity = activityMap.get(tribe);
-                    if (tribeActivity != null) {
-                        if (tribe.getType() != ContentSourceType.Community) {
-                            for (ContentSource person : tribe.getMembers()) {
-                                Activity personActivity = activityMap.get(person);
-                                tribeActivity.addFiguresFrom(personActivity);
-                            }
-                        }
-                    }
-                }
-            }
-
             // mark content sources as active or not
             for (Activity activity : activityCollection) {
                 if (activity.getScore() > 0) {

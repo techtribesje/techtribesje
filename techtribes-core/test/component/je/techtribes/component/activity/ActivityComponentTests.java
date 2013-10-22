@@ -29,11 +29,11 @@ public class ActivityComponentTests extends AbstractComponentTestsBase {
             int id = contentSource.getId();
             template.update("insert into activity (content_source_id, international_talks, local_talks, content, tweets, events, last_activity_datetime, activity_datetime) values (?, ?, ?, ?, ?, ?, ?, ?)",
                     id,
-                    id * 1,
-                    id * 2,
+                    contentSource.isPerson() ? id * 1 : 0,
+                    contentSource.isPerson() ? id * 2 : 0,
                     id * 3,
                     id * 4,
-                    id * 5,
+                    contentSource.isTribe() ? id * 5 : 0,
                     dateTimeFormat.format(DateUtils.getDate(2013, 7, 1, 12+id, 0)),
                     dateTimeFormat.format(DateUtils.getToday())
                     );
@@ -84,7 +84,7 @@ public class ActivityComponentTests extends AbstractComponentTestsBase {
         assertEquals(id*2, activity.getNumberOfLocalTalks());
         assertEquals(id*3, activity.getNumberOfNewsFeedEntries());
         assertEquals(id*4, activity.getNumberOfTweets());
-        assertEquals(id*5, activity.getNumberOfEvents());
+        assertEquals(0, activity.getNumberOfEvents());
         assertEquals("2013-07-01 13:00:00", dateTimeFormat.format(activity.getLastActivityDate())); // UTC date
     }
 
@@ -99,11 +99,11 @@ public class ActivityComponentTests extends AbstractComponentTestsBase {
         assertEquals(4, activityForChrisClark.getNumberOfLocalTalks());
         assertEquals(6, activityForChrisClark.getNumberOfNewsFeedEntries());
         assertEquals(8, activityForChrisClark.getNumberOfTweets());
-        assertEquals(10, activityForChrisClark.getNumberOfEvents());
+        assertEquals(0, activityForChrisClark.getNumberOfEvents());
 
         Activity activityForP247 = getActivityComponent().getActivity(p247);
-        assertEquals(3, activityForP247.getNumberOfInternationalTalks());
-        assertEquals(6, activityForP247.getNumberOfLocalTalks());
+        assertEquals(0, activityForP247.getNumberOfInternationalTalks());
+        assertEquals(0, activityForP247.getNumberOfLocalTalks());
         assertEquals(9, activityForP247.getNumberOfNewsFeedEntries());
         assertEquals(12, activityForP247.getNumberOfTweets());
         assertEquals(15, activityForP247.getNumberOfEvents());
@@ -119,14 +119,14 @@ public class ActivityComponentTests extends AbstractComponentTestsBase {
         assertEquals(4, activityForChrisClark.getNumberOfLocalTalks());
         assertEquals(6, activityForChrisClark.getNumberOfNewsFeedEntries());
         assertEquals(8, activityForChrisClark.getNumberOfTweets());
-        assertEquals(10, activityForChrisClark.getNumberOfEvents());
+        assertEquals(0, activityForChrisClark.getNumberOfEvents());
 
         activityForP247 = getActivityComponent().getActivity(p247);
-        assertEquals(3+2, activityForP247.getNumberOfInternationalTalks());
-        assertEquals(6+4, activityForP247.getNumberOfLocalTalks());
-        assertEquals(9+6, activityForP247.getNumberOfNewsFeedEntries());
-        assertEquals(12+8, activityForP247.getNumberOfTweets());
-        assertEquals(15+10, activityForP247.getNumberOfEvents());
+        assertEquals(0, activityForP247.getNumberOfInternationalTalks());
+        assertEquals(0, activityForP247.getNumberOfLocalTalks());
+        assertEquals(9, activityForP247.getNumberOfNewsFeedEntries());
+        assertEquals(12, activityForP247.getNumberOfTweets());
+        assertEquals(15, activityForP247.getNumberOfEvents());
     }
 
     @Test
