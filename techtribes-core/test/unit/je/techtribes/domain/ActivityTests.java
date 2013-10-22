@@ -19,7 +19,7 @@ public class ActivityTests {
         assertEquals(10, activity.getTwitterScore());
         assertEquals(0, activity.getEventScore());
 
-        assertEquals(235, activity.getRawScore(), 0.0);
+        assertEquals(235, activity.getScore(), 0.0);
         assertEquals(235, activity.getScore(), 0.0);
     }
 
@@ -30,7 +30,7 @@ public class ActivityTests {
 
         assertEquals(25, activity.getTwitterScore());
 
-        assertEquals(250, activity.getRawScore(), 0.0);
+        assertEquals(250, activity.getScore(), 0.0);
         assertEquals(250, activity.getScore(), 0.0);
     }
 
@@ -39,25 +39,23 @@ public class ActivityTests {
         ContentSource tribe = new Tribe(ContentSourceType.Business);
         activity = new Activity(tribe, 1, 1, 3, 10, 0);
 
-        assertEquals(100, activity.getInternationalTalkScore());
-        assertEquals(50, activity.getLocalTalkScore());
+        assertEquals(0, activity.getInternationalTalkScore());
+        assertEquals(0, activity.getLocalTalkScore());
         assertEquals(75, activity.getNewsFeedEntryScore());
         assertEquals(10, activity.getTwitterScore());
         assertEquals(0, activity.getEventScore());
 
-        assertEquals(235, activity.getRawScore(), 0.0);
-        assertEquals(235, activity.getScore(), 0.0);
+        assertEquals(85, activity.getScore(), 0.0);
     }
 
     @Test
     public void testTwitterScoreForTribeIsCappedAt25() {
         ContentSource tribe = new Tribe(ContentSourceType.Community);
-        activity = new Activity(tribe, 1, 1, 3, 49, 1);
+        activity = new Activity(tribe, 0, 0, 3, 49, 1);
 
         assertEquals(25, activity.getTwitterScore());
 
-        assertEquals(350, activity.getRawScore(), 0.0);
-        assertEquals(350, activity.getScore(), 0.0);
+        assertEquals(200, activity.getScore(), 0.0);
     }
 
     @Test
@@ -74,6 +72,38 @@ public class ActivityTests {
         activity = new Activity(tribe, 1, 1, 1, 1, 1);
 
         assertEquals(0, activity.getEventScore());
+    }
+
+    @Test
+    public void testGetInternationalTalkScore_ReturnsTheScore_WhenTheContentSourceIsAPerson() {
+        ContentSource person = new Person();
+        activity = new Activity(person, 1, 0, 0, 0, 0);
+
+        assertEquals(100, activity.getInternationalTalkScore());
+    }
+
+    @Test
+    public void testGetInternationalTalkScore_ReturnsZero_WhenTheContentSourceIsATribe() {
+        ContentSource tribe = new Tribe(ContentSourceType.Business);
+        activity = new Activity(tribe, 1, 0, 0, 0, 0);
+
+        assertEquals(0, activity.getInternationalTalkScore());
+    }
+
+    @Test
+    public void testGetLocalTalkScore_ReturnsTheScore_WhenTheContentSourceIsAPerson() {
+        ContentSource person = new Person();
+        activity = new Activity(person, 0, 1, 0, 0, 0);
+
+        assertEquals(50, activity.getLocalTalkScore());
+    }
+
+    @Test
+    public void testGetLocalTalkScore_ReturnsZero_WhenTheContentSourceIsATribe() {
+        ContentSource tribe = new Tribe(ContentSourceType.Business);
+        activity = new Activity(tribe, 0, 1, 0, 0, 0);
+
+        assertEquals(0, activity.getLocalTalkScore());
     }
 
 }

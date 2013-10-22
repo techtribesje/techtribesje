@@ -19,7 +19,7 @@ public class FrequentBloggerBadge extends AbstractBadge implements ActivityBadge
 
         if (activityList != null) {
             for (Activity activity : activityList) {
-                if (activity.getNumberOfNewsFeedEntriesWithoutAggregration() > 1) {
+                if (activity.getNumberOfNewsFeedEntries() > 1) {
                     contentSources.add(activity.getContentSource());
                 }
             }

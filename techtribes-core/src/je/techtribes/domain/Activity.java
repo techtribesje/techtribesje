@@ -1,8 +1,6 @@
 package je.techtribes.domain;
 
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Activity {
 
@@ -24,8 +22,6 @@ public class Activity {
     private long numberOfEvents;
 
     private Date lastActivityDate = new Date(0);
-
-    private List<Activity> activityList = new LinkedList<>();
 
     public Activity(int contentSourceId, long numberOfInternationalTalks, long numberOfLocalTalks, long numberOfNewsFeedEntries, long numberOfTweets, long numberOfEvents, Date lastActivityDate) {
         this.contentSourceId = contentSourceId;
@@ -59,143 +55,63 @@ public class Activity {
     }
 
     public long getNumberOfLocalTalks() {
-        long number = numberOfLocalTalks;
-
-        for (Activity activity : activityList) {
-            number += activity.getNumberOfLocalTalks();
-        }
-
-        return number;
+        return numberOfLocalTalks;
     }
 
     public long getNumberOfInternationalTalks() {
-        long number = numberOfInternationalTalks;
-
-        for (Activity activity : activityList) {
-            number += activity.getNumberOfInternationalTalks();
-        }
-
-        return number;
-    }
-
-    public long getNumberOfNewsFeedEntriesWithoutAggregration() {
-        return this.numberOfNewsFeedEntries;
+        return numberOfInternationalTalks;
     }
 
     public long getNumberOfNewsFeedEntries() {
-        long number = numberOfNewsFeedEntries;
-
-        for (Activity activity : activityList) {
-            number += activity.getNumberOfNewsFeedEntries();
-        }
-
-        return number;
+        return numberOfNewsFeedEntries;
     }
 
     public long getNumberOfTweets() {
-        long number = numberOfTweets;
-
-        for (Activity activity : activityList) {
-            number += activity.getNumberOfTweets();
-        }
-
-        return number;
+        return numberOfTweets;
     }
 
     public long getNumberOfEvents() {
-        long number = numberOfEvents;
-
-        for (Activity activity : activityList) {
-            number += activity.getNumberOfEvents();
-        }
-
-        return number;
+        return numberOfEvents;
     }
 
-    public void addFiguresFrom(Activity activity) {
-        if (activity.getLastActivityDate().after(lastActivityDate)) {
-            this.lastActivityDate = activity.getLastActivityDate();
-        }
-
-        this.activityList.add(activity);
-    }
-
-    public double getScore() {
-        return getRawScore();
-    }
-
-    public long getRawScore() {
+    public long getScore() {
         return getInternationalTalkScore() + getLocalTalkScore() + getNewsFeedEntryScore() + getTwitterScore() + getEventScore();
     }
 
     public long getLocalTalkScore() {
-        long score = this.numberOfLocalTalks * LOCAL_TALK_SCORE;
-
-        for (Activity activity : activityList) {
-            score += activity.getLocalTalkScore();
+        if (contentSource.isPerson()) {
+            return this.numberOfLocalTalks * LOCAL_TALK_SCORE;
+        } else {
+            return 0;
         }
-
-        return score;
     }
 
     public long getInternationalTalkScore() {
-        long score = this.numberOfInternationalTalks * INTERNATIONAL_TALK_SCORE;
-
-        for (Activity activity : activityList) {
-            score += activity.getInternationalTalkScore();
+        if (contentSource.isPerson()) {
+            return this.numberOfInternationalTalks * INTERNATIONAL_TALK_SCORE;
+        } else {
+            return 0;
         }
-
-        return score;
     }
 
     public long getNewsFeedEntryScore() {
-        long score = this.numberOfNewsFeedEntries * CONTENT_SCORE;
-
-        for (Activity activity : activityList) {
-            score += activity.getNewsFeedEntryScore();
-        }
-
-        return score;
+        return this.numberOfNewsFeedEntries * CONTENT_SCORE;
     }
 
     public long getTwitterScore() {
-        long tweets = this.numberOfTweets;
-
-        for (Activity activity : activityList) {
-            tweets += activity.getNumberOfTweets();
-        }
-
-        return Math.min(MAXIMUM_TWEET_SCORE, tweets * TWEET_SCORE);
+        return Math.min(MAXIMUM_TWEET_SCORE, this.numberOfTweets * TWEET_SCORE);
     }
 
     public long getEventScore() {
-        // only community tribes get points for events
-        if (contentSource.isTribe()) {
-            Tribe tribe = (Tribe)contentSource;
-
-            if (tribe.getType() == ContentSourceType.Community) {
-                long score = this.numberOfEvents * EVENT_SCORE;
-
-                for (Activity activity : activityList) {
-                    score += activity.getEventScore();
-                }
-
-                return score;
-            }
+        if (contentSource.isTribe() && contentSource.getType() == ContentSourceType.Community) {
+            return this.numberOfEvents * EVENT_SCORE;
+        } else {
+            return 0;
         }
-
-        return 0;
     }
 
     public Date getLastActivityDate() {
-        Date last = this.lastActivityDate;
-
-        for (Activity activity : activityList) {
-            if (activity.getLastActivityDate().after(last)) {
-                last = activity.getLastActivityDate();
-            }
-        }
-        return last;
+        return this.lastActivityDate;
     }
 
     public void setLastActivityDate(Date lastActivityDate) {

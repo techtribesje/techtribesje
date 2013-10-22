@@ -45,7 +45,7 @@ public class ActivityController extends AbstractController {
     private long calculateTopRawScore(List<Activity> activityList) {
         long topScore = 0;
         for (Activity activity : activityList) {
-            long rawScore = activity.getRawScore();
+            long rawScore = activity.getScore();
             if (rawScore > topScore) {
                 topScore = rawScore;
             }

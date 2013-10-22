@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="span1">
-                <span class="badge badge-inverse"><fmt:formatNumber value="${activity.score}" minFractionDigits="1" maxFractionDigits="1" /></span>
+                <span class="badge badge-inverse"><fmt:formatNumber value="${activity.score}" maxFractionDigits="0" /></span>
             </div>
         </div>
     </c:if>
