@@ -88,14 +88,6 @@
                         </c:otherwise>
                     </c:choose>
                     <c:choose>
-                        <c:when test="${activeNav eq 'talks'}">
-                            <li class="active"><a href="/tribes/${tribe.shortName}/talks">Talks</a></li>
-                        </c:when>
-                        <c:otherwise>
-                            <li><a href="/tribes/${tribe.shortName}/talks">Talks</a></li>
-                        </c:otherwise>
-                    </c:choose>
-                    <c:choose>
                         <c:when test="${activeNav eq 'content'}">
                             <li class="active"><a href="/tribes/${tribe.shortName}/content">Content</a></li>
                         </c:when>

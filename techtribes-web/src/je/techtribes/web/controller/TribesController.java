@@ -2,18 +2,13 @@ package je.techtribes.web.controller;
 
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
-import je.techtribes.domain.Event;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.github.GitHubComponent;
-import je.techtribes.domain.Job;
 import je.techtribes.component.job.JobComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryException;
 import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.search.SearchResult;
-import je.techtribes.domain.Talk;
-import je.techtribes.component.talk.TalkComponent;
-import je.techtribes.domain.Tweet;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.tweet.TweetException;
 import je.techtribes.domain.*;
@@ -30,7 +25,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 @Controller
 public class TribesController extends AbstractController {
@@ -38,7 +35,6 @@ public class TribesController extends AbstractController {
     private BadgeComponent badgeComponent;
     private NewsFeedEntryComponent newsFeedEntryComponent;
     private TweetComponent tweetComponent;
-    private TalkComponent talkComponent;
     private ActivityComponent activityComponent;
     private JobComponent jobService;
     private EventComponent eventService;
@@ -46,11 +42,10 @@ public class TribesController extends AbstractController {
     private SearchComponent searchComponent;
 
     @Autowired
-    public TribesController(BadgeComponent badgeComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, ActivityComponent activityComponent, JobComponent jobService, EventComponent eventService, GitHubComponent gitHubComponent, SearchComponent searchComponent) {
+    public TribesController(BadgeComponent badgeComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, ActivityComponent activityComponent, JobComponent jobService, EventComponent eventService, GitHubComponent gitHubComponent, SearchComponent searchComponent) {
         this.badgeComponent = badgeComponent;
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
-        this.talkComponent = talkComponent;
         this.activityComponent = activityComponent;
         this.jobService = jobService;
         this.eventService = eventService;
@@ -179,7 +174,8 @@ public class TribesController extends AbstractController {
 
             return "tribe-tweets-search";
         } else {
-            Collection<ContentSource> contentSources = createListOfShortNamesForTribeAndMembers(tribe);
+            List<ContentSource> contentSources = new LinkedList<>();
+            contentSources.add(contentSource);
 
             List<Tweet> tweets = new LinkedList<>();
             long numberOfTweets = tweetComponent.getNumberOfTweets(contentSources);
@@ -243,7 +239,8 @@ public class TribesController extends AbstractController {
 
             return "tribe-content-search";
         } else {
-            Collection<ContentSource> contentSources = createListOfShortNamesForTribeAndMembers(tribe);
+            List<ContentSource> contentSources = new LinkedList<>();
+            contentSources.add(contentSource);
 
             List<NewsFeedEntry> newsFeedEntries = new LinkedList<>();
             long numberOfNewsFeedEntries = newsFeedEntryComponent.getNumberOfNewsFeedEntries(contentSources);
@@ -269,34 +266,6 @@ public class TribesController extends AbstractController {
 
             return "tribe-content";
         }
-	}
-
-    @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/talks", method = RequestMethod.GET)
-	public String viewTribeTalks(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = findTribeByShortName(shortName);
-        if (contentSource == null) {
-            return "forward:/404";
-        }
-
-        Tribe tribe = (Tribe)contentSource;
-
-        List<Talk> talks = talkComponent.getTalks(createListOfMembers(tribe));
-
-        Set<String> countries = new TreeSet<>();
-        for (Talk talk : talks) {
-            countries.add(talk.getCountry());
-        }
-
-        model.addAttribute("tribe", contentSource);
-        model.addAttribute("talks", talks);
-        model.addAttribute("countries", countries);
-        model.addAttribute("numberOfCountries", countries.size());
-        model.addAttribute("activeNav", "talks");
-        model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(talks).getStatistics());
-        addCommonAttributes(model);
-        setPageTitle(model, contentSource.getName(), "Talks");
-
-        return "tribe-talks";
 	}
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/jobs", method = RequestMethod.GET)
@@ -352,34 +321,5 @@ public class TribesController extends AbstractController {
 
         return "tribe-code";
 	}
-
-    private Collection<ContentSource> createListOfShortNamesForTribeAndMembers(Tribe tribe) {
-        List<ContentSource> shortNames = new LinkedList<>();
-        shortNames.add(tribe);
-        shortNames.addAll(createListOfShortNamesForTribeMembers(tribe));
-
-        return shortNames;
-    }
-
-    private Collection<ContentSource> createListOfShortNamesForTribeMembers(Tribe tribe) {
-        if (tribe.getType() != ContentSourceType.Community) {
-            List<ContentSource> list = new LinkedList<>();
-            list.addAll(tribe.getMembers());
-            return list;
-        }
-
-        return new LinkedList<>();
-    }
-
-    private Collection<ContentSource> createListOfMembers(Tribe tribe) {
-        Collection<ContentSource> members = new LinkedList<>();
-        if (tribe.getType() != ContentSourceType.Community) {
-            for (Person person : tribe.getMembers()) {
-                members.add(person);
-            }
-        }
-
-        return members;
-    }
 
 }
