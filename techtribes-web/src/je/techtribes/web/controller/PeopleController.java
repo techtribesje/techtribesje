@@ -79,7 +79,11 @@ public class PeopleController extends AbstractController {
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}", method = RequestMethod.GET)
 	public String viewPerson(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        ContentSource contentSource = findPersonByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
+
         List<AwardedBadge> badges = badgeComponent.getAwardedBadges(contentSource);
         addUnawardedBadges(badges, Badges.getBadges(), contentSource);
         Collections.sort(badges, new AwardedBadgeComparator());
@@ -110,7 +114,10 @@ public class PeopleController extends AbstractController {
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/talks", method = RequestMethod.GET)
 	public String viewTalksByPerson(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        ContentSource contentSource = findPersonByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
 
         List<Talk> talks = talksService.getTalks(contentSource);
         Set<String> countries = new TreeSet<String>();
@@ -132,7 +139,10 @@ public class PeopleController extends AbstractController {
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/code", method = RequestMethod.GET)
 	public String viewCodeByPerson(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        ContentSource contentSource = findPersonByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
 
         model.addAttribute("person", contentSource);
         model.addAttribute("activeNav", "code");
@@ -152,8 +162,12 @@ public class PeopleController extends AbstractController {
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/tweets/{page:[\\d]+}", method = RequestMethod.GET)
 	public String viewTweets(@PathVariable("name")String shortName, @PathVariable("page")int page, ModelMap model) {
+        ContentSource contentSource = findPersonByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
+
         List<ContentSource> contentSources = new LinkedList<>();
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
         contentSources.add(contentSource);
 
         List<Tweet> tweets = new LinkedList<>();
@@ -191,8 +205,12 @@ public class PeopleController extends AbstractController {
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/content/{page:[\\d]+}", method = RequestMethod.GET)
 	public String viewContent(@PathVariable("name")String shortName, @PathVariable("page")int page, ModelMap model) {
+        ContentSource contentSource = findPersonByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
+
         List<ContentSource> contentSources = new LinkedList<>();
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
         contentSources.add(contentSource);
 
         List<NewsFeedEntry> newsFeedEntries = new LinkedList<>();

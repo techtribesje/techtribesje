@@ -101,11 +101,11 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}", method = RequestMethod.GET)
 	public String viewTribe(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
-        if (contentSource.isPerson()) {
-            loggingComponent.error(this, shortName + " is not a tribe");
-            return "404";
+        ContentSource contentSource = findTribeByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
         }
+
         Tribe tribe = (Tribe)contentSource;
 
         // redirect to the jobs page for tribes where we're not aggregating content
@@ -150,10 +150,9 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/tweets/{page:[\\d]+}", method = RequestMethod.GET)
 	public String viewTribeTweets(@PathVariable("name")String shortName, @PathVariable("page")int page, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
-        if (contentSource.isPerson()) {
-            loggingComponent.error(this, shortName + " is not a tribe");
-            return "404";
+        ContentSource contentSource = findTribeByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
         }
 
         Tribe tribe = (Tribe)contentSource;
@@ -215,11 +214,11 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/content/{page:[\\d]+}", method = RequestMethod.GET)
 	public String viewTribeContent(@PathVariable("name")String shortName, @PathVariable("page")int page, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
-        if (contentSource.isPerson()) {
-            loggingComponent.error(this, shortName + " is not a tribe");
-            return "404";
+        ContentSource contentSource = findTribeByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
         }
+
         Tribe tribe = (Tribe)contentSource;
         model.addAttribute("tribe", contentSource);
         model.addAttribute("activeNav", "content");
@@ -274,11 +273,11 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/talks", method = RequestMethod.GET)
 	public String viewTribeTalks(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
-        if (contentSource.isPerson()) {
-            loggingComponent.error(this, shortName + " is not a tribe");
-            return "404";
+        ContentSource contentSource = findTribeByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
         }
+
         Tribe tribe = (Tribe)contentSource;
 
         List<Talk> talks = talkComponent.getTalks(createListOfMembers(tribe));
@@ -302,7 +301,10 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/jobs", method = RequestMethod.GET)
 	public String viewTribeJobs(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        ContentSource contentSource = findTribeByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
 
         List<Job> jobs = jobService.getRecentJobs(contentSource, 12, false);
 
@@ -317,7 +319,10 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/events", method = RequestMethod.GET)
 	public String viewTribeEvents(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        ContentSource contentSource = findTribeByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
 
         List<Event> events = eventService.getEvents(contentSource, 12);
 
@@ -332,7 +337,10 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value="/tribes/{name:^[a-z-0-9]*$}/code", method = RequestMethod.GET)
 	public String viewCodeByTribe(@PathVariable("name")String shortName, ModelMap model) {
-        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        ContentSource contentSource = findTribeByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
 
         model.addAttribute("tribe", contentSource);
         model.addAttribute("activeNav", "code");

@@ -61,4 +61,30 @@ public class AbstractController {
         return contentSourceComponent.findByTwitterId(twitterId);
     }
 
+    protected ContentSource findTribeByShortName(String shortName) {
+        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        if (contentSource == null) {
+            loggingComponent.error(this, "Tribe called " + shortName + " does not exist");
+            return null;
+        } else if (!contentSource.isTribe()) {
+            loggingComponent.error(this, shortName + " is not a tribe");
+            return null;
+        } else {
+            return contentSource;
+        }
+    }
+
+    protected ContentSource findPersonByShortName(String shortName) {
+        ContentSource contentSource = contentSourceComponent.findByShortName(shortName);
+        if (contentSource == null) {
+            loggingComponent.error(this, "Person called " + shortName + " does not exist");
+            return null;
+        } else if (!contentSource.isPerson()) {
+            loggingComponent.error(this, shortName + " is not a person");
+            return null;
+        } else {
+            return contentSource;
+        }
+    }
+
 }
