@@ -5,14 +5,16 @@
 
             <br />
 
+            <p>
+                <a href="http://twitter.com/techtribesje" target="_blank"><img src="/static/img/twitter.png" alt="Twitter" /></a>
+                |
+                <a href="/rss.xml"><img src="/static/img/feed-icon-32x32.png" alt="Feed icon" /></a>
+                |
+                <a href="http://youtube.com/channel/UC8X5oFK7-ARLQsxDHE1FX2Q?feature=watch" target="_blank"><img src="/static/img/youtube.png" alt="YouTube" /></a>
+            </p>
+
             <c:if test="${empty pageContext.request.userPrincipal}">
                 <form action="/signin/twitter" method="POST">
-                    <a href="http://twitter.com/techtribesje" target="_blank"><img src="/static/img/twitter.png" alt="Twitter" /></a>
-                    |
-                    <a href="/rss.xml"><img src="/static/img/feed-icon-32x32.png" alt="Feed icon" /></a>
-                    |
-                    <a href="http://youtube.com/channel/UC8X5oFK7-ARLQsxDHE1FX2Q?feature=watch" target="_blank"><img src="/static/img/youtube.png" alt="YouTube" /></a>
-                    |
                     <input type="submit" class="btn" value="Sign in with Twitter" />
                 </form>
             </c:if>
