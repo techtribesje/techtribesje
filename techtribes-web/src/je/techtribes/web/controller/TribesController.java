@@ -104,9 +104,7 @@ public class TribesController extends AbstractController {
         Tribe tribe = (Tribe)contentSource;
 
         // redirect to the jobs page for tribes where we're not aggregating content
-        if (!tribe.isContentAggregated()) {
-            return "redirect:/tribes/" + tribe.getShortName() + "/jobs";
-        } else if (tribe.getType() == ContentSourceType.Tech) {
+        if (tribe.getType() == ContentSourceType.Tech) {
             return "redirect:/tribes/" + tribe.getShortName() + "/content";
         }
 
