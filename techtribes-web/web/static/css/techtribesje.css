@@ -176,6 +176,7 @@ footer a {
 }
 
 .section {
+    background: #555555;
     background: linear-gradient(to bottom, #555555, #888888);
     background: -webkit-linear-gradient(top, #555555, #888888);
     color: white;
@@ -203,6 +204,7 @@ footer a {
 }
 
 .newsSection {
+    background: #000000;
     background: linear-gradient(to bottom, #000000, #111111);
     background: -webkit-linear-gradient(top, #000000, #111111);
     padding-top: 20px;
@@ -210,6 +212,7 @@ footer a {
 }
 
 .contentSection {
+    background: #027602;
     background: linear-gradient(to bottom, #027602, #019201);
     background: -webkit-linear-gradient(top, #027602, #019201);
 }
@@ -220,6 +223,7 @@ footer a {
 }
 
 .eventsSection {
+    background: #DD9300;
     background: linear-gradient(to bottom, #DD9300, #FFAA00);
     background: -webkit-linear-gradient(top, #DD9300, #FFAA00);
 }
@@ -230,6 +234,7 @@ footer a {
 }
 
 .talksSection {
+    background: #A80000;
     background: linear-gradient(to bottom, #A80000, #BE0000);
     background: -webkit-linear-gradient(top, #A80000, #BE0000);
 }
@@ -240,6 +245,7 @@ footer a {
 }
 
 .tweetsSection {
+    background: #044E6B;
     background: linear-gradient(to bottom, #044E6B, #0776A0);
     background: -webkit-linear-gradient(top, #044E6B, #0776A0);
 }
@@ -250,11 +256,13 @@ footer a {
 }
 
 .codeSection {
+    background: #478FB2;
     background: linear-gradient(to bottom, #478FB2, #5CB8E6);
     background: -webkit-linear-gradient(top, #478FB2, #5CB8E6);
 }
 
 .jobsSection {
+    background: #390258;
     background: linear-gradient(to bottom, #390258, #48036F);
     background: -webkit-linear-gradient(top, #390258, #48036F);
 }
