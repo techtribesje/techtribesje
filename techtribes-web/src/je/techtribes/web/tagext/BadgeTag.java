@@ -12,11 +12,21 @@ public class BadgeTag extends SimpleTagSupport {
     private int id;
     private int size = 96;
 
+    private String cssClasses;
+
     @Override
     public void doTag() throws JspException, IOException {
         Badge badge = Badges.find(id);
         if (badge != null) {
-            getJspContext().getOut().write("<img src=\"/static/img/badges/" + id + ".png\" alt=\"" + badge.getName() +"\" title=\"" + badge.getName() + "\" border=\"0\" width=\"" + size + "px\"/>");
+            StringBuilder buf = new StringBuilder();
+
+            buf.append("<img src=\"/static/img/badges/").append(id).append(".png\" alt=\"").append(badge.getName()).append("\" title=\"").append(badge.getName()).append("\" border=\"0\" width=\"").append(size).append("px\"");
+            if (cssClasses != null && !cssClasses.isEmpty()) {
+                buf.append(" class=\"").append(cssClasses).append("\"");
+            }
+            buf.append("/>");
+
+            getJspContext().getOut().write(buf.toString());
         }
     }
 
@@ -26,6 +36,10 @@ public class BadgeTag extends SimpleTagSupport {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public void setCssClasses(String cssClasses) {
+        this.cssClasses = cssClasses;
     }
 
 }
