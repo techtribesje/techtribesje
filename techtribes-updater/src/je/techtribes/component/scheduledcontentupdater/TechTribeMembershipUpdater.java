@@ -13,6 +13,9 @@ class TechTribeMembershipUpdater {
 
     private static final int PAGE_SIZE = 100;
 
+    private static final int NEWS_FEED_ENTRIES_THRESHOLD = 10;
+    private static final int TWEETS_THRESHOLD = 50;
+
     private final ScheduledContentUpdaterImpl scheduledContentUpdater;
     private final ContentSourceComponent contentSourceComponent;
     private final SearchComponent searchComponent;
@@ -29,13 +32,13 @@ class TechTribeMembershipUpdater {
             final Tribe techTribe = (Tribe)cs;
             scheduledContentUpdater.logDebug("Determining membership for " + techTribe.getName() + " tech tribe");
 
-            Set<Integer> personIds = getContentSourceIds(5, new Searcher() {
+            Set<Integer> personIds = getContentSourceIds(NEWS_FEED_ENTRIES_THRESHOLD, new Searcher() {
                 @Override
                 public List<SearchResult> search(int page) {
                     return searchComponent.searchForNewsFeedEntries(techTribe.getSearchTerms(), PAGE_SIZE, page);
                 }
             });
-            personIds.addAll(getContentSourceIds(25, new Searcher() {
+            personIds.addAll(getContentSourceIds(TWEETS_THRESHOLD, new Searcher() {
                 @Override
                 public List<SearchResult> search(int page) {
                     return searchComponent.searchForTweets(techTribe.getSearchTerms(), PAGE_SIZE, page);
