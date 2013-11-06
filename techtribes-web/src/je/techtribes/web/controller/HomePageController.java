@@ -20,6 +20,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -57,6 +58,7 @@ public class HomePageController extends AbstractController {
 
         List<Job> jobs = jobComponent.getRecentJobs(PageSize.RECENT_JOBS);
         List<Event> events = eventComponent.getFutureEvents(PageSize.RECENT_EVENTS);
+        Collections.reverse(events);
 
         model.addAttribute("newsFeedEntries", newsFeedEntries);
         model.addAttribute("newsEntries", newsEntries);
