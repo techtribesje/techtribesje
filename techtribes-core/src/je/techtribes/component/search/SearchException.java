@@ -1,6 +1,6 @@
 package je.techtribes.component.search;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class SearchException extends ComponentException {
 

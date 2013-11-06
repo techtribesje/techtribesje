@@ -1,6 +1,8 @@
 package je.techtribes.component.tweet;
 
+import com.codingthearchitecture.seos.element.Collaboration;
 import com.codingthearchitecture.seos.element.Component;
+import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
 
@@ -8,10 +10,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Provides access to tweets.
- */
-@Component
+@Component(responsibility = "Provides access to tweets.")
+@Collaboration(target = ContentSourceComponent.class, responsibility = "Enriches with")
 public interface TweetComponent {
 
     /**

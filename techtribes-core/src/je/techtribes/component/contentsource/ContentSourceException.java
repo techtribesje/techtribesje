@@ -1,6 +1,6 @@
 package je.techtribes.component.contentsource;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class ContentSourceException extends ComponentException {
 

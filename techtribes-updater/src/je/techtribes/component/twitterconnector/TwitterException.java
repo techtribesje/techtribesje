@@ -1,6 +1,6 @@
 package je.techtribes.component.twitterconnector;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class TwitterException extends ComponentException {
 

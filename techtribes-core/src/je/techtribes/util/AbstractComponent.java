@@ -1,4 +1,4 @@
-package je.techtribes.component;
+package je.techtribes.util;
 
 import je.techtribes.component.log.LoggingComponentFactory;
 

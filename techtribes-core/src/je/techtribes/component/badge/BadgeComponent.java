@@ -6,10 +6,7 @@ import je.techtribes.domain.badge.AwardedBadge;
 
 import java.util.List;
 
-/**
- * Manages the badges that have been awarded to people and tribes.
- */
-@Component
+@Component(responsibility = "Manages the badges that have been awarded to people and tribes.")
 public interface BadgeComponent {
 
     List<AwardedBadge> getAwardedBadges();

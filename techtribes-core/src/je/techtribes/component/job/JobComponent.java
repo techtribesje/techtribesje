@@ -6,10 +6,7 @@ import je.techtribes.domain.Job;
 
 import java.util.List;
 
-/**
- * Provides access to information about recently posted jobs.
- */
-@Component
+@Component(responsibility = "Provides access to information about recently posted jobs.")
 public interface JobComponent {
 
     /**

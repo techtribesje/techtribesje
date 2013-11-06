@@ -1,6 +1,6 @@
 package je.techtribes.component.scheduledcontentupdater;
 
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;

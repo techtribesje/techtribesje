@@ -1,6 +1,6 @@
 package je.techtribes.component.newsfeedentry;
 
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.domain.ContentSource;

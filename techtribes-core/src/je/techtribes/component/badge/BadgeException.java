@@ -1,6 +1,6 @@
 package je.techtribes.component.badge;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class BadgeException extends ComponentException {
 

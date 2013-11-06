@@ -1,6 +1,6 @@
 package je.techtribes.component.activity;
 
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.log.LoggingComponentFactory;

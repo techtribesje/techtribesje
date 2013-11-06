@@ -1,6 +1,6 @@
 package je.techtribes.component.social;
 
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionSignUp;

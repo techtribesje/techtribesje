@@ -1,6 +1,6 @@
 package je.techtribes.component.contentsource;
 
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.Person;

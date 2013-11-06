@@ -6,10 +6,7 @@ import je.techtribes.domain.GitHubRepository;
 
 import java.util.List;
 
-/**
- * Provides access to the list of GitHub repos associated with content sources.
- */
-@Component
+@Component(responsibility = "Provides access to the list of GitHub repos associated with content sources.")
 public interface GitHubComponent {
 
     /**

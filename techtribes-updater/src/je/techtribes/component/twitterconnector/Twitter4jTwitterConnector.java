@@ -1,6 +1,6 @@
 package je.techtribes.component.twitterconnector;
 
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.domain.Tweet;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;

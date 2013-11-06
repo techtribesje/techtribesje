@@ -1,4 +1,4 @@
-package je.techtribes.component;
+package je.techtribes.util;
 
 public abstract class ComponentException extends RuntimeException {
 

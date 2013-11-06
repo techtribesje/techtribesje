@@ -1,15 +1,12 @@
 package je.techtribes.component.contentupdater;
 
 import com.codingthearchitecture.seos.element.Component;
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import org.springframework.scheduling.annotation.Scheduled;
 
-/**
- * Refreshes the (cached) list of content sources and activity rankings on the website every 5 minutes.
- */
-@Component
+@Component(responsibility = "Refreshes the (cached) list of content sources and activity rankings on the website every 5 minutes.")
 public class ContentUpdateComponent extends AbstractComponent {
 
     private ContentSourceComponent contentSourceComponent;

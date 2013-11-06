@@ -1,6 +1,6 @@
 package je.techtribes.component.contentupdater;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class ContentUpdateComponentException extends ComponentException {
 

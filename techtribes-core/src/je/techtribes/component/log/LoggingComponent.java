@@ -2,10 +2,7 @@ package je.techtribes.component.log;
 
 import com.codingthearchitecture.seos.element.Component;
 
-/**
- * Provides logging facilities to all other components.
- */
-@Component
+@Component(responsibility = "Provides logging facilities to all other components.")
 public interface LoggingComponent {
 
     void debug(Object caller, String message);

@@ -1,6 +1,6 @@
 package je.techtribes.component.talk;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class TalkException extends ComponentException {
 

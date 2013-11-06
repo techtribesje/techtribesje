@@ -8,7 +8,7 @@ import com.sun.syndication.feed.rss.Channel;
 import com.sun.syndication.feed.rss.Item;
 import com.sun.syndication.io.WireFeedInput;
 import com.sun.syndication.io.XmlReader;
-import je.techtribes.component.AbstractComponent;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.domain.NewsFeed;
 import je.techtribes.domain.NewsFeedEntry;
 import je.techtribes.util.comparator.ContentItemComparator;

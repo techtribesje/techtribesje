@@ -1,6 +1,6 @@
 package je.techtribes.component.activity;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class ActivityException extends ComponentException {
 

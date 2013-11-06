@@ -1,6 +1,6 @@
 package je.techtribes.component.githubconnector;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class GitHubConnectorException extends ComponentException {
 

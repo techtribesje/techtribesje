@@ -1,6 +1,6 @@
 package je.techtribes.component.job;
 
-import je.techtribes.component.ComponentException;
+import je.techtribes.util.ComponentException;
 
 public class JobException extends ComponentException {
 

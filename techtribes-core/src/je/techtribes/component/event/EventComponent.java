@@ -7,10 +7,7 @@ import je.techtribes.domain.Event;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Provides access to information about local events (e.g. meetups, user groups, etc).
- */
-@Component
+@Component(responsibility = "Provides access to information about local events (e.g. meetups, user groups, etc).")
 public interface EventComponent {
 
     /**

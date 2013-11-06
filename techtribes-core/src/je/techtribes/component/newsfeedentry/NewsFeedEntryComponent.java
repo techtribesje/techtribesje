@@ -8,10 +8,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Provides access to blog entries and news.
- */
-@Component
+@Component(responsibility = "Provides access to blog entries and news.")
 public interface NewsFeedEntryComponent {
 
     List<NewsFeedEntry> getRecentNewsFeedEntries(int page, int pageSize);
