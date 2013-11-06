@@ -148,31 +148,31 @@ footer a {
 
 .selected {
     border: #dddddd solid 1px;
-    background: #FAFAFA;
-    background: linear-gradient(to bottom, #FAFAFA, #EAEAEA);
-    background: -webkit-linear-gradient(top, #FAFAFA, #EAEAEA);
+    background-color: #FAFAFA;
+    background-image: linear-gradient(to bottom, #FAFAFA, #EAEAEA);
+    background-image: -webkit-linear-gradient(top, #FAFAFA, #EAEAEA);
     color: black;
 }
 
 .badge-followersover1000 {
-    background: #FFAD40;
-    background: linear-gradient(to bottom, #FFAD40, #F3A640);
-    background: -webkit-linear-gradient(top, #FFAD40, #F3A640);
+    background-color: #FFAD40;
+    background-image: linear-gradient(to bottom, #FFAD40, #F3A640);
+    background-image: -webkit-linear-gradient(top, #FFAD40, #F3A640);
 }
 .badge-followersover5000 {
-    background: #999999;
-    background: linear-gradient(to bottom, #999999, #AAAAAA);
-    background: -webkit-linear-gradient(top, #999999, #AAAAAA);
+    background-color: #999999;
+    background-image: linear-gradient(to bottom, #999999, #AAAAAA);
+    background-image: -webkit-linear-gradient(top, #999999, #AAAAAA);
 }
 .badge-followersunder500 {
-    background: #A66002;
-    background: linear-gradient(to bottom, #A66002, #965601);
-    background: -webkit-linear-gradient(top, #A66002, #965601);
+    background-color: #A66002;
+    background-image: linear-gradient(to bottom, #A66002, #965601);
+    background-image: -webkit-linear-gradient(top, #A66002, #965601);
 }
 .badge-followers0 {
-    background: #000000;
-    background: linear-gradient(to bottom, #000000, #000000);
-    background: -webkit-linear-gradient(top, #000000, #000000);
+    background-color: #000000;
+    background-image: linear-gradient(to bottom, #000000, #000000);
+    background-image: -webkit-linear-gradient(top, #000000, #000000);
 }
 
 .section {
@@ -197,74 +197,75 @@ footer a {
 .section a {
     color: white;
 }
+
 .progress .bar {
     background-color: #888888;
-    background: linear-gradient(to bottom, #888888, #555555);
-    background: -webkit-linear-gradient(top, #888888, #555555);
+    background-image: linear-gradient(to bottom, #888888, #555555);
+    background-image: -webkit-linear-gradient(top, #888888, #555555);
 }
 
 .newsSection {
-    background: #000000;
-    background: linear-gradient(to bottom, #000000, #111111);
-    background: -webkit-linear-gradient(top, #000000, #111111);
+    background-color: #000000;
+    background-image: linear-gradient(to bottom, #000000, #111111);
+    background-image: -webkit-linear-gradient(top, #000000, #111111);
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .contentSection {
-    background: #027602;
-    background: linear-gradient(to bottom, #027602, #019201);
-    background: -webkit-linear-gradient(top, #027602, #019201);
+    background-color: #027602;
+    background-image: linear-gradient(to bottom, #027602, #019201);
+    background-image: -webkit-linear-gradient(top, #027602, #019201);
 }
 .progress .bar-content, .contentSection .progress .bar {
     background-color: #019201;
-    background: linear-gradient(to bottom, #019201, #027602);
-    background: -webkit-linear-gradient(top, #019201, #027602);
+    background-image: linear-gradient(to bottom, #019201, #027602);
+    background-image: -webkit-linear-gradient(top, #019201, #027602);
 }
 
 .eventsSection {
-    background: #DD9300;
-    background: linear-gradient(to bottom, #DD9300, #FFAA00);
-    background: -webkit-linear-gradient(top, #DD9300, #FFAA00);
+    background-color: #DD9300;
+    background-image: linear-gradient(to bottom, #DD9300, #FFAA00);
+    background-image: -webkit-linear-gradient(top, #DD9300, #FFAA00);
 }
 .progress .bar-events {
     background-color: #FFAA00;
-    background: linear-gradient(to bottom, #FFAA00, #DD9300);
-    background: -webkit-linear-gradient(top, #FFAA00, #DD9300);
+    background-image: linear-gradient(to bottom, #FFAA00, #DD9300);
+    background-image: -webkit-linear-gradient(top, #FFAA00, #DD9300);
 }
 
 .talksSection {
-    background: #A80000;
-    background: linear-gradient(to bottom, #A80000, #BE0000);
-    background: -webkit-linear-gradient(top, #A80000, #BE0000);
+    background-color: #A80000;
+    background-image: linear-gradient(to bottom, #A80000, #BE0000);
+    background-image: -webkit-linear-gradient(top, #A80000, #BE0000);
 }
 .progress .bar-talks {
     background-color: #BE0000;
-    background: linear-gradient(to bottom, #BE0000, #A80000);
-    background: -webkit-linear-gradient(top, #BE0000, #A80000);
+    background-image: linear-gradient(to bottom, #BE0000, #A80000);
+    background-image: -webkit-linear-gradient(top, #BE0000, #A80000);
 }
 
 .tweetsSection {
-    background: #044E6B;
-    background: linear-gradient(to bottom, #044E6B, #0776A0);
-    background: -webkit-linear-gradient(top, #044E6B, #0776A0);
+    background-color: #044E6B;
+    background-image: linear-gradient(to bottom, #044E6B, #0776A0);
+    background-image: -webkit-linear-gradient(top, #044E6B, #0776A0);
 }
 .progress .bar-tweets, .tweetsSection .progress .bar {
     background-color: #0776A0;
-    background: linear-gradient(to bottom, #0776A0, #044E6B);
-    background: -webkit-linear-gradient(top, #0776A0, #044E6B);
+    background-image: linear-gradient(to bottom, #0776A0, #044E6B);
+    background-image: -webkit-linear-gradient(top, #0776A0, #044E6B);
 }
 
 .codeSection {
-    background: #478FB2;
-    background: linear-gradient(to bottom, #478FB2, #5CB8E6);
-    background: -webkit-linear-gradient(top, #478FB2, #5CB8E6);
+    background-color: #478FB2;
+    background-image: linear-gradient(to bottom, #478FB2, #5CB8E6);
+    background-image: -webkit-linear-gradient(top, #478FB2, #5CB8E6);
 }
 
 .jobsSection {
-    background: #390258;
-    background: linear-gradient(to bottom, #390258, #48036F);
-    background: -webkit-linear-gradient(top, #390258, #48036F);
+    background-color: #390258;
+    background-image: linear-gradient(to bottom, #390258, #48036F);
+    background-image: -webkit-linear-gradient(top, #390258, #48036F);
 }
 
 .embeddedVideo, .embeddedMap {
