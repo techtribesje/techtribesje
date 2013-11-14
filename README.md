@@ -17,34 +17,8 @@ You'll need the following in order to build and run the techtribes.je website:
 - [MySQL 5.5](http://www.mysql.com)
 - [MongoDB 2.4](http://www.mongodb.org)
 
-## Building techtribes.je
+## Software Guidebook
 
-There is an Ant build script (build.xml) in the top-level directory of the repo, which can be used to compile, build and test the code.
+There is a software guidebook for the [techtribes.je](http://techtribes.je) website in the [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers) book.
 
-### Compile and run unit tests
-
-````
-ant unit-tests
-````
-
-### Compile, run unit and component (integration) tests
-
-````
-ant component-tests
-````
-
-TODO: list the database schema prerequisites.
-
-### Compile, run all tests and build a distribution ZIP
-
-````
-ant dist
-````
-
-## Running techtribes.je
-
-TODO: list out the configuration file details.
-
-### Running the website
-
-### Running the standalone content updater
+![Software Architecture for Developers](software-architecture-for-developers.png)
