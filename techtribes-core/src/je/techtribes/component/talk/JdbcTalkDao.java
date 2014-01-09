@@ -32,7 +32,7 @@ class JdbcTalkDao {
         Date start = DateUtils.getStartOfYear(year);
         Date end = DateUtils.getEndOfYear(year);
 
-        return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where talk_date between ? and ? order by talk_date desc",
+        return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where talk_date between ? and ? order by talk_date asc",
                 new Object[] { start, end },
                 new TalkRowMapper());
     }

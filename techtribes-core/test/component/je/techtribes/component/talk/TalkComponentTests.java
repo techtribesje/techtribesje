@@ -162,7 +162,7 @@ public class TalkComponentTests extends AbstractComponentTestsBase {
         List<Talk> talks = getTalkComponent().getTalksByYear(currentYear-1);
         assertEquals(12, talks.size());
         for (int i = 0; i < 11; i++) {
-            assertEquals("Talk " + (12-i), talks.get(i).getTitle());
+            assertEquals("Talk " + (i+1), talks.get(i).getTitle());
         }
     }
 
