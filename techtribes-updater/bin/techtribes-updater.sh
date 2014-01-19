@@ -1,2 +1,2 @@
 #!/bin/bash
-java -cp ./lib/*:. je.techtribes.updater.Main
+java -Dtwitter4j.http.useSSL=true -cp ./lib/*:. je.techtribes.updater.Main
