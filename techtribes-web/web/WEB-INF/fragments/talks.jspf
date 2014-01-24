@@ -10,9 +10,15 @@
                         <a href="/talks/${talk.id}">${talk.title}</a>
                     </h3>
                     ${talk.truncatedDescription}
+
+                    <c:if test="${not empty talk.videoUrl}">
+                    <div class="embeddedVideo">
+                        <techtribesje:embedVideo url="${talk.videoUrl}" width="355" height="200" />
+                    </div>
+                    </c:if>
+
                     <div style="float: right;">
                     <c:if test="${not empty talk.slidesUrl}"><a href="${talk.slidesUrl}" target="_blank"><i class="icon-th-large"></i></a></c:if>
-                    <c:if test="${not empty talk.videoUrl}"><a href="${talk.videoUrl}" target="_blank"><i class="icon-film"></i></a></c:if>
                     </div>
                     <br /><br />
                     <div class="metadata">

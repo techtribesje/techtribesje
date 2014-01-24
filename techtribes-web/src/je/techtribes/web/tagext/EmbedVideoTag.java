@@ -9,12 +9,14 @@ import java.io.IOException;
 public class EmbedVideoTag extends SimpleTagSupport {
 
     private String url;
+    private int width = 560;
+    private int height = 315;
 
     @Override
     public void doTag() throws JspException, IOException {
         Video video = new Video(url);
         if (video.isYouTube()) {
-            getJspContext().getOut().write("<iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/" + video.getYouTubeId() + "\" frameborder=\"0\" allowfullscreen></iframe>");
+            getJspContext().getOut().write("<iframe width=\"" + width + "\" height=\"" + height + "\" src=\"http://www.youtube.com/embed/" + video.getYouTubeId() + "\" frameborder=\"0\" allowfullscreen></iframe>");
         }
     }
 
@@ -22,4 +24,11 @@ public class EmbedVideoTag extends SimpleTagSupport {
         this.url = url;
     }
 
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 }
