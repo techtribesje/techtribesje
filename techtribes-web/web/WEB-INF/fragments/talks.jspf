@@ -13,7 +13,7 @@
 
                     <c:if test="${not empty talk.videoUrl}">
                     <div class="embeddedVideo">
-                        <techtribesje:embedVideo url="${talk.videoUrl}" width="355" height="200" />
+                        <techtribesje:embedVideo url="${talk.videoUrl}" width="267" height="150" />
                     </div>
                     </c:if>
 
