@@ -118,7 +118,7 @@
 
                 <hr />
 
-                <div class="row">
+                <div class="row hidden-phone">
                     <div class="span4" style="text-align: center;">
                         <h4>An Intro to Bitcoin Mining & Investing</h4>
                         <p><a href="/people/jonathanday">Jonathan Day</a></p>
