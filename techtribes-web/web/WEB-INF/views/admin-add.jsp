@@ -54,7 +54,7 @@
                 <div class="controls">
                     <select id="type" name="type">
                         <option value="p">Person</option>
-                        <option value="s">Social Tribe</option>
+                        <option value="c">Social Tribe</option>
                         <option value="t">Tech Tribe</option>
                         <option value="b">Business Tribe</option>
                     </select>
