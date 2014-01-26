@@ -8,6 +8,7 @@ import com.sun.syndication.feed.rss.Channel;
 import com.sun.syndication.feed.rss.Item;
 import com.sun.syndication.io.WireFeedInput;
 import com.sun.syndication.io.XmlReader;
+import je.techtribes.domain.ContentSourceType;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.domain.NewsFeed;
 import je.techtribes.domain.NewsFeedEntry;
@@ -122,11 +123,21 @@ class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnect
     }
 
     private void add(List<NewsFeedEntry> entries, NewsFeedEntry fe) {
-        // this tries to ensure that only Channel Island news is aggregated from DQ Mag
-        if (fe.getContentSource().getShortName().equals("digitalquadrantmagazine")) {
-            String body = fe.getBody().toLowerCase();
-            if (body.contains("jersey") || body.contains("guernsey") || body.contains("channel island")) {
-                entries.add(fe);
+        if (fe.getContentSource().getType() == ContentSourceType.Media) {
+            if (fe.getContentSource().getShortName().equals("digitalquadrantmagazine")) {
+                // this tries to ensure that only Channel Island news is aggregated from DQ Mag
+                String body = fe.getBody().toLowerCase();
+                if (body.contains("jersey") || body.contains("guernsey") || body.contains("channel island")) {
+                    entries.add(fe);
+                }
+            } else {
+                // this tries to ensure that only digital/IT/technology news is aggregated
+                String body = fe.getBody().toLowerCase();
+                if (    body.contains("digital") ||
+                        body.contains("technology") ||
+                        body.contains("software")) {
+                    entries.add(fe);
+                }
             }
         } else {
             entries.add(fe);

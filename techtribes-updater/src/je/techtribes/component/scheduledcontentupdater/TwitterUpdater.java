@@ -7,6 +7,7 @@ import je.techtribes.component.tweet.TweetException;
 import je.techtribes.component.twitterconnector.StreamingTweetListener;
 import je.techtribes.component.twitterconnector.TwitterConnector;
 import je.techtribes.domain.ContentSource;
+import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.Tweet;
 import je.techtribes.component.twitterconnector.TwitterProfile;
 
@@ -54,7 +55,7 @@ class TwitterUpdater {
     public void refreshRecentTweets() {
         try {
             List<Tweet> tweets = twitterConnector.getRecentTweets();
-            List<Tweet> filteredTweets = filterUnknownContentSources(tweets);
+            List<Tweet> filteredTweets = filterTweets(tweets);
             tweetComponent.storeTweets(filteredTweets);
 
             for (Tweet tweet : filteredTweets) {
@@ -74,7 +75,7 @@ class TwitterUpdater {
                 public void onTweet(final Tweet tweet) {
                     List<Tweet> listOfTweets = new LinkedList<>();
                     listOfTweets.add(tweet);
-                    List<Tweet> filteredTweets = filterUnknownContentSources(listOfTweets);
+                    List<Tweet> filteredTweets = filterTweets(listOfTweets);
                     tweetComponent.storeTweets(filteredTweets);
 
                     for (Tweet ft : filteredTweets) {
@@ -103,14 +104,29 @@ class TwitterUpdater {
         }
     }
 
-    private List<Tweet> filterUnknownContentSources(List<Tweet> tweets) {
+    private List<Tweet> filterTweets(List<Tweet> tweets) {
         List<Tweet> filteredTweets = new LinkedList<>();
 
         for (Tweet tweet : tweets) {
             ContentSource contentSource = contentSourceComponent.findByTwitterId(tweet.getTwitterId());
             if (contentSource != null && contentSource.isContentAggregated()) {
-                filteredTweets.add(tweet);
                 tweet.setContentSource(contentSource);
+
+                if (contentSource.getType() == ContentSourceType.Media) {
+                    if (contentSource.getShortName().equals("digitalquadrantmagazine")) {
+                        filteredTweets.add(tweet);
+                    } else {
+                        // this tries to ensure that only digital/IT/technology tweets are aggregated
+                        String body = tweet.getBody().toLowerCase();
+                        if (    body.contains("digital") ||
+                                body.contains("technology") ||
+                                body.contains("software")) {
+                            filteredTweets.add(tweet);
+                        }
+                    }
+                } else {
+                    filteredTweets.add(tweet);
+                }
             }
         }
 
