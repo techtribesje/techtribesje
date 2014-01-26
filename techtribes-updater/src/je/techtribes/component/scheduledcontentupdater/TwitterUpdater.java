@@ -120,6 +120,7 @@ class TwitterUpdater {
                         String body = tweet.getBody().toLowerCase();
                         if (    body.contains("digital") ||
                                 body.contains("technology") ||
+                                body.contains("bitcoin") ||
                                 body.contains("software")) {
                             filteredTweets.add(tweet);
                         }
