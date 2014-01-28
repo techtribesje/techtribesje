@@ -57,11 +57,7 @@ class TwitterUpdater {
             List<Tweet> tweets = twitterConnector.getRecentTweets();
             List<Tweet> filteredTweets = filterTweets(tweets);
             tweetComponent.storeTweets(filteredTweets);
-
-            for (Tweet tweet : filteredTweets) {
-                searchComponent.add(tweet);
-            }
-
+            searchComponent.addTweets(filteredTweets);
         } catch (TweetException e) {
             ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error refreshing tweets", e);
             scheduledContentUpdater.logError(scue);
@@ -77,10 +73,7 @@ class TwitterUpdater {
                     listOfTweets.add(tweet);
                     List<Tweet> filteredTweets = filterTweets(listOfTweets);
                     tweetComponent.storeTweets(filteredTweets);
-
-                    for (Tweet ft : filteredTweets) {
-                        searchComponent.add(ft);
-                    }
+                    searchComponent.addTweets(filteredTweets);
                 }
 
                 @Override

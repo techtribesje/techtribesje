@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -86,12 +87,19 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
         return new IndexWriter(index, config);
     }
 
-    public void add(NewsFeedEntry newsFeedEntry) {
+    public void addNewsFeedEntries(Collection<NewsFeedEntry> newsFeedEntries) {
         try  {
             IndexWriter indexWriter = createIndexWriter();
 
-            remove(newsFeedEntry, indexWriter);
-            insert(newsFeedEntry, indexWriter);
+            for (NewsFeedEntry newsFeedEntry : newsFeedEntries) {
+                try {
+                    remove(newsFeedEntry, indexWriter);
+                    insert(newsFeedEntry, indexWriter);
+                } catch (Exception e) {
+                    SearchException se = new SearchException("Error adding news feed entry " + newsFeedEntry.toString(), e);
+                    logError(se);
+                }
+            }
 
             indexWriter.close();
         } catch (Exception e) {
@@ -101,16 +109,23 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
         }
     }
 
-    public void add(Tweet tweet) {
+    public void addTweets(Collection<Tweet> tweets) {
         try {
             IndexWriter indexWriter = createIndexWriter();
 
-            remove(tweet, indexWriter);
-            insert(tweet, indexWriter);
+            for (Tweet tweet : tweets) {
+                try {
+                    remove(tweet, indexWriter);
+                    insert(tweet, indexWriter);
+                } catch (Exception e) {
+                    SearchException se = new SearchException("Error adding tweet " + tweet.toString(), e);
+                    logError(se);
+                }
+            }
 
             indexWriter.close();
         } catch (Exception e) {
-            SearchException se = new SearchException("Error adding tweet", e);
+            SearchException se = new SearchException("Error adding tweets", e);
             logError(se);
             throw se;
         }

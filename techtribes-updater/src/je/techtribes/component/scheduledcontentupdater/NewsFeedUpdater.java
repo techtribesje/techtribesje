@@ -36,10 +36,7 @@ class NewsFeedUpdater {
                     try {
                         List<NewsFeedEntry> newsFeedEntries = newsFeedConnector.loadNewsFeedEntries(newsFeed);
                         newsFeedEntryComponent.storeNewsFeedEntries(newsFeedEntries);
-
-                        for (NewsFeedEntry newsFeedEntry : newsFeedEntries) {
-                            searchComponent.add(newsFeedEntry);
-                        }
+                        searchComponent.addNewsFeedEntries(newsFeedEntries);
                     } catch (Exception e) {
                         ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error updating news feed for " + newsFeed.getUrl(), e);
                         scheduledContentUpdater.logWarn(scue);

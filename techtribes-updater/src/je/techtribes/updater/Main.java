@@ -35,17 +35,17 @@ public class Main {
 
             rebuildSearchIndexes(applicationContext);
             System.exit(0);
+        } else {
+            final ScheduledContentUpdater scu = (ScheduledContentUpdater)applicationContext.getBean("contentUpdater");
+
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                     public void run() {
+                         scu.stop();
+                     }
+                 });
+
+            scu.start();
         }
-
-        final ScheduledContentUpdater scu = (ScheduledContentUpdater)applicationContext.getBean("contentUpdater");
-
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-                 public void run() {
-                     scu.stop();
-                 }
-             });
-
-        scu.start();
     }
 
     private static void rebuildSearchIndexes(ApplicationContext applicationContext) {
@@ -64,21 +64,18 @@ public class Main {
         for (int page = 1; page <= numberOfPages; page++) {
             loggingComponent.info(Main.class, "Indexing news feed entries; page " + page + " of " + numberOfPages);
             List<NewsFeedEntry> newsFeedEntries = newsFeedEntryComponent.getRecentNewsFeedEntries(page, PageSize.RECENT_NEWS_FEED_ENTRIES);
-            for (NewsFeedEntry newsFeedEntry : newsFeedEntries) {
-                searchComponent.add(newsFeedEntry);
-            }
+            searchComponent.addNewsFeedEntries(newsFeedEntries);
         }
 
         // add add everything that the tweet service knows about
+        int tweetPageSize = 200;
         long numberOfTweets = tweetComponent.getNumberOfTweets();
         loggingComponent.info(Main.class, "Number of tweets: " + numberOfTweets);
-        numberOfPages = PageSize.calculateNumberOfPages(numberOfTweets, PageSize.RECENT_TWEETS);
+        numberOfPages = PageSize.calculateNumberOfPages(numberOfTweets, tweetPageSize);
         for (int page = 1; page <= numberOfPages; page++) {
             loggingComponent.info(Main.class, "Indexing tweets; page " + page + " of " + numberOfPages);
-            List<Tweet> tweets = tweetComponent.getRecentTweets(page, PageSize.RECENT_TWEETS);
-            for (Tweet tweet : tweets) {
-                searchComponent.add(tweet);
-            }
+            List<Tweet> tweets = tweetComponent.getRecentTweets(page, tweetPageSize);
+            searchComponent.addTweets(tweets);
         }
         loggingComponent.info(Main.class, "Finished rebuilding search indexes");
     }
