@@ -136,6 +136,7 @@ class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnect
                 if (    body.contains("digital") ||
                         body.contains("technology") ||
                         body.contains("bitcoin") ||
+                        body.contains("bcs jersey") ||
                         body.contains("software")) {
                     entries.add(fe);
                 }
