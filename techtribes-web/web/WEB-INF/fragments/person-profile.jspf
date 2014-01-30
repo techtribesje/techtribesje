@@ -32,6 +32,16 @@
     </c:if>
 </p>
 
+<c:if test="${not empty person.newsFeeds}">
+    <br /><br />
+    <h2>News feeds</h2>
+    <ul>
+    <c:forEach var="newsFeed" items="${person.newsFeeds}">
+        <li><a href="${newsFeed.url}" target="_blank">${newsFeed.url}</a></li>
+    </c:forEach>
+        </ul>
+</c:if>
+
 <c:if test="${not empty person.tribes}">
 <br /><br />
 <h2>Tribes <span class="badge">${person.numberOfTribes}</span></h2>
