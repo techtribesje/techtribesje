@@ -146,6 +146,21 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
         }
     }
 
+    public void removeNewsFeedEntry(String url) {
+        try {
+            IndexWriter indexWriter = createIndexWriter();
+
+            Term term = new Term(PERMALINK, url);
+            indexWriter.deleteDocuments(term);
+
+            indexWriter.close();
+        } catch (Exception e) {
+            SearchException se = new SearchException("Error removing news feed entry", e);
+            logError(se);
+            throw se;
+        }
+    }
+
     private void remove(NewsFeedEntry newsFeedEntry, IndexWriter indexWriter) throws Exception {
         Term term = new Term(PERMALINK, newsFeedEntry.getPermalink());
         indexWriter.deleteDocuments(term);

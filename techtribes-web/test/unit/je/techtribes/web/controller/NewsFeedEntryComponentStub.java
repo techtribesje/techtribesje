@@ -49,4 +49,8 @@ public class NewsFeedEntryComponentStub implements NewsFeedEntryComponent {
     public void storeNewsFeedEntries(Collection<NewsFeedEntry> newsFeedEntries) {
     }
 
+    @Override
+    public void removeNewsFeedEntry(String url) {
+    }
+
 }

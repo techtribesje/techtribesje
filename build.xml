@@ -12,6 +12,10 @@
     <property name="updater.build.dir" value="${build.dir}/techtribes-updater" />
     <property name="updater.dist.dir" value="${dist.dir}/techtribes-updater" />
 
+    <property name="util.dir" value="${basedir}/techtribes-util" />
+    <property name="util.build.dir" value="${build.dir}/techtribes-util" />
+    <property name="util.dist.dir" value="${dist.dir}/techtribes-util" />
+
     <property name="web.dir" value="${basedir}/techtribes-web" />
     <property name="web.build.dir" value="${build.dir}/techtribes-web" />
     <property name="web.dist.dir" value="${dist.dir}/techtribes-web" />
@@ -49,6 +53,9 @@
         <mkdir dir="${updater.build.dir}/production-classes"/>
         <mkdir dir="${updater.build.dir}/test-classes"/>
 
+        <mkdir dir="${util.build.dir}"/>
+        <mkdir dir="${util.build.dir}/production-classes"/>
+
         <mkdir dir="${web.build.dir}"/>
         <mkdir dir="${web.build.dir}/production-classes"/>
         <mkdir dir="${web.build.dir}/test-classes"/>
@@ -56,6 +63,8 @@
         <mkdir dir="${dist.dir}"/>
         <mkdir dir="${updater.dist.dir}"/>
         <mkdir dir="${updater.dist.dir}/lib"/>
+        <mkdir dir="${util.dist.dir}"/>
+        <mkdir dir="${util.dist.dir}/lib"/>
         <mkdir dir="${web.dist.dir}"/>
         <mkdir dir="${web.dist.dir}/WEB-INF"/>
         <mkdir dir="${web.dist.dir}/WEB-INF/classes"/>
@@ -94,6 +103,15 @@
                 <fileset dir="${test.lib.dir}" includes="*.jar" />
                 <pathelement location="${core.build.dir}/production-classes" />
                 <pathelement location="${updater.build.dir}/production-classes" />
+            </classpath>
+        </javac>
+
+        <javac srcdir="${util.dir}/src" destdir="${util.build.dir}/production-classes" debug="yes">
+            <classpath>
+                <fileset dir="${production.lib.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+                <pathelement location="${core.build.dir}/production-classes" />
             </classpath>
         </javac>
 
@@ -188,6 +206,11 @@
             <fileset dir="${updater.dir}/src" includes="**/*.xml" />
         </jar>
 
+        <jar jarfile="${build.dir}/techtribes-util.jar">
+            <fileset dir="${util.build.dir}/production-classes"/>
+            <fileset dir="${util.dir}/src" includes="**/*.xml" />
+        </jar>
+
         <jar jarfile="${build.dir}/techtribes-web.jar">
             <fileset dir="${web.build.dir}/production-classes"/>
             <fileset dir="${web.dir}/src" includes="**/*.xml" />
@@ -226,6 +249,19 @@
             </fileset>
             <fileset dir="${build.dir}" includes="techtribes-core.jar" />
             <fileset dir="${build.dir}" includes="techtribes-updater.jar" />
+        </copy>
+
+        <copy todir="${util.dist.dir}">
+            <fileset dir="${util.dir}/etc" includes="applicationContext.xml" />
+            <fileset dir="${util.dir}/etc" includes="log4j.properties" />
+            <fileset dir="${util.dir}/bin" includes="*.sh" />
+        </copy>
+        <copy todir="${util.dist.dir}/lib">
+            <fileset dir="${production.lib.dir}">
+                <include name="*.jar"/>
+            </fileset>
+            <fileset dir="${build.dir}" includes="techtribes-core.jar" />
+            <fileset dir="${build.dir}" includes="techtribes-util.jar" />
         </copy>
 
         <copy todir="${web.dist.dir}">

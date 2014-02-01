@@ -16,6 +16,8 @@ public interface SearchComponent {
 
     void deleteTweet(long id);
 
+    void removeNewsFeedEntry(String url);
+
     List<SearchResult> searchForNewsFeedEntries(String query, int hitsPerPage, int page);
 
     List<SearchResult> searchForTweets(String query, int hitsPerPage, int page);

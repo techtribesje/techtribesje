@@ -118,6 +118,17 @@ class NewsFeedEntryComponentImpl extends AbstractComponent implements NewsFeedEn
         }
     }
 
+    @Override
+    public void removeNewsFeedEntry(String url) {
+        try {
+            newsFeedEntryDao.removeNewsFeedEntry(url);
+        } catch (Exception e) {
+            NewsFeedEntryException nfee = new NewsFeedEntryException("Error removing news feed entry with URL " + url, e);
+            logError(nfee);
+            throw nfee;
+        }
+    }
+
     private void filterAndEnrich(List<NewsFeedEntry> newsFeedEntries) {
         ContentItemFilter<NewsFeedEntry> filter = new ContentItemFilter<>();
         filter.filter(newsFeedEntries, contentSourceComponent, false);

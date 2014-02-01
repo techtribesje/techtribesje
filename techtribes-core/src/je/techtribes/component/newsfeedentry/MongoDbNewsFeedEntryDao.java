@@ -140,6 +140,13 @@ class MongoDbNewsFeedEntryDao {
         }
     }
 
+    void removeNewsFeedEntry(String url) {
+        BasicDBObject query = new BasicDBObject();
+        query.put(PERMALINK_KEY, url);
+
+        getDBCollection().remove(query);
+    }
+
     private List<NewsFeedEntry> toListOfNewsFeedEntry(List<DBObject> dbos) {
         List<NewsFeedEntry> newsFeedEntries = new LinkedList<>();
 

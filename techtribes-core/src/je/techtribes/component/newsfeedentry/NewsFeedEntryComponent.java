@@ -25,4 +25,6 @@ public interface NewsFeedEntryComponent {
 
     void storeNewsFeedEntries(Collection<NewsFeedEntry> newsFeedEntries);
 
+    void removeNewsFeedEntry(String url);
+
 }

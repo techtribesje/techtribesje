@@ -303,6 +303,30 @@ public class NewsFeedEntryComponentTests extends AbstractComponentTestsBase {
         assertEquals(yesterday, getNewsFeedEntryComponent().getRecentNewsFeedEntries(1, 1).get(0).getTimestamp());
     }
 
+    @Test
+    public void test_RemovingANewsFeedEntry_WhenANewsFeedEntryExists_RemovesTheNewsFeedEntry() {
+        Date today = DateUtils.getToday();
+        List<NewsFeedEntry> newsFeedEntries = new LinkedList<>();
+        newsFeedEntries.add(new NewsFeedEntry("http://www.somedomain.com/123", "Title", "Body", today, getContentSourceComponent().findByShortName("simonbrown")));
+        getNewsFeedEntryComponent().storeNewsFeedEntries(newsFeedEntries);
+
+        assertEquals(1, getNewsFeedEntryComponent().getNumberOfNewsFeedEntries());
+        getNewsFeedEntryComponent().removeNewsFeedEntry("http://www.somedomain.com/123");
+        assertEquals(0, getNewsFeedEntryComponent().getNumberOfNewsFeedEntries());
+    }
+
+    @Test
+    public void test_RemovingANewsFeedEntry_WhenANewsFeedEntryDoesntExist_DoesntRemoveAnything() {
+        Date today = DateUtils.getToday();
+        List<NewsFeedEntry> newsFeedEntries = new LinkedList<>();
+        newsFeedEntries.add(new NewsFeedEntry("http://www.somedomain.com/123", "Title", "Body", today, getContentSourceComponent().findByShortName("simonbrown")));
+        getNewsFeedEntryComponent().storeNewsFeedEntries(newsFeedEntries);
+
+        assertEquals(1, getNewsFeedEntryComponent().getNumberOfNewsFeedEntries());
+        getNewsFeedEntryComponent().removeNewsFeedEntry("http://www.otherdomain.com/123");
+        assertEquals(1, getNewsFeedEntryComponent().getNumberOfNewsFeedEntries());
+    }
+
     private NewsFeedEntry createNewsFeedEntry(String contentSourceShortName, long id, String title, String body, Date date) {
         return new NewsFeedEntry("http://www.somedomain.com/" + id, title + " " + id, body, date, getContentSourceComponent().findByShortName(contentSourceShortName));
     }

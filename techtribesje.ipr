@@ -366,6 +366,7 @@
       <module fileurl="file://$PROJECT_DIR$/techtribes.iml" filepath="$PROJECT_DIR$/techtribes.iml" />
       <module fileurl="file://$PROJECT_DIR$/techtribes-core/techtribes-core.iml" filepath="$PROJECT_DIR$/techtribes-core/techtribes-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/techtribes-updater/techtribes-updater.iml" filepath="$PROJECT_DIR$/techtribes-updater/techtribes-updater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/techtribes-util/techtribes-util.iml" filepath="$PROJECT_DIR$/techtribes-util/techtribes-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/techtribes-web/techtribes-web.iml" filepath="$PROJECT_DIR$/techtribes-web/techtribes-web.iml" />
     </modules>
   </component>
