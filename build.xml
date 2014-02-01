@@ -61,6 +61,7 @@
         <mkdir dir="${web.build.dir}/test-classes"/>
 
         <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${dist.dir}/lib"/>
         <mkdir dir="${updater.dist.dir}"/>
         <mkdir dir="${updater.dist.dir}/lib"/>
         <mkdir dir="${util.dist.dir}"/>
@@ -238,15 +239,18 @@
     </target>
 
     <target name="dist" depends="component-tests">
+        <copy todir="${dist.dir}/lib">
+            <fileset dir="${production.lib.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </copy>
+
         <copy todir="${updater.dist.dir}">
             <fileset dir="${updater.dir}/etc" includes="applicationContext.xml" />
             <fileset dir="${updater.dir}/etc" includes="log4j.properties" />
             <fileset dir="${updater.dir}/bin" includes="*.sh" />
         </copy>
         <copy todir="${updater.dist.dir}/lib">
-            <fileset dir="${production.lib.dir}">
-                <include name="*.jar"/>
-            </fileset>
             <fileset dir="${build.dir}" includes="techtribes-core.jar" />
             <fileset dir="${build.dir}" includes="techtribes-updater.jar" />
         </copy>
@@ -257,9 +261,6 @@
             <fileset dir="${util.dir}/bin" includes="*.sh" />
         </copy>
         <copy todir="${util.dist.dir}/lib">
-            <fileset dir="${production.lib.dir}">
-                <include name="*.jar"/>
-            </fileset>
             <fileset dir="${build.dir}" includes="techtribes-core.jar" />
             <fileset dir="${build.dir}" includes="techtribes-util.jar" />
         </copy>
