@@ -23,7 +23,7 @@ public class Main {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         LoggingComponent loggingComponent = (LoggingComponent)applicationContext.getBean("loggingComponent");
-        loggingComponent.info(Main.class, "techtribes.je utils, version " + Version.getBuildNumber() + " built on " + Version.getBuildTimestamp());
+        loggingComponent.info(new Main(), "techtribes.je utils, version " + Version.getBuildNumber() + " built on " + Version.getBuildTimestamp());
 
         if (args.length > 0) {
             if ("rebuildsearch".equals(args[0])) {
@@ -41,7 +41,7 @@ public class Main {
 
     private static void removeNewsFeedEntry(String url, ApplicationContext applicationContext) {
         LoggingComponent loggingComponent = (LoggingComponent)applicationContext.getBean("loggingComponent");
-        loggingComponent.info(Main.class, "Removing news feed entry with URL " + url);
+        loggingComponent.info(new Main(), "Removing news feed entry with URL " + url);
 
         NewsFeedEntryComponent newsFeedEntryComponent = (NewsFeedEntryComponent)applicationContext.getBean("newsFeedEntryComponent");
         SearchComponent searchComponent = (SearchComponent)applicationContext.getBean("searchComponent");
