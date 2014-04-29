@@ -38,4 +38,34 @@ public class VideoTests {
         assertNull(video.getYouTubeId());
     }
 
+    @Test
+    public void testIsUStream_ReturnsFalse_WhenUrlIsNull() {
+        video = new Video(null);
+        assertFalse(video.isUStream());
+    }
+
+    @Test
+    public void test_IsUStream_ReturnsFalse_WhenVideoIsntAUStreamVideo() {
+        video = new Video("http://vimeo.com/123456789");
+        assertFalse(video.isUStream());
+    }
+
+    @Test
+    public void test_IsUStream_ReturnsTrue_WhenVideoIsAUStreamVideo() {
+        video = new Video("http://www.ustream.tv/recorded/46743935");
+        assertTrue(video.isUStream());
+    }
+
+    @Test
+    public void test_GetUStreamId_ReturnsTheUStreamId_WhenVideoIsAUStreamVideo() {
+        video = new Video("http://www.ustream.tv/recorded/46743935");
+        assertEquals("46743935", video.getUStreamId());
+    }
+
+    @Test
+    public void test_GetUStreamId_ReturnsNull_WhenVideoIsNotAUStreamVideo() {
+        video = new Video("http://vimeo.com/123456789");
+        assertNull(video.getYouTubeId());
+    }
+
 }
