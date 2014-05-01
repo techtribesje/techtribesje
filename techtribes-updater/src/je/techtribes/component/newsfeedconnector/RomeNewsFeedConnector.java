@@ -132,12 +132,12 @@ class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnect
                 }
             } else {
                 // this tries to ensure that only digital/IT/technology news is aggregated
-                String body = fe.getBody().toLowerCase();
-                if (    body.contains("digital") ||
-                        body.contains("technology") ||
-                        body.contains("bitcoin") ||
-                        body.contains("bcs jersey") ||
-                        body.contains("software")) {
+                String content = fe.getTitle().toLowerCase() + " " + fe.getBody().toLowerCase();
+                if (    content.contains("digital") ||
+                        content.contains("technology") ||
+                        content.contains("bitcoin") ||
+                        content.contains("bcs jersey") ||
+                        content.contains("software")) {
                     entries.add(fe);
                 }
             }
