@@ -161,8 +161,8 @@ public class TalkComponentTests extends AbstractComponentTestsBase {
     public void test_getTalksByYear_ReturnsSomeTalks_WhenThereAreSome() {
         List<Talk> talks = getTalkComponent().getTalksByYear(currentYear-1);
         assertEquals(12, talks.size());
-        for (int i = 0; i < 11; i++) {
-            assertEquals("Talk " + (i+1), talks.get(i).getTitle());
+        for (int i = 0; i < 12; i++) {
+            assertEquals("Talk " + (12-i), talks.get(i).getTitle());
         }
     }
 
@@ -176,7 +176,7 @@ public class TalkComponentTests extends AbstractComponentTestsBase {
     public void test_getTalksByContentSource_ReturnsSomeTalks_WhenThereAreSome() {
         List<Talk> talks = getTalkComponent().getTalks(getContentSourceComponent().findByShortName("simonbrown"));
         assertEquals(12, talks.size());
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 12; i++) {
             assertEquals("Talk " + (12-i), talks.get(i).getTitle());
         }
     }
@@ -203,10 +203,37 @@ public class TalkComponentTests extends AbstractComponentTestsBase {
         contentSources.add(getContentSourceComponent().findByShortName("chrisclark"));
         List<Talk> talks = getTalkComponent().getTalks(contentSources);
         assertEquals(24, talks.size());
-        for (int i = 0; i < 23; i++) {
+        for (int i = 0; i < 24; i++) {
             assertEquals("Talk " + (24-i), talks.get(i).getTitle());
         }
     }
+
+    @Test
+    public void test_getTalksWithVideo_ReturnsSomeTalks_WhenThereAreSome() {
+        getJdbcTemplate().update("insert into talk (name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "Talk for today",
+                "Here is a description for talk for today",
+                "w",
+                "Event name for talk for today",
+                "City",
+                "Country",
+                getContentSourceComponent().findByShortName("simonbrown").getId(),
+                "http://event.com/today",
+                dateFormat.format(DateUtils.getToday()),
+                null,
+                "http://youtube.com/1234567890");
+
+        List<Talk> talks = getTalkComponent().getTalksWithVideo();
+        assertEquals(1, talks.size());
+    }
+
+    @Test
+    public void test_getTalksWithVideo_ReturnsEmptyList_WhenThereAreNone() {
+        List<Talk> talks = getTalkComponent().getTalksWithVideo();
+        assertEquals(0, talks.size());
+    }
+
+
 
     @After
     public void tearDown() {

@@ -19,6 +19,8 @@ public class EmbedVideoTag extends SimpleTagSupport {
             getJspContext().getOut().write("<iframe width=\"" + width + "\" height=\"" + height + "\" src=\"http://www.youtube.com/embed/" + video.getYouTubeId() + "\" frameborder=\"0\" allowfullscreen></iframe>");
         } else if (video.isUStream()) {
             getJspContext().getOut().write("<iframe width=\"" + width + "\" height=\"" + height + "\" src=\"http://www.ustream.tv/embed/recorded/" + video.getUStreamId() + "?v=3&amp;wmode=direct\" scrolling=\"no\" frameborder=\"0\"></iframe>");
+        } else {
+            getJspContext().getOut().write("<a href=\"" + url + "\" target=\"_blank\"><img src=\"/static/img/play-video.png\" /></a>");
         }
     }
 

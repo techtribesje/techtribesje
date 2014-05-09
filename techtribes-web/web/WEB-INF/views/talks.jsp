@@ -7,21 +7,31 @@
                         <li class="active"><a href="/talks/year/2014">2014</a></li>
                         <li><a href="/talks/year/2013">2013</a></li>
                         <li><a href="/talks/year/2012">2012</a></li>
+                        <li><a href="/talks/videos">Videos</a></li>
                     </c:when>
                     <c:when test="${activeNav eq '2013'}">
                         <li><a href="/talks/year/2014">2014</a></li>
                         <li class="active"><a href="/talks/year/2013">2013</a></li>
                         <li><a href="/talks/year/2012">2012</a></li>
+                        <li><a href="/talks/videos">Videos</a></li>
                     </c:when>
                     <c:when test="${activeNav eq '2012'}">
                         <li><a href="/talks/year/2014">2014</a></li>
                         <li><a href="/talks/year/2013">2013</a></li>
                         <li class="active"><a href="/talks/year/2012">2012</a></li>
+                        <li><a href="/talks/videos">Videos</a></li>
+                    </c:when>
+                    <c:when test="${activeNav eq 'videos'}">
+                        <li><a href="/talks/year/2014">2014</a></li>
+                        <li><a href="/talks/year/2013">2013</a></li>
+                        <li><a href="/talks/year/2012">2012</a></li>
+                        <li class="active"><a href="/talks/videos">Videos</a></li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="/talks/year/2014">2014</a></li>
                         <li><a href="/talks/year/2013">2013</a></li>
                         <li><a href="/talks/year/2012">2012</a></li>
+                        <li><a href="/talks/videos">Videos</a></li>
                     </c:otherwise>
                 </c:choose>
             </ul>

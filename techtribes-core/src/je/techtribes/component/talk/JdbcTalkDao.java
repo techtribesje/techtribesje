@@ -27,12 +27,19 @@ class JdbcTalkDao {
                 new TalkRowMapper());
     }
 
+    List<Talk> getTalksWithVideo() {
+        JdbcTemplate select = new JdbcTemplate(dataSource);
+
+        return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where video_url is not null order by talk_date desc",
+                new TalkRowMapper());
+    }
+
     List<Talk> getTalksByYear(int year) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
         Date start = DateUtils.getStartOfYear(year);
         Date end = DateUtils.getEndOfYear(year);
 
-        return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where talk_date between ? and ? order by talk_date asc",
+        return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where talk_date between ? and ? order by talk_date desc",
                 new Object[] { start, end },
                 new TalkRowMapper());
     }

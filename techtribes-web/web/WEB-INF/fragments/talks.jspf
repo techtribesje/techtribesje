@@ -17,10 +17,8 @@
                     </div>
                     </c:if>
 
-                    <div style="float: right;">
-                    <c:if test="${not empty talk.slidesUrl}"><a href="${talk.slidesUrl}" target="_blank"><i class="icon-th-large"></i></a></c:if>
-                    </div>
                     <br /><br />
+
                     <div class="metadata">
                         <div style="float: left;">
                             <img src="<techtribesje:flag name="${talk.country}" />" alt="${talk.country}" title="${talk.country}" />

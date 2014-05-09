@@ -39,6 +39,20 @@ class TalkComponentImpl extends AbstractComponent implements TalkComponent {
     }
 
     @Override
+    public List<Talk> getTalksWithVideo() {
+        try {
+            List<Talk> talks = talkDao.getTalksWithVideo();
+            filterAndEnrich(talks);
+
+            return talks;
+        } catch (Exception e) {
+            TalkException te = new TalkException("Error getting talks with video", e);
+            logError(te);
+            throw te;
+        }
+    }
+
+    @Override
     public List<Talk> getTalksByYear(int year) {
         try {
             List<Talk> talks = talkDao.getTalksByYear(year);

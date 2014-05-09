@@ -31,6 +31,16 @@ public class TalksController extends AbstractController {
         return viewTalksByYear(currentYear, model);
 	}
 
+    @RequestMapping(value = "/talks/videos", method = RequestMethod.GET)
+	public String viewTalksWithVideo(ModelMap model) {
+        List<Talk> talks = talkComponent.getTalksWithVideo();
+
+        prepareModel(talks, model);
+        model.addAttribute("activeNav", "videos");
+
+        return "talks";
+	}
+
     @RequestMapping(value = "/talks/year/{year:[\\d]{4}}", method = RequestMethod.GET)
 	public String viewTalksByYear(@PathVariable("year")int year, ModelMap model) {
         List<Talk> talks = talkComponent.getTalksByYear(year);
