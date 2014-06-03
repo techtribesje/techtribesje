@@ -98,7 +98,7 @@
             </classpath>
         </javac>
 
-        <javac srcdir="${updater.dir}/test/unit" destdir="${updater.build.dir}/test-classes" debug="yes">
+        <javac srcdir="${updater.dir}/test" destdir="${updater.build.dir}/test-classes" debug="yes">
             <classpath>
                 <fileset dir="${production.lib.dir}" includes="*.jar" />
                 <fileset dir="${test.lib.dir}" includes="*.jar" />
@@ -232,6 +232,25 @@
 
             <batchtest fork="yes" todir="${build.dir}">
                 <fileset dir="${core.dir}/test/component">
+                    <include name="**/*Tests.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+
+        <junit printsummary="yes" haltonfailure="yes">
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${test.lib.dir}" includes="*.jar" />
+                <pathelement location="${build.dir}/techtribes-core.jar" />
+                <pathelement location="${build.dir}/techtribes-updater.jar" />
+                <pathelement location="${updater.build.dir}/test-classes"/>
+                <pathelement location="${updater.dir}/test/component"/>
+            </classpath>
+
+            <formatter type="plain"/>
+
+            <batchtest fork="no" todir="${build.dir}">
+                <fileset dir="${updater.dir}/test/component">
                     <include name="**/*Tests.java"/>
                 </fileset>
             </batchtest>

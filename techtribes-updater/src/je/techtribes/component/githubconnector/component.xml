@@ -4,7 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean name="gitHubConnector" class="je.techtribes.component.githubconnector.EclipseMylynGitHubConnector">
+    <bean name="gitHubConnector" class="je.techtribes.component.githubconnector.GitHubConnectorImpl">
+        <constructor-arg name="gitHubApi" ref="gitHubApi" />
+    </bean>
+
+    <bean name="gitHubApi" class="je.techtribes.component.githubconnector.EclipseMylynGitHubApi">
         <constructor-arg name="oAuth2" value="${github.oauth2}" />
     </bean>
 
