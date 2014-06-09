@@ -1,6 +1,6 @@
 package je.techtribes.component.scheduledcontentupdater;
 
-import com.codingthearchitecture.seos.element.Component;
+import com.structurizr.element.Component;
 
 @Component(responsibility = "Refreshes the data behind techtribes.je on a scheduled basis.")
 public interface ScheduledContentUpdater {

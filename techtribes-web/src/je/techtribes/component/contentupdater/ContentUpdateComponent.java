@@ -1,6 +1,6 @@
 package je.techtribes.component.contentupdater;
 
-import com.codingthearchitecture.seos.element.Component;
+import com.structurizr.element.Component;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;

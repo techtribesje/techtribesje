@@ -1,6 +1,6 @@
 package je.techtribes.component.activity;
 
-import com.codingthearchitecture.seos.element.Component;
+import com.structurizr.element.Component;
 import je.techtribes.domain.Activity;
 import je.techtribes.domain.ContentSource;
 

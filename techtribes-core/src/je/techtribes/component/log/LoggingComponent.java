@@ -1,6 +1,6 @@
 package je.techtribes.component.log;
 
-import com.codingthearchitecture.seos.element.Component;
+import com.structurizr.element.Component;
 
 @Component(responsibility = "Provides logging facilities to all other components.")
 public interface LoggingComponent {

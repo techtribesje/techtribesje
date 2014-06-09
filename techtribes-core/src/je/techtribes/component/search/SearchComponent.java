@@ -1,6 +1,6 @@
 package je.techtribes.component.search;
 
-import com.codingthearchitecture.seos.element.Component;
+import com.structurizr.element.Component;
 import je.techtribes.domain.NewsFeedEntry;
 import je.techtribes.domain.Tweet;
 
