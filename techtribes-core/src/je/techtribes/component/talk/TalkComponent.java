@@ -1,6 +1,6 @@
 package je.techtribes.component.talk;
 
-import com.structurizr.element.Component;
+import com.structurizr.annotation.Component;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Talk;
 
@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-@Component(responsibility = "Provides access to information about talks by local speakers.")
+@Component(description = "Provides access to information about talks by local speakers.")
 public interface TalkComponent {
 
     List<Talk> getRecentTalks();

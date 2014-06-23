@@ -1,5 +1,6 @@
 package je.techtribes.component.newsfeedconnector;
 
+import com.structurizr.annotation.SoftwareSystemDependency;
 import com.sun.syndication.feed.WireFeed;
 import com.sun.syndication.feed.atom.Content;
 import com.sun.syndication.feed.atom.Entry;
@@ -9,9 +10,9 @@ import com.sun.syndication.feed.rss.Item;
 import com.sun.syndication.io.WireFeedInput;
 import com.sun.syndication.io.XmlReader;
 import je.techtribes.domain.ContentSourceType;
-import je.techtribes.util.AbstractComponent;
 import je.techtribes.domain.NewsFeed;
 import je.techtribes.domain.NewsFeedEntry;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.util.comparator.ContentItemComparator;
 
 import java.net.HttpURLConnection;
@@ -19,6 +20,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+@SoftwareSystemDependency(target = "Blogs", description = "Gets blog/news posts from")
 class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnector {
 
     private static int CONNECTION_TIMEOUT = 1000 * 30;

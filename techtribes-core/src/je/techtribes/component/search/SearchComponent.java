@@ -1,13 +1,13 @@
 package je.techtribes.component.search;
 
-import com.structurizr.element.Component;
+import com.structurizr.annotation.Component;
 import je.techtribes.domain.NewsFeedEntry;
 import je.techtribes.domain.Tweet;
 
 import java.util.Collection;
 import java.util.List;
 
-@Component(responsibility = "Search facilities for news feed entries and tweets.")
+@Component(description = "Search facilities for news feed entries and tweets.")
 public interface SearchComponent {
 
     void addNewsFeedEntries(Collection<NewsFeedEntry> newsFeedEntries);

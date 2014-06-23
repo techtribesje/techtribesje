@@ -1,6 +1,6 @@
 package je.techtribes.component.contentsource;
 
-import com.structurizr.element.Component;
+import com.structurizr.annotation.Component;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.Person;
@@ -9,7 +9,7 @@ import je.techtribes.domain.Tribe;
 import java.util.List;
 import java.util.Set;
 
-@Component(responsibility = "Provides access to information about people and tribes.")
+@Component(description = "Provides access to information about people and tribes.")
 public interface ContentSourceComponent {
 
     void refreshContentSources();

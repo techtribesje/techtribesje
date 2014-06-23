@@ -1,5 +1,6 @@
 package je.techtribes.component.scheduledcontentupdater;
 
+import com.structurizr.annotation.ComponentDependency;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
@@ -16,18 +17,37 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 class ScheduledContentUpdaterImpl extends AbstractComponent implements ScheduledContentUpdater {
 
+    @ComponentDependency(description = "Gets people and tribes from")
     private ContentSourceComponent contentSourceComponent;
 
+    @ComponentDependency(description = "Updates the list of repositories using")
     private GitHubComponent gitHubComponent;
+
+    @ComponentDependency(description = "Stores new tweets using")
     private TweetComponent tweetComponent;
+
+    @ComponentDependency(description = "Stores new and updated news feed entries using")
     private NewsFeedEntryComponent newsFeedEntryComponent;
+
+    @ComponentDependency(description = "Recalculates the people/tribe activity rankings using")
     private ActivityComponent activityComponent;
+
+    @ComponentDependency(description = "Gets recent talks using")
     private TalkComponent talkComponent;
+
+    @ComponentDependency(description = "Stores new badges using")
     private BadgeComponent badgeComponent;
+
+    @ComponentDependency(description = "Updates the search indexes for new tweets/news feed entries using")
     private SearchComponent searchComponent;
 
+    @ComponentDependency(description = "Gets public repositories using the GitHub API")
     private GitHubConnector gitHubConnector;
+
+    @ComponentDependency(description = "Downloads RSS/Atom feeds for blogs")
     private NewsFeedConnector newsFeedConnector;
+
+    @ComponentDependency(description = "Refreshes profile information and gets new tweets using the REST and streaming APIs")
     private TwitterConnector twitterConnector;
 
     private NewsFeedUpdater newsFeedUpdater;

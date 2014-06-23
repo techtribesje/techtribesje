@@ -1,8 +1,8 @@
 package je.techtribes.component.scheduledcontentupdater;
 
-import com.structurizr.element.Component;
+import com.structurizr.annotation.Component;
 
-@Component(responsibility = "Refreshes the data behind techtribes.je on a scheduled basis.")
+@Component(description = "Refreshes the data behind techtribes.je on a scheduled basis.")
 public interface ScheduledContentUpdater {
 
     public void start();

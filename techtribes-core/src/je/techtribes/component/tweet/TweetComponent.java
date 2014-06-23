@@ -1,7 +1,6 @@
 package je.techtribes.component.tweet;
 
-import com.structurizr.element.Component;
-import je.techtribes.component.contentsource.ContentSourceComponent;
+import com.structurizr.annotation.Component;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
 
@@ -9,7 +8,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-@Component(responsibility = "Provides access to tweets.")
+@Component(description = "Provides access to tweets.")
 public interface TweetComponent {
 
     /**

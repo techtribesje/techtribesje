@@ -1,13 +1,13 @@
 package je.techtribes.component.event;
 
-import com.structurizr.element.Component;
+import com.structurizr.annotation.Component;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Event;
 
 import java.util.Date;
 import java.util.List;
 
-@Component(responsibility = "Provides access to information about local events (e.g. meetups, user groups, etc).")
+@Component(description = "Provides access to information about local events (e.g. meetups, user groups, etc).")
 public interface EventComponent {
 
     /**

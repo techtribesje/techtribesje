@@ -1,6 +1,6 @@
 package je.techtribes.component.newsfeedentry;
 
-import com.structurizr.element.Component;
+import com.structurizr.annotation.Component;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.NewsFeedEntry;
 
@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-@Component(responsibility = "Provides access to blog entries and news.")
+@Component(description = "Provides access to blog entries and news.")
 public interface NewsFeedEntryComponent {
 
     List<NewsFeedEntry> getRecentNewsFeedEntries(int page, int pageSize);

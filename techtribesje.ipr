@@ -384,7 +384,6 @@
     <file url="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/contentsource" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/event" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/github" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/job" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/techtribes-core/src/je/techtribes/component/talk" dialect="MySQL" />
   </component>
   <component name="VcsDirectoryMappings">

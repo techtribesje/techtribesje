@@ -6,7 +6,6 @@ import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.github.GitHubComponent;
-import je.techtribes.component.job.JobComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
@@ -132,10 +131,6 @@ public abstract class AbstractComponentTestsBase {
 
     protected static EventComponent getEventComponent() {
         return (EventComponent)applicationContext.getBean("eventComponent");
-    }
-
-    protected static JobComponent getJobComponent() {
-        return (JobComponent)applicationContext.getBean("jobComponent");
     }
 
     protected static GitHubComponent getGitHubComponent() {

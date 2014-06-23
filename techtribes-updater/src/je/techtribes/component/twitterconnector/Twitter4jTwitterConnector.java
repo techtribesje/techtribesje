@@ -1,7 +1,8 @@
 package je.techtribes.component.twitterconnector;
 
-import je.techtribes.util.AbstractComponent;
+import com.structurizr.annotation.SoftwareSystemDependency;
 import je.techtribes.domain.Tweet;
+import je.techtribes.util.AbstractComponent;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -10,6 +11,7 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
+@SoftwareSystemDependency(target = "Twitter", description= "Gets tweets and profile information from")
 class Twitter4jTwitterConnector extends AbstractComponent implements TwitterConnector {
 
     private static final int LOOKUP_USERS_PAGE_SIZE = 100;
