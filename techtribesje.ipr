@@ -363,6 +363,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/structurizr/structurizr.iml" filepath="$PROJECT_DIR$/structurizr/structurizr.iml" />
       <module fileurl="file://$PROJECT_DIR$/techtribes.iml" filepath="$PROJECT_DIR$/techtribes.iml" />
       <module fileurl="file://$PROJECT_DIR$/techtribes-core/techtribes-core.iml" filepath="$PROJECT_DIR$/techtribes-core/techtribes-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/techtribes-updater/techtribes-updater.iml" filepath="$PROJECT_DIR$/techtribes-updater/techtribes-updater.iml" />
@@ -373,7 +374,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SqlDialectMappings">
@@ -391,6 +392,17 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
+    <library name="lib">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/structurizr/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/structurizr/lib" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/structurizr/lib" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/structurizr/lib" recursive="false" type="SOURCES" />
+    </library>
     <library name="Production Libraries">
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib/production" />

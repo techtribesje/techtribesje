@@ -1,0 +1,661 @@
+{
+  "people" : [ {
+    "id" : 4,
+    "name" : "Administration User",
+    "description" : "A system administration user.",
+    "location" : "External",
+    "relationships" : [ {
+      "sourceId" : 4,
+      "destinationId" : 1,
+      "description" : "Add people, add tribes and manage tribe membership."
+    }, {
+      "sourceId" : 4,
+      "destinationId" : 8,
+      "description" : "Add people, add tribes and manage tribe membership."
+    } ],
+    "type" : "Person"
+  }, {
+    "id" : 2,
+    "name" : "Anonymous User",
+    "description" : "Anybody on the web.",
+    "location" : "External",
+    "relationships" : [ {
+      "sourceId" : 2,
+      "destinationId" : 1,
+      "description" : "View people, tribes (businesses, communities and interest groups), content, events, jobs, etc from the local tech, digital and IT sector."
+    }, {
+      "sourceId" : 2,
+      "destinationId" : 8,
+      "description" : "View people, tribes (businesses, communities and interest groups), content, events, jobs, etc from the local tech, digital and IT sector."
+    } ],
+    "type" : "Person"
+  }, {
+    "id" : 3,
+    "name" : "Aggregated User",
+    "description" : "A user or business with content that is aggregated into the website.",
+    "location" : "External",
+    "relationships" : [ {
+      "sourceId" : 3,
+      "destinationId" : 1,
+      "description" : "Manage user profile and tribe membership."
+    }, {
+      "sourceId" : 3,
+      "destinationId" : 8,
+      "description" : "Manage user profile and tribe membership."
+    } ],
+    "type" : "Person"
+  } ],
+  "softwareSystems" : [ {
+    "id" : 5,
+    "name" : "Twitter",
+    "description" : "twitter.com",
+    "location" : "External",
+    "relationships" : [ ],
+    "containers" : [ ],
+    "type" : "SoftwareSystem"
+  }, {
+    "id" : 1,
+    "name" : "techtribes.je",
+    "description" : "techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands",
+    "location" : "Internal",
+    "relationships" : [ {
+      "sourceId" : 1,
+      "destinationId" : 5,
+      "description" : "Gets profile information and tweets from."
+    }, {
+      "sourceId" : 1,
+      "destinationId" : 6,
+      "description" : "Gets information about public code repositories from."
+    }, {
+      "sourceId" : 1,
+      "destinationId" : 7,
+      "description" : "Gets content using RSS and Atom feeds from."
+    } ],
+    "containers" : [ {
+      "id" : 9,
+      "name" : "Content Updater",
+      "description" : "Updates profiles, tweets, GitHub repos and content on a scheduled basis.",
+      "location" : "Internal",
+      "relationships" : [ {
+        "sourceId" : 9,
+        "destinationId" : 10,
+        "description" : "Reads from and writes data to"
+      }, {
+        "sourceId" : 9,
+        "destinationId" : 11,
+        "description" : "Reads from and writes data to"
+      }, {
+        "sourceId" : 9,
+        "destinationId" : 12,
+        "description" : "Writes to"
+      }, {
+        "sourceId" : 9,
+        "destinationId" : 5,
+        "description" : "Gets profile information and tweets from."
+      }, {
+        "sourceId" : 9,
+        "destinationId" : 6,
+        "description" : "Gets information about public code repositories from."
+      }, {
+        "sourceId" : 9,
+        "destinationId" : 7,
+        "description" : "Gets content using RSS and Atom feeds from."
+      } ],
+      "technology" : "Standalone Java 7 application",
+      "components" : [ {
+        "id" : 13,
+        "name" : "EventComponent",
+        "description" : "Provides access to information about local events (e.g. meetups, user groups, etc).",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 13,
+          "destinationId" : 18,
+          "description" : ""
+        }, {
+          "sourceId" : 13,
+          "destinationId" : 21,
+          "description" : ""
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.event.EventComponent",
+        "type" : "Component"
+      }, {
+        "id" : 25,
+        "name" : "TalkComponent",
+        "description" : "Provides access to information about talks by local speakers.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 25,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 25,
+          "destinationId" : 18,
+          "description" : ""
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.talk.TalkComponent",
+        "type" : "Component"
+      }, {
+        "id" : 15,
+        "name" : "BadgeComponent",
+        "description" : "Manages the badges that have been awarded to people and tribes.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 15,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 15,
+          "destinationId" : 18,
+          "description" : ""
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.badge.BadgeComponent",
+        "type" : "Component"
+      }, {
+        "id" : 18,
+        "name" : "ContentSourceComponent",
+        "description" : "Provides access to information about people and tribes.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 18,
+          "destinationId" : 21,
+          "description" : ""
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.contentsource.ContentSourceComponent",
+        "type" : "Component"
+      }, {
+        "id" : 23,
+        "name" : "NewsFeedEntryComponent",
+        "description" : "Provides access to blog entries and news.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 23,
+          "destinationId" : 18,
+          "description" : ""
+        }, {
+          "sourceId" : 23,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 23,
+          "destinationId" : 11,
+          "description" : "Reads from and writes to"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.newsfeedentry.NewsFeedEntryComponent",
+        "type" : "Component"
+      }, {
+        "id" : 17,
+        "name" : "TweetComponent",
+        "description" : "Provides access to tweets.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 17,
+          "destinationId" : 18,
+          "description" : ""
+        }, {
+          "sourceId" : 17,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 17,
+          "destinationId" : 11,
+          "description" : "Reads from and writes to"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.tweet.TweetComponent",
+        "type" : "Component"
+      }, {
+        "id" : 24,
+        "name" : "SearchComponent",
+        "description" : "Search facilities for news feed entries and tweets.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 24,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 24,
+          "destinationId" : 18,
+          "description" : ""
+        }, {
+          "sourceId" : 24,
+          "destinationId" : 12,
+          "description" : "Reads from and writes to"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.search.SearchComponent",
+        "type" : "Component"
+      }, {
+        "id" : 22,
+        "name" : "NewsFeedConnector",
+        "description" : "Retrieves news feed entries from RSS and Atom feeds.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 22,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 22,
+          "destinationId" : 7,
+          "description" : "Gets blog/news posts from"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.newsfeedconnector.NewsFeedConnector",
+        "type" : "Component"
+      }, {
+        "id" : 19,
+        "name" : "GitHubComponent",
+        "description" : "Provides access to the list of GitHub repos associated with content sources.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 19,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 19,
+          "destinationId" : 18,
+          "description" : ""
+        }, {
+          "sourceId" : 19,
+          "destinationId" : 10,
+          "description" : "Reads from and writes to"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.github.GitHubComponent",
+        "type" : "Component"
+      }, {
+        "id" : 16,
+        "name" : "ActivityComponent",
+        "description" : "Provides access to information about, and calculates, the recent activity rankings.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 16,
+          "destinationId" : 17,
+          "description" : ""
+        }, {
+          "sourceId" : 16,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 16,
+          "destinationId" : 23,
+          "description" : ""
+        }, {
+          "sourceId" : 16,
+          "destinationId" : 18,
+          "description" : ""
+        }, {
+          "sourceId" : 16,
+          "destinationId" : 25,
+          "description" : ""
+        }, {
+          "sourceId" : 16,
+          "destinationId" : 13,
+          "description" : ""
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.activity.ActivityComponent",
+        "type" : "Component"
+      }, {
+        "id" : 26,
+        "name" : "ScheduledContentUpdater",
+        "description" : "Refreshes the data behind techtribes.je on a scheduled basis.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 26,
+          "destinationId" : 16,
+          "description" : "Recalculates the people/tribe activity rankings using"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 15,
+          "description" : "Stores new badges using"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 23,
+          "description" : "Stores new and updated news feed entries using"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 17,
+          "description" : "Stores new tweets using"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 18,
+          "description" : "Gets people and tribes from"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 25,
+          "description" : "Gets recent talks using"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 22,
+          "description" : "Downloads RSS/Atom feeds for blogs"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 19,
+          "description" : "Updates the list of repositories using"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 14,
+          "description" : "Refreshes profile information and gets new tweets using the REST and streaming APIs"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 24,
+          "description" : "Updates the search indexes for new tweets/news feed entries using"
+        }, {
+          "sourceId" : 26,
+          "destinationId" : 20,
+          "description" : "Gets public repositories using the GitHub API"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.scheduledcontentupdater.ScheduledContentUpdater",
+        "type" : "Component"
+      }, {
+        "id" : 14,
+        "name" : "TwitterConnector",
+        "description" : "Pulls profile information and tweets from Twitter.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 14,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 14,
+          "destinationId" : 5,
+          "description" : "Gets tweets and profile information from"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.twitterconnector.TwitterConnector",
+        "type" : "Component"
+      }, {
+        "id" : 21,
+        "name" : "LoggingComponent",
+        "description" : "Provides logging facilities to all other components.",
+        "location" : "Internal",
+        "relationships" : [ ],
+        "fullyQualifiedClassName" : "je.techtribes.component.log.LoggingComponent",
+        "type" : "Component"
+      }, {
+        "id" : 20,
+        "name" : "GitHubConnector",
+        "description" : "Gets information about repositories from GitHub.",
+        "location" : "Internal",
+        "relationships" : [ {
+          "sourceId" : 20,
+          "destinationId" : 21,
+          "description" : ""
+        }, {
+          "sourceId" : 20,
+          "destinationId" : 6,
+          "description" : "Gets the list of public repositories from"
+        } ],
+        "fullyQualifiedClassName" : "je.techtribes.component.githubconnector.GitHubConnector",
+        "type" : "Component"
+      } ],
+      "type" : "Container"
+    }, {
+      "id" : 10,
+      "name" : "Relational Database",
+      "description" : "Stores people, tribes, tribe membership, talks, events, jobs, badges, GitHub repos, etc.",
+      "location" : "Internal",
+      "relationships" : [ ],
+      "technology" : "MySQL 5.5.x",
+      "components" : [ ],
+      "type" : "Container"
+    }, {
+      "id" : 11,
+      "name" : "NoSQL Data Store",
+      "description" : "Stores content from RSS/Atom feeds (blog posts) and tweets.",
+      "location" : "Internal",
+      "relationships" : [ ],
+      "technology" : "MongoDB 2.2.x",
+      "components" : [ ],
+      "type" : "Container"
+    }, {
+      "id" : 12,
+      "name" : "File System",
+      "description" : "Stores search indexes.",
+      "location" : "Internal",
+      "relationships" : [ ],
+      "technology" : null,
+      "components" : [ ],
+      "type" : "Container"
+    }, {
+      "id" : 8,
+      "name" : "Web Application",
+      "description" : "Allows users to view people, tribes, content, events, jobs, etc from the local tech, digital and IT sector.",
+      "location" : "Internal",
+      "relationships" : [ {
+        "sourceId" : 8,
+        "destinationId" : 10,
+        "description" : "Reads from and writes data to"
+      }, {
+        "sourceId" : 8,
+        "destinationId" : 11,
+        "description" : "Reads from"
+      }, {
+        "sourceId" : 8,
+        "destinationId" : 12,
+        "description" : "Reads from"
+      } ],
+      "technology" : "Apache Tomcat 7.x",
+      "components" : [ ],
+      "type" : "Container"
+    } ],
+    "type" : "SoftwareSystem"
+  }, {
+    "id" : 6,
+    "name" : "GitHub",
+    "description" : "github.com",
+    "location" : "External",
+    "relationships" : [ ],
+    "containers" : [ ],
+    "type" : "SoftwareSystem"
+  }, {
+    "id" : 7,
+    "name" : "Blogs",
+    "description" : "RSS and Atom feeds",
+    "location" : "External",
+    "relationships" : [ ],
+    "containers" : [ ],
+    "type" : "SoftwareSystem"
+  } ],
+  "contextViews" : [ {
+    "softwareSystemId" : 1,
+    "description" : null,
+    "type" : "Context",
+    "elements" : [ {
+      "id" : 1
+    }, {
+      "id" : 2
+    }, {
+      "id" : 3
+    }, {
+      "id" : 4
+    }, {
+      "id" : 5
+    }, {
+      "id" : 6
+    }, {
+      "id" : 7
+    } ],
+    "relationships" : [ {
+      "sourceId" : 4,
+      "destinationId" : 1
+    }, {
+      "sourceId" : 1,
+      "destinationId" : 5
+    }, {
+      "sourceId" : 3,
+      "destinationId" : 1
+    }, {
+      "sourceId" : 2,
+      "destinationId" : 1
+    }, {
+      "sourceId" : 1,
+      "destinationId" : 7
+    }, {
+      "sourceId" : 1,
+      "destinationId" : 6
+    } ]
+  } ],
+  "containerViews" : [ {
+    "softwareSystemId" : 1,
+    "description" : null,
+    "type" : "Container",
+    "elements" : [ {
+      "id" : 2
+    }, {
+      "id" : 3
+    }, {
+      "id" : 4
+    }, {
+      "id" : 5
+    }, {
+      "id" : 6
+    }, {
+      "id" : 7
+    }, {
+      "id" : 8
+    }, {
+      "id" : 9
+    }, {
+      "id" : 10
+    }, {
+      "id" : 11
+    }, {
+      "id" : 12
+    } ],
+    "relationships" : [ {
+      "sourceId" : 9,
+      "destinationId" : 11
+    }, {
+      "sourceId" : 8,
+      "destinationId" : 12
+    }, {
+      "sourceId" : 9,
+      "destinationId" : 5
+    }, {
+      "sourceId" : 9,
+      "destinationId" : 10
+    }, {
+      "sourceId" : 9,
+      "destinationId" : 6
+    }, {
+      "sourceId" : 8,
+      "destinationId" : 10
+    }, {
+      "sourceId" : 9,
+      "destinationId" : 7
+    }, {
+      "sourceId" : 3,
+      "destinationId" : 8
+    }, {
+      "sourceId" : 4,
+      "destinationId" : 8
+    }, {
+      "sourceId" : 9,
+      "destinationId" : 12
+    }, {
+      "sourceId" : 2,
+      "destinationId" : 8
+    }, {
+      "sourceId" : 8,
+      "destinationId" : 11
+    } ]
+  } ],
+  "componentViews" : [ {
+    "softwareSystemId" : 1,
+    "description" : null,
+    "containerId" : 9,
+    "type" : "Component",
+    "elements" : [ {
+      "id" : 5
+    }, {
+      "id" : 6
+    }, {
+      "id" : 7
+    }, {
+      "id" : 8
+    }, {
+      "id" : 10
+    }, {
+      "id" : 11
+    }, {
+      "id" : 12
+    }, {
+      "id" : 14
+    }, {
+      "id" : 15
+    }, {
+      "id" : 17
+    }, {
+      "id" : 19
+    }, {
+      "id" : 20
+    }, {
+      "id" : 22
+    }, {
+      "id" : 23
+    }, {
+      "id" : 24
+    }, {
+      "id" : 25
+    }, {
+      "id" : 26
+    } ],
+    "relationships" : [ {
+      "sourceId" : 26,
+      "destinationId" : 23
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 17
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 20
+    }, {
+      "sourceId" : 14,
+      "destinationId" : 5
+    }, {
+      "sourceId" : 17,
+      "destinationId" : 11
+    }, {
+      "sourceId" : 8,
+      "destinationId" : 10
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 14
+    }, {
+      "sourceId" : 8,
+      "destinationId" : 12
+    }, {
+      "sourceId" : 24,
+      "destinationId" : 12
+    }, {
+      "sourceId" : 19,
+      "destinationId" : 10
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 15
+    }, {
+      "sourceId" : 8,
+      "destinationId" : 11
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 22
+    }, {
+      "sourceId" : 22,
+      "destinationId" : 7
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 24
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 25
+    }, {
+      "sourceId" : 26,
+      "destinationId" : 19
+    }, {
+      "sourceId" : 23,
+      "destinationId" : 11
+    }, {
+      "sourceId" : 20,
+      "destinationId" : 6
+    } ]
+  } ]
+}
