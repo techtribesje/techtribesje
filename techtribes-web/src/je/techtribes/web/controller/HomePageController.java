@@ -80,6 +80,8 @@ public class HomePageController extends AbstractController {
         addCommonAttributes(model);
         setPageTitle(model);
 
+        model.addAttribute("includeVideos", true);
+
 		return "home";
 	}
 

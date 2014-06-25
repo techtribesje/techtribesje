@@ -41,6 +41,8 @@ public class AbstractController {
         if (SecurityContextHolder.getContext().getAuthentication() != null) {
             model.addAttribute("user", lookupContentSourceBySignedInTwitterId());
         }
+
+        model.addAttribute("includeVideos", false);
     }
 
     protected void setPageTitle(ModelMap model, String... titles) {

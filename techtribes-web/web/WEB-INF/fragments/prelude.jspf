@@ -116,8 +116,8 @@
 
                 <%@ include file="/WEB-INF/fragments/mostActive.jspf" %>
 
+                <c:if test="${includeVideos}">
                 <hr />
-
                 <div class="row hidden-phone">
                     <div class="span4" style="text-align: center;">
                         <h4>An Intro to Bitcoin Mining & Investing</h4>
@@ -135,6 +135,7 @@
                         <iframe width="267" height="150" src="//www.youtube.com/embed/EoH1vEuVPus" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
+                </c:if>
 
             </div>
         </div>
