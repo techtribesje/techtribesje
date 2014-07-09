@@ -1,31 +1,42 @@
 package je.techtribes.util;
 
+import com.structurizr.annotation.ComponentDependency;
+import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.component.log.LoggingComponentFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractComponent {
 
+    @ComponentDependency(description = "Writes logs messages using")
+    private LoggingComponent loggingComponent;
+
+    @Autowired
+    public void setLoggingComponent(LoggingComponent loggingComponent) {
+        this.loggingComponent = loggingComponent;
+    }
+
     public void logDebug(String message) {
-        LoggingComponentFactory.create().debug(this, message);
+        loggingComponent.debug(this, message);
     }
 
     public void logInfo(String message) {
-        LoggingComponentFactory.create().info(this, message);
+        loggingComponent.info(this, message);
     }
 
     public void logWarn(String message) {
-        LoggingComponentFactory.create().warn(this, message);
+        loggingComponent.warn(this, message);
     }
 
     public void logWarn(ComponentException ce) {
-        LoggingComponentFactory.create().warn(this, ce.getMessage(), ce.getCause());
+        loggingComponent.warn(this, ce.getMessage(), ce.getCause());
     }
 
     public void logError(String message) {
-        LoggingComponentFactory.create().error(this, message);
+        loggingComponent.error(this, message);
     }
 
     public void logError(ComponentException ce) {
-        LoggingComponentFactory.create().error(this, ce.getMessage(), ce.getCause());
+        loggingComponent.error(this, ce.getMessage(), ce.getCause());
     }
 
 }

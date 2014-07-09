@@ -1,6 +1,7 @@
 package je.techtribes.web.controller;
 
 import je.techtribes.domain.NewsFeedEntry;
+import je.techtribes.web.controller.newsfeed.RssController;
 import org.junit.Test;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.View;

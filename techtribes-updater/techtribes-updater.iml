@@ -43,6 +43,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Test Libraries" level="project" />
   </component>
 </module>
 

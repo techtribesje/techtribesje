@@ -1,5 +1,6 @@
 package je.techtribes.component.job;
 
+import com.structurizr.annotation.ContainerDependency;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
@@ -9,6 +10,7 @@ import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.List;
 
+@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
 class JobComponentImpl extends AbstractComponent implements JobComponent {
 
     private JdbcJobDao jobDao;

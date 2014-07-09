@@ -9,10 +9,6 @@ import java.util.List;
 public class ActivityComponentStub implements ActivityComponent {
 
     @Override
-    public void calculateActivityForLastSevenDays() {
-    }
-
-    @Override
     public List<Activity> getActivityListForPeople() {
         return null;
     }

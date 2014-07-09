@@ -1,8 +1,9 @@
 package je.techtribes;
 
-import com.structurizr.ComponentFinder;
+import com.structurizr.componentfinder.ComponentFinder;
+import com.structurizr.componentfinder.SpringComponentFinderStrategy;
+import com.structurizr.componentfinder.StructurizrComponentFinderStrategy;
 import com.structurizr.model.Container;
-import com.structurizr.model.Location;
 import com.structurizr.model.Model;
 import com.structurizr.model.SoftwareSystem;
 
@@ -12,13 +13,15 @@ public class CreateComponentModelForContainer extends AbstractUtility {
         Model model = readModelFromFile();
 
         SoftwareSystem techTribes = model.getSoftwareSystemWithName("techtribes.je");
-        Container contentUpdater = techTribes.getContainerWithName(args[0]);
+        Container container = techTribes.getContainerWithName(args[0]);
 
-        ComponentFinder componentFinder = new ComponentFinder(contentUpdater, "je.techtribes");
+        ComponentFinder componentFinder = new ComponentFinder(
+                container,
+                "je.techtribes",
+                new SpringComponentFinderStrategy(),
+                new StructurizrComponentFinderStrategy());
+
         componentFinder.findComponents();
-        componentFinder.findComponentDependencies();
-        componentFinder.findSoftwareSystemDependencies();
-        componentFinder.findContainerDependencies();
 
         writeModelToFile(model);
     }

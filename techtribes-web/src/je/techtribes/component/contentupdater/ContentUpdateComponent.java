@@ -24,7 +24,6 @@ public class ContentUpdateComponent extends AbstractComponent {
     @Scheduled(cron="0 */5 * * * ?")
     public void refresh() {
         try {
-            logDebug("Refreshing people and activity rankings");
             contentSourceComponent.refreshContentSources();
             activityComponent.refreshRecentActivity();
         } catch (Exception e) {

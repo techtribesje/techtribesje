@@ -9,13 +9,12 @@
         <constructor-arg name="gitHubComponent" ref="gitHubComponent" />
         <constructor-arg name="tweetComponent" ref="tweetComponent" />
         <constructor-arg name="newsFeedEntryComponent" ref="newsFeedEntryComponent" />
-        <constructor-arg name="activityComponent" ref="activityComponent" />
-        <constructor-arg name="talkComponent" ref="talkComponent" />
-        <constructor-arg name="badgeComponent" ref="badgeComponent" />
+        <constructor-arg name="activityUpdaterComponent" ref="activityUpdaterComponent" />
         <constructor-arg name="searchComponent"  ref="searchComponent" />
         <constructor-arg name="gitHubConnector" ref="gitHubConnector" />
         <constructor-arg name="newsFeedConnector" ref="newsFeedConnector" />
         <constructor-arg name="twitterConnector" ref="twitterConnector" />
+        <constructor-arg name="badgeAwarder" ref="badgeAwarder" />
     </bean>
 
 </beans>

@@ -2,6 +2,7 @@ package je.techtribes.web.controller;
 
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.NewsFeedEntry;
+import je.techtribes.web.controller.content.ContentController;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.ui.ModelMap;

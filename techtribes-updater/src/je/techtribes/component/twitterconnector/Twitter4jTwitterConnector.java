@@ -1,6 +1,7 @@
 package je.techtribes.component.twitterconnector;
 
 import com.structurizr.annotation.SoftwareSystemDependency;
+import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.domain.Tweet;
 import je.techtribes.util.AbstractComponent;
 import twitter4j.*;

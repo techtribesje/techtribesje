@@ -9,8 +9,6 @@ import java.util.List;
 @Component(description = "Provides access to information about, and calculates, the recent activity rankings.")
 public interface ActivityComponent {
 
-    void calculateActivityForLastSevenDays();
-
     List<Activity> getActivityListForPeople();
 
     List<Activity> getActivityListForBusinessTribes();

@@ -1,5 +1,6 @@
 package je.techtribes.component.contentsource;
 
+import com.structurizr.annotation.ContainerDependency;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.ContentSourceType;
@@ -9,6 +10,7 @@ import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.*;
 
+@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
 class ContentSourceComponentImpl extends AbstractComponent implements ContentSourceComponent {
 
     private JdbcContentSourceDao contentSourceDao;

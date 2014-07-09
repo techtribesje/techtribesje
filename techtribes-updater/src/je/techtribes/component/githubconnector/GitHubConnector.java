@@ -1,7 +1,6 @@
 package je.techtribes.component.githubconnector;
 
 import com.structurizr.annotation.Component;
-import com.structurizr.annotation.ComponentDependency;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.GitHubRepository;
 

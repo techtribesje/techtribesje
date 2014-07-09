@@ -6,10 +6,6 @@
 
     <bean id="activityComponent" class="je.techtribes.component.activity.ActivityComponentImpl">
         <constructor-arg name="contentSourceComponent" ref="contentSourceComponent" />
-        <constructor-arg name="newsFeedEntryComponent" ref="newsFeedEntryComponent" />
-        <constructor-arg name="tweetComponent" ref="tweetComponent" />
-        <constructor-arg name="talkComponent" ref="talkComponent" />
-        <constructor-arg name="eventComponent" ref="eventComponent" />
         <constructor-arg name="jdbcDatabaseConfiguration" ref="jdbcDatabaseConfiguration" />
     </bean>
 

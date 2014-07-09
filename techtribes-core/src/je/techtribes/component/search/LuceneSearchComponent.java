@@ -1,6 +1,7 @@
 package je.techtribes.component.search;
 
 import com.structurizr.annotation.ContainerDependency;
+import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
@@ -55,9 +56,10 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
     private static String TYPE_NEWS_FEED_ENTRY = "n";
     private static String TYPE_TWEET = "t";
 
-    LuceneSearchComponent(ContentSourceComponent contentSourceComponent, String luceneIndexPath) {
+    LuceneSearchComponent(ContentSourceComponent contentSourceComponent, String luceneIndexPath, LoggingComponent loggingComponent) {
         this.contentSourceComponent = contentSourceComponent;
         this.luceneIndexPath = luceneIndexPath;
+        this.setLoggingComponent(loggingComponent);
     }
 
     public void init() {

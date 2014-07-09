@@ -28,7 +28,7 @@ public class CreateBaseModel extends AbstractUtility {
         Container contentUpdater = techTribes.addContainer("Content Updater", "Updates profiles, tweets, GitHub repos and content on a scheduled basis.", "Standalone Java 7 application");
         Container relationalDatabase = techTribes.addContainer("Relational Database", "Stores people, tribes, tribe membership, talks, events, jobs, badges, GitHub repos, etc.", "MySQL 5.5.x");
         Container noSqlStore = techTribes.addContainer("NoSQL Data Store", "Stores content from RSS/Atom feeds (blog posts) and tweets.", "MongoDB 2.2.x");
-        Container fileSystem = techTribes.addContainer("File System", "Stores search indexes.", null);
+        Container fileSystem = techTribes.addContainer("File System", "Stores search indexes.", "Local disk");
 
         anonymousUser.uses(webApplication, "View people, tribes (businesses, communities and interest groups), content, events, jobs, etc from the local tech, digital and IT sector.");
         authenticatedUser.uses(webApplication, "Manage user profile and tribe membership.");

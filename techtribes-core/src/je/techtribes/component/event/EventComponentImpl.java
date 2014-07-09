@@ -1,5 +1,6 @@
 package je.techtribes.component.event;
 
+import com.structurizr.annotation.ContainerDependency;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
@@ -11,6 +12,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
 class EventComponentImpl extends AbstractComponent implements EventComponent {
 
     private JdbcEventDao eventDao;
