@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.people;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.github.GitHubComponent;
@@ -30,6 +31,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class PeopleController extends AbstractController {
 
     private BadgeComponent badgeComponent;

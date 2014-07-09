@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.search;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.search.SearchResult;
 import je.techtribes.component.search.SearchResultType;
@@ -19,6 +20,7 @@ import java.net.URLEncoder;
 import java.util.List;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class SearchController extends AbstractController {
 
     private SearchComponent searchService;

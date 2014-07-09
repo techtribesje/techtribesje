@@ -2,7 +2,7 @@ package je.techtribes;
 
 import com.mongodb.Mongo;
 import je.techtribes.component.activity.ActivityComponent;
-import je.techtribes.component.activityupdater.ActivityUpdaterComponent;
+import je.techtribes.component.activityupdater.ActivityUpdater;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.event.EventComponent;
@@ -154,8 +154,8 @@ public abstract class AbstractComponentTestsBase {
         return (ActivityComponent)applicationContext.getBean("activityComponent");
     }
 
-    protected static ActivityUpdaterComponent getActivityUpdaterComponent() {
-        return (ActivityUpdaterComponent)applicationContext.getBean("activityUpdaterComponent");
+    protected static ActivityUpdater getActivityUpdater() {
+        return (ActivityUpdater)applicationContext.getBean("activityUpdater");
     }
 
     protected static BadgeComponent getBadgeComponent() {

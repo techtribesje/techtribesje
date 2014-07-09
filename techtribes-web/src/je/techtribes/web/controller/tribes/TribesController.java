@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.tribes;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.event.EventComponent;
@@ -31,6 +32,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class TribesController extends AbstractController {
 
     private BadgeComponent badgeComponent;

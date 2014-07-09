@@ -1,18 +1,15 @@
 package je.techtribes.component.scheduledcontentupdater;
 
 import com.structurizr.annotation.ComponentDependency;
-import je.techtribes.component.activity.ActivityComponent;
-import je.techtribes.component.activityupdater.ActivityUpdaterComponent;
+import je.techtribes.component.activityupdater.ActivityUpdater;
 import je.techtribes.component.badgeawarder.BadgeAwarder;
 import je.techtribes.util.AbstractComponent;
-import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.github.GitHubComponent;
 import je.techtribes.component.githubconnector.GitHubConnector;
 import je.techtribes.component.newsfeedconnector.NewsFeedConnector;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.search.SearchComponent;
-import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.component.twitterconnector.TwitterConnector;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -32,7 +29,7 @@ class ScheduledContentUpdaterImpl extends AbstractComponent implements Scheduled
     private NewsFeedEntryComponent newsFeedEntryComponent;
 
     @ComponentDependency(description = "Recalculates the people/tribe activity rankings using")
-    private ActivityUpdaterComponent activityUpdaterComponent;
+    private ActivityUpdater activityUpdater;
 
     @ComponentDependency(description = "Updates the search indexes for new tweets/news feed entries using")
     private SearchComponent searchComponent;
@@ -54,12 +51,12 @@ class ScheduledContentUpdaterImpl extends AbstractComponent implements Scheduled
     private GitHubUpdater gitHubUpdater;
     private TechTribeMembershipUpdater techTribeMembershipUpdater;
 
-    public ScheduledContentUpdaterImpl(ContentSourceComponent contentSourceComponent, GitHubComponent gitHubComponent, TweetComponent tweetComponent, NewsFeedEntryComponent newsFeedEntryComponent, ActivityUpdaterComponent activityUpdaterComponent, SearchComponent searchComponent, GitHubConnector gitHubConnector, NewsFeedConnector newsFeedConnector, TwitterConnector twitterConnector, BadgeAwarder badgeAwarder) {
+    public ScheduledContentUpdaterImpl(ContentSourceComponent contentSourceComponent, GitHubComponent gitHubComponent, TweetComponent tweetComponent, NewsFeedEntryComponent newsFeedEntryComponent, ActivityUpdater activityUpdater, SearchComponent searchComponent, GitHubConnector gitHubConnector, NewsFeedConnector newsFeedConnector, TwitterConnector twitterConnector, BadgeAwarder badgeAwarder) {
         this.contentSourceComponent = contentSourceComponent;
         this.gitHubComponent = gitHubComponent;
         this.tweetComponent = tweetComponent;
         this.newsFeedEntryComponent = newsFeedEntryComponent;
-        this.activityUpdaterComponent = activityUpdaterComponent;
+        this.activityUpdater = activityUpdater;
         this.searchComponent = searchComponent;
         this.gitHubConnector = gitHubConnector;
         this.newsFeedConnector = newsFeedConnector;
@@ -113,7 +110,7 @@ class ScheduledContentUpdaterImpl extends AbstractComponent implements Scheduled
         techTribeMembershipUpdater.update();
 
         logInfo("Calculating activity rankings");
-        activityUpdaterComponent.calculateActivityForLastSevenDays();
+        activityUpdater.calculateActivityForLastSevenDays();
 
         logInfo("Awarding badges");
         badgeAwarder.awardBadgesForActivity();

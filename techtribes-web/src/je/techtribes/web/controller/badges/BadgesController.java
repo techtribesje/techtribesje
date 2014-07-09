@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.badges;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.domain.badge.AwardedBadge;
 import je.techtribes.domain.badge.Badge;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class BadgesController extends AbstractController {
 
     private BadgeComponent badgeComponent;

@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.activity;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.domain.Activity;
 import je.techtribes.component.badge.BadgeComponent;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class ActivityController extends AbstractController {
 
     private ActivityComponent activityComponent;

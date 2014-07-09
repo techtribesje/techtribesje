@@ -7,6 +7,7 @@ import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.Person;
 import je.techtribes.domain.Tribe;
 import je.techtribes.util.JdbcDatabaseConfiguration;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.*;
 
@@ -33,12 +34,13 @@ class ContentSourceComponentImpl extends AbstractComponent implements ContentSou
 
     public void init() {
         try {
-        refreshContentSources();
+            refreshContentSources();
         } catch (Exception e) {
             logError(new ContentSourceException("Could not initialise component", e));
         }
     }
 
+    @Scheduled(cron="0 */5 * * * ?")
     @Override
     public synchronized void refreshContentSources() {
         List<ContentSource> allContentSources = new LinkedList<>();

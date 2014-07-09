@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.newsfeed;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.domain.ContentItem;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.util.PageSize;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceView;
 import java.util.List;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class RssController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;

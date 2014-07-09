@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.content;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.domain.ContentItem;
 import je.techtribes.util.PageSize;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class ContentController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;

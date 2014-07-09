@@ -2,6 +2,7 @@ package je.techtribes.web.controller.tweets;
 
 import com.structurizr.annotation.Component;
 import com.structurizr.annotation.ComponentDependency;
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.domain.Tweet;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.util.PageSize;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @Controller
 @Component(description = "Allows users to view tweets.")
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class TweetsController extends AbstractController {
 
     @ComponentDependency(description = "Gets tweets from")

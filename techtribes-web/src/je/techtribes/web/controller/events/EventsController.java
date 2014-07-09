@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.events;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.event.EventException;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Event;
@@ -19,6 +20,7 @@ import java.util.Calendar;
 import java.util.List;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class EventsController extends AbstractController {
 
     private EventComponent eventService;

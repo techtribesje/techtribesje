@@ -44,7 +44,7 @@
         <constructor-arg ref="signInAdapter" />
     </bean>
 
-    <bean id="signInAdapter" class="je.techtribes.component.social.SignInAdapterImpl">
+    <bean id="signInAdapter" class="je.techtribes.component.social.TwitterSignInComponent">
         <property name="twitterIdForAdministration" value="${twitter.id}" />
     </bean>
 

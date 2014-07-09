@@ -16,7 +16,7 @@ public class AbstractUtility {
 
     protected static void writeModelToFile(Model model) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
         String modelAsJson = objectMapper.writeValueAsString(model);
 
@@ -38,7 +38,6 @@ public class AbstractUtility {
         reader.close();
 
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
         Model model = objectMapper.readValue(buf.toString(), Model.class);
         model.hydrate();

@@ -4,6 +4,7 @@ import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.GitHubRepository;
 import je.techtribes.domain.Person;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+@Ignore
 public class GitHubConnectorTests {
 
     protected static ApplicationContext applicationContext;

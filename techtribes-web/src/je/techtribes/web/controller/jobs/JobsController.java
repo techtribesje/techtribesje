@@ -1,5 +1,7 @@
 package je.techtribes.web.controller.jobs;
 
+import com.structurizr.annotation.Component;
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.component.job.JobComponent;
 import je.techtribes.domain.Job;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
+@Component(description = "Allows users to view local job opportunities.")
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class JobsController extends AbstractController {
 
     private JobComponent jobService;

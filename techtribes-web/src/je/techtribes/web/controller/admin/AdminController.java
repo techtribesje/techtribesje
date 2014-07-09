@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.admin;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.domain.*;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Set;
 
 @Controller
+@UsedBy( person = "Administration User", description = "uses" )
 public class AdminController extends AbstractController {
 
     @RequestMapping(value="/admin/status", method = RequestMethod.GET)

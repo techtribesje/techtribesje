@@ -12,7 +12,7 @@ import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.*;
 
-class ActivityUpdaterComponentImpl extends AbstractComponent implements ActivityUpdaterComponent {
+class ActivityUpdaterImpl extends AbstractComponent implements ActivityUpdater {
 
     private ContentSourceComponent contentSourceComponent;
     private NewsFeedEntryComponent newsFeedEntryComponent;
@@ -22,7 +22,7 @@ class ActivityUpdaterComponentImpl extends AbstractComponent implements Activity
 
     private JdbcActivityUpdaterDao activityUpdaterDao;
 
-    ActivityUpdaterComponentImpl(ContentSourceComponent contentSourceComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent, JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
+    ActivityUpdaterImpl(ContentSourceComponent contentSourceComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent, JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
         this.contentSourceComponent = contentSourceComponent;
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;

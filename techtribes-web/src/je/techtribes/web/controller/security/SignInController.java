@@ -1,5 +1,7 @@
 package je.techtribes.web.controller.security;
 
+import com.structurizr.annotation.Component;
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.social.connect.Connection;
@@ -14,7 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class SecurityController extends AbstractController {
+@Component(description = "Allows the user to sign-in.")
+@UsedBy( person = "Anonymous User", description = "uses" )
+public class SignInController extends AbstractController {
 
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String showHomePage(ModelMap model, HttpServletRequest request) {

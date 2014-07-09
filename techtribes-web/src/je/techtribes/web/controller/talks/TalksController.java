@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.talks;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Talk;
@@ -17,6 +18,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class TalksController extends AbstractController {
 
     private TalkComponent talkComponent;

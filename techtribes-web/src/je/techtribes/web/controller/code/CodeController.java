@@ -1,5 +1,6 @@
 package je.techtribes.web.controller.code;
 
+import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.github.GitHubComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.GitHubRepository;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.*;
 
 @Controller
+@UsedBy( person = "Anonymous User", description = "uses" )
 public class CodeController extends AbstractController {
 
     private GitHubComponent gitHubComponent;

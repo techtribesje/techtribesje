@@ -13,7 +13,7 @@ import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class ActivityUpdaterComponentTests extends AbstractComponentTestsBase {
+public class ActivityUpdaterTests extends AbstractComponentTestsBase {
 
     private SimpleDateFormat dateTimeFormat;
 
@@ -29,7 +29,7 @@ public class ActivityUpdaterComponentTests extends AbstractComponentTestsBase {
 
         // there is an activity record, but there are no talks, tweets, etc
         tearDown();
-        getActivityUpdaterComponent().calculateActivityForLastSevenDays();
+        getActivityUpdater().calculateActivityForLastSevenDays();
         getActivityComponent().refreshRecentActivity();
 
         Activity activity = getActivityComponent().getActivity(simonbrown);
@@ -87,7 +87,7 @@ public class ActivityUpdaterComponentTests extends AbstractComponentTestsBase {
                 DateUtils.getXDaysAgo(1));
 
         // now there is an activity record with information in it
-        getActivityUpdaterComponent().calculateActivityForLastSevenDays();
+        getActivityUpdater().calculateActivityForLastSevenDays();
         getActivityComponent().refreshRecentActivity();
 
         activity = getActivityComponent().getActivity(simonbrown);

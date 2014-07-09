@@ -9,7 +9,7 @@
         <constructor-arg name="gitHubComponent" ref="gitHubComponent" />
         <constructor-arg name="tweetComponent" ref="tweetComponent" />
         <constructor-arg name="newsFeedEntryComponent" ref="newsFeedEntryComponent" />
-        <constructor-arg name="activityUpdaterComponent" ref="activityUpdaterComponent" />
+        <constructor-arg name="activityUpdater" ref="activityUpdater" />
         <constructor-arg name="searchComponent"  ref="searchComponent" />
         <constructor-arg name="gitHubConnector" ref="gitHubConnector" />
         <constructor-arg name="newsFeedConnector" ref="newsFeedConnector" />

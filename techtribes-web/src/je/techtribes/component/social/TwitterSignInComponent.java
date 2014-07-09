@@ -1,5 +1,6 @@
 package je.techtribes.component.social;
 
+import com.structurizr.annotation.Component;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.util.SecurityRoles;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -14,7 +15,8 @@ import org.springframework.web.context.request.NativeWebRequest;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SignInAdapterImpl extends AbstractComponent implements SignInAdapter {
+@Component(description = "Allows users to sign-in with their Twitter ID.")
+public class TwitterSignInComponent extends AbstractComponent implements SignInAdapter {
 
     private String twitterIdForAdministration;
 

@@ -8,6 +8,7 @@ import je.techtribes.domain.ContentSource;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.util.JdbcDatabaseConfiguration;
 import je.techtribes.util.comparator.ActivityByScoreComparator;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.*;
 
@@ -26,6 +27,14 @@ class ActivityComponentImpl extends AbstractComponent implements ActivityCompone
     ActivityComponentImpl(ContentSourceComponent contentSourceComponent, JdbcDatabaseConfiguration jdbcDatabaseConfiguration) {
         this.contentSourceComponent = contentSourceComponent;
         this.activityDao = new JdbcActivityDao(jdbcDatabaseConfiguration);
+    }
+
+    public void init() {
+        try {
+            refreshRecentActivity();
+        } catch (Exception e) {
+            logError(new ActivityException("Could not initialise component", e));
+        }
     }
 
     public List<Activity> getActivityListForPeople() {
@@ -49,6 +58,7 @@ class ActivityComponentImpl extends AbstractComponent implements ActivityCompone
         }
     }
 
+    @Scheduled(cron="0 */5 * * * ?")
     @Override
     public synchronized void refreshRecentActivity() {
         try {
