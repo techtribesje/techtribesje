@@ -5,7 +5,7 @@ import com.structurizr.model.*;
 public class CreateBaseModel extends AbstractUtility {
 
     public static void main(String[] args) throws Exception {
-        Model model = new Model();
+        Model model = new Model("techtribes.je", "The software architecture model for the techtribes.je system");
         SoftwareSystem techTribes = model.addSoftwareSystem(Location.Internal, "techtribes.je", "techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands");
 
         Person anonymousUser = model.addPerson(Location.External, "Anonymous User", "Anybody on the web.");
