@@ -80,7 +80,7 @@
                 </div>
                 <div class="span3">
                     <div class="statistic">${fn:length(mediaTribes)}</div>
-                    <div class="title"><a href="/media">media organisation</a></div>
+                    <div class="title"><a href="/media">media organisations</a></div>
                 </div>
                 <div class="span2">
                     <c:forEach var="tribe" items="${mediaTribes}">
