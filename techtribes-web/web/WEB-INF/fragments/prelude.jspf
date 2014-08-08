@@ -87,9 +87,9 @@
 
         <div class="siteHeader">
             <div class="container">
-                <a href="/"><img src="/static/img/siteHeaderMonkey.png" alt="Monkey" style="float: left;"/></a>
                 <div style="text-align: center;">
                     <div id="headerNavigation">
+                        <a href="/">techtribes.je</a>
                         <a href="/news" class="newsLink">News</a>
                         <a href="/events" class="eventsLink">Events</a>
                         <a href="/talks" class="talksLink">Talks</a>
@@ -98,17 +98,12 @@
                         <a href="/code" class="codeLink">Code</a>
                         <a href="/people">People</a>
                         <a href="/tribes">Tribes</a>
-                        <a href="/jobs" class="jobsLink">Jobs</a>
                     </div>
                     <div>
                         <form class="form-search" action="/search">
-                            <select id="findExpertsDropDown" class="input-xlarge">
-                                <option value="">Find me people who know about...</option>
-                                <c:forEach var="techTribe" items="${techTribes}">
-                                    <option value="${techTribe.shortName}">${techTribe.name}</option>
-                                </c:forEach>
-                            </select>
-                            &nbsp;or&nbsp;
+                            <c:forEach var="techTribe" items="${techTribes}">
+                                <a href="<techtribesje:goto contentSource="${techTribe}" />"><img src="${techTribe.profileImageUrl}" alt="Profile image" title="${techTribe.name}" class="profileImageSmall" /></a>
+                            </c:forEach>
                             <input name="q" type="text" value="<c:out value='${param["q"]}' escapeXml='true' />" class="search-query input-xlarge" placeholder="Search...">
                         </form>
                     </div>
