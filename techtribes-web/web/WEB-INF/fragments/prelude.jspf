@@ -109,26 +109,7 @@
                     </div>
                 </div>
 
-                <c:if test="${includeVideos}">
-                <hr />
-                <div class="row hidden-phone">
-                    <div class="span4" style="text-align: center;">
-                        <h4>An Intro to Bitcoin Mining & Investing</h4>
-                        <p><a href="/people/jonathanday">Jonathan Day</a></p>
-                        <iframe width="267" height="150" src="//www.youtube.com/embed/DUAWAfHnx9Y" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="span4" style="text-align: center;">
-                        <h4>10 uses for Raspberry Pi in 10 minutes</h4>
-                        <p><a href="/people/robdudley">Rob Dudley</a></p>
-                        <iframe width="267" height="150" src="//www.youtube.com/embed/txm_3dUpqQg" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="span4" style="text-align: center;">
-                        <h4>Data Protection & Defamation</h4>
-                        <p>Vicky Milner</p>
-                        <iframe width="267" height="150" src="//www.youtube.com/embed/EoH1vEuVPus" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                </c:if>
+                <%@ include file="/WEB-INF/fragments/mostActive.jspf" %>
 
             </div>
         </div>
