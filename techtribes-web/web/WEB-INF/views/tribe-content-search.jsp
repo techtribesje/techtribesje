@@ -4,8 +4,6 @@
         <%@ include file="/WEB-INF/fragments/tribe-profile.jspf" %>
 
         <hr />
-        <%@ include file="/WEB-INF/fragments/content-source-statistics.jspf" %>
-        <hr />
 
         <%@ include file="/WEB-INF/fragments/newsFeedEntries.jspf" %>
 

@@ -42,7 +42,7 @@
         </ul>
 </c:if>
 
-<c:if test="${not empty tribe.members}">
+<c:if test="${not empty tribe.members and tribe.type ne 'Tech'}">
     <br /><br />
     <c:choose>
         <c:when test="${tribe.type eq 'Community'}">
