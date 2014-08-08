@@ -34,17 +34,6 @@ public class SignInController extends AbstractController {
 		return "signin";
 	}
 
-    @RequestMapping(value = "/signout", method = RequestMethod.GET)
-   	public String showPage(ModelMap model, HttpServletRequest request) {
-           SecurityContextHolder.clearContext();
-           HttpSession session = request.getSession(false);
-           if (session != null) {
-               session.invalidate();
-           }
-
-   		return "redirect:/";
-   	}
-
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
    	public String showHomePage(ModelMap model) {
            addCommonAttributes(model);
