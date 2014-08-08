@@ -49,7 +49,6 @@ class ScheduledContentUpdaterImpl extends AbstractComponent implements Scheduled
     private NewsFeedUpdater newsFeedUpdater;
     private TwitterUpdater twitterUpdater;
     private GitHubUpdater gitHubUpdater;
-    private TechTribeMembershipUpdater techTribeMembershipUpdater;
 
     public ScheduledContentUpdaterImpl(ContentSourceComponent contentSourceComponent, GitHubComponent gitHubComponent, TweetComponent tweetComponent, NewsFeedEntryComponent newsFeedEntryComponent, ActivityUpdater activityUpdater, SearchComponent searchComponent, GitHubConnector gitHubConnector, NewsFeedConnector newsFeedConnector, TwitterConnector twitterConnector, BadgeAwarder badgeAwarder) {
         this.contentSourceComponent = contentSourceComponent;
@@ -69,7 +68,6 @@ class ScheduledContentUpdaterImpl extends AbstractComponent implements Scheduled
         newsFeedUpdater = new NewsFeedUpdater(this, contentSourceComponent, newsFeedConnector, newsFeedEntryComponent, searchComponent);
         twitterUpdater = new TwitterUpdater(this, contentSourceComponent, tweetComponent, searchComponent, twitterConnector);
         gitHubUpdater = new GitHubUpdater(this, contentSourceComponent, gitHubComponent, gitHubConnector);
-        techTribeMembershipUpdater = new TechTribeMembershipUpdater(this, contentSourceComponent, searchComponent);
 
         // this is the initial content update following startup of this component
         logInfo("Updating content sources from database");
@@ -105,9 +103,6 @@ class ScheduledContentUpdaterImpl extends AbstractComponent implements Scheduled
     @Scheduled(cron="0 0 * * * ?")
     void updateAndAwardBadges() {
         updateContentSourcesAndNews();
-
-        logInfo("Updating tech tribe memberships");
-        techTribeMembershipUpdater.update();
 
         logInfo("Calculating activity rankings");
         activityUpdater.calculateActivityForLastSevenDays();
