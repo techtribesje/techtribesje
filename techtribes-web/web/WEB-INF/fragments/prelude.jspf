@@ -114,8 +114,6 @@
                     </div>
                 </div>
 
-                <%@ include file="/WEB-INF/fragments/mostActive.jspf" %>
-
                 <c:if test="${includeVideos}">
                 <hr />
                 <div class="row hidden-phone">
