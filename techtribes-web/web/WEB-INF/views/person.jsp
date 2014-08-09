@@ -1,6 +1,12 @@
 <div class="section">
+    <div class="sectionHeading">
+        <div class="container">
+            <%@ include file="/WEB-INF/fragments/person-navigation.jspf" %>
+            <h1><a href="<techtribesje:goto contentSource="${person}"/>"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a> ${person.name}</h1>
+        </div>
+    </div>
+
     <div class="container">
-        <%@ include file="/WEB-INF/fragments/person-navigation.jspf" %>
         <%@ include file="/WEB-INF/fragments/person-profile.jspf" %>
 
         <c:if test="${not empty activity && activity.score > 0}">

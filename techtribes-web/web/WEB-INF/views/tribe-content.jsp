@@ -1,8 +1,14 @@
 <div class="section contentSection">
-    <div class="container">
-        <%@ include file="/WEB-INF/fragments/tribe-navigation.jspf" %>
-        <h1><a href="<techtribesje:goto contentSource="${tribe}"/>"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImage" /></a> Blog posts, etc</h1>
+    <div class="sectionHeading">
+        <div class="container">
+            <div style="float: right;">
+                <%@ include file="/WEB-INF/fragments/tribe-navigation.jspf" %>
+            </div>
+            <h1><a href="<techtribesje:goto contentSource="${tribe}"/>"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImage" /></a> ${tribe.name}</h1>
+        </div>
+    </div>
 
+    <div class="container">
         <c:choose>
         <c:when test="${not empty newsFeedEntries}">
         <%@ include file="/WEB-INF/fragments/newsFeedEntries.jspf" %>

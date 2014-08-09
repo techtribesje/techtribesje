@@ -1,5 +1,3 @@
-<h1><a href="<techtribesje:goto contentSource="${tribe}"/>"><img src="${tribe.profileImageUrl}" alt="Profile image" class="profileImage" /></a> ${tribe.name}</h1>
-
 <c:if test="${not empty tribe.profile}">
 <p>
     ${tribe.profile}

@@ -78,13 +78,7 @@ public class TribesController extends AbstractController {
 
     @RequestMapping(value = "/tribes", method = RequestMethod.GET)
 	public String viewTribes(ModelMap model) {
-        List<Tribe> tribes = contentSourceComponent.getTribes();
-
-        model.addAttribute("tribes", tribes);
-        addCommonAttributes(model);
-        setPageTitle(model, "Tribes");
-
-        return "tribes";
+        return viewBusinessTribes(model);
 	}
 
 	public String viewTribesByType(ModelMap model, ContentSourceType type, String view, String title) {

@@ -1,8 +1,12 @@
 <div class="section tweetsSection">
-    <div class="container">
-        <%@ include file="/WEB-INF/fragments/person-navigation.jspf" %>
-        <h1><a href="/people/${person.shortName}"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a> Tweets</h1>
+    <div class="sectionHeading">
+        <div class="container">
+            <%@ include file="/WEB-INF/fragments/person-navigation.jspf" %>
+            <h1><a href="<techtribesje:goto contentSource="${person}"/>"><img src="${person.profileImageUrl}" alt="Profile image" class="profileImage" /></a> ${person.name}</h1>
+        </div>
+    </div>
 
+    <div class="container">
         <c:choose>
         <c:when test="${not empty tweets}">
         <%@ include file="/WEB-INF/fragments/tweets.jspf" %>
