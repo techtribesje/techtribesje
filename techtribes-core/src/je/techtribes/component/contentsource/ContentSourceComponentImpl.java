@@ -40,7 +40,6 @@ class ContentSourceComponentImpl extends AbstractComponent implements ContentSou
         }
     }
 
-    @Scheduled(cron="0 */5 * * * ?")
     @Override
     public synchronized void refreshContentSources() {
         List<ContentSource> allContentSources = new LinkedList<>();

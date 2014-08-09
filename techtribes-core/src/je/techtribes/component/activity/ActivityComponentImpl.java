@@ -58,7 +58,6 @@ class ActivityComponentImpl extends AbstractComponent implements ActivityCompone
         }
     }
 
-    @Scheduled(cron="0 */5 * * * ?")
     @Override
     public synchronized void refreshRecentActivity() {
         try {
