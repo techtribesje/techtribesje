@@ -96,6 +96,7 @@
                         <a href="/content" class="contentLink">Content</a>
                         <a href="/tweets" class="tweetsLink">Tweets</a>
                         <a href="/code" class="codeLink">Code</a>
+                        <a href="/books" class="booksLink">Books</a>
                         <a href="/people">People</a>
                         <a href="/tribes">Tribes</a>
                     </div>

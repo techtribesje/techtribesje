@@ -268,6 +268,12 @@ footer a {
     background-image: -webkit-linear-gradient(top, #390258, #48036F);
 }
 
+.booksSection {
+    background-color: #003366;
+    background-image: linear-gradient(to bottom, #003366, #194775);
+    background-image: -webkit-linear-gradient(top, #003366, #194775);
+}
+
 .embeddedVideo, .embeddedMap {
     padding: 8px;
     text-align: center;
@@ -313,4 +319,11 @@ footer a {
 }
 #headerNavigation .jobsLink {
     color: #48036F;
+}
+#headerNavigation .booksLink {
+    color: #003366;
+}
+
+.bookCover {
+    background: white;
 }

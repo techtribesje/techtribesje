@@ -1,0 +1,17 @@
+<div class="${book.contentSource.shortName} highlightableContent job">
+    <h3>
+        <a href="<techtribesje:goto contentSource="${book.contentSource}"/>"><img src="${book.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
+        <a href="${book.url}" target="_blank">${book.title}</a>
+    </h3>
+    <p>
+        ${book.truncatedDescription}
+    </p>
+    <p>
+        <a href="${book.url}" target="_blank"><img src="/static/img/books/${book.id}.png" alt="${book.title}" class="thumbnail bookCover" /></a>
+    </p>
+    <br />
+    <div class="metadata">
+        Published by ${book.publisher}
+        <c:if test="${not empty book.publishedDate}"> in ${book.publishedDate}</c:if>
+    </div>
+</div>

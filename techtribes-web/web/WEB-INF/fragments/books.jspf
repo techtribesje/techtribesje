@@ -1,0 +1,18 @@
+<c:forEach var="book" items="${books}" varStatus="status">
+    <c:if test="${status.index % 3 == 0}">
+        <div class="row">
+    </c:if>
+            <div class="span4">
+                <%@ include file="/WEB-INF/fragments/book.jspf" %>
+            </div>
+    <c:if test="${status.index % 3 == 2}">
+        </div>
+    </c:if>
+
+    <c:if test="${status.last and status.index % 3 ne 2}">
+        <c:forEach begin="1" end="${2-(status.index % 3)}">
+            <div class="span4">&nbsp;</div>
+        </c:forEach>
+        </div>
+    </c:if>
+</c:forEach>
