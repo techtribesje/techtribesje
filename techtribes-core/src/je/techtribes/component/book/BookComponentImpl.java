@@ -3,6 +3,7 @@ package je.techtribes.component.book;
 import com.structurizr.annotation.ContainerDependency;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.Book;
+import je.techtribes.domain.ContentSource;
 import je.techtribes.util.AbstractComponent;
 
 import java.net.URL;
@@ -94,6 +95,23 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
 
         Collections.reverse(books);
         return books;
+    }
+
+    @Override
+    public List<Book> getBooks(ContentSource contentSource) {
+        if (contentSource == null) {
+            return new ArrayList<>();
+        }
+
+        List<Book> books = getBooks();
+        List<Book> filteredBooks = new ArrayList<>();
+        for (Book book : books) {
+            if (contentSource.equals(book.getContentSource())) {
+                filteredBooks.add(book);
+            }
+        }
+
+        return filteredBooks;
     }
 
     private Book createBook(int id, String title, String description, String url, String author, String publisher, String publishedDate) throws Exception {

@@ -40,5 +40,13 @@
                 <li><a href="/people/${person.shortName}/code">Code</a></li>
             </c:otherwise>
         </c:choose>
+        <c:choose>
+            <c:when test="${activeNav eq 'books'}">
+                <li class="active"><a href="/people/${person.shortName}/books">Books</a></li>
+            </c:when>
+            <c:otherwise>
+                <li><a href="/people/${person.shortName}/books">Books</a></li>
+            </c:otherwise>
+        </c:choose>
     </ul>
 </div>

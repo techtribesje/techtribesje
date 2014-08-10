@@ -3,6 +3,7 @@ package je.techtribes.web.controller.people;
 import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
+import je.techtribes.component.book.BookComponent;
 import je.techtribes.component.github.GitHubComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryException;
@@ -40,15 +41,17 @@ public class PeopleController extends AbstractController {
     private TalkComponent talksService;
     private ActivityComponent activityComponent;
     private GitHubComponent gitHubComponent;
+    private BookComponent bookComponent;
 
     @Autowired
-    public PeopleController(BadgeComponent badgeComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talksService, ActivityComponent activityComponent, GitHubComponent gitHubComponent) {
+    public PeopleController(BadgeComponent badgeComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talksService, ActivityComponent activityComponent, GitHubComponent gitHubComponent, BookComponent bookComponent) {
         this.badgeComponent = badgeComponent;
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
         this.talksService = talksService;
         this.activityComponent = activityComponent;
         this.gitHubComponent = gitHubComponent;
+        this.bookComponent = bookComponent;
     }
 
     @RequestMapping(value = "/people", method = RequestMethod.GET)
@@ -156,6 +159,22 @@ public class PeopleController extends AbstractController {
         setPageTitle(model, contentSource.getName(), "Code");
 
         return "person-code";
+	}
+
+    @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/books", method = RequestMethod.GET)
+	public String viewBooksByPerson(@PathVariable("name")String shortName, ModelMap model) {
+        ContentSource contentSource = findPersonByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
+
+        model.addAttribute("person", contentSource);
+        model.addAttribute("activeNav", "books");
+        model.addAttribute("books", bookComponent.getBooks(contentSource));
+        addCommonAttributes(model);
+        setPageTitle(model, contentSource.getName(), "Books");
+
+        return "person-books";
 	}
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/tweets", method = RequestMethod.GET)
