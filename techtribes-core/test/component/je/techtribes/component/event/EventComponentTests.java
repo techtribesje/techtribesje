@@ -83,7 +83,7 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss:SSS");
         sdf.setTimeZone(TimeZone.getTimeZone(DateUtils.APPLICATION_TIME_ZONE));
 
-        Event event = events.get(0);
+        Event event = events.get(23);
         assertEquals("Event 1", event.getTitle());
         assertEquals("Here is a description for event 1", event.getBody());
         assertEquals(Island.Jersey, event.getIsland());
@@ -93,7 +93,7 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         assertEquals("01-Jan-" + (currentYear-1) + " 17:30:00:000", sdf.format(event.getStartDate()));
         assertEquals("01-Jan-" + (currentYear-1) + " 20:30:00:000", sdf.format(event.getEndDate()));
 
-        event = events.get(23);
+        event = events.get(0);
         assertEquals("Event 24", event.getTitle());
         assertEquals("Here is a description for event 24", event.getBody());
         assertEquals(Island.Guernsey, event.getIsland());
@@ -120,10 +120,10 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         List<Event> events = getEventComponent().getEvents(getContentSourceComponent().findByShortName("techtribesje"), 12);
         assertEquals(12, events.size());
 
-        // Event 1 - 12
+        // Event 24 - 13
         for (int i = 0; i < 12; i++) {
             Event event = events.get(i);
-            assertEquals("Event " + (i+1), event.getTitle());
+            assertEquals("Event " + (24-i), event.getTitle());
             assertEquals("techtribes.je", event.getContentSource().getName());
         }
     }
@@ -138,10 +138,10 @@ public class EventComponentTests extends AbstractComponentTestsBase {
         List<Event> events = getEventComponent().getEventsByYear(currentYear + 1);
         assertEquals(12, events.size());
 
-        // Event 13 - 24
+        // Event 24 - 13
         for (int i = 0; i < 12; i++) {
             Event event = events.get(i);
-            assertEquals("Event " + (12+i+1), event.getTitle());
+            assertEquals("Event " + (24-i), event.getTitle());
             assertEquals("techtribes.je", event.getContentSource().getName());
         }
     }
