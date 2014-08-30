@@ -89,7 +89,7 @@
             <div class="container">
                 <div style="text-align: center;">
                     <div id="headerNavigation">
-                        <a href="/">techtribes.je</a>
+                        <a href="/"><img src="/static/img/monkey-48x48.png" />&nbsp;techtribes.je</a>
                         <a href="/news" class="newsLink">News</a>
                         <a href="/events" class="eventsLink">Events</a>
                         <a href="/talks" class="talksLink">Talks</a>
