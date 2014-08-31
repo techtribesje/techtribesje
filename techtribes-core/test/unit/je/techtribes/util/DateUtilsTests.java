@@ -117,4 +117,11 @@ public class DateUtilsTests {
         assertEquals("01-Jul-2013 16:30:00:000", sdf.format(date));
     }
 
+    @Test
+    public void test_getLastDayOfMonth() {
+        assertEquals(31, DateUtils.getLastDayOfMonth(2014, 1));
+        assertEquals(28, DateUtils.getLastDayOfMonth(2014, 2));
+        assertEquals(31, DateUtils.getLastDayOfMonth(2014, 3));
+    }
+
 }

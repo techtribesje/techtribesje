@@ -11,7 +11,7 @@ import java.util.TimeZone;
  */
 public class FriendlyDateFormatter {
 
-    private static final String DATE_FORMAT = "dd MMM yyyy";
+    private static final String DATE_FORMAT = "EEE dd MMM yyyy";
     private static final String TIME_FORMAT = "HH:mm";
 
     public String formatAsDateWithTime(Date date) {

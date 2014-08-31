@@ -3,6 +3,7 @@ package je.techtribes.web.controller.calendar;
 import je.techtribes.domain.Event;
 import je.techtribes.domain.NewsFeedEntry;
 import je.techtribes.domain.Talk;
+import je.techtribes.util.DateUtils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -14,6 +15,8 @@ public class DayViewModel {
     private int month;
     private int day;
 
+    private boolean padding = false;
+
     private List<Talk> talks = new ArrayList<>();
     private List<Event> events = new ArrayList<>();
     private List<NewsFeedEntry> newsFeedEntries = new ArrayList<>();
@@ -24,10 +27,12 @@ public class DayViewModel {
         this.day = day;
     }
 
-    public DayViewModel(Calendar cal) {
+    public DayViewModel(Calendar cal, boolean padding) {
         this.year = cal.get(Calendar.YEAR);
-        this.month = cal.get(Calendar.MONTH)-1;
-        this.day= cal.get(Calendar.DAY_OF_MONTH);
+        this.month = cal.get(Calendar.MONTH)+1;
+        this.day = cal.get(Calendar.DAY_OF_MONTH);
+
+        this.padding = padding;
     }
 
     public int getDay() {
@@ -66,8 +71,16 @@ public class DayViewModel {
         return new ArrayList<>(newsFeedEntries);
     }
 
+    public boolean isBlank() {
+        return events.isEmpty() && talks.isEmpty() && newsFeedEntries.isEmpty();
+    }
+
+    public boolean isPadding() {
+        return padding;
+    }
+
     public String getTitle() {
-        return "" + day;
+        return DateUtils.format("EEE", DateUtils.getCalendar(year, month, day)) + " " + day;
     }
 
 }

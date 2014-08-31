@@ -79,7 +79,7 @@
         </div>
     </c:if>
 
-    <div class="forkMe hidden-phone">
+    <div class="forkMe hidden-phone hidden-tablet">
         <a href="https://github.com/techtribesje/techtribesje" target="_blank"><img src="/static/img/github-forkme.png" alt="Fork me on GitHub"></a>
     </div>
 
@@ -89,16 +89,21 @@
             <div class="container">
                 <div style="text-align: center;">
                     <div id="headerNavigation">
-                        <a href="/"><img src="/static/img/monkey-48x48.png" />&nbsp;techtribes.je</a>
-                        <a href="/news" class="newsLink">News</a>
-                        <a href="/events" class="eventsLink">Events</a>
-                        <a href="/talks" class="talksLink">Talks</a>
-                        <a href="/content" class="contentLink">Content</a>
-                        <a href="/tweets" class="tweetsLink">Tweets</a>
-                        <a href="/code" class="codeLink">Code</a>
-                        <a href="/books" class="booksLink">Books</a>
-                        <a href="/people">People</a>
-                        <a href="/tribes">Tribes</a>
+                        <div>
+                            <a href="/"><img src="/static/img/monkey-48x48.png" />&nbsp;techtribes.je</a>
+                            <a href="/news" class="newsLink">News</a>
+                            <a href="/events" class="eventsLink">Events</a>
+                            <a href="/talks" class="talksLink">Talks</a>
+                            <a href="/content" class="contentLink">Content</a>
+                            <a href="/tweets" class="tweetsLink">Tweets</a>
+                            <a href="/code" class="codeLink">Code</a>
+                            <a href="/books" class="booksLink">Books</a>
+                        </div>
+                        <div>
+                            <a href="/people">People</a>
+                            <a href="/tribes">Tribes</a>
+                            <a href="/calendar">Calendar</a>
+                        </div>
                     </div>
                     <div>
                         <form class="form-search" action="/search">

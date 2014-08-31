@@ -40,8 +40,13 @@ public class ViewByMonthController extends AbstractController {
         this.newsFeedEntryComponent = newsFeedEntryComponent;
     }
 
+    @RequestMapping(value = "/calendar", method = RequestMethod.GET)
+	public String viewThisMonth(ModelMap model) {
+        return viewMonth(model, DateUtils.getYear(), DateUtils.getMonth());
+    }
+
     @RequestMapping(value = "/{year:\\d\\d\\d\\d}/{month:\\d\\d}", method = RequestMethod.GET)
-	public String viewRecentNews(ModelMap model, @PathVariable("year")int year, @PathVariable("month")int month) {
+	public String viewMonth(ModelMap model, @PathVariable("year")int year, @PathVariable("month")int month) {
 
         boolean invalid = false;
         if (month < 1) {
@@ -86,13 +91,13 @@ public class ViewByMonthController extends AbstractController {
         Calendar cal = DateUtils.getCalendar(year, month, 1);
         while (cal.get(Calendar.DAY_OF_WEEK) != Calendar.MONDAY) {
             cal.add(Calendar.DATE, -1);
-            days.add(0, new DayViewModel(cal));
+            days.add(0, new DayViewModel(cal, true));
         }
 
-        cal = DateUtils.getCalendar(year, month, DateUtils.getLastDayOfMonth(year, month));
+        cal = DateUtils.getCalendar(year, month, lastDayOfMonth);
         while (cal.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
             cal.add(Calendar.DATE, 1);
-            days.add(new DayViewModel(cal));
+            days.add(new DayViewModel(cal, true));
         }
 
         List<DayViewModel> viewModel = new ArrayList<>();

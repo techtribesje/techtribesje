@@ -76,7 +76,7 @@ public class DateUtils {
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(APPLICATION_TIME_ZONE));
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.MONTH, month-1);
-        cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+        cal.set(Calendar.DAY_OF_MONTH, getLastDayOfMonth(year, month));
         cal.set(Calendar.HOUR_OF_DAY, 23);
         cal.set(Calendar.MINUTE, 59);
         cal.set(Calendar.SECOND, 59);
@@ -141,6 +141,8 @@ public class DateUtils {
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(APPLICATION_TIME_ZONE));
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.MONTH, month-1);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 12);
 
         return cal.getActualMaximum(Calendar.DAY_OF_MONTH);
     }

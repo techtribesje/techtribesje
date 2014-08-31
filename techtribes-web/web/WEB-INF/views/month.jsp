@@ -9,21 +9,12 @@
         </div>
 
         <div id="calendar">
-            <div class="row">
-                <div class="span2 dayTitle">Monday</div>
-                <div class="span2 dayTitle">Tuesday</div>
-                <div class="span2 dayTitle">Wednesday</div>
-                <div class="span2 dayTitle">Thursday</div>
-                <div class="span2 dayTitle">Friday</div>
-                <div class="span2 dayTitle">Weekend</div>
-            </div>
-
             <c:forEach var="day" items="${viewModel}" varStatus="status">
                 <c:if test="${status.index % 6 == 0}">
                     <div class="row" style="margin-bottom: 20px;">
                 </c:if>
-                        <div class="span2" style="min-height: 200px;">
-                            <h3 class="dayTitle">${day.title}</h3>
+                        <div class="span2 <c:if test="${day.blank}">hidden-phone</c:if>" style="min-height: 200px;">
+                            <div class="dayTitle <c:if test="${day.padding}">faded</c:if>">${day.title}</div>
 
                             <c:forEach var="event" items="${day.events}">
                                 <p class="contentItem">

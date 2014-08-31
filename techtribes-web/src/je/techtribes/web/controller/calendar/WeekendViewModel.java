@@ -37,6 +37,16 @@ public class WeekendViewModel extends DayViewModel {
     }
 
     @Override
+    public boolean isBlank() {
+        return dayViewModelForSaturday.isBlank() && dayViewModelForSunday.isBlank();
+    }
+
+    @Override
+    public boolean isPadding() {
+        return dayViewModelForSaturday.isPadding() && dayViewModelForSunday.isPadding();
+    }
+
+    @Override
     public String getTitle() {
         return dayViewModelForSaturday.getTitle() + "/" + dayViewModelForSunday.getTitle();
     }
