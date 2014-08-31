@@ -1,5 +1,7 @@
 package je.techtribes.util;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -57,7 +59,7 @@ public class DateUtils {
         return cal.getTime();
     }
 
-    public static Date getStartOfMonth(int year, int month) {
+    public static Calendar getStartOfMonth(int year, int month) {
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(APPLICATION_TIME_ZONE));
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.MONTH, month-1);
@@ -67,10 +69,10 @@ public class DateUtils {
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
 
-        return cal.getTime();
+        return cal;
     }
 
-    public static Date getEndOfMonth(int year, int month) {
+    public static Calendar getEndOfMonth(int year, int month) {
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(APPLICATION_TIME_ZONE));
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.MONTH, month-1);
@@ -80,7 +82,7 @@ public class DateUtils {
         cal.set(Calendar.SECOND, 59);
         cal.set(Calendar.MILLISECOND, 999);
 
-        return cal.getTime();
+        return cal;
     }
 
     public static Date getEndOfYear(int year) {
@@ -160,14 +162,11 @@ public class DateUtils {
         return cal;
     }
 
-    public static int getDayOfWeek(int year, int month, int day) {
-        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(APPLICATION_TIME_ZONE));
-        cal.set(Calendar.YEAR, year);
-        cal.set(Calendar.MONTH, month-1);
-        cal.set(Calendar.DAY_OF_MONTH, day);
-        cal.set(Calendar.HOUR_OF_DAY, 12);
+    public static String format(String format, Calendar cal) {
+        DateFormat dateFormat = new SimpleDateFormat(format);
+        dateFormat.setTimeZone(TimeZone.getTimeZone(APPLICATION_TIME_ZONE));
 
-        return cal.get(Calendar.DAY_OF_WEEK);
+        return dateFormat.format(cal.getTime());
     }
 
 }

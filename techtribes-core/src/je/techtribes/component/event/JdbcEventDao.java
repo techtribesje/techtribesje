@@ -42,8 +42,8 @@ class JdbcEventDao {
 
     List<Event> getEventsByMonth(int year, int month) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        Date start = DateUtils.getStartOfMonth(year, month);
-        Date end = DateUtils.getEndOfMonth(year, month);
+        Date start = DateUtils.getStartOfMonth(year, month).getTime();
+        Date end = DateUtils.getEndOfMonth(year, month).getTime();
 
         return select.query("select event.id, event.title, event.description, event.island, event.location, event.content_source_id, event.url, event.start_datetime, event.end_datetime from event, content_source where start_datetime between ? and ? and event.content_source_id = content_source.id order by start_datetime desc",
                 new Object[]{start, end},

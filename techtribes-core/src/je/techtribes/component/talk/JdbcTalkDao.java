@@ -46,8 +46,8 @@ class JdbcTalkDao {
 
     List<Talk> getTalksByMonth(int year, int month) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        Date start = DateUtils.getStartOfMonth(year, month);
-        Date end = DateUtils.getEndOfMonth(year, month);
+        Date start = DateUtils.getStartOfMonth(year, month).getTime();
+        Date end = DateUtils.getEndOfMonth(year, month).getTime();
 
         return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where talk_date between ? and ? order by talk_date desc",
                 new Object[] { start, end },

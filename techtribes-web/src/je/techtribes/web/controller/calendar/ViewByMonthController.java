@@ -76,8 +76,8 @@ public class ViewByMonthController extends AbstractController {
         }
 
         List<NewsFeedEntry> newsFeedEntries = newsFeedEntryComponent.getNewsFeedEntries(
-                DateUtils.getStartOfMonth(year, month),
-                DateUtils.getEndOfMonth(year, month));
+                DateUtils.getStartOfMonth(year, month).getTime(),
+                DateUtils.getEndOfMonth(year, month).getTime());
         for (NewsFeedEntry newsFeedEntry : newsFeedEntries) {
             int day = DateUtils.getDay(newsFeedEntry.getTimestamp());
             days.get(day-1).add(newsFeedEntry);
@@ -109,8 +109,7 @@ public class ViewByMonthController extends AbstractController {
             viewModel.add(weekendViewModel);
         }
 
-        SimpleDateFormat sdf = new SimpleDateFormat("MMMM yyyy");
-        String title = sdf.format(DateUtils.getStartOfMonth(year, month));
+        String title = DateUtils.format("MMMM yyyy", DateUtils.getStartOfMonth(year, month));
 
         Calendar previousMonth = DateUtils.getCalendar(year, month, 1);
         previousMonth.add(Calendar.MONTH, -1);
@@ -131,12 +130,11 @@ public class ViewByMonthController extends AbstractController {
 	}
 
     private MonthLinkViewModel createMonthLinkViewModel(Calendar cal) {
-        SimpleDateFormat titleFormatter = new SimpleDateFormat("MMMM yyyy");
         NumberFormat yearFormat = new DecimalFormat("0000");
         NumberFormat monthFormat = new DecimalFormat("00");
 
         return new MonthLinkViewModel(
-                titleFormatter.format(cal.getTime()),
+                DateUtils.format("MMMM yyyy", cal),
                 "/" + yearFormat.format(cal.get(Calendar.YEAR)) + "/" + monthFormat.format(cal.get(Calendar.MONTH)+1));
     }
 
