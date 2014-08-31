@@ -26,7 +26,7 @@ public class BooksController extends AbstractController {
     }
 
     @RequestMapping(value = "/books", method = RequestMethod.GET)
-	public String viewRecentNews(ModelMap model) {
+	public String viewBooks(ModelMap model) {
         List<Book> books = bookComponent.getBooks();
 
         model.addAttribute("books", books);
