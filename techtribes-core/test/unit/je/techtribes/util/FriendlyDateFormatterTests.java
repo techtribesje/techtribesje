@@ -80,7 +80,7 @@ public class FriendlyDateFormatterTests {
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
 
-        assertEquals("14 Jul 2012", df.formatAsDateWithoutTime(cal.getTime()));
+        assertEquals("Sat 14 Jul 2012", df.formatAsDateWithoutTime(cal.getTime()));
     }
 
     @Test
@@ -92,7 +92,7 @@ public class FriendlyDateFormatterTests {
         cal.set(Calendar.HOUR_OF_DAY, 14);
         cal.set(Calendar.MINUTE, 30);
 
-        assertEquals("14 Jul 2012 at 14:30", df.formatAsDateWithTime(cal.getTime()));
+        assertEquals("Sat 14 Jul 2012 at 14:30", df.formatAsDateWithTime(cal.getTime()));
     }
 
 }
