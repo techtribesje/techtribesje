@@ -40,6 +40,16 @@ class JdbcEventDao {
                 new EventRowMapper());
     }
 
+    List<Event> getEventsByMonth(int year, int month) {
+        JdbcTemplate select = new JdbcTemplate(dataSource);
+        Date start = DateUtils.getStartOfMonth(year, month);
+        Date end = DateUtils.getEndOfMonth(year, month);
+
+        return select.query("select event.id, event.title, event.description, event.island, event.location, event.content_source_id, event.url, event.start_datetime, event.end_datetime from event, content_source where start_datetime between ? and ? and event.content_source_id = content_source.id order by start_datetime desc",
+                new Object[]{start, end},
+                new EventRowMapper());
+    }
+
     List<Event> getEvents(ContentSource contentSource, int pageSize) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
         return select.query("select id, title, description, island, location, content_source_id, url, start_datetime, end_datetime from event where content_source_id = ? order by start_datetime desc limit 0,?",

@@ -69,6 +69,20 @@ class TalkComponentImpl extends AbstractComponent implements TalkComponent {
     }
 
     @Override
+    public List<Talk> getTalksByMonth(int year, int month) {
+        try {
+            List<Talk> talks = talkDao.getTalksByMonth(year, month);
+            filterAndEnrich(talks);
+
+            return talks;
+        } catch (Exception e) {
+            TalkException te = new TalkException("Error getting talks for month " + month + "/" + year, e);
+            logError(te);
+            throw te;
+        }
+    }
+
+    @Override
     public List<Talk> getTalks(ContentSource contentSource) {
         try {
             List<Talk> talks = talkDao.getTalks(contentSource);

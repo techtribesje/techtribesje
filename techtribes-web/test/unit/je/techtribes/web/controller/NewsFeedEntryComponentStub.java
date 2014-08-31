@@ -26,6 +26,11 @@ public class NewsFeedEntryComponentStub implements NewsFeedEntryComponent {
     }
 
     @Override
+    public List<NewsFeedEntry> getNewsFeedEntries(Date start, Date end) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
     public List<NewsFeedEntry> getRecentNewsFeedEntries(Collection<ContentSource> contentSources, int page, int pageSize) {
         return null;
     }

@@ -44,6 +44,16 @@ class JdbcTalkDao {
                 new TalkRowMapper());
     }
 
+    List<Talk> getTalksByMonth(int year, int month) {
+        JdbcTemplate select = new JdbcTemplate(dataSource);
+        Date start = DateUtils.getStartOfMonth(year, month);
+        Date end = DateUtils.getEndOfMonth(year, month);
+
+        return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where talk_date between ? and ? order by talk_date desc",
+                new Object[] { start, end },
+                new TalkRowMapper());
+    }
+
     List<Talk> getTalks(ContentSource contentSource) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
         return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where content_source_id = ? order by talk_date desc",

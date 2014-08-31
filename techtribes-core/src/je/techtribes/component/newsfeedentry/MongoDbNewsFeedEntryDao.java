@@ -100,6 +100,14 @@ class MongoDbNewsFeedEntryDao {
         return toListOfNewsFeedEntry(dbos);
     }
 
+    List<NewsFeedEntry> getNewsFeedEntries(Date start, Date end) {
+        BasicDBObject query = new BasicDBObject();
+        query.put(TIMESTAMP_KEY, BasicDBObjectBuilder.start("$gte", start).add("$lte", end).get());
+        List<DBObject> dbos = getDBCollection().find(query).sort(new BasicDBObject(TIMESTAMP_KEY, -1)).toArray();
+
+        return toListOfNewsFeedEntry(dbos);
+    }
+
     List<NewsFeedEntry> getRecentNewsFeedEntries(ContentSource contentSource, int pageSize) {
         if (contentSource != null) {
             List<DBObject> dbos = getDBCollection().find(new BasicDBObject(CONTENT_SOURCE_ID_KEY, contentSource.getId())).sort(new BasicDBObject(TIMESTAMP_KEY, -1)).limit(pageSize).toArray();

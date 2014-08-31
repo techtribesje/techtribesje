@@ -42,6 +42,19 @@ class NewsFeedEntryComponentImpl extends AbstractComponent implements NewsFeedEn
         }
     }
 
+    public List<NewsFeedEntry> getNewsFeedEntries(Date start, Date end) {
+        try {
+            List<NewsFeedEntry> newsFeedEntries = newsFeedEntryDao.getNewsFeedEntries(start, end);
+            filterAndEnrich(newsFeedEntries);
+
+            return newsFeedEntries;
+        } catch (Exception e) {
+            NewsFeedEntryException nfee = new NewsFeedEntryException("Error getting news feed entries between " + start + " and " + end, e);
+            logError(nfee);
+            throw nfee;
+        }
+    }
+
     public List<NewsFeedEntry> getRecentNewsFeedEntries(ContentSource contentSource, int pageSize) {
         try {
             pageSize = PageSize.validatePageSize(pageSize);

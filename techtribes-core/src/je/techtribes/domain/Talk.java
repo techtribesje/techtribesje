@@ -84,6 +84,7 @@ public class Talk extends ContentItem {
 
     public void setDate(Date date) {
         this.date = date;
+        setTimestamp(date);
     }
 
     public URL getSlidesUrl() {

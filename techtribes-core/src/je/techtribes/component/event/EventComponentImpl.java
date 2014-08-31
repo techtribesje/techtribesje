@@ -52,6 +52,20 @@ class EventComponentImpl extends AbstractComponent implements EventComponent {
     }
 
     @Override
+    public List<Event> getEventsByMonth(int year, int month) {
+        try {
+            List<Event> events = eventDao.getEventsByMonth(year, month);
+            filterAndEnrich(events);
+
+            return events;
+        } catch (Exception e) {
+            EventException ee = new EventException("Error getting events for month " + year + "/" + month, e);
+            logError(ee);
+            throw ee;
+        }
+    }
+
+    @Override
     public List<Event> getEvents(ContentSource contentSource, int pageSize) {
         try {
             List<Event> events = eventDao.getEvents(contentSource, pageSize);

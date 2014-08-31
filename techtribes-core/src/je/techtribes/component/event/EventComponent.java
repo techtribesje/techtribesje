@@ -21,6 +21,11 @@ public interface EventComponent {
     List<Event> getEventsByYear(int year);
 
     /**
+     * Gets a list of events in a given month, ordered by latest first.
+     */
+    List<Event> getEventsByMonth(int year, int month);
+
+    /**
      * Gets a list of events for the given ContentSource, ordered by latest first.
      */
     List<Event> getEvents(ContentSource contentSource, int pageSize);

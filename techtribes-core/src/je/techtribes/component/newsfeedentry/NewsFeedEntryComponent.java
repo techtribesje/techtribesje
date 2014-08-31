@@ -13,6 +13,8 @@ public interface NewsFeedEntryComponent {
 
     List<NewsFeedEntry> getRecentNewsFeedEntries(int page, int pageSize);
 
+    List<NewsFeedEntry> getNewsFeedEntries(Date start, Date end);
+
     List<NewsFeedEntry> getRecentNewsFeedEntries(ContentSource contentSource, int pageSize);
 
     List<NewsFeedEntry> getRecentNewsFeedEntries(Collection<ContentSource> contentSources, int page, int pageSize);

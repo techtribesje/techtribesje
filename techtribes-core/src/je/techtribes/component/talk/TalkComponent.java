@@ -17,6 +17,8 @@ public interface TalkComponent {
 
     List<Talk> getTalksByYear(int year);
 
+    List<Talk> getTalksByMonth(int year, int month);
+
     List<Talk> getTalks(ContentSource contentSource);
 
     List<Talk> getTalks(Collection<ContentSource> contentSources);

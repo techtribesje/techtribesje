@@ -66,6 +66,8 @@ a img {
 .pagingLinks {
     text-align: center;
     color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .hover {
@@ -274,6 +276,12 @@ footer a {
     background-image: -webkit-linear-gradient(top, #003366, #194775);
 }
 
+.calendarSection {
+    background-color: #000000;
+    background-image: linear-gradient(to bottom, #000000, #111111);
+    background-image: -webkit-linear-gradient(top, #000000, #111111);
+}
+
 .embeddedVideo, .embeddedMap {
     padding: 8px;
     text-align: center;
@@ -302,13 +310,13 @@ footer a {
 #headerNavigation .newsLink {
     color: #000000;
 }
-#headerNavigation .eventsLink {
+#headerNavigation .eventsLink, #calendar .eventsLink {
     color: #FFAA00;
 }
-#headerNavigation .talksLink {
+#headerNavigation .talksLink, #calendar .talksLink {
     color: #BE0000;
 }
-#headerNavigation .contentLink {
+#headerNavigation .contentLink, #calendar .contentLink {
     color: #019201;
 }
 #headerNavigation .tweetsLink {
@@ -326,4 +334,13 @@ footer a {
 
 .bookCover {
     background: white;
+}
+
+#calendar .contentItem {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#calendar .dayTitle {
+    color: gray;
 }
