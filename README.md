@@ -19,6 +19,6 @@ You'll need the following in order to build and run the techtribes.je website:
 
 ## Software Guidebook
 
-There is a software guidebook for the [techtribes.je](http://techtribes.je) website in the [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers) book.
+The [Software Guidebook can be found on Leanpub](https://leanpub.com/techtribesje).
 
-![Software Architecture for Developers](software-architecture-for-developers.png)
+![](techtribesje-software-guidebook.png)
