@@ -39,7 +39,7 @@ public class ReadWriteContentSourceComponentTests extends AbstractComponentTests
         assertEquals("kirstie_brown", kirstiebrown.getTwitterId());
         assertEquals("", kirstiebrown.getProfile());
         assertNull(kirstiebrown.getUrl());
-        assertEquals("http://techtribes.je/static/img/default-profile-image.png", kirstiebrown.getProfileImageUrl().toString());
+        assertEquals("https://techtribes.je/static/img/default-profile-image.png", kirstiebrown.getProfileImageUrl().toString());
         assertNull(kirstiebrown.getGitHubId());
         assertEquals(0, kirstiebrown.getTwitterFollowersCount());
 
@@ -50,12 +50,13 @@ public class ReadWriteContentSourceComponentTests extends AbstractComponentTests
         kirstiebrown.setProfile("Here is some profile text about Kirstie Brown");
         getContentSourceComponent().update(kirstiebrown);
 
+        getContentSourceComponent().refreshContentSources();
         kirstiebrown = (Person)getContentSourceComponent().findByShortName("kirstiebrown");
         assertEquals("Kirstie Brown", kirstiebrown.getName());
         assertEquals(Island.Jersey, kirstiebrown.getIsland());
         assertEquals("Here is some profile text about Kirstie Brown", kirstiebrown.getProfile());
         assertEquals("http://www.kirstiebrown.je", kirstiebrown.getUrl().toString());
-        assertEquals("http://www.kirstiebrown.je/photo.jpg", kirstiebrown.getProfileImageUrl().toString());
+        assertEquals("https://www.kirstiebrown.je/photo.jpg", kirstiebrown.getProfileImageUrl().toString());
         assertEquals("kirstie_brown", kirstiebrown.getTwitterId());
         assertEquals("kirstiebrown", kirstiebrown.getGitHubId());
         assertEquals(1234, kirstiebrown.getTwitterFollowersCount());

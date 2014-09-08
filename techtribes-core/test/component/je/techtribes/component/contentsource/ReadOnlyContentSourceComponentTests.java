@@ -22,7 +22,7 @@ public class ReadOnlyContentSourceComponentTests extends AbstractComponentTestsB
         assertEquals("simonbrown", person.getTwitterId());
         assertNull(person.getGitHubId());
         assertNull(person.getSearchTerms());
-        assertEquals("http://techtribes.je/static/img/default-profile-image.png", person.getProfileImageUrl().toString());
+        assertEquals("https://techtribes.je/static/img/default-profile-image.png", person.getProfileImageUrl().toString());
         assertEquals(0, person.getTwitterFollowersCount());
         assertEquals(0, person.getNumberOfTribes());
     }
