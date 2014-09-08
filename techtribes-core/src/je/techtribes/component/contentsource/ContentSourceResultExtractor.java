@@ -34,7 +34,7 @@ class ContentSourceResultExtractor implements ResultSetExtractor<ContentSource> 
         String profileImageUrlAsString = rs.getString("profile_image_url");
         if (profileImageUrlAsString != null && !profileImageUrlAsString.isEmpty()) {
             try {
-                contentSource.setProfileImageUrl(new URL(profileImageUrlAsString));
+                contentSource.setProfileImageUrl(new URL(profileImageUrlAsString.replace("http:", "https:")));
             } catch (MalformedURLException e) {
                 LoggingComponentFactory.create().warn(this, "Couldn't get profile image URL for " + contentSource.getName(), e);
             }

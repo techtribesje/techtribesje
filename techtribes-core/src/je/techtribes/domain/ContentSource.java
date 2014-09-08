@@ -116,7 +116,7 @@ public abstract class ContentSource implements Comparable<ContentSource> {
             return profileImageUrl;
         } else {
             try {
-                return new URL("http://techtribes.je/static/img/default-profile-image.png");
+                return new URL("https://techtribes.je/static/img/default-profile-image.png");
             } catch (MalformedURLException e) {
                 LoggingComponentFactory.create().warn(this, "Could not set profile image URL");
                 return null;
