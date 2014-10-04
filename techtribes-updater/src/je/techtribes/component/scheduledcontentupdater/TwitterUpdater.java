@@ -8,6 +8,7 @@ import je.techtribes.component.twitterconnector.StreamingTweetListener;
 import je.techtribes.component.twitterconnector.TwitterConnector;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.ContentSourceType;
+import je.techtribes.domain.Tribe;
 import je.techtribes.domain.Tweet;
 import je.techtribes.component.twitterconnector.TwitterProfile;
 
@@ -111,12 +112,10 @@ class TwitterUpdater {
                     } else {
                         // this tries to ensure that only digital/IT/technology tweets are aggregated
                         String body = tweet.getBody().toLowerCase();
-                        if (    body.contains("digital") ||
-                                body.contains("technology") ||
-                                body.contains("bcs jersey") ||
-                                body.contains("bitcoin") ||
-                                body.contains("software")) {
-                            filteredTweets.add(tweet);
+                        for (String keyword : Tribe.MEDIA_TRIBE_KEYWORD_TRIGGERS) {
+                            if (body.contains(keyword) && !filteredTweets.contains(tweet)) {
+                                filteredTweets.add(tweet);
+                            }
                         }
                     }
                 } else {

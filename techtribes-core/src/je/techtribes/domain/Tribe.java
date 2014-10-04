@@ -2,12 +2,17 @@ package je.techtribes.domain;
 
 import je.techtribes.util.comparator.ContentSourceByNameComparator;
 
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Tribe extends ContentSource {
+
+    public static String[] MEDIA_TRIBE_KEYWORD_TRIGGERS = new String[] {
+            "digital", "technology", "bitcoin", "fintech",
+            "computer", "online", "email",
+            "bcs jersey", "digital jersey",
+            "egov", "e-gov",
+            "coding", "software"
+    };
 
     private final Set<Person> members = new TreeSet<>(new ContentSourceByNameComparator());
 

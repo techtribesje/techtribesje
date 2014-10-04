@@ -12,6 +12,7 @@ import com.sun.syndication.io.XmlReader;
 import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.NewsFeed;
 import je.techtribes.domain.NewsFeedEntry;
+import je.techtribes.domain.Tribe;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.util.comparator.ContentItemComparator;
 
@@ -135,17 +136,10 @@ class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnect
             } else {
                 // this tries to ensure that only digital/IT/technology news is aggregated
                 String content = fe.getTitle().toLowerCase() + " " + fe.getBody().toLowerCase();
-                if (    content.contains("digital") ||
-                        content.contains("technology") ||
-                        content.contains("bitcoin") ||
-                        content.contains("fintech") ||
-                        content.contains("computer") ||
-                        content.contains("online") ||
-                        content.contains("email") ||
-                        content.contains("bcs jersey") ||
-                        content.contains("coding") ||
-                        content.contains("software")) {
-                    entries.add(fe);
+                for (String keyword : Tribe.MEDIA_TRIBE_KEYWORD_TRIGGERS) {
+                    if (content.contains(keyword) && !entries.contains(fe)) {
+                        entries.add(fe);
+                    }
                 }
             }
         } else {
