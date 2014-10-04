@@ -51,7 +51,7 @@
     <orderEntry type="library" exported="" name="Production Libraries" level="project" />
     <orderEntry type="module" module-name="techtribes-core" exported="" />
     <orderEntry type="library" scope="TEST" name="Test Libraries" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0" level="application_server_libraries" />
+    <orderEntry type="library" name="techtribesje - Tomcat 8.0.12" level="application_server_libraries" />
   </component>
 </module>
 

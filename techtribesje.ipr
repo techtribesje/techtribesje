@@ -17,6 +17,7 @@
           </element>
           <element id="directory" name="lib">
             <element id="library" level="project" name="Production Libraries" />
+            <element id="library" level="project" name="Test Libraries" />
           </element>
           <element id="dir-copy" path="$PROJECT_DIR$/techtribes-core/etc/spring" />
           <element id="file-copy" path="$PROJECT_DIR$/techtribes-web/etc/techtribesje.tld" />
@@ -46,13 +47,10 @@
       </profile>
     </annotationProcessing>
   </component>
-  <component name="CopyrightManager" default="">
-    <module2copyright />
-  </component>
+  <component name="CopyrightManager" default="" />
   <component name="DataSourceManagerImpl" format="xml" hash="51958883">
-    <data-source source="LOCAL" name="Data Source" product="MySQL" version="5.5.28" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )" uuid="69271ba3-4605-493e-a71d-b339094e649a">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Data Source" uuid="69271ba3-4605-493e-a71d-b339094e649a">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/techtribesje</jdbc-url>

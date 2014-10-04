@@ -22,7 +22,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Production Libraries" level="project" />
-    <orderEntry type="library" name="Test Libraries" level="project" />
+    <orderEntry type="library" scope="TEST" name="Test Libraries" level="project" />
   </component>
 </module>
 
