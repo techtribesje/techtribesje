@@ -30,7 +30,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "Java has fimly established itself as the major enterprise development platform and has been widely adopted by many corporations around the world. Wrox's commitment to the Java programming community continues with timely updates to its core technology libary with Professional Java Server Programming J2EE 1.3 Edition and Professional JSP 2nd Edition and builds on this solid base with more focused drill down titles on topics such as WebObjects and Web design.",
                     "http://www.amazon.com/Professional-JSP-2nd-Simon-Brown/dp/1861004958/",
                     "simonbrown",
-                    "Wrox Press",
+                    "Wrox",
                     "April 2001"));
 
             books.add(createBook(2,
@@ -38,7 +38,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "Java servlets are fast becoming indispensable enterprise components, as they provide a means to build scalable and portable business services that communicate over the Web. This book provides a comprehensive guide to developing applications based on the Java Servlet 2.3 API, a part of the Java 2 Platform, Enterprise Edition 1.3. The book reveals how and where servlets fit into an enterprise solution, and addresses issues such as security, scalability, performance and design. It walks you through the API covering the role of all the classes and interfaces and provides lots of example applications to demonstrate servlets in action. The book also covers the key role that servlets play in the new web services development model.",
                     "http://www.amazon.com/Professional-Java-Servlets-Andrew-Harbourne-Thomas/dp/186100561X",
                     "simonbrown",
-                    "Wrox Press",
+                    "Wrox",
                     "January 2002"));
 
             books.add(createBook(3,
@@ -46,7 +46,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "JSP Tag Libraries is an extension to Java Server Pages, the java API for web development, that allows a cleaner separation of logic and presentation. This promotes genuine reusability and improves the scope and power of JSP. JSP Tag Libraries teaches you how to create usable, maintainable, and flexible tags. We will teach you good practices, and the design implications of tags, that will enable you to maximise the reusability of your code. This book includes many useful code examples that illustrate the points being made. With the prevalence of material on using of jsp tags, we will not concentrate in detail on using 3rd party tags, but rather aim to take you from writing script-like JSP based applications to creating genuinely object oriented web applications.",
                     "http://www.amazon.com/Professional-JSP-Libraries-Simon-Brown/dp/1861006217",
                     "simonbrown",
-                    "Wrox Press",
+                    "Wrox",
                     "April 2002"));
 
             books.add(createBook(4,
@@ -88,6 +88,14 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "mattchatterley",
                     "Leanpub",
                     null));
+
+            books.add(createBook(9,
+                    "Professional Java EE Design Patterns",
+                    "Master Java EE design pattern implementation to improve your design skills and your application’s architecture",
+                    "http://www.wrox.com/WileyCDA/WroxTitle/Professional-Java-EE-Design-Patterns.productCd-111884341X.html",
+                    "alextheedom",
+                    "Wrox",
+                    "December 2014"));
         } catch (Exception e) {
             logError(e.getMessage());
             throw new BookException("Error getting list of books", e);
