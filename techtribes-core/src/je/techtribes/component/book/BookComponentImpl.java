@@ -114,6 +114,16 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "Leanpub",
                     null,
                     Book.Role.Contributor));
+
+            books.add(createBook(11,
+                    "Microsoft System Center 2012 Compliance Management Cookbook",
+                    "Over 40 practical recipes that will help you plan, build, implement, and enhance IT compliance policies using Microsoft Security Compliance Manager and Microsoft System Center 2012 R2",
+                    "https://www.packtpub.com/virtualization-and-cloud/microsoft-system-center-2012-compliance-management-cookbook",
+                    "ronnieisherwood",
+                    "Packt",
+                    "October 2014",
+                    Book.Role.Author));
+
         } catch (Exception e) {
             logError(e.getMessage());
             throw new BookException("Error getting list of books", e);
