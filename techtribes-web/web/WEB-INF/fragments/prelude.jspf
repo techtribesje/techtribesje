@@ -117,9 +117,5 @@
 
                 <%--<%@ include file="/WEB-INF/fragments/mostActive.jspf" %>--%>
 
-                <div style="text-align: center;">
-                    <a href="http://tumblr.techtribes.je/post/98962462726/coffee-and-code"><img src="/static/img/codeweekeu.png" alt="Code Week EU" /></a>
-                </div>
-
             </div>
         </div>
