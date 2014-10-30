@@ -6,11 +6,18 @@ import java.net.URL;
 
 public class Book extends ContentItem {
 
+    public enum Role {
+        Author,
+        Contributor
+    }
+
     private int id;
     private String description;
     private String publisher;
     private String publishedDate;
     private URL url;
+
+    private Role role = Role.Author;
 
     public Book(int id) {
         this.id = id;
@@ -59,6 +66,14 @@ public class Book extends ContentItem {
 
     public void setUrl(URL url) {
         this.url = url;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override

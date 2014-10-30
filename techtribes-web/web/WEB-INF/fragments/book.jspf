@@ -11,7 +11,7 @@
     </p>
     <br />
     <div class="metadata">
-        Published by ${book.publisher}
+        ${book.role} | Published by ${book.publisher}
         <c:if test="${not empty book.publishedDate}"> in ${book.publishedDate}</c:if>
     </div>
 </div>

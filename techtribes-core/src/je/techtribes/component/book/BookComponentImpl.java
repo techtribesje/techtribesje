@@ -31,7 +31,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "http://www.amazon.com/Professional-JSP-2nd-Simon-Brown/dp/1861004958/",
                     "simonbrown",
                     "Wrox",
-                    "April 2001"));
+                    "April 2001",
+                    Book.Role.Author));
 
             books.add(createBook(2,
                     "Professional Java Servlets",
@@ -39,7 +40,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "http://www.amazon.com/Professional-Java-Servlets-Andrew-Harbourne-Thomas/dp/186100561X",
                     "simonbrown",
                     "Wrox",
-                    "January 2002"));
+                    "January 2002",
+                    Book.Role.Author));
 
             books.add(createBook(3,
                     "Professional JSP Tag Libraries",
@@ -47,7 +49,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "http://www.amazon.com/Professional-JSP-Libraries-Simon-Brown/dp/1861006217",
                     "simonbrown",
                     "Wrox",
-                    "April 2002"));
+                    "April 2002",
+                    Book.Role.Author));
 
             books.add(createBook(4,
                     "Pro JSP 3rd Edition",
@@ -55,7 +58,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "http://www.apress.com/java/jsp/9781590592250",
                     "simonbrown",
                     "Apress",
-                    "September 2003"));
+                    "September 2003",
+                    Book.Role.Author));
 
             books.add(createBook(5,
                     "Pro JSP 2",
@@ -63,7 +67,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "http://www.apress.com/java/jsp/9781590595138",
                     "simonbrown",
                     "Apress",
-                    "December 2005"));
+                    "December 2005",
+                    Book.Role.Author));
 
             books.add(createBook(6,
                     "Software Architecture for Developers",
@@ -71,7 +76,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "https://leanpub.com/software-architecture-for-developers",
                     "simonbrown",
                     "Leanpub",
-                    null));
+                    null,
+                    Book.Role.Author));
 
             books.add(createBook(7,
                     "Are you an IT project manager?",
@@ -79,7 +85,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "https://leanpub.com/projectmanager",
                     "kirstiebrown",
                     "Leanpub",
-                    null));
+                    null,
+                    Book.Role.Author));
 
             books.add(createBook(8,
                     "Practical SQL Server Performance Tuning",
@@ -87,7 +94,8 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "https://leanpub.com/practicalperformancetuningforsqlserver",
                     "mattchatterley",
                     "Leanpub",
-                    null));
+                    null,
+                    Book.Role.Author));
 
             books.add(createBook(9,
                     "Professional Java EE Design Patterns",
@@ -95,7 +103,17 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "http://www.wrox.com/WileyCDA/WroxTitle/Professional-Java-EE-Design-Patterns.productCd-111884341X.html",
                     "alextheedom",
                     "Wrox",
-                    "December 2014"));
+                    "December 2014",
+                    Book.Role.Author));
+
+            books.add(createBook(10,
+                    "Talking with Tech Leads",
+                    "A book for Tech Leads, from Tech Leads. Discover how more than 35 Tech Leads find the delicate balance between the technical and non-technical worlds. Discover the challenges a Tech Lead faces and how to overcome them. You may be surprised by the lessons they have to share.",
+                    "https://leanpub.com/talking-with-tech-leads",
+                    "simonbrown",
+                    "Leanpub",
+                    null,
+                    Book.Role.Contributor));
         } catch (Exception e) {
             logError(e.getMessage());
             throw new BookException("Error getting list of books", e);
@@ -122,7 +140,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
         return filteredBooks;
     }
 
-    private Book createBook(int id, String title, String description, String url, String author, String publisher, String publishedDate) throws Exception {
+    private Book createBook(int id, String title, String description, String url, String author, String publisher, String publishedDate, Book.Role role) throws Exception {
         Book book = new Book(id);
         book.setTitle(title);
         book.setDescription(description);
@@ -130,6 +148,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
         book.setContentSource(contentSourceComponent.findByShortName(author));
         book.setPublisher(publisher);
         book.setPublishedDate(publishedDate);
+        book.setRole(role);
 
         return book;
     }
