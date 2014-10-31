@@ -19,9 +19,7 @@ public class Book extends ContentItem {
 
         @Override
         public String toString() {
-            return "Role{" +
-                    "description='" + description + '\'' +
-                    '}';
+            return description;
         }
     }
 
@@ -82,8 +80,8 @@ public class Book extends ContentItem {
         this.url = url;
     }
 
-    public Role getRole() {
-        return role;
+    public String getRole() {
+        return role.toString();
     }
 
     public void setRole(Role role) {
