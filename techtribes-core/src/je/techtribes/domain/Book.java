@@ -7,8 +7,22 @@ import java.net.URL;
 public class Book extends ContentItem {
 
     public enum Role {
-        Author,
-        Contributor
+        Author("Author"),
+        Coauthor("Co-author"),
+        Contributor("Contributor");
+
+        private String description;
+
+        Role(String description) {
+            this.description = description;
+        }
+
+        @Override
+        public String toString() {
+            return "Role{" +
+                    "description='" + description + '\'' +
+                    '}';
+        }
     }
 
     private int id;

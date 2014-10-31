@@ -32,7 +32,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "simonbrown",
                     "Wrox",
                     "April 2001",
-                    Book.Role.Author));
+                    Book.Role.Coauthor));
 
             books.add(createBook(2,
                     "Professional Java Servlets",
@@ -41,7 +41,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "simonbrown",
                     "Wrox",
                     "January 2002",
-                    Book.Role.Author));
+                    Book.Role.Coauthor));
 
             books.add(createBook(3,
                     "Professional JSP Tag Libraries",
@@ -59,7 +59,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "simonbrown",
                     "Apress",
                     "September 2003",
-                    Book.Role.Author));
+                    Book.Role.Coauthor));
 
             books.add(createBook(5,
                     "Pro JSP 2",
@@ -68,7 +68,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "simonbrown",
                     "Apress",
                     "December 2005",
-                    Book.Role.Author));
+                    Book.Role.Coauthor));
 
             books.add(createBook(6,
                     "Software Architecture for Developers",
@@ -104,7 +104,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "alextheedom",
                     "Wrox",
                     "December 2014",
-                    Book.Role.Author));
+                    Book.Role.Coauthor));
 
             books.add(createBook(10,
                     "Talking with Tech Leads",
@@ -122,7 +122,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "ronnieisherwood",
                     "Packt",
                     "October 2014",
-                    Book.Role.Author));
+                    Book.Role.Coauthor));
 
         } catch (Exception e) {
             logError(e.getMessage());
