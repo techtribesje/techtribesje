@@ -1,4 +1,4 @@
-<div class="${book.contentSource.shortName} highlightableContent job">
+<div class="${book.contentSource.shortName} highlightableContent job <c:if test="${not book.published}">faded</c:if>">
     <h3>
         <a href="<techtribesje:goto contentSource="${book.contentSource}"/>"><img src="${book.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
         <a href="${book.url}" target="_blank">${book.title}</a>
@@ -11,7 +11,10 @@
     </p>
     <br />
     <div class="metadata">
-        ${book.role} | Published by ${book.publisher}
-        <c:if test="${not empty book.publishedDate}"> in ${book.publishedDate}</c:if>
+        ${book.role} | ${book.publisher} |
+        <c:choose>
+            <c:when test="${book.published}">${book.publishedDate}</c:when>
+            <c:otherwise>Unpublished</c:otherwise>
+        </c:choose>
     </div>
 </div>

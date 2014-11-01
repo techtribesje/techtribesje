@@ -93,4 +93,8 @@ public class Book extends ContentItem {
         return getUrl() != null ? getUrl().toString() : "";
     }
 
+    public boolean isPublished() {
+        return this.publishedDate != null;
+    }
+
 }

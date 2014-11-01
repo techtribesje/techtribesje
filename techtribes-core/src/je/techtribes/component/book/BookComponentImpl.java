@@ -76,7 +76,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "https://leanpub.com/software-architecture-for-developers",
                     "simonbrown",
                     "Leanpub",
-                    null,
+                    "February 2012",
                     Book.Role.Author));
 
             books.add(createBook(7,
@@ -85,7 +85,7 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "https://leanpub.com/projectmanager",
                     "kirstiebrown",
                     "Leanpub",
-                    null,
+                    "March 2013",
                     Book.Role.Author));
 
             books.add(createBook(8,
@@ -97,22 +97,13 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     null,
                     Book.Role.Author));
 
-            books.add(createBook(9,
-                    "Professional Java EE Design Patterns",
-                    "Master Java EE design pattern implementation to improve your design skills and your application’s architecture",
-                    "http://www.wrox.com/WileyCDA/WroxTitle/Professional-Java-EE-Design-Patterns.productCd-111884341X.html",
-                    "alextheedom",
-                    "Wrox",
-                    "December 2014",
-                    Book.Role.Coauthor));
-
             books.add(createBook(10,
                     "Talking with Tech Leads",
                     "A book for Tech Leads, from Tech Leads. Discover how more than 35 Tech Leads find the delicate balance between the technical and non-technical worlds. Discover the challenges a Tech Lead faces and how to overcome them. You may be surprised by the lessons they have to share.",
                     "https://leanpub.com/talking-with-tech-leads",
                     "simonbrown",
                     "Leanpub",
-                    null,
+                    "September 2014",
                     Book.Role.Contributor));
 
             books.add(createBook(11,
@@ -122,6 +113,15 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "ronnieisherwood",
                     "Packt",
                     "October 2014",
+                    Book.Role.Coauthor));
+
+            books.add(createBook(9,
+                    "Professional Java EE Design Patterns",
+                    "Master Java EE design pattern implementation to improve your design skills and your application’s architecture",
+                    "http://www.wrox.com/WileyCDA/WroxTitle/Professional-Java-EE-Design-Patterns.productCd-111884341X.html",
+                    "alextheedom",
+                    "Wrox",
+                    "December 2014",
                     Book.Role.Coauthor));
 
         } catch (Exception e) {
