@@ -115,6 +115,15 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "October 2014",
                     Book.Role.Coauthor));
 
+            books.add(createBook(12,
+                    "程序员必读之软件架构",
+                    "A Chinese translation of \"Software Architecture for Developers\"",
+                    "http://www.ituring.com.cn/book/1444",
+                    "simonbrown",
+                    "Turing Book Company",
+                    "November 2014",
+                    Book.Role.Author));
+
             books.add(createBook(9,
                     "Professional Java EE Design Patterns",
                     "Master Java EE design pattern implementation to improve your design skills and your application’s architecture",
