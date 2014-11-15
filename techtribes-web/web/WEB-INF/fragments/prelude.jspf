@@ -96,10 +96,10 @@
                             <a href="/talks" class="talksLink">Talks</a>
                             <a href="/content" class="contentLink">Content</a>
                             <a href="/tweets" class="tweetsLink">Tweets</a>
-                            <a href="/code" class="codeLink">Code</a>
-                            <a href="/books" class="booksLink">Books</a>
                         </div>
                         <div>
+                            <a href="/code" class="codeLink">Code</a>
+                            <a href="/books" class="booksLink">Books</a>
                             <a href="/people">People</a>
                             <a href="/tribes">Tribes</a>
                             <a href="/calendar">Calendar</a>
@@ -107,9 +107,6 @@
                     </div>
                     <div>
                         <form class="form-search" action="/search">
-                            <c:forEach var="techTribe" items="${techTribes}">
-                                <a href="<techtribesje:goto contentSource="${techTribe}" />"><img src="${techTribe.profileImageUrl}" alt="Profile image" title="${techTribe.name}" class="profileImageSmall" /></a>
-                            </c:forEach>
                             <input name="q" type="text" value="<c:out value='${param["q"]}' escapeXml='true' />" class="search-query input-xlarge" placeholder="Search...">
                         </form>
                     </div>
@@ -118,4 +115,6 @@
                 <%--<%@ include file="/WEB-INF/fragments/mostActive.jspf" %>--%>
 
             </div>
+
+
         </div>
