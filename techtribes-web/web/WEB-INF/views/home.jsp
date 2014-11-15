@@ -12,16 +12,22 @@
     <%@ include file="/WEB-INF/views/talks.jsp" %>
 </c:if>
 
-<div class="contentSection">
-    <%@ include file="/WEB-INF/views/content.jsp" %>
-</div>
-
-<div class="tweetsSection">
-    <%@ include file="/WEB-INF/views/tweets.jsp" %>
-</div>
+<%@ include file="/WEB-INF/views/content.jsp" %>
 
 <c:if test="${not empty jobs}">
-<div class="jobsSection">
     <%@ include file="/WEB-INF/views/jobs.jsp" %>
-</div>
 </c:if>
+
+<div class="section booksSection hidden-phone">
+    <div class="container">
+        <h1>Books by local authors</h1>
+        <div class="row">
+            <c:forEach var="book" items="${books}">
+                <div class="span1 <c:if test="${not book.published}">faded</c:if>">
+                    <a href="${book.url}" target="_blank"><img src="/static/img/books/${book.id}.png" alt="${book.title}" class="thumbnail bookCover" /></a>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+</div>
+

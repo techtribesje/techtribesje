@@ -2,6 +2,7 @@ package je.techtribes.web.controller.home;
 
 import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.activity.ActivityComponent;
+import je.techtribes.component.book.BookComponent;
 import je.techtribes.domain.Event;
 import je.techtribes.domain.Job;
 import je.techtribes.domain.Talk;
@@ -36,15 +37,17 @@ public class HomePageController extends AbstractController {
     private JobComponent jobComponent;
     private EventComponent eventComponent;
     private ActivityComponent activityComponent;
+    private BookComponent bookComponent;
 
     @Autowired
-    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, JobComponent jobComponent, EventComponent eventComponent, ActivityComponent activityComponent) {
+    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, JobComponent jobComponent, EventComponent eventComponent, ActivityComponent activityComponent, BookComponent bookComponent) {
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
         this.talkComponent = talkComponent;
         this.jobComponent = jobComponent;
         this.eventComponent = eventComponent;
         this.activityComponent = activityComponent;
+        this.bookComponent = bookComponent;
     }
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -69,6 +72,7 @@ public class HomePageController extends AbstractController {
         model.addAttribute("talks", talks);
         model.addAttribute("jobs", jobs);
         model.addAttribute("events", events);
+        model.addAttribute("books", bookComponent.getBooks());
 
         model.addAttribute("activityListForPeople", activityComponent.getActivityListForPeople());
         model.addAttribute("activityListForBusinessTribes", activityComponent.getActivityListForBusinessTribes());
