@@ -8,7 +8,7 @@ public class Tribe extends ContentSource {
 
     public static String[] MEDIA_TRIBE_KEYWORD_TRIGGERS = new String[] {
             "digital", "technology", "bitcoin", "fintech",
-            "computer", "email",
+            "computer", "email", "broadband", "fibre",
             "bcs jersey", "digital jersey",
             "egov", "e-gov",
             "coding", "software"
