@@ -44,6 +44,7 @@ public abstract class AbstractComponentTestsBase {
 
         applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         addContentSources();
+        getContentSourceComponent().refreshContentSources();
     }
 
     private static void initMongo() {
