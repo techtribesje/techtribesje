@@ -14,7 +14,6 @@ import static org.junit.Assert.assertEquals;
 public class NewsFeedConnectorTests extends AbstractComponentTestsBase {
 
     private NewsFeedConnector newsFeedConnector;
-    private MockNewsFeedInterface newsFeedInterface;
 
     @Before
     public void setUp() {
@@ -22,11 +21,24 @@ public class NewsFeedConnectorTests extends AbstractComponentTestsBase {
     }
 
     @Test
-    public void test_loadNewsFeedEntries_Works() throws Exception {
+    public void test_loadNewsFeedEntries_ReadsAnRssFeed() throws Exception {
         ContentSource contentSource = ContentSourceFactory.create(ContentSourceType.Person);
         contentSource.setName("Simon Brown");
 
-        NewsFeed newsFeed = new NewsFeed("https://raw.githubusercontent.com/techtribesje/techtribesje/master/techtribes-updater/test/component/je/techtribes/component/newsfeedconnector/codingthearchitecture.xml", contentSource);
+        NewsFeed newsFeed = new NewsFeed("https://raw.githubusercontent.com/techtribesje/techtribesje/master/techtribes-updater/test/component/je/techtribes/component/newsfeedconnector/codingthearchitecture.rss", contentSource);
+        assertNewsFeed(newsFeed, contentSource);
+    }
+
+    @Test
+    public void test_loadNewsFeedEntries_ReadsAnAtomFeed() throws Exception {
+        ContentSource contentSource = ContentSourceFactory.create(ContentSourceType.Person);
+        contentSource.setName("Simon Brown");
+
+        NewsFeed newsFeed = new NewsFeed("https://raw.githubusercontent.com/techtribesje/techtribesje/master/techtribes-updater/test/component/je/techtribes/component/newsfeedconnector/codingthearchitecture.atom", contentSource);
+        assertNewsFeed(newsFeed, contentSource);
+    }
+
+    private void assertNewsFeed(NewsFeed newsFeed, ContentSource contentSource) {
         List<NewsFeedEntry> newsFeedEntries = newsFeedConnector.loadNewsFeedEntries(newsFeed);
         assertEquals(10, newsFeedEntries.size());
 
