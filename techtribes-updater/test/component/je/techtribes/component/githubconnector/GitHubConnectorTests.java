@@ -9,11 +9,12 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-@Ignore
 public class GitHubConnectorTests {
 
     protected static ApplicationContext applicationContext;
@@ -29,17 +30,31 @@ public class GitHubConnectorTests {
         ContentSource contentSource = new Person();
         contentSource.setGitHubId("techtribesje");
         List<GitHubRepository> repos = gitHubConnector.getRepositories(contentSource);
-        assertEquals(2, repos.size());
+        Collections.sort(repos, new Comparator<GitHubRepository>() {
+            @Override
+            public int compare(GitHubRepository r1, GitHubRepository r2) {
+                return r1.getName().compareTo(r2.getName());
+            }
+        });
+        assertEquals(4, repos.size());
 
-        assertEquals("techtribesje", repos.get(0).getName());
-        assertEquals("Source code for the techtribes.je website", repos.get(0).getDescription());
-        assertEquals("https://github.com/techtribesje/techtribesje", repos.get(0).getUrl());
-        assertEquals(contentSource, repos.get(0).getContentSource());
+        int index = 0;
+        assertEquals("introduction-to-coding", repos.get(index).getName());
 
-        assertEquals("techtribesje-bin", repos.get(1).getName());
-        assertEquals("Scripts for the techtribes.je live environment", repos.get(1).getDescription());
-        assertEquals("https://github.com/techtribesje/techtribesje-bin", repos.get(1).getUrl());
-        assertEquals(contentSource, repos.get(1).getContentSource());
+        index = 1;
+        assertEquals("software-guidebook", repos.get(index).getName());
+
+        index = 2;
+        assertEquals("techtribesje", repos.get(index).getName());
+        assertEquals("Source code for the techtribes.je website", repos.get(index).getDescription());
+        assertEquals("https://github.com/techtribesje/techtribesje", repos.get(index).getUrl());
+        assertEquals(contentSource, repos.get(index).getContentSource());
+
+        index = 3;
+        assertEquals("techtribesje-bin", repos.get(index).getName());
+        assertEquals("Scripts for the techtribes.je live environment", repos.get(index).getDescription());
+        assertEquals("https://github.com/techtribesje/techtribesje-bin", repos.get(index).getUrl());
+        assertEquals(contentSource, repos.get(index).getContentSource());
     }
 
 }

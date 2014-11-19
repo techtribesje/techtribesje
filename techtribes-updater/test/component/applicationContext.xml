@@ -7,7 +7,10 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="file:/etc/techtribesje-test.properties"/>
+    <context:property-placeholder location="techtribesje-test.properties"/>
+
+    <!-- this properties file contains the GitHub OAuth credentials -->
+    <context:property-placeholder location="file:${user.home}/techtribesje-test.properties"/>
 
     <import resource="classpath*:je/techtribes/config.xml" />
     <import resource="classpath*:je/techtribes/**/component.xml" />
