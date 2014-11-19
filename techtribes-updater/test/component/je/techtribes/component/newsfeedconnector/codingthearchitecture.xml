@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+<channel>
+  <title>Coding the Architecture - sbrown</title>
+  <link>http://www.codingthearchitecture.com/authors/sbrown/</link>
+  <description>Software architecture for developers</description>
+  <language>en</language>
+  <copyright>Coding the Architecture</copyright>
+  <lastBuildDate>Wed, 19 Nov 2014 09:00:00 GMT</lastBuildDate>
+  <generator>Pebble (http://pebble.sourceforge.net)</generator>
+  <docs>http://backend.userland.com/rss</docs>
+  
+  
+  <item>
+    <title>Speaking in Australia - YOW! 2014</title>
+    <link>http://www.codingthearchitecture.com/2014/11/13/speaking_in_australia_yow_2014.html</link>
+    
+      
+        <description>
+          &lt;p&gt;
+For my final trip of the year, I&#039;m heading to Australia at the end of this month for the &lt;a href=&#034;http://2014.yowconference.com.au&#034;&gt;YOW! 2014&lt;/a&gt; series of conferences. I&#039;ll be presenting &lt;a href=&#034;https://a.confui.com/-A4d5Y9tJ&#034;&gt;Agility and the essence of software architecture&lt;/a&gt; in Melbourne, Brisbane and Sydney.
+Plus I&#039;ll be running my &lt;a href=&#034;https://a.confui.com/-RsaB7oCm&#034;&gt;Simple sketches for diagramming your software architecture&lt;/a&gt; workshop in Melbourne and Sydney. I can&#039;t wait; see you there!
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/11/13/speaking_in_australia_yow_2014.html#comments</comments>
+    <guid isPermaLink="true">http://www.codingthearchitecture.com/2014/11/13/speaking_in_australia_yow_2014.html</guid>
+    <pubDate>Thu, 13 Nov 2014 09:37:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Simple sketches for diagramming your software architecture</title>
+    <link>https://www.voxxed.com/blog/2014/10/simple-sketches-for-diagramming-your-software-architecture/</link>
+    
+      
+        <description>
+          &lt;p&gt;
+If you’re working in an agile software development team at the moment, take a look around at your environment. Whether it’s physical or virtual, there’s likely to be a story wall or Kanban board visualising the work yet to be started, in progress and done. Visualising your software development process is a fantastic way to introduce transparency because anybody can see, at a glance, a high-level snapshot of the current progress.
+&lt;/p&gt;
+
+&lt;p&gt;
+As an industry, we’ve become adept at visualising our software development process over the past few years – however, it seems we’ve forgotten how to visualise the actual software that we’re building. I’m not just referring to post-project documentation. This also includes communication during the software development process. Agile approaches talk about moving fast, and this requires good communication, but it’s surprising that many teams struggle to effectively communicate the design of their software.
+&lt;/p&gt;&lt;p&gt;&lt;a href=&#034;https://www.voxxed.com/blog/2014/10/simple-sketches-for-diagramming-your-software-architecture/&#034;&gt;Read more...&lt;/a&gt;&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/11/12/simple_sketches_for_diagramming_your_software_architecture.html#comments</comments>
+    <guid isPermaLink="true">https://www.voxxed.com/blog/2014/10/simple-sketches-for-diagramming-your-software-architecture/</guid>
+    <pubDate>Wed, 12 Nov 2014 22:02:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>【翻訳】マイクロサービス – 分散された大きな泥だんご</title>
+    <link>http://postd.cc/distributed_big_balls_of_mud/</link>
+    
+      
+        <description>
+          &lt;p&gt;
+モノリシックがダメだからといって、マイクロサービスが解決策になるわけではない
+
+ソフトウェア開発業界は流行に左右されやすいという証拠に、今マイクロサービスが、いたるところで大騒ぎされています。”次の大ブーム”だと思う人もいるでしょう。また、（10年前に”上出来”と見なされたような）大型のSOA、サービス指向アーキテクチャが単に軽量化して進化したものだと捉える人もいるでしょう。私は現在のマイクロサービスアーキテクチャに関しては好意的に見ています。しかし、だからといってこのアーキテクチャは決して万能薬ではありません。言うまでもないことかもしれませんが、多くの人が間違った理由でマイクロサービスに飛び付いているように思えるのです。
+&lt;/p&gt;&lt;p&gt;&lt;a href=&#034;http://postd.cc/distributed_big_balls_of_mud/&#034;&gt;Read more...&lt;/a&gt;&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/11/12/1415822760000.html#comments</comments>
+    <guid isPermaLink="true">http://postd.cc/distributed_big_balls_of_mud/</guid>
+    <pubDate>Wed, 12 Nov 2014 20:06:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Online training now available via Parleys</title>
+    <link>http://www.codingthearchitecture.com/2014/11/12/online_training_now_available_via_parleys.html</link>
+    
+      
+        <description>
+          &lt;p&gt;
+As announced during the opening keynote at Devoxx Belgium this morning, I&#039;m delighted to say that &lt;a href=&#034;https://www.parleys.com/course/5421902ce4b07b42e9a84402/info&#034;&gt;Software Architecture for Developers&lt;/a&gt; is now available as an online/video training course via &lt;a href=&#034;https://www.parleys.com&#034;&gt;Parleys&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+&lt;a href=&#034;https://www.parleys.com&#034;&gt;&lt;img src=&#034;http://www.codingthearchitecture.com/images/2014/20141112-parleys1.png&#034; alt=&#034;Parleys&#034; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+&lt;a href=&#034;https://www.parleys.com/course/5421902ce4b07b42e9a84402/info&#034;&gt;&lt;img src=&#034;http://www.codingthearchitecture.com/images/2014/20141112-parleys2.png&#034; alt=&#034;Parleys&#034; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The online course includes the same content as the regular &lt;a href=&#034;http://www.codingthearchitecture.com/training/&#034;&gt;on-site 2-day version&lt;/a&gt;, with the exception of the hands-on software design and sketching exercises. From &lt;a href=&#034;https://www.parleys.com/course/5421902ce4b07b42e9a84402/info&#034;&gt;the course overview page&lt;/a&gt;...
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+A lightweight approach to software architecture is pivotal to successfully delivering software, and it can complement agile approaches rather than compete against them. After all, a good architecture enables agility and this doesn&#039;t happen by magic. &#034;Software Architecture for Developers&#034; is a practical and pragmatic guide to lightweight software architecture. You&#039;ll learn:
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;The essence of software architecture.&lt;/li&gt;
+&lt;li&gt;Why the software architecture role should include coding, coaching and collaboration.&lt;/li&gt;
+&lt;li&gt;The things that you *really* need to think about before coding.&lt;/li&gt;
+&lt;li&gt;How to visualise your software architecture using simple sketches.&lt;/li&gt;
+&lt;li&gt;A lightweight approach to documenting your software.&lt;/li&gt;
+&lt;li&gt;Why there is *no* conflict between agile and architecture.&lt;/li&gt;
+&lt;li&gt;What &#034;just enough&#034; up front design means.&lt;/li&gt;
+&lt;li&gt;How to identify risks with risk-storming.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+  &lt;iframe width=&#034;560&#034; height=&#034;315&#034; src=&#034;//www.youtube.com/embed/hgsQVyFl98I&#034; frameborder=&#034;0&#034; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+I&#039;m excited to be working with Parleys on this and I think they have an amazing platform for delivering online training. If you&#039;re thinking about creating an online course, I recommend taking a look at Parleys. The tooling behind the scenes used to put the course together is incredible. Many thanks to Carlo Waelens and the Parleys team for everything over the past few months - I hope this is the start of something big for you.
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/11/12/online_training_now_available_via_parleys.html#comments</comments>
+    <guid isPermaLink="true">http://www.codingthearchitecture.com/2014/11/12/online_training_now_available_via_parleys.html</guid>
+    <pubDate>Wed, 12 Nov 2014 12:43:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>程序员必读之软件架构</title>
+    <link>http://www.codingthearchitecture.com/2014/11/10/1415634000000.html</link>
+    
+      
+        <description>
+          &lt;p&gt;
+A quick note to say that the Chinese translation of my &lt;a href=&#034;https://leanpub.com/software-architecture-for-developers&#034;&gt;Software Architecture for Developers&lt;/a&gt; book has now been released and is available from &lt;a href=&#034;http://www.ituring.com.cn/book/1444&#034;&gt;Turing Book Company&lt;/a&gt;, both as an e-book and hard-copy.
+&lt;/p&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+&lt;a href=&#034;http://www.ituring.com.cn/book/1444&#034;&gt;&lt;img src=&#034;http://www.codingthearchitecture.com/images/2014/sa4d-chinese.jpg&#034; alt=&#034;Software Architecture for Developers&#034; class=&#034;img-polaroid&#034; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+I know there&#039;s demand for a hard-copy of the regular version, so I&#039;ll be doing this early next year, probably as a print-on-demand book from somewhere like Lulu, CreateSpace, etc.
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/11/10/1415634000000.html#comments</comments>
+    <guid isPermaLink="true">http://www.codingthearchitecture.com/2014/11/10/1415634000000.html</guid>
+    <pubDate>Mon, 10 Nov 2014 15:40:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Software architecture vs code (DevDay 2014)</title>
+    <link>http://www.codingthearchitecture.com/2014/10/27/software_architecture_vs_code_devday_2014.html</link>
+    
+      
+        <description>
+          &lt;p&gt;
+I had the pleasure of delivering the closing keynote at the &lt;a href=&#034;http://devday.pl&#034;&gt;DevDay 2014 conference&lt;/a&gt; in Krakow, Poland last month. It&#039;s a one day event, with a bias towards the .NET platform, and one of my favourite conferences from this year. Beautiful city, fantastic crowd and top-notch hospitality. If you get the chance to attend next year, do it!
+&lt;/p&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+&lt;iframe width=&#034;560&#034; height=&#034;315&#034; src=&#034;//www.youtube.com/embed/ehH3UGdSwPo&#034; frameborder=&#034;0&#034; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+If you missed it, you can find &lt;a href=&#034;http://www.youtube.com/playlist?list=PLBMFXMTB7U76Lnuq3HbOem3dd5S2dfTha&#034;&gt;videos of the talks to watch online&lt;/a&gt;. Here&#039;s mine called &lt;a href=&#034;http://www.youtube.com/watch?v=ehH3UGdSwPo&#034;&gt;Software architecture vs code&lt;/a&gt;. It covers the conflict between software architecture and code, how we can resolve this, the benefits of doing so, fishing and a call for donations to charity every time you write &lt;code&gt;public class&lt;/code&gt; without thinking. Enjoy!
+&lt;/p&gt;
+
+&lt;p&gt;
+p.s. I&#039;ve written about some of these same topics on the blog ... for example, &lt;a href=&#034;http://www.codingthearchitecture.com/2014/10/01/modularity_and_testability.html&#034;&gt;Modularity and testability&lt;/a&gt; and &lt;a href=&#034;http://www.codingthearchitecture.com/2014/05/29/software_architecture_vs_code.html&#034;&gt;Software architecture vs code&lt;/a&gt;. My &lt;a href=&#034;http://www.structurizr.com&#034;&gt;Structurizr&lt;/a&gt; project is starting to put some of this into practice too.
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/10/27/software_architecture_vs_code_devday_2014.html#comments</comments>
+    <guid isPermaLink="true">http://www.codingthearchitecture.com/2014/10/27/software_architecture_vs_code_devday_2014.html</guid>
+    <pubDate>Mon, 27 Oct 2014 18:10:32 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Software architecture sketching in Iceland</title>
+    <link>http://www.codingthearchitecture.com/2014/10/23/software_architecture_sketching_in_iceland.html</link>
+    
+      
+        <description>
+          &lt;p&gt;
+I&#039;ll be in Iceland next month for the &lt;a href=&#034;http://www.agileisland.is&#034;&gt;Agile Iceland 2014 conference&lt;/a&gt;, which I&#039;m really looking forward to as everybody tells me that Iceland is a fantastic country to visit. While in Iceland, I&#039;ll also be running my 1-day software architecture sketching workshop on the 6th of November. If you&#039;re interested in learning how to communicate the design of your software in a simple yet effective way without using lots of complex UML diagrams, please do &lt;a href=&#034;http://www.agileisland.is&#034;&gt;join me&lt;/a&gt;. Everybody who attends will also get a copy of my &lt;a href=&#034;https://leanpub.com/software-architecture-for-developers&#034;&gt;Software Architecture for Developers&lt;/a&gt; ebook too. :-)
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/10/23/software_architecture_sketching_in_iceland.html#comments</comments>
+    <guid isPermaLink="true">http://www.codingthearchitecture.com/2014/10/23/software_architecture_sketching_in_iceland.html</guid>
+    <pubDate>Thu, 23 Oct 2014 09:46:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Comparing solutions</title>
+    <link>http://www.codingthearchitecture.com/2014/10/22/comparing_solutions.html</link>
+    
+      
+        <description>
+          &lt;p&gt;
+Here&#039;s a little snippet that my class really picked up on yesterday. During the &lt;a href=&#034;http://www.codingthearchitecture.com/training/&#034;&gt;training course&lt;/a&gt;, we get people into groups and ask them to design a solution based upon &lt;a href=&#034;http://www.codingthearchitecture.com/training/static/case-study-financial-risk-system.pdf&#034;&gt;some simple requirements&lt;/a&gt;. The deliverable is &#034;one or more diagrams to describe your solution&#034;. Aside from answering a few questions about the business domain and the environment, that&#039;s pretty much all the guidance that groups get.
+&lt;/p&gt;
+
+&lt;p&gt;
+As you can probably imagine, the resulting diagrams are all very different. Some are very high-level, others very low-level. Some show static structure, others show runtime and behavioural views. Some show technology, others don&#039;t. Without a consistent approach, these differing diagrams make it hard for people to understand the solutions being presented to them. But furthermore, the differing diagrams make it really hard to &lt;i&gt;compare&lt;/i&gt; solutions too.
+&lt;/p&gt;
+
+&lt;p&gt;
+As I&#039;ve said before, &lt;a href=&#034;http://www.codingthearchitecture.com/2014/07/06/i_teach_people_how_to_draw_pictures.html&#034;&gt;I don&#039;t actually teach people to draw pictures&lt;/a&gt;. What I do instead is to teach people how to think about, and therefore describe, their software using a simple set of abstractions. This is my &lt;a href=&#034;http://static.codingthearchitecture.com/c4.pdf&#034;&gt;C4 model&lt;/a&gt;. With these abstractions in place, groups then redraw their diagrams. Despite the notations still differing between the groups, the solutions are much easier to understand. The solutions are much easier to compare too, because of the consistency in the way they are being described. A common set of abstractions is much more important than a common notation.
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/10/22/comparing_solutions.html#comments</comments>
+    <guid isPermaLink="true">http://www.codingthearchitecture.com/2014/10/22/comparing_solutions.html</guid>
+    <pubDate>Wed, 22 Oct 2014 13:38:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Modularity and testability</title>
+    <link>http://www.codingthearchitecture.com/2014/10/01/modularity_and_testability.html</link>
+    
+      
+        <description>
+          &lt;p&gt;
+I&#039;ve been writing blog posts covering a number of topics over the past few months; from &lt;a href=&#034;http://www.codingthearchitecture.com/2014/05/29/software_architecture_vs_code.html&#034;&gt;the conflict between software architecture and code&lt;/a&gt; and &lt;a href=&#034;http://www.codingthearchitecture.com/2014/06/01/an_architecturally_evident_coding_style.html&#034;&gt;architecturally-evident coding styles&lt;/a&gt; through to &lt;a href=&#034;http://www.codingthearchitecture.com/2014/06/24/software_architecture_as_code.html&#034;&gt;representing a software architecture model as code&lt;/a&gt; and how microservice architectures can easily turn into &lt;a href=&#034;http://www.codingthearchitecture.com/2014/07/06/distributed_big_balls_of_mud.html&#034;&gt;distributed big balls of mud&lt;/a&gt;. The common theme running throughout all of them is structure, and this in turn has a relationship with testability.
+&lt;/p&gt;
+
+&lt;p&gt;
+The TL;DR version of this post is: think about modularity, think about how you structure your code, think about the options you have for testing your code and stop making everything public.
+&lt;/p&gt;
+
+&lt;h3&gt;1. The conflict between software architecture and code&lt;/h3&gt;
+&lt;p&gt;
+I&#039;ve recently been talking a lot about the disconnect between software architecture and code. &lt;a href=&#034;http://rhinoresearch.com&#034;&gt;George Fairbanks&lt;/a&gt; calls this the &#034;model-code gap&#034;. It basically says that the abstractions we consider at the architecture level (components, services, modules, layers, etc) are often not explicitly reflected in the code. A major cause is that we don&#039;t have those concepts in OO programming languages such as Java, C#, etc. You can&#039;t do &lt;code&gt;public component X&lt;/code&gt; in Java, for example.
+&lt;/p&gt;
+
+&lt;h3&gt;2. The &#034;unit testing is wasteful&#034; thing&lt;/h3&gt;
+&lt;p&gt;
+Hopefully, we&#039;ve all see the &#034;unit testing is wasteful&#034; thing, and all of the follow-up discussion. The unfortunate thing about much of the discussion is that &#034;unit testing&#034; has been used interchangeably with &#034;TDD&#034;. In my mind, the debate is about unit testing rather than TDD as a practice. I&#039;m not a TDDer, but I do write automated tests. I mostly write tests afterwards. But sometimes I write them beforehand, particularly if I want to test-drive my implementation of something before integrating it. If TDD works for you, that&#039;s great. If not, don&#039;t worry about it. Just make sure that you *do* write some tests. :-)
+&lt;/p&gt;
+
+&lt;p&gt;
+There are, of course, a number of sides to the debate, but in &lt;a href=&#034;http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html&#034;&gt;TDD is dead. Long live testing.&lt;/a&gt; (ignore the title), DHH makes some good points about the numbers and types of tests that a system should have. To quote (strikethrough mine):
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+I think that&#039;s the direction we&#039;re heading. Less emphasis on unit tests, &lt;strike&gt;because we&#039;re no longer doing test-first as a design practice&lt;/strike&gt;, and more emphasis on, yes, slow, system tests. (Which btw do not need to be so slow any more, thanks to advances in parallelization and cloud runner infrastructure).
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+The type of software system you&#039;re building will also have an impact on the number and types of tests. I once worked on a system where we had a huge number of integration tests, but very few unit tests, primarily because the system actually did very little aside from get data from a Microsoft Dynamics CRM system (via web services) and display it on some web pages. I&#039;ve also worked on systems that were completely the opposite, with lots of complex business logic.
+&lt;/p&gt;
+
+&lt;p&gt;
+There&#039;s another implicit assumption in all of this ... what&#039;s the &#034;unit&#034; in &#034;unit testing&#034;? For many it&#039;s an isolated class, but for others the word &#034;unit&#034; can be used to represent anything from a single class through to an entire sub-system.
+&lt;/p&gt;
+
+&lt;h3&gt;3. The microservices hype&lt;/h3&gt;
+&lt;p&gt;
+Microservices is the new, shiny kid in town. There *are* many genuine benefits from adopting this style of architecture, but I do worry that we&#039;re simply going to end up building the next wave of distributed big balls of mud if we&#039;re not careful. Technologies like &lt;a href=&#034;http://projects.spring.io/spring-boot/&#034;&gt;Spring Boot&lt;/a&gt; make creating and deploying microservices relatively straightforward, but the design thinking behind partitioning a software system into services is still as hard as it&#039;s ever been. This is why I&#039;ve been using this slide in my recent talks.
+&lt;/p&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+&lt;img src=&#034;http://static.codingthearchitecture.com/presentations/sas2014-software-architecture-vs-code/slides/slide.085.png&#034; alt=&#034;If you can&#039;t build a structured monolith, what makes you think microservices is the answer!?&#034; class=&#034;thumbnail&#034; /&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;Modularity&lt;/h3&gt;
+&lt;p&gt;
+Uncle Bob Martin posted &lt;a href=&#034;http://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html&#034;&gt;Microservices and Jars&lt;/a&gt; last month, which touches upon the topic of building monolithic applications that do have a clean internal structure, by using the concept of separately deployable units (e.g. JARs, DLLs, etc). Although he doesn&#039;t talk about the mechanisms needed to make this happen (e.g. plugin architectures, Java classloaders, etc), it&#039;s all achievable. I rarely see teams doing this though.
+&lt;/p&gt;
+
+&lt;p&gt;
+Structuring our code for modularity at the macro level, even in monolithic systems, provides a number of benefits, but it&#039;s a simple way to reduce the model-code gap. In other words, we structure our code to reflect the structural building blocks (e.g. components, services, modules) that we define at the architecture level. If there are &#034;components&#034; on the architecture diagrams, I want to see &#034;components&#034; in the code. This alignment of architecture and code has positive implications for explaining, understanding, maintaining, adapting and working with the system.
+&lt;/p&gt;
+
+&lt;p&gt;
+It&#039;s also about avoiding big balls of mud, and I want to do this by enforcing some useful boundaries in order to slice up my thousands of lines of code/classes into manageable chunks. Uncle Bob suggests that you can use JARs to do this. There are other modularity mechanisms available in Java too; including &lt;a href=&#034;http://docs.oracle.com/javase/tutorial/ext/basics/spi.html&#034;&gt;SPI&lt;/a&gt;, &lt;a href=&#034;http://docs.oracle.com/javaee/7/tutorial/doc/cdi-basic.htm&#034;&gt;CDI&lt;/a&gt; and &lt;a href=&#034;http://www.osgi.org&#034;&gt;OSGi&lt;/a&gt;. But you don&#039;t even need a plugin architecture to build a structured monolith. Simply using the scoping modifiers built in to Java is sufficient to represent the concept of a lightweight in-process component/module.
+&lt;/p&gt;
+
+&lt;h3&gt;Stop making everything public&lt;/h3&gt;
+&lt;p&gt;
+We need to resist the temptation to make everything public though, because this is often why codebases turn into a sprawling mass of interconnected objects. I do wonder whether the keystrokes used to write &lt;code&gt;public class&lt;/code&gt; are ingrained into our muscle memory as developers. As I said during my closing session at DevDay in Krakow last week, we should make a donation to charity every time we type &lt;code&gt;public class&lt;/code&gt; without thinking about whether that class really needs to be public.
+&lt;/p&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+&lt;img src=&#034;http://static.codingthearchitecture.com/presentations/devday2014-software-architecture-vs-code/slides/slide.087.png&#034; alt=&#034;Donate to charity every time you type public class without thinking&#034; class=&#034;thumbnail&#034; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A simple way to create a lightweight component/module in Java is to create a public interface and keep all of the implementation (one or more classes) package protected, ensuring there is only one &#034;component&#034; per package. Here&#039;s &lt;a href=&#034;https://github.com/techtribesje/techtribesje/tree/master/techtribes-web/src/je/techtribes/component/job&#034;&gt;an example of a such a component&lt;/a&gt;, which also happens to be a Spring Bean. This isn&#039;t a silver bullet and there are trade-offs that I have consciously made (e.g. shared domain classes and utility code), but it does at least illustrate that all code doesn&#039;t need to be public. Proponents of &lt;a href=&#034;http://en.wikipedia.org/wiki/Domain-driven_design&#034;&gt;DDD&lt;/a&gt; and &lt;a href=&#034;http://alistair.cockburn.us/Hexagonal+architecture&#034;&gt;ports &amp; adapters&lt;/a&gt; may disagree with the naming I&#039;ve used but, that aside, I do like the stronger sense of modularity that such an approach provides.
+&lt;/p&gt;
+
+&lt;h3&gt;Testability&lt;/h3&gt;
+&lt;p&gt;
+And now you have some options for writing automated tests. In this particular example, I&#039;ve chosen to write automated tests that treat the component as a single thing; going through the component API to the database and back again. You can still do class-level testing too (inside the package), but only if it makes sense and provides value. You can also do TDD; both at the component API and the component implementation level. Treating your components/modules as black boxes results in a slightly different testing pyramid, in that it changes the balance of class and component tests.
+&lt;/p&gt;
+
+&lt;p align=&#034;center&#034;&gt;
+&lt;img src=&#034;http://www.codingthearchitecture.com/images/2014/20141001-testing-pyramid.png&#034; alt=&#034;Rethinking the testing pyramid?&#034; class=&#034;thumbnail&#034; /&gt;
+&lt;/p&gt;
+ 
+&lt;p&gt;
+A microservice architecture will likely push you down this route too, with a balanced mix of low-level class and higher-level service tests. Of course there is no &#034;typical&#034; shape for the testing pyramid; the type of system you&#039;re building will determine what it looks like. There are many options for building testable software, but neither unit testing or TDD are dead.
+&lt;/p&gt;
+
+&lt;p&gt;
+In summary, I&#039;m looking for ways in which it we can structure our code for modularity at the macro-level, to avoid the big ball of mud and to shrink the model-code gap. I also want to be able to &lt;a href=&#034;http://www.structurizr.com&#034;&gt;automatically draw some useful architecture diagrams based upon the code&lt;/a&gt;. We shouldn&#039;t blindly be making everything public and writing automated tests at the class level. After all, there are a number of different approaches that we can take for all of this, and the modularity you choose has an implication on the number and types of tests that you write. As I said at the start; think about modularity, think about how you structure your code, think about the options you have for testing your code and stop making everything public. Designing software requires conscious effort. Let&#039;s not stop thinking.
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/10/01/modularity_and_testability.html#comments</comments>
+    <guid isPermaLink="true">http://www.codingthearchitecture.com/2014/10/01/modularity_and_testability.html</guid>
+    <pubDate>Wed, 01 Oct 2014 21:21:26 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Firm foundations</title>
+    <link>http://www.asas2014.nl/posts/VAhgjyYAACMAYla5/firm-foundations</link>
+    
+      
+        <description>
+          &lt;p&gt;
+I truly believe that a lightweight, pragmatic approach to software architecture is pivotal to successfully delivering software, and that it can complement agile approaches rather than compete against them. After all, a good architecture enables agility and this doesn&#039;t happen by magic. But the people in our industry often tend to have a very different view. Historically, software architecture has been a discipline steeped in academia and, I think, subsequently feels inaccessible to many software developers. It&#039;s also not a particularly trendy topic when compared to [microservices|Node.js|Docker|insert other new thing here].
+&lt;/p&gt;
+
+&lt;p&gt;
+I&#039;ve been distilling the essence of software architecture over the past few years, helping software teams to understand and introduce it into the way that they work. And, for me, the absolute essence of software architecture is about building firm foundations; both in terms of the team that is building the software and for the software itself. It&#039;s about technical leadership, creating a shared vision and stacking the chances of success in your favour.
+&lt;/p&gt;
+
+&lt;p&gt;
+I&#039;m delighted to have been invited back to &lt;a href=&#034;http://www.asas2014.nl&#034;&gt;ASAS 2014&lt;/a&gt; and my opening keynote is about what a software team can do in order to create those firm foundations. I&#039;m also going to talk about some of the concrete examples of what I&#039;ve done in the past, illustrating how I apply a minimal set of software architecture practices in the real world to take an idea through to working software. I&#039;ll also share some examples of where this hasn&#039;t exactly gone to plan too! I look forward to seeing you in a few weeks.
+&lt;/p&gt;&lt;p&gt;&lt;a href=&#034;http://www.asas2014.nl/posts/VAhgjyYAACMAYla5/firm-foundations&#034;&gt;Read more...&lt;/a&gt;&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <comments>http://www.codingthearchitecture.com/2014/09/09/firm_foundations.html#comments</comments>
+    <guid isPermaLink="true">http://www.asas2014.nl/posts/VAhgjyYAACMAYla5/firm-foundations</guid>
+    <pubDate>Tue, 09 Sep 2014 11:32:00 GMT</pubDate>
+  </item>
+  
+  </channel>
+</rss>

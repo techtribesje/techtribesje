@@ -4,6 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="newsFeedConnector" class="je.techtribes.component.newsfeedconnector.RomeNewsFeedConnector" />
+    <bean id="newsFeedConnector" class="je.techtribes.component.newsfeedconnector.NewsFeedConnectorImpl">
+        <constructor-arg name="newsFeedInterface" ref="newsFeedInterface" />
+    </bean>
+
+    <bean name="newsFeedInterface" class="je.techtribes.component.newsfeedconnector.RomeNewsFeedInterface" />
 
 </beans>

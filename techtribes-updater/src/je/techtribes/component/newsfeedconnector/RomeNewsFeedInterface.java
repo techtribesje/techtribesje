@@ -9,26 +9,34 @@ import com.sun.syndication.feed.rss.Channel;
 import com.sun.syndication.feed.rss.Item;
 import com.sun.syndication.io.WireFeedInput;
 import com.sun.syndication.io.XmlReader;
+import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.NewsFeed;
 import je.techtribes.domain.NewsFeedEntry;
 import je.techtribes.domain.Tribe;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.util.comparator.ContentItemComparator;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.HttpURLConnection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-@SoftwareSystemDependency(target = "Blogs", description = "Gets blog/news posts from")
-class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnector {
+class RomeNewsFeedInterface extends NewsFeedInterface {
 
     private static int CONNECTION_TIMEOUT = 1000 * 30;
     private static int READ_TIMEOUT = 1000 * 30;
 
+    private LoggingComponent loggingComponent;
+
+    @Autowired
+    public void setLoggingComponent(LoggingComponent loggingComponent) {
+        this.loggingComponent = loggingComponent;
+    }
+
     public List<NewsFeedEntry> loadNewsFeedEntries(NewsFeed feed) throws NewsFeedConnectorException {
-        logDebug("Refreshing feed from " + feed.getUrl());
+        loggingComponent.debug(this, "Refreshing feed from " + feed.getUrl());
         HttpURLConnection conn = null;
 
         try {
@@ -60,7 +68,7 @@ class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnect
                             item.getPubDate(),
                             feed.getContentSource()
                     );
-                    add(entries, fe);
+                    entries.add(fe);
                 }
             } else if (wf.getFeedType() != null && wf.getFeedType().startsWith("atom")) {
                 com.sun.syndication.feed.atom.Feed atomFeed = (com.sun.syndication.feed.atom.Feed) wf;
@@ -100,18 +108,16 @@ class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnect
                             entry.getPublished() != null ? entry.getPublished() : entry.getUpdated(),
                             feed.getContentSource()
                     );
-                    add(entries, fe);
+                    entries.add(fe);
                 }
             }
 
-            Collections.sort(entries, new ContentItemComparator());
-
-            logDebug("Refreshed feed from " + feed.getUrl());
+            loggingComponent.debug(this, "Refreshed feed from " + feed.getUrl());
 
             return entries;
         } catch (Exception e) {
             NewsFeedConnectorException nfce = new NewsFeedConnectorException("Could not update news feed from " + feed.getUrl(), e);
-            logWarn(nfce);
+            loggingComponent.warn(this, nfce.getMessage());
             throw nfce;
         } finally {
             try {
@@ -120,30 +126,8 @@ class RomeNewsFeedConnector extends AbstractComponent implements NewsFeedConnect
                 }
             } catch (Exception e) {
                 NewsFeedConnectorException nfce = new NewsFeedConnectorException("Could not disconnect from " + feed.getUrl(), e);
-                logWarn(nfce);
+                loggingComponent.warn(this, nfce.getMessage());
             }
-        }
-    }
-
-    private void add(List<NewsFeedEntry> entries, NewsFeedEntry fe) {
-        if (fe.getContentSource().getType() == ContentSourceType.Media) {
-            if (fe.getContentSource().getShortName().equals("digitalquadrantmagazine")) {
-                // this tries to ensure that only Channel Island news is aggregated from DQ Mag
-                String body = fe.getBody().toLowerCase();
-                if (body.contains("jersey") || body.contains("guernsey") || body.contains("channel island")) {
-                    entries.add(fe);
-                }
-            } else {
-                // this tries to ensure that only digital/IT/technology news is aggregated
-                String content = fe.getTitle().toLowerCase() + " " + fe.getBody().toLowerCase();
-                for (String keyword : Tribe.MEDIA_TRIBE_KEYWORD_TRIGGERS) {
-                    if (content.contains(keyword) && !entries.contains(fe)) {
-                        entries.add(fe);
-                    }
-                }
-            }
-        } else {
-            entries.add(fe);
         }
     }
 
