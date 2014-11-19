@@ -7,6 +7,7 @@ import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.github.GitHubComponent;
+import je.techtribes.component.newsfeedconnector.NewsFeedConnector;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
@@ -160,6 +161,10 @@ public abstract class AbstractComponentTestsBase {
 
     protected static BadgeComponent getBadgeComponent() {
         return (BadgeComponent)applicationContext.getBean("badgeComponent");
+    }
+
+    protected static NewsFeedConnector getNewsFeedConnector() {
+        return (NewsFeedConnector)applicationContext.getBean("newsFeedConnector");
     }
 
 }

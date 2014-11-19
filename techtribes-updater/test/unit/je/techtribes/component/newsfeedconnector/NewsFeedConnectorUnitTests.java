@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class NewsFeedConnectorTests {
+public class NewsFeedConnectorUnitTests {
 
     private NewsFeedConnector newsFeedConnector;
     private MockNewsFeedInterface newsFeedInterface;
