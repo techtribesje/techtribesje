@@ -99,7 +99,8 @@ public class CreateViews extends AbstractUtility {
         Container webApplication = techTribes.getContainerWithName("Web Application");
 
         // create one component view per Spring controller
-        Set<Component> controllers = webApplication.getComponents().stream().filter(c -> c.getTechnology().equals("Spring Controller")).collect(Collectors.toSet());
+        Set<Component> controllers = webApplication.getComponents().stream()
+                .filter(c -> c.getTechnology().equals("Spring Controller")).collect(Collectors.toSet());
         for (Component controller : controllers) {
             ComponentView view = model.createComponentView(techTribes, webApplication);
             view.setDescription(controller.getName());
