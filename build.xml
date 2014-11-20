@@ -103,6 +103,7 @@
                 <fileset dir="${production.lib.dir}" includes="*.jar" />
                 <fileset dir="${test.lib.dir}" includes="*.jar" />
                 <pathelement location="${core.build.dir}/production-classes" />
+                <pathelement location="${core.build.dir}/test-classes" />
                 <pathelement location="${updater.build.dir}/production-classes" />
             </classpath>
         </javac>
@@ -263,6 +264,7 @@
                 <fileset dir="${test.lib.dir}" includes="*.jar" />
                 <pathelement location="${build.dir}/techtribes-core.jar" />
                 <pathelement location="${build.dir}/techtribes-updater.jar" />
+                <pathelement location="${core.build.dir}/test-classes"/>
                 <pathelement location="${updater.build.dir}/test-classes"/>
                 <pathelement location="${updater.dir}/test/component"/>
             </classpath>
