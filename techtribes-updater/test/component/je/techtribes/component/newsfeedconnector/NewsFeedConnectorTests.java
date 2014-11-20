@@ -1,6 +1,6 @@
 package je.techtribes.component.newsfeedconnector;
 
-import je.techtribes.AbstractComponentTestsBase;
+import je.techtribes.AbstractUpdaterComponentTestsBase;
 import je.techtribes.domain.*;
 import je.techtribes.util.DateUtils;
 import org.junit.Before;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class NewsFeedConnectorTests extends AbstractComponentTestsBase {
+public class NewsFeedConnectorTests extends AbstractUpdaterComponentTestsBase {
 
     private NewsFeedConnector newsFeedConnector;
 

@@ -1,6 +1,6 @@
 package je.techtribes.component.activityupdater;
 
-import je.techtribes.AbstractComponentTestsBase;
+import je.techtribes.AbstractUpdaterComponentTestsBase;
 import je.techtribes.domain.*;
 import je.techtribes.util.DateUtils;
 import org.junit.After;
@@ -8,19 +8,73 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class ActivityUpdaterTests extends AbstractComponentTestsBase {
+public class ActivityUpdaterTests extends AbstractUpdaterComponentTestsBase {
 
     private SimpleDateFormat dateTimeFormat;
 
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
         dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         dateTimeFormat.setTimeZone(TimeZone.getTimeZone(DateUtils.UTC_TIME_ZONE));
+
+        addContentSources();
+    }
+
+    private void addContentSources() throws Exception {
+        Person simonbrown = new Person();
+        simonbrown.setName("Simon Brown");
+        simonbrown.setIsland(Island.Jersey);
+        simonbrown.setProfile("Here is some profile text about Simon Brown");
+        simonbrown.setUrl(new URL("http://www.simonbrown.je"));
+        simonbrown.setTwitterId("simonbrown");
+        getContentSourceComponent().add(simonbrown);
+
+        Person chrisclark = new Person();
+        chrisclark.setName("Chris Clark");
+        chrisclark.setIsland(Island.Jersey);
+        chrisclark.setProfile("Here is some profile text about Chris Clark");
+        chrisclark.setUrl(new URL("http://www.chrisclark.je"));
+        chrisclark.setTwitterId("nomanualreqd");
+        getContentSourceComponent().add(chrisclark);
+
+        Tribe p247 = new Tribe(ContentSourceType.Business);
+        p247.setName("Prosperity 24.7");
+        p247.setIsland(Island.Jersey);
+        p247.setProfile("Here is some profile text about P247");
+        p247.setTwitterId("p247");
+        p247.setUrl(new URL("http://www.prosperity247.com"));
+        p247.setGitHubId(null);
+        getContentSourceComponent().add(p247);
+
+        Tribe techtribesje = new Tribe(ContentSourceType.Community);
+        techtribesje.setName("techtribes.je");
+        techtribesje.setIsland(Island.Jersey);
+        techtribesje.setProfile("Here is some profile text about Tech Tribes");
+        techtribesje.setTwitterId("techtribesje");
+        techtribesje.setUrl(new URL("http://www.techtribes.je"));
+        techtribesje.setGitHubId(null);
+        getContentSourceComponent().add(techtribesje);
+
+        Tribe coding = new Tribe(ContentSourceType.Tech);
+        coding.setName("Coding");
+        coding.setIsland(Island.None);
+        coding.setProfile("Here is some profile text about the coding tribe");
+        coding.setSearchTerms("coding programming java .net ruby php python perl");
+        getContentSourceComponent().add(coding);
+
+        Tribe dqmag = new Tribe(ContentSourceType.Media);
+        dqmag.setName("DQ Magazine");
+        dqmag.setIsland(Island.Jersey);
+        dqmag.setProfile("Here is some profile text about DQ Magazine");
+        dqmag.setTwitterId("dqmag");
+        dqmag.setUrl(new URL("http://www.dqmagazine.com"));
+        getContentSourceComponent().add(dqmag);
     }
 
     @Test
