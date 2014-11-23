@@ -87,6 +87,22 @@ public class NewsFeedConnectorTests extends AbstractUpdaterComponentTestsBase {
 
     }
 
+    @Test(expected = NewsFeedConnectorException.class)
+    public void test_loadNewsFeedEntries_FailsWithAnException_WhenTheNewsFeedIsntFound() throws Exception {
+        ContentSource contentSource = ContentSourceFactory.create(ContentSourceType.Person);
+
+        NewsFeed newsFeed = new NewsFeed("https://techtribes.je/somepage", contentSource);
+        newsFeedConnector.loadNewsFeedEntries(newsFeed);
+    }
+
+    @Test(expected = NewsFeedConnectorException.class)
+    public void test_loadNewsFeedEntries_FailsWithAnException_WhenGivenHtml() throws Exception {
+        ContentSource contentSource = ContentSourceFactory.create(ContentSourceType.Person);
+
+        NewsFeed newsFeed = new NewsFeed("https://techtribes.je", contentSource);
+        newsFeedConnector.loadNewsFeedEntries(newsFeed);
+    }
+
     private void assertNewsFeedEntry(NewsFeedEntry newsFeedEntry, String title, String body, String permalink, Date date, ContentSource contentSource) {
         assertNewsFeedEntry(newsFeedEntry, title, permalink, date, contentSource);
         assertEquals(body, newsFeedEntry.getBody().trim());
