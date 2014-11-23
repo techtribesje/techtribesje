@@ -5,7 +5,7 @@ package je.techtribes.util;
  */
 public final class StringUtils {
 
-    public static final int DEFAULT_MAX_CONTENT_LENGTH = 256;
+    public static final int DEFAULT_MAX_CONTENT_LENGTH = 255;
 
     public static String filterHtml(String s) {
         if (s == null) {
