@@ -106,7 +106,7 @@ class MongoDbTweetDao {
     }
 
     List<Tweet> getRecentHashtaggedTweets(String hashtag, int page, int pageSize) {
-        List<DBObject> dbObjects = getHashtaggedTweetsDBCollection().find(new BasicDBObject(HASHTAGS_KEY, Pattern.compile(hashtag))).sort(new BasicDBObject(TWEET_ID_KEY, -1)).skip((page - 1) * pageSize).limit(pageSize).toArray();
+        List<DBObject> dbObjects = getHashtaggedTweetsDBCollection().find(new BasicDBObject(HASHTAGS_KEY, Pattern.compile(hashtag + " "))).sort(new BasicDBObject(TWEET_ID_KEY, -1)).skip((page - 1) * pageSize).limit(pageSize).toArray();
         return toHashtaggedTweets(dbObjects);
     }
 
@@ -130,7 +130,7 @@ class MongoDbTweetDao {
                     hashtags.append(" ");
                 }
 
-                doc.put(HASHTAGS_KEY, hashtags.toString().trim());
+                doc.put(HASHTAGS_KEY, hashtags.toString());
                 doc.put(BODY_KEY, tweet.getBody());
                 doc.put(TIMESTAMP_KEY, tweet.getTimestamp());
 

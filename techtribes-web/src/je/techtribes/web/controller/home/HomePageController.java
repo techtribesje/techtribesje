@@ -3,18 +3,13 @@ package je.techtribes.web.controller.home;
 import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.book.BookComponent;
-import je.techtribes.domain.Event;
-import je.techtribes.domain.Job;
-import je.techtribes.domain.Talk;
+import je.techtribes.component.event.EventComponent;
+import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
+import je.techtribes.component.talk.TalkComponent;
+import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.Badge;
 import je.techtribes.domain.badge.Badges;
-import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
-import je.techtribes.component.event.EventComponent;
-import je.techtribes.component.job.JobComponent;
-import je.techtribes.component.tweet.TweetComponent;
-import je.techtribes.component.talk.TalkComponent;
-import je.techtribes.domain.Tweet;
 import je.techtribes.util.PageSize;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,20 +29,16 @@ public class HomePageController extends AbstractController {
     private NewsFeedEntryComponent newsFeedEntryComponent;
     private TweetComponent tweetComponent;
     private TalkComponent talkComponent;
-    private JobComponent jobComponent;
     private EventComponent eventComponent;
     private ActivityComponent activityComponent;
-    private BookComponent bookComponent;
 
     @Autowired
-    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, JobComponent jobComponent, EventComponent eventComponent, ActivityComponent activityComponent, BookComponent bookComponent) {
+    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent, ActivityComponent activityComponent, BookComponent bookComponent) {
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
         this.talkComponent = talkComponent;
-        this.jobComponent = jobComponent;
         this.eventComponent = eventComponent;
         this.activityComponent = activityComponent;
-        this.bookComponent = bookComponent;
     }
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -62,7 +53,6 @@ public class HomePageController extends AbstractController {
             talks = talks.subList(0, PageSize.RECENT_TALKS);
         }
 
-        List<Job> jobs = jobComponent.getRecentJobs(PageSize.RECENT_JOBS);
         List<Event> events = eventComponent.getFutureEvents(PageSize.RECENT_EVENTS);
         Collections.reverse(events);
 
@@ -70,9 +60,7 @@ public class HomePageController extends AbstractController {
         model.addAttribute("newsEntries", newsEntries);
         model.addAttribute("tweets", tweets);
         model.addAttribute("talks", talks);
-        model.addAttribute("jobs", jobs);
         model.addAttribute("events", events);
-        model.addAttribute("books", bookComponent.getBooks());
 
         model.addAttribute("activityListForPeople", activityComponent.getActivityListForPeople());
         model.addAttribute("activityListForBusinessTribes", activityComponent.getActivityListForBusinessTribes());

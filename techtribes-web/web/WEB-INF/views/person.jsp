@@ -9,15 +9,15 @@
     <div class="container">
         <%@ include file="/WEB-INF/fragments/person-profile.jspf" %>
 
-        <c:if test="${not empty activity && activity.score > 0}">
-        <br /><br />
-        <h2>Activity</h2>
-        <p>
-            Here's a summary of this person's activity over the past 7 days.
-            <a href="/activity"><span class="badge"><fmt:formatNumber value="${activity.score}" maxFractionDigits="0" /> points</span></a>
-        </p>
-        <%@ include file="/WEB-INF/fragments/activity-summary.jspf" %>
-        </c:if>
+        <%--<c:if test="${not empty activity && activity.score > 0}">--%>
+        <%--<br /><br />--%>
+        <%--<h2>Activity</h2>--%>
+        <%--<p>--%>
+            <%--Here's a summary of this person's activity over the past 7 days.--%>
+            <%--<a href="/activity"><span class="badge"><fmt:formatNumber value="${activity.score}" maxFractionDigits="0" /> points</span></a>--%>
+        <%--</p>--%>
+        <%--<%@ include file="/WEB-INF/fragments/activity-summary.jspf" %>--%>
+        <%--</c:if>--%>
 
         <c:if test="${not empty badges}">
         <br /><br />

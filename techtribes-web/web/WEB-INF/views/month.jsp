@@ -20,7 +20,7 @@
                                 <p class="contentItem">
                                     <a href="<techtribesje:goto contentSource="${event.contentSource}"/>"><img src="${event.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${event.contentSource.name}" /></a>
                                     <img src="<techtribesje:flag name="${event.island}" />" alt="${event.island}" title="${event.island}" />
-                                    <a href="/events/${event.id}" class="eventsLink">${event.title}</a>
+                                    <a href="/events/${event.id}">${event.title}</a>
                                 </p>
                             </c:forEach>
 
@@ -28,7 +28,7 @@
                                 <p class="contentItem">
                                     <a href="<techtribesje:goto contentSource="${talk.contentSource}"/>"><img src="${talk.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" title="${talk.contentSource.name}" /></a>
                                     <img src="<techtribesje:flag name="${talk.country}" />" alt="${talk.country}" title="${talk.country}" />
-                                    <a href="/talks/${talk.id}" class="talksLink">${talk.title}</a>
+                                    <a href="/talks/${talk.id}">${talk.title}</a>
                                 </p>
                             </c:forEach>
 

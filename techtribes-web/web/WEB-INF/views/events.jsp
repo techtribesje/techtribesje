@@ -27,7 +27,7 @@
                     </c:choose>
                 </ul>
             </div>
-            <h1>Local events</h1>
+            <h1>Upcoming events</h1>
         </div>
     </div>
 

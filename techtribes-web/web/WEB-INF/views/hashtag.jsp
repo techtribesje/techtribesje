@@ -1,6 +1,6 @@
 <div class="section tweetsSection">
     <div class="container">
-        <h1>#digitaljersey</h1>
+        <h1>#${hashtag}</h1>
 
         <c:forEach var="tweet" items="${tweets}" varStatus="status">
         <c:if test="${status.index % 4 == 0}">
@@ -28,21 +28,5 @@
     </div>
     </c:if>
     </c:forEach>
-        <div class="pagingLinks">
-        <c:choose>
-            <c:when test="${showPagingLinks ne 'false'}">
-                <c:if test="${currentPage > 1}">
-                    <a href="/tweets/${currentPage-1}">&lt; Newer</a> |
-                </c:if>
-                Page ${currentPage}
-                <c:if test="${currentPage < maxPage}">
-                    | <a href="/tweets/${currentPage+1}">Older &gt;</a>
-                </c:if>
-            </c:when>
-            <c:otherwise>
-                <a href="/tweets/">More...</a>
-            </c:otherwise>
-        </c:choose>
-        </div>
     </div>
 </div>

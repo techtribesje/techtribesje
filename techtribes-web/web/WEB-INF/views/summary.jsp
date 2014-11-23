@@ -1,43 +1,5 @@
 <div class="section">
     <div class="container">
-        <h1>About techtribes.je</h1>
-
-        <p>
-            Our team of monkeys is constantly watching the smoke signals from the tech tribes around Jersey (Channel Islands)<sup>*</sup> so that you can keep
-            up to date with what's happening from the comfort of wherever you're sitting.
-            Since Guernsey is so close, the team is keeping an eye on them as well. Our mission is to:
-        </p>
-
-        <ol>
-            <li>Share local content and expertise.</li>
-            <li>Bring the local tribes together.</li>
-            <li>Encourage an open, sharing and learning culture.</li>
-        </ol>
-
-        <h3>What?</h3>
-        <p>
-            Or to put that simply...
-        </p>
-        <ul>
-            <li>Want to see who makes up the local digital community? Sure thing, we have a list of <a href="/people">people</a> and <a href="/business">businesses</a>.</li>
-            <li>How about who is the most <a href="/activity">active</a> in the community?</li>
-            <li>Who is putting Jersey on the global stage and where are they speaking? Our list of <a href="/talks">talks</a> should answer that.</li>
-            <li>Maybe you just want to see who's talking about Microsoft <a href="/search?q=sharepoint">SharePoint</a> or <a href="/search?q=crm">CRM</a>? No problem.</li>
-            <li>Perhaps you want to know who's tweeting about <a href="/search?q=%23digitalJersey">Digital Jersey</a> or <a href="/search?q=%23bcsjersey">BCS Jersey</a>? We've got that covered.</li>
-            <li>Or maybe you fancy a drink with some local geeks? We can find <a href="/events">social gatherings</a> for you too.</li>
-        </ul>
-
-        <p>
-            If you're looking for something related to the local technology industry, you'll find it here.
-            If not, it doesn't exist or the locals are too quiet. Enjoy the journey! :-)
-        </p>
-
-        <p>
-            <sup>*</sup> people have said that specifying "(Channel Islands)" is "cute" ... but this is <a href="http://en.wikipedia.org/wiki/Jersey" target="_blank">old Jersey</a> that we're talking about, not New Jersey!
-        </p>
-
-        <hr />
-
         <div id="infographics">
 
             <div class="row">

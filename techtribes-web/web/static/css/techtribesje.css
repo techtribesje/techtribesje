@@ -74,14 +74,14 @@ a img {
     border: #eeeeee solid 1px;
 }
 footer {
-    background: #aaaaaa;
+    background: #ECF0F1;
     text-align: center;
     padding: 40px 20px 40px 20px;
-    border-top: gray solid 5px;
-    color: #444444;
+    border-top: #7F8C8D solid 1px;
+    color: #7F8C8D;
 }
 footer a {
-    color: #444444;
+    color: #7F8C8D;
 }
 .bannerAd {
     text-align: center;
@@ -133,7 +133,7 @@ footer a {
     padding-bottom: 40px;
     margin-left: auto;
     margin-bottom: 0;
-    border-bottom: #444444 solid 5px;
+    border-bottom: #7F8C8D solid 1px;
 }
 .siteHeaderImage {
     border-radius: 6px 6px 6px 6px;
@@ -157,31 +157,23 @@ footer a {
 }
 
 .badge-followersover1000 {
-    background-color: #FFAD40;
-    background-image: linear-gradient(to bottom, #FFAD40, #F3A640);
-    background-image: -webkit-linear-gradient(top, #FFAD40, #F3A640);
+    background: #FFAD40;
 }
 .badge-followersover5000 {
-    background-color: #999999;
-    background-image: linear-gradient(to bottom, #999999, #AAAAAA);
-    background-image: -webkit-linear-gradient(top, #999999, #AAAAAA);
+    background: #999999;
 }
 .badge-followersunder500 {
-    background-color: #A66002;
-    background-image: linear-gradient(to bottom, #A66002, #965601);
-    background-image: -webkit-linear-gradient(top, #A66002, #965601);
+    background: #A66002;
 }
 .badge-followers0 {
-    background-color: #000000;
-    background-image: linear-gradient(to bottom, #000000, #000000);
-    background-image: -webkit-linear-gradient(top, #000000, #000000);
+    background: #000000;
 }
 
 .section {
-    background: #555555;
-    background: linear-gradient(to bottom, #555555, #888888);
-    background: -webkit-linear-gradient(top, #555555, #888888);
+    background: #7F8C8D;
     color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .section h1 {
     font-size: 45px;
@@ -191,95 +183,57 @@ footer a {
     padding-bottom: 10px;
     color: white;
 }
-
-.section {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 .section a {
     color: white;
 }
 
-.progress .bar {
-    background-color: #888888;
-    background-image: linear-gradient(to bottom, #888888, #555555);
-    background-image: -webkit-linear-gradient(top, #888888, #555555);
-}
-
 .newsSection {
-    background-color: #000000;
-    background-image: linear-gradient(to bottom, #000000, #111111);
-    background-image: -webkit-linear-gradient(top, #000000, #111111);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background: #000000;
+}
+#headerNavigation .newsLink {
+    color: #000000;
 }
 
-.contentSection {
-    background-color: #027602;
-    background-image: linear-gradient(to bottom, #027602, #019201);
-    background-image: -webkit-linear-gradient(top, #027602, #019201);
+.contentSection, .progress .bar-content, .contentSection .progress .bar {
+    background: #027602;
 }
-.progress .bar-content, .contentSection .progress .bar {
-    background-color: #019201;
-    background-image: linear-gradient(to bottom, #019201, #027602);
-    background-image: -webkit-linear-gradient(top, #019201, #027602);
+#headerNavigation .contentLink, #calendar .contentLink {
+    color: #027602;
 }
 
-.eventsSection {
-    background-color: #DD9300;
-    background-image: linear-gradient(to bottom, #DD9300, #FFAA00);
-    background-image: -webkit-linear-gradient(top, #DD9300, #FFAA00);
+.eventsSection, .progress .bar-events {
+    background: #DD9300;
 }
-.progress .bar-events {
-    background-color: #FFAA00;
-    background-image: linear-gradient(to bottom, #FFAA00, #DD9300);
-    background-image: -webkit-linear-gradient(top, #FFAA00, #DD9300);
+#headerNavigation .eventsLink, #calendar .eventsLink {
+    color: #DD9300;
 }
 
-.talksSection {
-    background-color: #A80000;
-    background-image: linear-gradient(to bottom, #A80000, #BE0000);
-    background-image: -webkit-linear-gradient(top, #A80000, #BE0000);
+.talksSection, .progress .bar-talks {
+    background: #A80000;
 }
-.progress .bar-talks {
-    background-color: #BE0000;
-    background-image: linear-gradient(to bottom, #BE0000, #A80000);
-    background-image: -webkit-linear-gradient(top, #BE0000, #A80000);
+#headerNavigation .talksLink, #calendar .talksLink {
+    color: #A80000;
 }
 
-.tweetsSection {
-    background-color: #044E6B;
-    background-image: linear-gradient(to bottom, #044E6B, #0776A0);
-    background-image: -webkit-linear-gradient(top, #044E6B, #0776A0);
+.tweetsSection, .progress .bar-tweets, .tweetsSection .progress .bar {
+    background: #044E6B;
 }
-.progress .bar-tweets, .tweetsSection .progress .bar {
-    background-color: #0776A0;
-    background-image: linear-gradient(to bottom, #0776A0, #044E6B);
-    background-image: -webkit-linear-gradient(top, #0776A0, #044E6B);
+#headerNavigation .tweetsLink {
+    color: #044E6B;
 }
 
 .codeSection {
-    background-color: #478FB2;
-    background-image: linear-gradient(to bottom, #478FB2, #5CB8E6);
-    background-image: -webkit-linear-gradient(top, #478FB2, #5CB8E6);
+    background: #478FB2;
 }
-
-.jobsSection {
-    background-color: #390258;
-    background-image: linear-gradient(to bottom, #390258, #48036F);
-    background-image: -webkit-linear-gradient(top, #390258, #48036F);
+#headerNavigation .codeLink {
+    color: #478FB2;
 }
 
 .booksSection {
-    background-color: #003366;
-    background-image: linear-gradient(to bottom, #003366, #194775);
-    background-image: -webkit-linear-gradient(top, #003366, #194775);
+    background: #2C3E50;
 }
-
-.calendarSection {
-    background-color: #000000;
-    background-image: linear-gradient(to bottom, #000000, #111111);
-    background-image: -webkit-linear-gradient(top, #000000, #111111);
+#headerNavigation .booksLink {
+    color: #2C3E50;
 }
 
 .embeddedVideo, .embeddedMap {
@@ -304,32 +258,8 @@ footer a {
     padding-bottom: 20px;
 }
 #headerNavigation a {
-    color: #888888;
+    color: #7F8C8D;
     padding: 10px;
-}
-#headerNavigation .newsLink {
-    color: #000000;
-}
-#headerNavigation .eventsLink, #calendar .eventsLink {
-    color: #FFAA00;
-}
-#headerNavigation .talksLink, #calendar .talksLink {
-    color: #BE0000;
-}
-#headerNavigation .contentLink, #calendar .contentLink {
-    color: #019201;
-}
-#headerNavigation .tweetsLink {
-    color: #0776A0;
-}
-#headerNavigation .codeLink {
-    color: #478FB2;
-}
-#headerNavigation .jobsLink {
-    color: #48036F;
-}
-#headerNavigation .booksLink {
-    color: #003366;
 }
 
 .bookCover {
@@ -342,6 +272,6 @@ footer a {
 }
 
 #calendar .dayTitle {
-    color: gray;
+    color: #ffffff;
     font-size: 16px;
 }

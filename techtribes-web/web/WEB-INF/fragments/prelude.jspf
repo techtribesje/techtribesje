@@ -91,18 +91,19 @@
                     <div id="headerNavigation">
                         <div>
                             <a href="/"><img src="/static/img/monkey-48x48.png" />&nbsp;techtribes.je</a>
+                            <a href="/people">People</a>
+                            <a href="/tribes">Tribes</a>
+                            <a href="/calendar">Calendar</a>
+                            <a href="/summary">Summary</a>
+                        </div>
+                        <div>
                             <a href="/news" class="newsLink">News</a>
                             <a href="/events" class="eventsLink">Events</a>
                             <a href="/talks" class="talksLink">Talks</a>
                             <a href="/content" class="contentLink">Content</a>
                             <a href="/tweets" class="tweetsLink">Tweets</a>
-                        </div>
-                        <div>
                             <a href="/code" class="codeLink">Code</a>
                             <a href="/books" class="booksLink">Books</a>
-                            <a href="/people">People</a>
-                            <a href="/tribes">Tribes</a>
-                            <a href="/calendar">Calendar</a>
                         </div>
                     </div>
                     <div>
@@ -112,9 +113,10 @@
                     </div>
                 </div>
 
-                <%--<%@ include file="/WEB-INF/fragments/mostActive.jspf" %>--%>
+                <c:if test="${not empty activityListForPeople}">
+                    <%@ include file="/WEB-INF/fragments/mostActive.jspf" %>
+                </c:if>
 
             </div>
-
 
         </div>

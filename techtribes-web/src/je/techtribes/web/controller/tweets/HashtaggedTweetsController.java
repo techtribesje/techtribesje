@@ -29,24 +29,25 @@ public class HashtaggedTweetsController extends AbstractController {
         this.tweetComponent = tweetComponent;
     }
 
-    @RequestMapping(value="/digitaljersey", method = RequestMethod.GET)
-	public String viewRecentTweetsByPage(ModelMap model) {
-        return viewRecentTweetsByPage(1, model);
+    @RequestMapping(value="/hashtag/{hashtag}", method = RequestMethod.GET)
+	public String viewRecentTweetsByPage(@PathVariable("hashtag")String hashtag, ModelMap model) {
+        return viewRecentTweetsByPage(hashtag, 1, model);
 	}
 
-    @RequestMapping(value="/digitaljersey/{page:[\\d]+}", method = RequestMethod.GET)
-	public String viewRecentTweetsByPage(@PathVariable("page")int page, ModelMap model) {
+    @RequestMapping(value="/hashtag/{hashtag}/{page:[\\d]+}", method = RequestMethod.GET)
+	public String viewRecentTweetsByPage(@PathVariable("hashtag")String hashtag, @PathVariable("page")int page, ModelMap model) {
         int maxPage = PageSize.calculateNumberOfPages(tweetComponent.getNumberOfTweets(), PageSize.RECENT_TWEETS);
         page = PageSize.validatePage(page, maxPage);
-        List<Tweet> tweets = tweetComponent.getRecentHashtaggedTweets("#digitaljersey", page, PageSize.RECENT_TWEETS);
+        List<Tweet> tweets = tweetComponent.getRecentHashtaggedTweets("#" + hashtag, page, PageSize.RECENT_TWEETS);
 
+        model.addAttribute("hashtag", hashtag);
         model.addAttribute("tweets", tweets);
         model.addAttribute("currentPage", page);
         model.addAttribute("maxPage", maxPage);
         addCommonAttributes(model);
         setPageTitle(model, "Tweets", "Page " + page);
 
-		return "digitaljersey";
+		return "hashtag";
 	}
 
 }

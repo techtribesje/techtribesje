@@ -35,7 +35,7 @@ public class Talk extends ContentItem {
     }
 
     public String getTruncatedDescription() {
-        return StringUtils.filterHtmlAndTruncate(getBody(), 512);
+        return StringUtils.filterHtmlAndTruncate(getBody(), 256);
     }
 
     public TalkType getType() {

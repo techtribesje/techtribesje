@@ -20,16 +20,16 @@ import java.util.Set;
 import java.util.TreeSet;
 
 @Controller
-@RequestMapping("/about")
+@RequestMapping("/summary")
 @UsedBy( person = "Anonymous User", description = "uses" )
-public class AboutPageController extends AbstractController {
+public class SummaryController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;
     private TweetComponent tweetComponent;
     private TalkComponent talkComponent;
 
     @Autowired
-    public AboutPageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent) {
+    public SummaryController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent) {
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
         this.talkComponent = talkComponent;

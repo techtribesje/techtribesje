@@ -14,9 +14,4 @@
 
 <%@ include file="/WEB-INF/views/content.jsp" %>
 
-<c:if test="${not empty jobs}">
-    <%@ include file="/WEB-INF/views/jobs.jsp" %>
-</c:if>
-
-
 

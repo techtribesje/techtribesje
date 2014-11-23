@@ -33,7 +33,7 @@ public class NewsFeedEntry extends ContentItem {
 
     @Override
     public String getTruncatedBody() {
-        return StringUtils.filterHtmlAndTruncate(getBody(), 512);
+        return StringUtils.filterHtmlAndTruncate(getBody(), 256);
     }
 
     public boolean equals(Object o) {
