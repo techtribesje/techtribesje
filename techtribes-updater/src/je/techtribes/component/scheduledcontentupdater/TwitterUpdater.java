@@ -63,16 +63,24 @@ class TwitterUpdater {
             ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error refreshing tweets", e);
             scheduledContentUpdater.logError(scue);
         }
+
+        try {
+            List<Tweet> tweets = twitterConnector.getRecentHashtaggedTweets();
+            tweetComponent.storeHashtaggedTweets(tweets);
+        } catch (TweetException e) {
+            ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error refreshing hashtagged tweets", e);
+            scheduledContentUpdater.logError(scue);
+        }
     }
 
     public void startStreaming() {
         try {
-            twitterConnector.startStreaming(new StreamingTweetListener() {
+            twitterConnector.startUserStream(new StreamingTweetListener() {
                 @Override
                 public void onTweet(final Tweet tweet) {
-                    List<Tweet> listOfTweets = new LinkedList<>();
-                    listOfTweets.add(tweet);
-                    List<Tweet> filteredTweets = filterTweets(listOfTweets);
+                    List<Tweet> tweets = new LinkedList<>();
+                    tweets.add(tweet);
+                    List<Tweet> filteredTweets = filterTweets(tweets);
                     tweetComponent.storeTweets(filteredTweets);
                     searchComponent.addTweets(filteredTweets);
                 }
@@ -83,6 +91,20 @@ class TwitterUpdater {
                     searchComponent.deleteTweet(tweetId);
                 }
             });
+
+            twitterConnector.startFilteredStream(new StreamingTweetListener() {
+                @Override
+                public void onTweet(final Tweet tweet) {
+                    List<Tweet> tweets = new LinkedList<>();
+                    tweets.add(tweet);
+                    tweetComponent.storeHashtaggedTweets(tweets);
+                }
+
+                @Override
+                public void onDelete(long tweetId) {
+                    tweetComponent.removeHashtaggedTweet(tweetId);
+                }
+            });
         } catch (Exception e) {
             ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error starting streaming", e);
             scheduledContentUpdater.logError(scue);
@@ -91,7 +113,8 @@ class TwitterUpdater {
 
     public void stopStreaming() {
         try {
-            twitterConnector.stopStreaming();
+            twitterConnector.stopUserStream();
+            twitterConnector.stopFilteredStream();
         } catch (Exception e) {
             ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error stopping streaming", e);
             scheduledContentUpdater.logError(scue);

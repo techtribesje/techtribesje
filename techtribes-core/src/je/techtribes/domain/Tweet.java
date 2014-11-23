@@ -1,6 +1,8 @@
 package je.techtribes.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Represents a tweet.
@@ -9,12 +11,14 @@ public class Tweet extends ContentItem {
 
     private String twitterId;
     private long id;
+    private String profileImageUrl;
 
-    public Tweet(String twitterId, long id, String body, Date timestamp) {
+    public Tweet(String twitterId, long id, String body, Date timestamp, String profileImageUrl) {
         this.twitterId = twitterId;
         this.id = id;
         setBody(body);
         setTimestamp(timestamp);
+        this.profileImageUrl = profileImageUrl;
     }
 
     public Tweet(int contentSourceId, long id, String body, Date timestamp) {
@@ -51,7 +55,39 @@ public class Tweet extends ContentItem {
 
     @Override
     public String getPermalink() {
-        return "http://twitter.com/" + getContentSource().getTwitterId() + "/status/" + getId();
+        if (getContentSource() != null) {
+            return "http://twitter.com/" + getContentSource().getTwitterId() + "/status/" + getId();
+        } else {
+            return "http://twitter.com/" + getTwitterId() + "/status/" + getId();
+        }
+    }
+
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public Set<String> getHashtags() {
+        return getTokens("#");
+    }
+
+    public Set<String> getUsers() {
+        return getTokens("@");
+    }
+
+    private Set<String> getTokens(String prefix) {
+        Set<String> tokenSet = new HashSet<>();
+
+        if (getBody() != null) {
+            String tokens[] = getBody().split("\\s");
+            StringBuilder twitterHashtags = new StringBuilder();
+            for (String token : tokens) {
+                if (token.startsWith(prefix)) {
+                    tokenSet.add(token.toLowerCase());
+                }
+            }
+        }
+
+        return tokenSet;
     }
 
     @Override

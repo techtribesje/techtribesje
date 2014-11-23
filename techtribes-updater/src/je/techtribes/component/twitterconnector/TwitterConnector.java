@@ -12,8 +12,14 @@ public interface TwitterConnector {
 
     public List<Tweet> getRecentTweets();
 
-    public void startStreaming(StreamingTweetListener tweetListener);
+    public List<Tweet> getRecentHashtaggedTweets();
 
-    public void stopStreaming();
+    public void startUserStream(StreamingTweetListener tweetListener);
+
+    public void stopUserStream();
+
+    public void startFilteredStream(StreamingTweetListener tweetListener);
+
+    public void stopFilteredStream();
 
 }

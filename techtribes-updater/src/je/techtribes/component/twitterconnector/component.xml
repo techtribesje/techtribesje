@@ -4,13 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="twitterConnector" class="je.techtribes.component.twitterconnector.Twitter4jTwitterConnector" scope="singleton" destroy-method="stopStreaming">
+    <bean id="twitterConnector" class="je.techtribes.component.twitterconnector.Twitter4jTwitterConnector" scope="singleton" destroy-method="stopUserStream">
         <constructor-arg name="twitterId" value="${twitter.id}" />
         <constructor-arg name="oAuthConsumerKey" value="${twitter.consumerKey}" />
         <constructor-arg name="oAuthConsumerSecret" value="${twitter.consumerSecret}" />
         <constructor-arg name="oAuthAccessToken" value="${twitter.accessToken}" />
         <constructor-arg name="oAuthAccessTokenSecret" value="${twitter.accessTokenSecret}" />
         <constructor-arg name="debug" value="${twitter.debug}" />
+        <constructor-arg name="filters" value="${twitter.filters}" />
     </bean>
 
 </beans>

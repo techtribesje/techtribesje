@@ -213,20 +213,20 @@ class LuceneSearchComponent extends AbstractComponent implements SearchComponent
         doc.add(new Field(TYPE, TYPE_TWEET, Field.Store.YES, Field.Index.NOT_ANALYZED));
         doc.add(new Field(TIMESTAMP, timestampDateFormat.format(tweet.getTimestamp()), Field.Store.YES, Field.Index.NOT_ANALYZED));
 
-        String tokens[] = tweet.getBody().split("\\s");
         StringBuilder twitterHashtags = new StringBuilder();
-        StringBuilder twitterUsers = new StringBuilder();
-        for (String token : tokens) {
-            if (token.startsWith("#")) {
-                twitterHashtags.append(token);
-                twitterHashtags.append(" ");
-            } else if (token.startsWith("@")) {
-                twitterUsers.append(token);
-                twitterUsers.append(" ");
-            }
+        for (String hashtag : tweet.getHashtags()) {
+            twitterHashtags.append(hashtag);
+            twitterHashtags.append(" ");
         }
-        doc.add(new Field(TWITTER_HASHTAGS, twitterHashtags.toString(), Field.Store.NO, Field.Index.ANALYZED));
-        doc.add(new Field(TWITTER_USERS, twitterUsers.toString(), Field.Store.NO, Field.Index.ANALYZED));
+
+        StringBuilder twitterUsers = new StringBuilder();
+        for (String user : tweet.getUsers()) {
+            twitterUsers.append(user);
+            twitterUsers.append(" ");
+        }
+
+        doc.add(new Field(TWITTER_HASHTAGS, twitterHashtags.toString().trim(), Field.Store.NO, Field.Index.ANALYZED));
+        doc.add(new Field(TWITTER_USERS, twitterUsers.toString().trim(), Field.Store.NO, Field.Index.ANALYZED));
         return doc;
     }
 

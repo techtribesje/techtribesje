@@ -124,6 +124,41 @@ class TweetComponentImpl extends AbstractComponent implements TweetComponent {
         }
     }
 
+    @Override
+    public List<Tweet> getRecentHashtaggedTweets(String hashtag, int page, int pageSize) {
+        try {
+            page = PageSize.validatePage(page);
+            pageSize = PageSize.validatePageSize(pageSize);
+            return tweetDao.getRecentHashtaggedTweets(hashtag, page, pageSize);
+        } catch (Exception e) {
+            TweetException te = new TweetException("Error while retrieving recent hashtagged tweets for page " + page, e);
+            logError(te);
+            throw te;
+        }
+    }
+
+    @Override
+    public void removeHashtaggedTweet(long tweetId) {
+        try {
+            tweetDao.removeHashtaggedTweet(tweetId);
+        } catch (Exception e) {
+            TweetException te = new TweetException("Error deleting hashtagged tweet with ID " + tweetId, e);
+            logError(te);
+            throw te;
+        }
+    }
+
+    @Override
+    public void storeHashtaggedTweets(Collection<Tweet> tweets) {
+        try {
+            tweetDao.storeHashtaggedTweets(tweets);
+        } catch (Exception e) {
+            TweetException te = new TweetException("Error saving hashtagged tweets", e);
+            logError(te);
+            throw te;
+        }
+    }
+
     private void filterAndEnrich(List<Tweet> tweets) {
         ContentItemFilter<Tweet> filter = new ContentItemFilter<>();
         filter.filter(tweets, contentSourceComponent, false);

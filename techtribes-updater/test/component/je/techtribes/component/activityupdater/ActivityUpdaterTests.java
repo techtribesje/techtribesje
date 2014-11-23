@@ -127,7 +127,7 @@ public class ActivityUpdaterTests extends AbstractUpdaterComponentTestsBase {
         getNewsFeedEntryComponent().storeNewsFeedEntries(newsFeedEntries);
 
         Collection<Tweet> tweets = new LinkedList<>();
-        Tweet tweet = new Tweet("simonbrown", 1234567890, "Body", DateUtils.getXDaysAgo(1));
+        Tweet tweet = new Tweet("simonbrown", 1234567890, "Body", DateUtils.getXDaysAgo(1), null);
         tweet.setContentSource(simonbrown);
         tweets.add(tweet);
         getTweetComponent().storeTweets(tweets);

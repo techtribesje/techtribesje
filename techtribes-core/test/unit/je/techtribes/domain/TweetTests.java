@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TweetTests {
 
@@ -76,6 +77,37 @@ public class TweetTests {
 
         tweet = new Tweet(contentSource, 1234567890, "This is a ##hashtag.", new Date());
         assertEquals("This is a #<a href=\"/search?q=%23hashtag\">#hashtag</a>.", tweet.getBodyAsHtml());
+    }
+
+    @Test
+    public void test_getHashtags_ReturnsAnEmptySet_WhenTheBodyIsNull() {
+        tweet = new Tweet(contentSource, 1234567890, null, new Date());
+        assertEquals(0, tweet.getHashtags().size());
+    }
+
+    @Test
+    public void test_getHashtags_ReturnsAnEmptySet_WhenTheBodyIsEmpty() {
+        tweet = new Tweet(contentSource, 1234567890, "", new Date());
+        assertEquals(0, tweet.getHashtags().size());
+    }
+
+    @Test
+    public void test_getHashtags_ReturnsANonEmptySet_WhenTheBodyIncludesSomeHashtags() {
+        tweet = new Tweet(contentSource, 1234567890, "Hello #digitaljersey", new Date());
+        assertEquals(1, tweet.getHashtags().size());
+        assertTrue(tweet.getHashtags().contains("#digitaljersey"));
+
+        tweet = new Tweet(contentSource, 1234567890, "Hello #digitaljersey and #techtribesje in Jersey", new Date());
+        assertEquals(2, tweet.getHashtags().size());
+        assertTrue(tweet.getHashtags().contains("#digitaljersey"));
+        assertTrue(tweet.getHashtags().contains("#techtribesje"));
+    }
+
+    @Test
+    public void test_getHashtags_ReturnsHashtagsInLowerCase_WhenTheBodyIncludesMixedCaseHashtags() {
+        tweet = new Tweet(contentSource, 1234567890, "Hello #DigitalJersey", new Date());
+        assertEquals(1, tweet.getHashtags().size());
+        assertTrue(tweet.getHashtags().contains("#digitaljersey"));
     }
 
 }
