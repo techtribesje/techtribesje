@@ -135,7 +135,7 @@ public class TweetTests {
     }
 
     @Test
-    public void test_getUsers_ReturnsHashtagsInLowerCase_WhenTheBodyIncludesMixedCaseUsers() {
+    public void test_getUsers_ReturnsUsernamesInLowerCase_WhenTheBodyIncludesMixedCaseUsers() {
         tweet = new Tweet(contentSource, 1234567890, "Hello @DigitalJersey", new Date());
         assertEquals(1, tweet.getUsers().size());
         assertTrue(tweet.getUsers().contains("@digitaljersey"));
