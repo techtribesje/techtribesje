@@ -110,4 +110,35 @@ public class TweetTests {
         assertTrue(tweet.getHashtags().contains("#digitaljersey"));
     }
 
+    @Test
+    public void test_getUsers_ReturnsAnEmptySet_WhenTheBodyIsNull() {
+        tweet = new Tweet(contentSource, 1234567890, null, new Date());
+        assertEquals(0, tweet.getUsers().size());
+    }
+
+    @Test
+    public void test_getUsers_ReturnsAnEmptySet_WhenTheBodyIsEmpty() {
+        tweet = new Tweet(contentSource, 1234567890, "", new Date());
+        assertEquals(0, tweet.getUsers().size());
+    }
+
+    @Test
+    public void test_getUsers_ReturnsANonEmptySet_WhenTheBodyIncludesSomeUsers() {
+        tweet = new Tweet(contentSource, 1234567890, "Hello @digitaljersey", new Date());
+        assertEquals(1, tweet.getUsers().size());
+        assertTrue(tweet.getUsers().contains("@digitaljersey"));
+
+        tweet = new Tweet(contentSource, 1234567890, "Hello @digitaljersey and @techtribesje in Jersey", new Date());
+        assertEquals(2, tweet.getUsers().size());
+        assertTrue(tweet.getUsers().contains("@digitaljersey"));
+        assertTrue(tweet.getUsers().contains("@techtribesje"));
+    }
+
+    @Test
+    public void test_getUsers_ReturnsHashtagsInLowerCase_WhenTheBodyIncludesMixedCaseUsers() {
+        tweet = new Tweet(contentSource, 1234567890, "Hello @DigitalJersey", new Date());
+        assertEquals(1, tweet.getUsers().size());
+        assertTrue(tweet.getUsers().contains("@digitaljersey"));
+    }
+
 }
