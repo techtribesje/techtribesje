@@ -14,8 +14,9 @@ class GitHubRepositoryResultExtractor implements ResultSetExtractor<GitHubReposi
         String name = rs.getString("name");
         String description = rs.getString("description");
         String url = rs.getString("url");
+        boolean fork = rs.getBoolean("fork");
 
-        GitHubRepository gitHubRepository = new GitHubRepository(name, description, url);
+        GitHubRepository gitHubRepository = new GitHubRepository(name, description, url, fork);
         gitHubRepository.setContentSourceId(contentSourceId);
 
         return gitHubRepository;

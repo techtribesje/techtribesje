@@ -1,11 +1,10 @@
 package je.techtribes.domain;
 
-import je.techtribes.domain.GitHubRepository;
-import je.techtribes.domain.Person;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class GitHubRepositoryTests {
 
@@ -13,7 +12,7 @@ public class GitHubRepositoryTests {
 
     @Before
     public void setUp() {
-        repo = new GitHubRepository("repoName", "repoDescription", "https://github.com/user/repoName");
+        repo = new GitHubRepository("repoName", "repoDescription", "https://github.com/user/repoName", false);
     }
 
     @Test
@@ -29,6 +28,11 @@ public class GitHubRepositoryTests {
     @Test
     public void testGetUrl() {
         assertEquals("https://github.com/user/repoName", repo.getUrl());
+    }
+
+    @Test
+    public void testIsFork() {
+        assertFalse(repo.isFork());
     }
 
     @Test

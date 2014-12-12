@@ -12,25 +12,30 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class GitHubComponentTests extends AbstractComponentTestsBase {
+
+    private static final String INSERT_STATEMENT = "insert into github_repo (content_source_id, name, description, url, fork) values (?, ?, ?, ?, ?)";
 
     @Before
     public void setUp() {
         JdbcTemplate template = getJdbcTemplate();
         for (int i = 1; i <= 5; i++) {
-            template.update("insert into github_repo (content_source_id, name, description, url) values (?, ?, ?, ?)",
+            template.update(INSERT_STATEMENT,
                     1,
                     "Repo " + i,
                     "Here is a description for repo " + i,
-                    "https://github.com/repo" + i);
+                    "https://github.com/repo" + i,
+                    false);
         }
         for (int i = 6; i <= 10; i++) {
-            template.update("insert into github_repo (content_source_id, name, description, url) values (?, ?, ?, ?)",
+            template.update(INSERT_STATEMENT,
                     2,
                     "Repo " + i,
                     "Here is a description for repo " + i,
-                    "https://github.com/repo" + i);
+                    "https://github.com/repo" + i,
+                    true);
         }
     }
 
@@ -73,6 +78,7 @@ public class GitHubComponentTests extends AbstractComponentTestsBase {
         assertEquals("Here is a description for repo 1", repo.getDescription());
         assertEquals("Simon Brown", repo.getContentSource().getName());
         assertEquals("https://github.com/repo1", repo.getUrl());
+        assertFalse(repo.isFork());
     }
 
     @Test
@@ -94,7 +100,7 @@ public class GitHubComponentTests extends AbstractComponentTestsBase {
         assertEquals(5, repos.size());
 
         List<GitHubRepository> newRepos = new LinkedList<>();
-        newRepos.add(new GitHubRepository("New repo", "Here is a description of the new repo", "https://github.com/newrepo"));
+        newRepos.add(new GitHubRepository("New repo", "Here is a description of the new repo", "https://github.com/newrepo", false));
         newRepos.get(0).setContentSource(contentSource);
 
         getGitHubComponent().setRepositories(newRepos, contentSource);

@@ -10,15 +10,17 @@ public class GitHubRepository {
     private String name;
     private String description;
     private String url;
+    private boolean fork;
 
-    public GitHubRepository(String name, String description, String url) {
+    public GitHubRepository(String name, String description, String url, boolean fork) {
         this.name = name;
         this.description = description;
         this.url = url;
+        this.fork = fork;
     }
 
-    public GitHubRepository(String name, String description, String url, ContentSource contentSource) {
-        this(name, description, url);
+    public GitHubRepository(String name, String description, String url, boolean fork, ContentSource contentSource) {
+        this(name, description, url, fork);
         this.contentSource = contentSource;
     }
 
@@ -52,6 +54,10 @@ public class GitHubRepository {
 
     public String getUrl() {
         return url;
+    }
+
+    public boolean isFork() {
+        return fork;
     }
 
     @Override

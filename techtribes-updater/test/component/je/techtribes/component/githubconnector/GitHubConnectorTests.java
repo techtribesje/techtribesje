@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class GitHubConnectorTests {
 
@@ -48,12 +49,14 @@ public class GitHubConnectorTests {
         assertEquals("techtribesje", repos.get(index).getName());
         assertEquals("Source code for the techtribes.je website", repos.get(index).getDescription());
         assertEquals("https://github.com/techtribesje/techtribesje", repos.get(index).getUrl());
+        assertFalse(repos.get(index).isFork());
         assertEquals(contentSource, repos.get(index).getContentSource());
 
         index = 3;
         assertEquals("techtribesje-bin", repos.get(index).getName());
         assertEquals("Scripts for the techtribes.je live environment", repos.get(index).getDescription());
         assertEquals("https://github.com/techtribesje/techtribesje-bin", repos.get(index).getUrl());
+        assertFalse(repos.get(index).isFork());
         assertEquals(contentSource, repos.get(index).getContentSource());
     }
 

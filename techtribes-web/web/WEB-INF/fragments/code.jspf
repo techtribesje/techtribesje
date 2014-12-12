@@ -3,11 +3,14 @@
         <div class="row">
     </c:if>
             <div class="span3">
-                <div class="codeRepo">
+                <div class="codeRepo <c:if test='${repo.fork}'>faded</c:if>">
                     <a href="${repo.url}" target="_blank"><img src="/static/img/techtribes/github.png" alt="GitHub" class="profileImageSmall" title="GitHub" /></a> <a href="${repo.url}" target="_blank">${repo.name}</a>
                     <p>
                     ${repo.truncatedDescription}
                     </p>
+                    <c:if test='${repo.fork}'>
+                    <p class="metadata">Fork</p>
+                    </c:if>
                 </div>
             </div>
     <c:if test="${status.index % 4 == 3}">

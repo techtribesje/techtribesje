@@ -23,8 +23,8 @@ public class EclipseMylynGitHubApi extends GitHubApi {
         List<GitHubRepository> repos = new LinkedList<>();
 
         for (Repository repo : service.getRepositories(contentSource.getGitHubId())) {
-            if (!repo.isFork() && !repo.isPrivate()) {
-                GitHubRepository gitHubRepository = new GitHubRepository(repo.getName(), repo.getDescription(), repo.getHtmlUrl(), contentSource);
+            if (!repo.isPrivate()) {
+                GitHubRepository gitHubRepository = new GitHubRepository(repo.getName(), repo.getDescription(), repo.getHtmlUrl(), repo.isFork(), contentSource);
                 repos.add(gitHubRepository);
             }
         }

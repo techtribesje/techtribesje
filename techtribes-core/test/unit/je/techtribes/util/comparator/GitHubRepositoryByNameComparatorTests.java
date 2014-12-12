@@ -9,8 +9,8 @@ public class GitHubRepositoryByNameComparatorTests {
 
     @Test
     public void test() {
-        GitHubRepository r1 = new GitHubRepository("aaa", "aaa", "http://github.com/user/aaa");
-        GitHubRepository r2 = new GitHubRepository("BBB", "BBB", "http://github.com/user/BBB");
+        GitHubRepository r1 = new GitHubRepository("aaa", "aaa", "http://github.com/user/aaa", false);
+        GitHubRepository r2 = new GitHubRepository("BBB", "BBB", "http://github.com/user/BBB", false);
 
         GitHubRepositoryByNameComparator comparator = new GitHubRepositoryByNameComparator();
         assertTrue(comparator.compare(r1, r2) < 0);

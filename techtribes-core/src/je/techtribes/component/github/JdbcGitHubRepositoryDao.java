@@ -18,13 +18,13 @@ class JdbcGitHubRepositoryDao {
 
     List<GitHubRepository> getRepositories() {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        return select.query("select github_repo.content_source_id, github_repo.name, github_repo.description, github_repo.url from github_repo, content_source where github_repo.content_source_id = content_source.id order by name",
+        return select.query("select github_repo.content_source_id, github_repo.name, github_repo.description, github_repo.url, github_repo.fork from github_repo, content_source where github_repo.content_source_id = content_source.id order by name",
                 new GitHubRepositoryRowMapper());
     }
 
     List<GitHubRepository> getRepositories(ContentSource contentSource) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        return select.query("select content_source_id, name, description, url from github_repo where content_source_id = ? order by name",
+        return select.query("select content_source_id, name, description, url, fork from github_repo where content_source_id = ? order by name",
                 new Object[] { contentSource.getId() },
                 new GitHubRepositoryRowMapper());
     }
@@ -34,11 +34,12 @@ class JdbcGitHubRepositoryDao {
         template.update("delete from github_repo where content_source_id = ?", contentSource.getId());
 
         for (GitHubRepository repository : repositories) {
-            template.update("insert into github_repo (content_source_id, name, description, url) values (?, ?, ?, ?)",
+            template.update("insert into github_repo (content_source_id, name, description, url, fork) values (?, ?, ?, ?, ?)",
                 repository.getContentSource().getId(),
                 repository.getName(),
                 repository.getDescription(),
-                repository.getUrl());
+                repository.getUrl(),
+                repository.isFork());
         }
     }
 
