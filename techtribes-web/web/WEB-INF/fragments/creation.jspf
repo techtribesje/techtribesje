@@ -1,0 +1,12 @@
+<div class="${creation.contentSource.shortName} highlightableContent job">
+    <h3>
+        <a href="<techtribesje:goto contentSource="${creation.contentSource}"/>"><img src="${creation.contentSource.profileImageUrl}" alt="Profile image" class="profileImageSmall" /></a>
+        <a href="${creation.url}" target="_blank">${creation.name}</a>
+    </h3>
+    <p>
+        ${creation.truncatedDescription}
+    </p>
+    <p>
+        <a href="${creation.url}" target="_blank"><img src="/static/img/creations/${creation.id}.png" alt="${creation.name}" class="thumbnail creationScreenshot" /></a>
+    </p>
+</div>

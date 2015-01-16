@@ -236,6 +236,13 @@ footer a {
     color: #2C3E50;
 }
 
+.creationsSection {
+    background: #7F8C8D;
+}
+#headerNavigation .creationsLink {
+    color: #7F8C8D;
+}
+
 .embeddedVideo, .embeddedMap {
     padding: 8px;
     text-align: center;
@@ -263,6 +270,10 @@ footer a {
 }
 
 .bookCover {
+    background: white;
+}
+
+.creationScreenshot {
     background: white;
 }
 
