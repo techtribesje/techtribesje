@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
 class BookComponentImpl extends AbstractComponent implements BookComponent {
 
     private ContentSourceComponent contentSourceComponent;
