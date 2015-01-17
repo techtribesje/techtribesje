@@ -44,6 +44,13 @@ class CreationComponentImpl extends AbstractComponent implements CreationCompone
                     "http://bit.coin.je/",
                     null,
                     "robbieandrews"));
+
+            creations.add(createCreation(4,
+                    "collaborate.je",
+                    "Created in the wake of Island Innovators 2014, collaborate.je is a community driven group with the primary aims of encouraging collaboration within the creative community in Jersey and encouraging the development of a collaborative creative eco-system.",
+                    "http://collaborate.je/",
+                    null,
+                    "mattchatterley"));
         } catch (Exception e) {
             logError(e.getMessage());
             throw new CreationException("Error getting list of creations", e);
