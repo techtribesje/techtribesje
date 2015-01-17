@@ -10,7 +10,7 @@ import java.util.Comparator;
 public class CreationByNameComparator implements Comparator<Creation> {
 
 	public int compare(Creation c1, Creation c2) {
-		return c1.getName().compareTo(c2.getName());
+		return c1.getName().compareToIgnoreCase(c2.getName());
 	}
 
 }

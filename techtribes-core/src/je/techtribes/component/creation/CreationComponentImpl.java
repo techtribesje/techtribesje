@@ -35,6 +35,12 @@ class CreationComponentImpl extends AbstractComponent implements CreationCompone
                     "Structurizr is an implementation of the C4 model as described in Simon Brown's Software Architecture for Developers book, which provides a way to easily and effectively communicate the software architecture of a software system. Structurizr allows you to create software architecture models and diagrams as code.",
                     "http://www.structurizr.com",
                     "simonbrown"));
+
+            creations.add(createCreation(3,
+                    "bit.coin.je",
+                    "We aim to build Jersey as the world's first #bitcoinisle. Here you find all the information you'll need to understand Bitcoin & Cryptocurrencies, how to get started with using it & which locally based companies are Bitcoin-friendly.",
+                    "http://bit.coin.je/",
+                    "robbieandrews"));
         } catch (Exception e) {
             logError(e.getMessage());
             throw new CreationException("Error getting list of creations", e);
