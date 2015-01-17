@@ -6,6 +6,11 @@
     <p>
         ${creation.truncatedDescription}
     </p>
+    <c:if test="${not empty creation.codeUrl}">
+    <p class="metadata">
+        <img src="/static/img/techtribes/opensource.png" class="profileImageSmall"/> <a href="${creation.codeUrl}">The code is open source</a>
+    </p>
+    </c:if>
     <p>
         <a href="${creation.url}" target="_blank"><img src="/static/img/creations/${creation.id}.png" alt="${creation.name}" class="thumbnail creationScreenshot" /></a>
     </p>

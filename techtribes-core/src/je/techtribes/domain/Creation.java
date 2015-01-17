@@ -9,6 +9,7 @@ public class Creation extends ContentItem {
     private int id;
     private String description;
     private URL url;
+    private URL codeUrl;
 
     public Creation(int id) {
         this.id = id;
@@ -49,6 +50,14 @@ public class Creation extends ContentItem {
 
     public void setUrl(URL url) {
         this.url = url;
+    }
+
+    public URL getCodeUrl() {
+        return codeUrl;
+    }
+
+    public void setCodeUrl(URL codeUrl) {
+        this.codeUrl = codeUrl;
     }
 
     @Override

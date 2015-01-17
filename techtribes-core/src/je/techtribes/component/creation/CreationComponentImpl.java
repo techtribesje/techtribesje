@@ -28,18 +28,21 @@ class CreationComponentImpl extends AbstractComponent implements CreationCompone
                     "techtribes.je",
                     "techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands.",
                     "https://techtribes.je",
+                    "https://github.com/techtribesje/techtribesje",
                     "simonbrown"));
 
             creations.add(createCreation(2,
                     "Structurizr",
                     "Structurizr is an implementation of the C4 model as described in Simon Brown's Software Architecture for Developers book, which provides a way to easily and effectively communicate the software architecture of a software system. Structurizr allows you to create software architecture models and diagrams as code.",
                     "http://www.structurizr.com",
+                    null,
                     "simonbrown"));
 
             creations.add(createCreation(3,
                     "bit.coin.je",
                     "We aim to build Jersey as the world's first #bitcoinisle. Here you find all the information you'll need to understand Bitcoin & Cryptocurrencies, how to get started with using it & which locally based companies are Bitcoin-friendly.",
                     "http://bit.coin.je/",
+                    null,
                     "robbieandrews"));
         } catch (Exception e) {
             logError(e.getMessage());
@@ -68,11 +71,14 @@ class CreationComponentImpl extends AbstractComponent implements CreationCompone
         return filteredCreations;
     }
 
-    private Creation createCreation(int id, String name, String description, String url, String creator) throws Exception {
+    private Creation createCreation(int id, String name, String description, String url, String codeUrl, String creator) throws Exception {
         Creation creation = new Creation(id);
         creation.setName(name);
         creation.setDescription(description);
         creation.setUrl(new URL(url));
+        if (codeUrl != null) {
+            creation.setCodeUrl(new URL(codeUrl));
+        }
         creation.setContentSource(contentSourceComponent.findByShortName(creator));
 
         return creation;
