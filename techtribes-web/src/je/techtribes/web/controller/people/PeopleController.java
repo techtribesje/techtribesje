@@ -4,6 +4,7 @@ import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.book.BookComponent;
+import je.techtribes.component.creation.CreationComponent;
 import je.techtribes.component.github.GitHubComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryException;
@@ -42,9 +43,10 @@ public class PeopleController extends AbstractController {
     private ActivityComponent activityComponent;
     private GitHubComponent gitHubComponent;
     private BookComponent bookComponent;
+    private CreationComponent creationComponent;
 
     @Autowired
-    public PeopleController(BadgeComponent badgeComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talksService, ActivityComponent activityComponent, GitHubComponent gitHubComponent, BookComponent bookComponent) {
+    public PeopleController(BadgeComponent badgeComponent, NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talksService, ActivityComponent activityComponent, GitHubComponent gitHubComponent, BookComponent bookComponent, CreationComponent creationComponent) {
         this.badgeComponent = badgeComponent;
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
@@ -52,6 +54,7 @@ public class PeopleController extends AbstractController {
         this.activityComponent = activityComponent;
         this.gitHubComponent = gitHubComponent;
         this.bookComponent = bookComponent;
+        this.creationComponent = creationComponent;
     }
 
     @RequestMapping(value = "/people", method = RequestMethod.GET)
@@ -162,7 +165,7 @@ public class PeopleController extends AbstractController {
 	}
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/books", method = RequestMethod.GET)
-	public String viewBooksByPerson(@PathVariable("name")String shortName, ModelMap model) {
+    public String viewBooksByPerson(@PathVariable("name")String shortName, ModelMap model) {
         ContentSource contentSource = findPersonByShortName(shortName);
         if (contentSource == null) {
             return "forward:/404";
@@ -175,7 +178,23 @@ public class PeopleController extends AbstractController {
         setPageTitle(model, contentSource.getName(), "Books");
 
         return "person-books";
-	}
+    }
+
+    @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/creations", method = RequestMethod.GET)
+    public String viewCreationsByPerson(@PathVariable("name")String shortName, ModelMap model) {
+        ContentSource contentSource = findPersonByShortName(shortName);
+        if (contentSource == null) {
+            return "forward:/404";
+        }
+
+        model.addAttribute("person", contentSource);
+        model.addAttribute("activeNav", "creations");
+        model.addAttribute("creations", creationComponent.getCreations(contentSource));
+        addCommonAttributes(model);
+        setPageTitle(model, contentSource.getName(), "Creations");
+
+        return "person-creations";
+    }
 
     @RequestMapping(value="/people/{name:^[a-z-0-9]*$}/tweets", method = RequestMethod.GET)
 	public String viewTweets(@PathVariable("name")String shortName, ModelMap model) {
