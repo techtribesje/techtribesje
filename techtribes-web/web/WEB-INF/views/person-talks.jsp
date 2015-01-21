@@ -11,7 +11,7 @@
             <c:when test="${not empty talks}">
                 <p style="text-align: center;">
                     <c:forEach var="country" items="${countries}"><img src="<techtribesje:flag name="${country}" />" alt="${country}" title="${country}" /> </c:forEach>
-                    (talks ${fn:length(talks)}, countries ${fn:length(countries)})
+                    (${fn:length(talks)} talks in ${fn:length(countries)} countries)
                 </p>
 
                 <%@ include file="/WEB-INF/fragments/talks.jspf" %>
