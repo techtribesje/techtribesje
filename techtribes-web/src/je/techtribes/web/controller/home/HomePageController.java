@@ -10,6 +10,7 @@ import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.domain.*;
 import je.techtribes.domain.badge.Badge;
 import je.techtribes.domain.badge.Badges;
+import je.techtribes.util.DateUtils;
 import je.techtribes.util.PageSize;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 @Controller
@@ -61,6 +63,13 @@ public class HomePageController extends AbstractController {
         model.addAttribute("tweets", tweets);
         model.addAttribute("talks", talks);
         model.addAttribute("events", events);
+
+        List<String> years = new LinkedList<>();
+        int currentYear = DateUtils.getYear();
+        for (int year = currentYear; year >= 2012; year--) {
+            years.add("" + year);
+        }
+        model.addAttribute("years", years);
 
         model.addAttribute("activityListForPeople", activityComponent.getActivityListForPeople());
         model.addAttribute("activityListForBusinessTribes", activityComponent.getActivityListForBusinessTribes());
