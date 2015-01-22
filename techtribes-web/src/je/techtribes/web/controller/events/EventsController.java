@@ -5,6 +5,7 @@ import je.techtribes.component.event.EventException;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Event;
 import je.techtribes.component.event.EventComponent;
+import je.techtribes.util.DateUtils;
 import je.techtribes.util.ICalendarFormatter;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.InternalResourceView;
 
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
 
 @Controller
@@ -40,8 +42,7 @@ public class EventsController extends AbstractController {
 	public String viewEventsByYear(@PathVariable("year")int year, ModelMap model) {
         List<Event> events = eventService.getEventsByYear(year);
 
-        prepareModel(model, events);
-        model.addAttribute("activeNav", "" + year);
+        prepareModel(model, events, year);
 
         return "events";
 	}
@@ -85,10 +86,19 @@ public class EventsController extends AbstractController {
         }
 	}
 
-    private void prepareModel(ModelMap model, List<Event> events) {
+    private void prepareModel(ModelMap model, List<Event> events, int selectedYear) {
         model.addAttribute("events", events);
         model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(events).getStatistics());
         addCommonAttributes(model);
+        model.addAttribute("activeNav", "" + selectedYear);
+
+        List<String> years = new LinkedList<>();
+        int currentYear = DateUtils.getYear();
+        for (int year = currentYear; year >= 2012; year--) {
+            years.add("" + year);
+        }
+        model.addAttribute("years", years);
+
         setPageTitle(model, "Events");
     }
 

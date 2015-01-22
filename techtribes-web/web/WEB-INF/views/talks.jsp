@@ -3,10 +3,7 @@
         <div class="container">
             <div style="float: right;">
                 <ul class="nav nav-pills">
-                    <c:set var="currentYear" value="2015"/>
-                    <c:set var="startYear" value="2012"/>
-                    <c:forEach var="i" begin="0" end="${currentYear-startYear}">
-                        <c:set var="year" value="${''}${(currentYear - i)}" />
+                    <c:forEach var="year" items="${years}">
                         <li <c:if test="${activeNav eq year}">class="active"</c:if>><a href="/talks/year/${year}">${year}</a></li>
                     </c:forEach>
                     <li <c:if test="${activeNav eq 'videos'}">class="active"</c:if>><a href="/talks/videos">Videos</a></li>

@@ -4,6 +4,7 @@ import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Talk;
+import je.techtribes.util.DateUtils;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.Calendar;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
@@ -38,8 +36,7 @@ public class TalksController extends AbstractController {
 	public String viewTalksWithVideo(ModelMap model) {
         List<Talk> talks = talkComponent.getTalksWithVideo();
 
-        prepareModel(talks, model);
-        model.addAttribute("activeNav", "videos");
+        prepareModel(talks, model, "videos");
 
         return "talks";
 	}
@@ -48,8 +45,7 @@ public class TalksController extends AbstractController {
 	public String viewTalksByYear(@PathVariable("year")int year, ModelMap model) {
         List<Talk> talks = talkComponent.getTalksByYear(year);
 
-        prepareModel(talks, model);
-        model.addAttribute("activeNav", "" + year);
+        prepareModel(talks, model, "" + year);
 
         return "talks";
 	}
@@ -65,10 +61,19 @@ public class TalksController extends AbstractController {
         return "talk";
 	}
 
-    private void prepareModel(List<Talk> talks, ModelMap model) {
+    private void prepareModel(List<Talk> talks, ModelMap model, String activeNav) {
         model.addAttribute("talks", talks);
         model.addAttribute("countries", getCountries(talks));
         model.addAttribute("contentSourceStatistics", new ContentSourceStatistics(talks).getStatistics());
+        model.addAttribute("activeNav", activeNav);
+
+        List<String> years = new LinkedList<>();
+        int currentYear = DateUtils.getYear();
+        for (int year = currentYear; year >= 2012; year--) {
+            years.add("" + year);
+        }
+        model.addAttribute("years", years);
+
         setPageTitle(model, "Talks");
         addCommonAttributes(model);
     }
