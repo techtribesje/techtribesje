@@ -49,11 +49,7 @@ public class HomePageController extends AbstractController {
         List<ContentSource> mediaTribes = contentSourceComponent.getContentSources(ContentSourceType.Media);
         List<? extends ContentItem> newsEntries = newsFeedEntryComponent.getRecentNewsFeedEntries(mediaTribes, 1, 3);
         List<Tweet> tweets = tweetComponent.getRecentTweets(1, 12);
-
-        List<Talk> talks = talkComponent.getRecentTalks();
-        if (talks.size() > PageSize.RECENT_TALKS) {
-            talks = talks.subList(0, PageSize.RECENT_TALKS);
-        }
+        List<Talk> talks = talkComponent.getUpcomingTalks(PageSize.UPCOMING_TALKS);
 
         List<Event> events = eventComponent.getFutureEvents(PageSize.RECENT_EVENTS);
         Collections.reverse(events);

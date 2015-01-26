@@ -167,6 +167,15 @@ public class TalkComponentTests extends AbstractComponentTestsBase {
     }
 
     @Test
+    public void test_getUpcomingTalks_ReturnsASubsetOfTalksInTheFuture() {
+        List<Talk> talks = getTalkComponent().getUpcomingTalks(3);
+        assertEquals(3, talks.size());
+        assertEquals("Talk 13", talks.get(0).getTitle());
+        assertEquals("Talk 14", talks.get(1).getTitle());
+        assertEquals("Talk 15", talks.get(2).getTitle());
+    }
+
+    @Test
     public void test_getTalksByContentSource_ReturnsEmptyList_WhenThereAreNone() {
         List<Talk> talks = getTalkComponent().getTalks(getContentSourceComponent().findByShortName("techtribesje"));
         assertEquals(0, talks.size());
@@ -232,8 +241,6 @@ public class TalkComponentTests extends AbstractComponentTestsBase {
         List<Talk> talks = getTalkComponent().getTalksWithVideo();
         assertEquals(0, talks.size());
     }
-
-
 
     @After
     public void tearDown() {

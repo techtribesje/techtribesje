@@ -5,7 +5,7 @@ public class PageSize {
     public static final int RECENT_NEWS_FEED_ENTRIES = 12;
     public static final int RECENT_NEWS = 12;
     public static final int RECENT_TWEETS = 28;
-    public static final int RECENT_TALKS = 3;
+    public static final int UPCOMING_TALKS = 3;
     public static final int RECENT_JOBS = 6;
     public static final int RECENT_EVENTS = 3;
 

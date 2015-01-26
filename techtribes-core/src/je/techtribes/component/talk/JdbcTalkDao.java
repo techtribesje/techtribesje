@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -51,6 +52,14 @@ class JdbcTalkDao {
 
         return select.query("select id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url from talk where talk_date between ? and ? order by talk_date desc",
                 new Object[] { start, end },
+                new TalkRowMapper());
+    }
+
+    List<Talk> getUpcomingTalks(int pageSize) {
+        Date today = DateUtils.getToday();
+        JdbcTemplate select = new JdbcTemplate(dataSource);
+        return select.query("SELECT id, name, description, type, event_name, city, country, content_source_id, url, talk_date, slides_url, video_url FROM talk WHERE talk_date > ? ORDER BY talk_date ASC LIMIT 0,?",
+                new Object[]{today, pageSize},
                 new TalkRowMapper());
     }
 

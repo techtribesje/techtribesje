@@ -13,6 +13,8 @@ public interface TalkComponent {
 
     List<Talk> getRecentTalks();
 
+    List<Talk> getUpcomingTalks(int pageSize);
+
     List<Talk> getTalksWithVideo();
 
     List<Talk> getTalksByYear(int year);
