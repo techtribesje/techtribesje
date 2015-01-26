@@ -67,9 +67,9 @@ public class HomePageController extends AbstractController {
         }
         model.addAttribute("years", years);
 
-        model.addAttribute("activityListForPeople", activityComponent.getActivityListForPeople());
-        model.addAttribute("activityListForBusinessTribes", activityComponent.getActivityListForBusinessTribes());
-        model.addAttribute("activityListForCommunityTribes", activityComponent.getActivityListForCommunityTribes());
+//        model.addAttribute("activityListForPeople", activityComponent.getActivityListForPeople());
+//        model.addAttribute("activityListForBusinessTribes", activityComponent.getActivityListForBusinessTribes());
+//        model.addAttribute("activityListForCommunityTribes", activityComponent.getActivityListForCommunityTribes());
 
         List<Badge> badges = Badges.getBadges();
         model.addAttribute("badges", badges);
