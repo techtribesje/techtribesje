@@ -51,6 +51,13 @@ class CreationComponentImpl extends AbstractComponent implements CreationCompone
                     "http://collaborate.je/",
                     null,
                     "mattchatterley"));
+
+            creations.add(createCreation(5,
+                    "Guernsey Bin Nights",
+                    "A simple utility app for Android to help people living in Guernsey remember when to put their bin bags out and which bags to put out, e.g. general rubbish, clear recycling bags or blue recycling bags.",
+                    "https://play.google.com/store/apps/details?id=gg.kodo.binbags",
+                    null,
+                    "adrianritchie"));
         } catch (Exception e) {
             logError(e.getMessage());
             throw new CreationException("Error getting list of creations", e);
