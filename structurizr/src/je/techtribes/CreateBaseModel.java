@@ -1,11 +1,13 @@
 package je.techtribes;
 
+import com.structurizr.Workspace;
 import com.structurizr.model.*;
 
 public class CreateBaseModel extends AbstractUtility {
 
     public static void main(String[] args) throws Exception {
-        Model model = new Model("techtribes.je", "The software architecture model for the techtribes.je system");
+        Workspace workspace = new Workspace("techtribes.je", "The software architecture model for the techtribes.je system");
+        Model model = workspace.getModel();
         SoftwareSystem techTribes = model.addSoftwareSystem(Location.Internal, "techtribes.je", "techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands");
 
         Person anonymousUser = model.addPerson(Location.External, "Anonymous User", "Anybody on the web.");
@@ -45,7 +47,7 @@ public class CreateBaseModel extends AbstractUtility {
         contentUpdater.uses(gitHub, "Gets information about public code repositories from.");
         contentUpdater.uses(blogs, "Gets content using RSS and Atom feeds from.");
 
-        writeModelToFile(model);
+        writeToFile(workspace);
     }
 
 }
