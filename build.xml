@@ -406,4 +406,6 @@
         </java>
     </target>
 
+    <target name="teamcity" depends="publish, software-architecture" />
+
 </project>
