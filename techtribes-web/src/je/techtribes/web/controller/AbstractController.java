@@ -1,6 +1,5 @@
 package je.techtribes.web.controller;
 
-import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.domain.ContentSource;

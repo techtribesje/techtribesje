@@ -104,7 +104,7 @@
                             <a href="/tweets" class="tweetsLink">Tweets</a>
                             <a href="/code" class="codeLink">Code</a>
                             <a href="/books" class="booksLink">Books</a>
-                            <a href="/creations" class="creationsLink">Creations</a>
+                            <%--<a href="/creations" class="creationsLink">Creations</a>--%>
                         </div>
                     </div>
                     <div>
@@ -114,9 +114,9 @@
                     </div>
                 </div>
 
-                <c:if test="${not empty activityListForPeople}">
-                    <%@ include file="/WEB-INF/fragments/mostActive.jspf" %>
-                </c:if>
+                <div align="center">
+                    <a href="https://techtribes.slack.com"><img src="/static/img/slack.png" alt="Join the conversation on Slack" /></a>
+                </div>
 
             </div>
 

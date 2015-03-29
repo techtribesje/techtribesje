@@ -1,11 +1,11 @@
 package je.techtribes.component.tweet;
 
 import com.structurizr.annotation.ContainerDependency;
-import je.techtribes.util.AbstractComponent;
+import je.techtribes.component.contentsource.ContentItemFilter;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Tweet;
-import je.techtribes.component.contentsource.ContentItemFilter;
+import je.techtribes.util.AbstractComponent;
 import je.techtribes.util.ContentSourceCollectionFormatter;
 import je.techtribes.util.MongoDatabaseConfiguration;
 import je.techtribes.util.PageSize;
@@ -119,41 +119,6 @@ class TweetComponentImpl extends AbstractComponent implements TweetComponent {
             tweetDao.storeTweets(tweets);
         } catch (Exception e) {
             TweetException te = new TweetException("Error saving tweets", e);
-            logError(te);
-            throw te;
-        }
-    }
-
-    @Override
-    public List<Tweet> getRecentHashtaggedTweets(String hashtag, int page, int pageSize) {
-        try {
-            page = PageSize.validatePage(page);
-            pageSize = PageSize.validatePageSize(pageSize);
-            return tweetDao.getRecentHashtaggedTweets(hashtag, page, pageSize);
-        } catch (Exception e) {
-            TweetException te = new TweetException("Error while retrieving recent hashtagged tweets for page " + page, e);
-            logError(te);
-            throw te;
-        }
-    }
-
-    @Override
-    public void removeHashtaggedTweet(long tweetId) {
-        try {
-            tweetDao.removeHashtaggedTweet(tweetId);
-        } catch (Exception e) {
-            TweetException te = new TweetException("Error deleting hashtagged tweet with ID " + tweetId, e);
-            logError(te);
-            throw te;
-        }
-    }
-
-    @Override
-    public void storeHashtaggedTweets(Collection<Tweet> tweets) {
-        try {
-            tweetDao.storeHashtaggedTweets(tweets);
-        } catch (Exception e) {
-            TweetException te = new TweetException("Error saving hashtagged tweets", e);
             logError(te);
             throw te;
         }

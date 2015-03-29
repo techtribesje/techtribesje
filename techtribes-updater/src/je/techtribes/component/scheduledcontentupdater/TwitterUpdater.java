@@ -63,14 +63,6 @@ class TwitterUpdater {
             ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error refreshing tweets", e);
             scheduledContentUpdater.logError(scue);
         }
-
-        try {
-            List<Tweet> tweets = twitterConnector.getRecentHashtaggedTweets();
-            tweetComponent.storeHashtaggedTweets(tweets);
-        } catch (TweetException e) {
-            ScheduledContentUpdaterException scue = new ScheduledContentUpdaterException("Error refreshing hashtagged tweets", e);
-            scheduledContentUpdater.logError(scue);
-        }
     }
 
     public void startStreaming() {
@@ -89,20 +81,6 @@ class TwitterUpdater {
                 public void onDelete(long tweetId) {
                     tweetComponent.removeTweet(tweetId);
                     searchComponent.deleteTweet(tweetId);
-                }
-            });
-
-            twitterConnector.startFilteredStream(new StreamingTweetListener() {
-                @Override
-                public void onTweet(final Tweet tweet) {
-                    List<Tweet> tweets = new LinkedList<>();
-                    tweets.add(tweet);
-                    tweetComponent.storeHashtaggedTweets(tweets);
-                }
-
-                @Override
-                public void onDelete(long tweetId) {
-                    tweetComponent.removeHashtaggedTweet(tweetId);
                 }
             });
         } catch (Exception e) {

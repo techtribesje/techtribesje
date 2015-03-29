@@ -51,19 +51,4 @@ public interface TweetComponent {
      */
     void storeTweets(Collection<Tweet> tweets);
 
-    /**
-     * Gets the most recent hashtagged tweets by page number.
-     */
-    List<Tweet> getRecentHashtaggedTweets(String hashtag, int page, int pageSize);
-
-    /**
-     * Stores a collection of tweets.
-     */
-    void storeHashtaggedTweets(Collection<Tweet> tweets);
-
-    /**
-     * Removes a tweet with the given ID.
-     */
-    void removeHashtaggedTweet(long tweetId);
-
 }
