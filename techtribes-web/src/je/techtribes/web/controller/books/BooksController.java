@@ -1,6 +1,5 @@
 package je.techtribes.web.controller.books;
 
-import com.structurizr.annotation.Component;
 import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.book.BookComponent;
 import je.techtribes.domain.Book;
@@ -13,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+/**
+ * Allows users to view books by local authors.
+ */
 @Controller
-@Component(description = "Allows users to view books by local authors.")
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class BooksController extends AbstractController {
 

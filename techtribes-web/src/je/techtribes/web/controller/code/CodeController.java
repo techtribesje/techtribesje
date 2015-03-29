@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.*;
 
+/**
+ * Shows GitHub repositories owned by local coders.
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class CodeController extends AbstractController {

@@ -1,8 +1,6 @@
 package je.techtribes.web.controller.home;
 
 import com.structurizr.annotation.UsedBy;
-import je.techtribes.component.activity.ActivityComponent;
-import je.techtribes.component.book.BookComponent;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.talk.TalkComponent;
@@ -23,6 +21,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Shows the home page.
+ */
 @Controller
 @RequestMapping("/")
 @UsedBy( person = "Anonymous User", description = "uses" )
@@ -32,15 +33,13 @@ public class HomePageController extends AbstractController {
     private TweetComponent tweetComponent;
     private TalkComponent talkComponent;
     private EventComponent eventComponent;
-    private ActivityComponent activityComponent;
 
     @Autowired
-    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent, ActivityComponent activityComponent, BookComponent bookComponent) {
+    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent) {
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
         this.talkComponent = talkComponent;
         this.eventComponent = eventComponent;
-        this.activityComponent = activityComponent;
     }
 
 	@RequestMapping(method = RequestMethod.GET)

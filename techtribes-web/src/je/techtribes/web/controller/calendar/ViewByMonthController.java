@@ -1,6 +1,5 @@
 package je.techtribes.web.controller.calendar;
 
-import com.structurizr.annotation.Component;
 import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
@@ -19,13 +18,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * Allows users to view a summary of site content by month.
+ */
 @Controller
-@Component(description = "Allows users to view a summary of site content by month.")
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class ViewByMonthController extends AbstractController {
 

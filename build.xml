@@ -24,6 +24,9 @@
     <property name="test.lib.dir" value="${basedir}/lib/test"/>
     <property name="runtime.lib.dir" value="${basedir}/lib/runtime"/>
 
+    <property name="software-architecture.dir" value="${basedir}/structurizr" />
+    <property name="software-architecture.build.dir" value="${build.dir}/software-architecture" />
+
     <property name="techtribesje.user" value="" />
 
     <property environment="env"/>
@@ -59,6 +62,8 @@
         <mkdir dir="${web.build.dir}"/>
         <mkdir dir="${web.build.dir}/production-classes"/>
         <mkdir dir="${web.build.dir}/test-classes"/>
+
+        <mkdir dir="${software-architecture.build.dir}/classes"/>
 
         <mkdir dir="${dist.dir}"/>
         <mkdir dir="${dist.dir}/lib"/>
@@ -339,37 +344,66 @@
         </exec>
     </target>
 
-    <target name="structure" depends="init">
-        <javac srcdir="${core.dir}/src" debug="yes">
-            <compilerarg value="-proc:only"/>
-            <compilerarg line="-processorpath ${production.lib.dir}/structurizr-annotations.jar"/>
-            <compilerarg line="-processor com.structurizr.AnnotationProcessor"/>
+    <target name="software-architecture" depends="build">
+        <javac srcdir="${software-architecture.dir}/src" destdir="${software-architecture.build.dir}/classes" debug="yes">
             <classpath>
-                <fileset dir="${production.lib.dir}">
-                    <include name="*.jar"/>
-                </fileset>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${software-architecture.dir}/lib" includes="*.jar" />
             </classpath>
         </javac>
 
-        <!--<javac srcdir="${core.dir}/src" destdir="${core.build.dir}/production-classes" debug="yes">-->
-            <!--<classpath>-->
-                <!--<fileset dir="${production.lib.dir}">-->
-                    <!--<include name="*.jar"/>-->
-                <!--</fileset>-->
-            <!--</classpath>-->
-        <!--</javac>-->
-
-        <javac srcdir="${updater.dir}/src" debug="yes" includeantruntime="false">
-            <compilerarg value="-proc:only"/>
-            <compilerarg line="-processorpath ${production.lib.dir}/structurizr-annotations.jar"/>
-            <compilerarg line="-processor com.structurizr.AnnotationProcessor"/>
+        <java classname="je.techtribes.CreateBaseModel" fork="true">
             <classpath>
-                <fileset dir="${production.lib.dir}">
-                    <include name="*.jar"/>
-                </fileset>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${software-architecture.dir}/lib" includes="*.jar" />
+                <pathelement location="${software-architecture.build.dir}/classes"/>
+            </classpath>
+        </java>
+
+        <java classname="je.techtribes.CreateComponentModelForWebApplication" fork="true">
+            <arg value="https://github.com/techtribesje/techtribesje/tree/master" />
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${runtime.lib.dir}" includes="*.jar" />
+                <fileset dir="${software-architecture.dir}/lib" includes="*.jar" />
+                <pathelement location="${software-architecture.build.dir}/classes"/>
                 <pathelement location="${core.build.dir}/production-classes" />
+                <pathelement location="${web.build.dir}/production-classes" />
+                <pathelement location="${java.home}/../lib/tools.jar" />
             </classpath>
-        </javac>
+        </java>
+
+        <java classname="je.techtribes.CreateComponentModelForContentUpdater" fork="true">
+            <arg value="https://github.com/techtribesje/techtribesje/tree/master" />
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${software-architecture.dir}/lib" includes="*.jar" />
+                <pathelement location="${software-architecture.build.dir}/classes"/>
+                <pathelement location="${core.build.dir}/production-classes" />
+                <pathelement location="${updater.build.dir}/production-classes" />
+                <pathelement location="${java.home}/../lib/tools.jar" />
+            </classpath>
+        </java>
+
+        <java classname="je.techtribes.CreateViews" fork="true">
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${software-architecture.dir}/lib" includes="*.jar" />
+                <pathelement location="${software-architecture.build.dir}/classes"/>
+            </classpath>
+        </java>
+
+        <java classname="je.techtribes.UploadModel" fork="true">
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${software-architecture.dir}/lib" includes="*.jar" />
+                <pathelement location="${software-architecture.build.dir}/classes"/>
+
+                <!-- locations to search for the structurizr.properties file -->
+                <pathelement location="${basedir}"/>
+                <pathelement location="${user.home}"/>
+            </classpath>
+        </java>
     </target>
 
 </project>

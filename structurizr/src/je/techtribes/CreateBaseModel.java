@@ -3,27 +3,34 @@ package je.techtribes;
 import com.structurizr.Workspace;
 import com.structurizr.model.*;
 
-public class CreateBaseModel extends AbstractUtility {
+public class CreateBaseModel extends AbstractStructurizrModel {
 
     public static void main(String[] args) throws Exception {
-        Workspace workspace = new Workspace("techtribes.je", "The software architecture model for the techtribes.je system");
-        Model model = workspace.getModel();
-        SoftwareSystem techTribes = model.addSoftwareSystem(Location.Internal, "techtribes.je", "techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands");
+        new CreateBaseModel().run();
+    }
 
-        Person anonymousUser = model.addPerson(Location.External, "Anonymous User", "Anybody on the web.");
-        Person authenticatedUser = model.addPerson(Location.External, "Aggregated User", "A user or business with content that is aggregated into the website.");
-        Person adminUser = model.addPerson(Location.External, "Administration User", "A system administration user.");
+    public CreateBaseModel() throws Exception {
+        this.workspace = new Workspace("techtribes.je", "The software architecture model for the techtribes.je system");
+    }
+
+    void run() throws Exception {
+        Model model = workspace.getModel();
+        SoftwareSystem techTribes = model.addSoftwareSystem(TECHTRIBES_JE, "techtribes.je is the only way to keep up to date with the IT, tech and digital sector in Jersey and Guernsey, Channel Islands");
+
+        Person anonymousUser = model.addPerson("Anonymous User", "Anybody on the web.");
+        Person authenticatedUser = model.addPerson("Aggregated User", "A user or business with content that is aggregated into the website.");
+        Person adminUser = model.addPerson("Administration User", "A system administration user.");
         anonymousUser.uses(techTribes, "View people, tribes (businesses, communities and interest groups), content, events, jobs, etc from the local tech, digital and IT sector.");
         authenticatedUser.uses(techTribes, "Manage user profile and tribe membership.");
         adminUser.uses(techTribes, "Add people, add tribes and manage tribe membership.");
 
-        SoftwareSystem twitter = model.addSoftwareSystem(Location.External, "Twitter", "twitter.com");
+        SoftwareSystem twitter = model.addSoftwareSystem("Twitter", "twitter.com");
         techTribes.uses(twitter, "Gets profile information and tweets from.");
 
-        SoftwareSystem gitHub = model.addSoftwareSystem(Location.External, "GitHub", "github.com");
+        SoftwareSystem gitHub = model.addSoftwareSystem("GitHub", "github.com");
         techTribes.uses(gitHub, "Gets information about public code repositories from.");
 
-        SoftwareSystem blogs = model.addSoftwareSystem(Location.External, "Blogs", "RSS and Atom feeds");
+        SoftwareSystem blogs = model.addSoftwareSystem("Blogs", "RSS and Atom feeds");
         techTribes.uses(blogs, "Gets content using RSS and Atom feeds from.");
 
         Container webApplication = techTribes.addContainer("Web Application", "Allows users to view people, tribes, content, events, jobs, etc from the local tech, digital and IT sector.", "Apache Tomcat 7.x");
@@ -47,7 +54,7 @@ public class CreateBaseModel extends AbstractUtility {
         contentUpdater.uses(gitHub, "Gets information about public code repositories from.");
         contentUpdater.uses(blogs, "Gets content using RSS and Atom feeds from.");
 
-        writeToFile(workspace);
+        writeToFile();
     }
 
 }
