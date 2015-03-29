@@ -23,8 +23,7 @@ public class CreateComponentModelForWebApplication extends AbstractStructurizrMo
     }
 
     public void run() throws Exception {
-        SoftwareSystem techTribes = getTechTribesSoftwareSystem();
-        Container container = techTribes.getContainerWithName(WEB_APPLICATION);
+        Container container = getWebApplication();
 
         ComponentFinder componentFinder = new ComponentFinder(
                 container,

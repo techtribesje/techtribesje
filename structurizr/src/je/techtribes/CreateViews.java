@@ -1,7 +1,9 @@
 package je.techtribes;
 
-import com.structurizr.Workspace;
-import com.structurizr.model.*;
+import com.structurizr.model.Component;
+import com.structurizr.model.Container;
+import com.structurizr.model.SoftwareSystem;
+import com.structurizr.model.Tags;
 import com.structurizr.view.*;
 
 import java.util.Set;
@@ -17,54 +19,35 @@ public class CreateViews extends AbstractStructurizrModel {
     }
 
     void run() throws Exception {
-        createSystemContextView(workspace);
-        createContainerView(workspace);
-        createComponentViewsForContentUpdater(workspace);
-        createComponentViewsForWebApplication(workspace);
-
-        SoftwareSystem techTribes = getTechTribesSoftwareSystem();
-        techTribes.addTags(TECHTRIBES_JE);
-
-        ViewSet viewSet = workspace.getViews();
-
-        viewSet.getStyles().add(new ElementStyle(Tags.ELEMENT, null, null, null, null, null));
-        viewSet.getStyles().add(new ElementStyle(TECHTRIBES_JE, null, null, "#041F37", "#ffffff", null));
-        viewSet.getStyles().add(new ElementStyle(Tags.SOFTWARE_SYSTEM, null, null, "#A4B7C9", "#000000", null));
-        viewSet.getStyles().add(new ElementStyle(Tags.PERSON, null, null, "#728da5", "#ffffff", null));
-        viewSet.getStyles().add(new ElementStyle(Tags.CONTAINER, null, null, "#2A4E6E", "#ffffff", null));
-        viewSet.getStyles().add(new ElementStyle(Tags.COMPONENT, null, null, "#728DA5", "#ffffff", null));
-        viewSet.getStyles().add(new RelationshipStyle(Tags.RELATIONSHIP, null, null, null, null, 500));
+        createSystemContextView();
+        createContainerView();
+        createComponentViewsForContentUpdater();
+        createComponentViewsForWebApplication();
+        addStyles();
 
         writeToFile();
     }
 
-    private void createSystemContextView(Workspace workspace) {
-        Model model = workspace.getModel();
-        ViewSet viewSet = workspace.getViews();
-        SoftwareSystem techTribes = model.getSoftwareSystemWithName("techtribes.je");
-        SystemContextView contextView = viewSet.createContextView(techTribes);
+    private void createSystemContextView() {
+        SoftwareSystem techTribes = getTechTribesSoftwareSystem();
+        SystemContextView contextView = workspace.getViews().createContextView(techTribes);
         contextView.addAllSoftwareSystems();
         contextView.addAllPeople();
     }
 
-    private void createContainerView(Workspace workspace) {
-        Model model = workspace.getModel();
-        ViewSet viewSet = workspace.getViews();
-        SoftwareSystem techTribes = model.getSoftwareSystemWithName("techtribes.je");
-        ContainerView containerView = viewSet.createContainerView(techTribes);
+    private void createContainerView() {
+        SoftwareSystem techTribes = getTechTribesSoftwareSystem();
+        ContainerView containerView = workspace.getViews().createContainerView(techTribes);
         containerView.addAllSoftwareSystems();
         containerView.addAllPeople();
         containerView.addAllContainers();
     }
 
-    private void createComponentViewsForContentUpdater(Workspace workspace) {
-        Model model = workspace.getModel();
-        ViewSet viewSet = workspace.getViews();
-        SoftwareSystem techTribes = model.getSoftwareSystemWithName("techtribes.je");
-        Container contentUpdater = techTribes.getContainerWithName("Content Updater");
-        Container webApplication = techTribes.getContainerWithName("Web Application");
+    private void createComponentViewsForContentUpdater() {
+        Container contentUpdater = getContentUpdater();
+        Container webApplication = getWebApplication();
 
-        ComponentView view = viewSet.createComponentView(contentUpdater);
+        ComponentView view = workspace.getViews().createComponentView(contentUpdater);
         view.setDescription("Updating information from external systems");
         view.addAllSoftwareSystems();
         view.addAllContainers();
@@ -78,7 +61,7 @@ public class CreateViews extends AbstractStructurizrModel {
         view.removeElementsThatCantBeReachedFrom(contentUpdater.getComponentWithName("ScheduledContentUpdater"));
         view.addRelationships();
 
-        view = viewSet.createComponentView(contentUpdater);
+        view = workspace.getViews().createComponentView(contentUpdater);
         view.setDescription("Updating recent activity");
         view.addAllSoftwareSystems();
         view.addAllContainers();
@@ -94,7 +77,7 @@ public class CreateViews extends AbstractStructurizrModel {
         view.removeElementsThatCantBeReachedFrom(contentUpdater.getComponentWithName("ActivityUpdater"));
         view.addRelationships();
 
-        view = viewSet.createComponentView(contentUpdater);
+        view = workspace.getViews().createComponentView(contentUpdater);
         view.setDescription("Awarding badges");
         view.addAllSoftwareSystems();
         view.addAllContainers();
@@ -111,18 +94,15 @@ public class CreateViews extends AbstractStructurizrModel {
         view.addRelationships();
     }
 
-    private void createComponentViewsForWebApplication(Workspace workspace) {
-        Model model = workspace.getModel();
-        ViewSet viewSet = workspace.getViews();
-        SoftwareSystem techTribes = model.getSoftwareSystemWithName("techtribes.je");
-        Container contentUpdater = techTribes.getContainerWithName("Content Updater");
-        Container webApplication = techTribes.getContainerWithName("Web Application");
+    private void createComponentViewsForWebApplication() {
+        Container contentUpdater = getContentUpdater();
+        Container webApplication = getWebApplication();
 
         // create one component view per Spring controller
         Set<Component> controllers = webApplication.getComponents().stream()
                 .filter(c -> c.getTechnology().equals("Spring Controller")).collect(Collectors.toSet());
         for (Component controller : controllers) {
-            ComponentView view = viewSet.createComponentView(webApplication);
+            ComponentView view = workspace.getViews().createComponentView(webApplication);
             view.setDescription(controller.getName());
             view.addAllSoftwareSystems();
             view.addAllContainers();
@@ -133,6 +113,20 @@ public class CreateViews extends AbstractStructurizrModel {
             view.addAllPeople();
             view.removeElementsWithNoRelationships();
         }
+    }
+
+    private void addStyles() {
+        SoftwareSystem techTribes = getTechTribesSoftwareSystem();
+        techTribes.addTags(TECHTRIBES_JE);
+
+        Configuration configuration = workspace.getViews().getConfiguration();
+        configuration.getStyles().add(new ElementStyle(Tags.ELEMENT, null, null, null, null, null));
+        configuration.getStyles().add(new ElementStyle(TECHTRIBES_JE, null, null, "#041F37", "#ffffff", null));
+        configuration.getStyles().add(new ElementStyle(Tags.SOFTWARE_SYSTEM, null, null, "#A4B7C9", "#000000", null));
+        configuration.getStyles().add(new ElementStyle(Tags.PERSON, null, null, "#728da5", "#ffffff", null));
+        configuration.getStyles().add(new ElementStyle(Tags.CONTAINER, null, null, "#2A4E6E", "#ffffff", null));
+        configuration.getStyles().add(new ElementStyle(Tags.COMPONENT, null, null, "#728DA5", "#ffffff", null));
+        configuration.getStyles().add(new RelationshipStyle(Tags.RELATIONSHIP, null, null, null, null, 500));
     }
 
 }

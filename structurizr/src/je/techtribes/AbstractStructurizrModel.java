@@ -3,6 +3,7 @@ package je.techtribes;
 import com.structurizr.Workspace;
 import com.structurizr.io.json.JsonReader;
 import com.structurizr.io.json.JsonWriter;
+import com.structurizr.model.Container;
 import com.structurizr.model.SoftwareSystem;
 
 import java.io.File;
@@ -25,6 +26,14 @@ abstract class AbstractStructurizrModel {
 
     protected SoftwareSystem getTechTribesSoftwareSystem() {
         return workspace.getModel().getSoftwareSystemWithName(TECHTRIBES_JE);
+    }
+
+    protected Container getWebApplication() {
+        return getTechTribesSoftwareSystem().getContainerWithName(WEB_APPLICATION);
+    }
+
+    protected Container getContentUpdater() {
+        return getTechTribesSoftwareSystem().getContainerWithName(CONTENT_UPDATER);
     }
 
     protected void writeToFile() throws Exception {

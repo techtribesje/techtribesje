@@ -16,5 +16,4 @@ public class UploadModel extends AbstractStructurizrModel {
         structurizrClient.mergeWorkspace(21, workspace);
     }
 
-
 }

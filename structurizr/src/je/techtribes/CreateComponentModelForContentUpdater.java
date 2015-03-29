@@ -23,8 +23,7 @@ public class CreateComponentModelForContentUpdater extends AbstractStructurizrMo
     }
 
     public void run() throws Exception {
-        SoftwareSystem techTribes = getTechTribesSoftwareSystem();
-        Container container = techTribes.getContainerWithName(CONTENT_UPDATER);
+        Container container = getContentUpdater();
 
         ComponentFinder componentFinder = new ComponentFinder(
                 container,
