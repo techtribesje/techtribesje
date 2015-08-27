@@ -124,7 +124,7 @@ public class CreateViews extends AbstractStructurizrModel {
         styles.add(new ElementStyle(Tags.ELEMENT, null, null, null, null, null));
         styles.add(new ElementStyle(TECHTRIBES_JE, null, null, "#041F37", "#ffffff", null));
         styles.add(new ElementStyle(Tags.SOFTWARE_SYSTEM, null, null, "#A4B7C9", "#000000", null));
-        styles.add(new ElementStyle(Tags.PERSON, 400, null, "#728da5", "#ffffff", null, Shape.Person));
+        styles.add(new ElementStyle(Tags.PERSON, null, null, "#728da5", "#ffffff", null, Shape.Person));
         styles.add(new ElementStyle(Tags.CONTAINER, null, null, "#2A4E6E", "#ffffff", null));
         styles.add(new ElementStyle(DATABASE_TAG, null, null, null, null, null, Shape.Cylinder));
         styles.add(new ElementStyle(FILE_SYSTEM_TAG, null, null, null, null, null, Shape.Folder));

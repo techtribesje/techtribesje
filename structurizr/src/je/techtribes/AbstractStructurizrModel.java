@@ -18,6 +18,7 @@ abstract class AbstractStructurizrModel {
     protected static final String WEB_APPLICATION = "Web Application";
     protected static final String CONTENT_UPDATER = "Content Updater";
     protected static final String DATABASE_TAG = "Database";
+    protected static final String FILE_SYSTEM_TAG = "File System";
 
     protected Workspace workspace;
 
