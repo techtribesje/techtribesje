@@ -6,7 +6,10 @@ import je.techtribes.domain.Creation;
 
 import java.util.List;
 
-@Component(description = "Provides access to information about creations by local people/businesses.")
+/**
+ * Provides access to information about creations by local people/businesses.
+ */
+@Component
 public interface CreationComponent {
 
     /**

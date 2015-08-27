@@ -5,7 +5,10 @@ import je.techtribes.domain.Tweet;
 
 import java.util.List;
 
-@Component(description = "Pulls profile information and tweets from Twitter.")
+/**
+ * Pulls profile information and tweets from Twitter.
+ */
+@Component
 public interface TwitterConnector {
 
     public List<TwitterProfile> getTwitterProfiles();

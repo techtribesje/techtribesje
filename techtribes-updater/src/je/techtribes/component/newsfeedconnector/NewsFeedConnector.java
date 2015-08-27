@@ -6,7 +6,10 @@ import je.techtribes.domain.NewsFeedEntry;
 
 import java.util.List;
 
-@Component(description = "Retrieves news feed entries from RSS and Atom feeds.")
+/**
+ * Retrieves news feed entries from RSS and Atom feeds.
+ */
+@Component
 public interface NewsFeedConnector {
 
     List<NewsFeedEntry> loadNewsFeedEntries(NewsFeed feed);

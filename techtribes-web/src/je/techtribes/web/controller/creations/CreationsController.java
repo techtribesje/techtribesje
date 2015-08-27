@@ -1,6 +1,5 @@
 package je.techtribes.web.controller.creations;
 
-import com.structurizr.annotation.Component;
 import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.creation.CreationComponent;
 import je.techtribes.domain.Creation;
@@ -13,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+/**
+ * Shows creations (websites, apps, etc) by local people/businesses.
+ */
 @Controller
-@Component(description = "Allows users to view creations by local people/businesses.")
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class CreationsController extends AbstractController {
 

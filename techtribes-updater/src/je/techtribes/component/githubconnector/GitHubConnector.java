@@ -6,7 +6,10 @@ import je.techtribes.domain.GitHubRepository;
 
 import java.util.List;
 
-@Component(description = "Gets information about repositories from GitHub.")
+/**
+ * Gets information about repositories from GitHub.
+ */
+@Component
 public interface GitHubConnector {
 
     List<GitHubRepository> getRepositories(ContentSource contentSource);

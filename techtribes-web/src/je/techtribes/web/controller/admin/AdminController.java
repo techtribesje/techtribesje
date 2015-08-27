@@ -17,6 +17,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Provides some basic administration features related to adding people, tribes, etc.
+ */
 @Controller
 @UsedBy( person = "Administration User", description = "uses" )
 public class AdminController extends AbstractController {

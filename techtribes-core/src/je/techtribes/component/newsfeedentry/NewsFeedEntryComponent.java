@@ -8,7 +8,10 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-@Component(description = "Provides access to blog entries and news.")
+/**
+ * Provides access to blog entries and news.
+ */
+@Component
 public interface NewsFeedEntryComponent {
 
     List<NewsFeedEntry> getRecentNewsFeedEntries(int page, int pageSize);

@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+/**
+ * Shows a summary of the recent activity (number of blog posts, tweets, events, etc).
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class ActivityController extends AbstractController {

@@ -8,7 +8,10 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-@Component(description = "Provides access to information about talks by local speakers.")
+/**
+ * Provides access to information about talks by local speakers.
+ */
+@Component
 public interface TalkComponent {
 
     List<Talk> getRecentTalks();

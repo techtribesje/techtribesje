@@ -2,7 +2,10 @@ package je.techtribes.component.log;
 
 import com.structurizr.annotation.Component;
 
-@Component(description = "Provides logging facilities to all other components.")
+/**
+ * Provides logging facilities to all other components.
+ */
+@Component
 public interface LoggingComponent {
 
     void debug(Object caller, String message);

@@ -32,6 +32,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
+/**
+ * Shows a summary of a person; including contents, tweets, talks, etc.
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class PeopleController extends AbstractController {

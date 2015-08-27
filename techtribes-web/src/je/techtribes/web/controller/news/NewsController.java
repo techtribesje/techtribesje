@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+/**
+ * Shows recent news.
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class NewsController extends AbstractController {

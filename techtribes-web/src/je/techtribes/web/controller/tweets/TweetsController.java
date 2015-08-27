@@ -1,10 +1,9 @@
 package je.techtribes.web.controller.tweets;
 
-import com.structurizr.annotation.Component;
 import com.structurizr.annotation.ComponentDependency;
 import com.structurizr.annotation.UsedBy;
-import je.techtribes.domain.Tweet;
 import je.techtribes.component.tweet.TweetComponent;
+import je.techtribes.domain.Tweet;
 import je.techtribes.util.PageSize;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+/**
+ * Shows tweets by local people and tribes.
+ */
 @Controller
-@Component(description = "Allows users to view tweets.")
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class TweetsController extends AbstractController {
 

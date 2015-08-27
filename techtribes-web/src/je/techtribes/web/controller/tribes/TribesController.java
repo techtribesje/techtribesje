@@ -31,6 +31,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Shows a summary of a tribe; including contents, tweets, talks, etc.
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class TribesController extends AbstractController {

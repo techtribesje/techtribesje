@@ -19,6 +19,9 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
+/**
+ * Allows users to search for content and tweets.
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class SearchController extends AbstractController {

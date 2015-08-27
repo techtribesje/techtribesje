@@ -17,6 +17,7 @@ abstract class AbstractStructurizrModel {
     protected static final String TECHTRIBES_JE = "techtribes.je";
     protected static final String WEB_APPLICATION = "Web Application";
     protected static final String CONTENT_UPDATER = "Content Updater";
+    protected static final String DATABASE_TAG = "Database";
 
     protected Workspace workspace;
 

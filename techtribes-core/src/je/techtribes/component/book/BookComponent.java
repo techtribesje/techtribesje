@@ -6,7 +6,10 @@ import je.techtribes.domain.ContentSource;
 
 import java.util.List;
 
-@Component(description = "Provides access to information about books by local authors.")
+/**
+ * Provides access to information about books by local authors.
+ */
+@Component
 public interface BookComponent {
 
     /**

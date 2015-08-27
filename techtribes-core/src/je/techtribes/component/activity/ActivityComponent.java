@@ -6,7 +6,10 @@ import je.techtribes.domain.ContentSource;
 
 import java.util.List;
 
-@Component(description = "Provides access to information about, and calculates, the recent activity rankings.")
+/**
+ * Provides access to information about, and calculates, the recent activity rankings.
+ */
+@Component
 public interface ActivityComponent {
 
     List<Activity> getActivityListForPeople();

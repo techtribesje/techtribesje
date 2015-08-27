@@ -15,6 +15,9 @@ import org.springframework.web.servlet.view.InternalResourceView;
 
 import java.util.List;
 
+/**
+ * Provides an RSS feed of recent content.
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class RssController extends AbstractController {

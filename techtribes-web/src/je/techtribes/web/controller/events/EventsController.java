@@ -21,6 +21,9 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Shows local business and community events (e.g. meetups, etc).
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class EventsController extends AbstractController {

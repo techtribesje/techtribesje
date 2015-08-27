@@ -1,5 +1,6 @@
 package je.techtribes;
 
+import com.structurizr.componentfinder.SpringComponentFinderStrategy;
 import com.structurizr.model.Component;
 import com.structurizr.model.Container;
 import com.structurizr.model.SoftwareSystem;
@@ -31,6 +32,7 @@ public class CreateViews extends AbstractStructurizrModel {
     private void createSystemContextView() {
         SoftwareSystem techTribes = getTechTribesSoftwareSystem();
         SystemContextView contextView = workspace.getViews().createContextView(techTribes);
+        contextView.setKey("Context");
         contextView.addAllSoftwareSystems();
         contextView.addAllPeople();
     }
@@ -38,6 +40,7 @@ public class CreateViews extends AbstractStructurizrModel {
     private void createContainerView() {
         SoftwareSystem techTribes = getTechTribesSoftwareSystem();
         ContainerView containerView = workspace.getViews().createContainerView(techTribes);
+        containerView.setKey("Containers");
         containerView.addAllSoftwareSystems();
         containerView.addAllPeople();
         containerView.addAllContainers();
@@ -59,7 +62,6 @@ public class CreateViews extends AbstractStructurizrModel {
         view.remove(contentUpdater.getComponentWithName("BadgeAwarder"));
         view.removeElementsWithNoRelationships();
         view.removeElementsThatCantBeReachedFrom(contentUpdater.getComponentWithName("ScheduledContentUpdater"));
-        view.addRelationships();
 
         view = workspace.getViews().createComponentView(contentUpdater);
         view.setDescription("Updating recent activity");
@@ -75,7 +77,6 @@ public class CreateViews extends AbstractStructurizrModel {
         view.remove(contentUpdater.getComponentWithName("BadgeAwarder"));
         view.removeElementsWithNoRelationships();
         view.removeElementsThatCantBeReachedFrom(contentUpdater.getComponentWithName("ActivityUpdater"));
-        view.addRelationships();
 
         view = workspace.getViews().createComponentView(contentUpdater);
         view.setDescription("Awarding badges");
@@ -91,7 +92,6 @@ public class CreateViews extends AbstractStructurizrModel {
         view.remove(contentUpdater.getComponentWithName("ActivityUpdater"));
         view.removeElementsWithNoRelationships();
         view.removeElementsThatCantBeReachedFrom(contentUpdater.getComponentWithName("BadgeAwarder"));
-        view.addRelationships();
     }
 
     private void createComponentViewsForWebApplication() {
@@ -100,10 +100,11 @@ public class CreateViews extends AbstractStructurizrModel {
 
         // create one component view per Spring controller
         Set<Component> controllers = webApplication.getComponents().stream()
-                .filter(c -> c.getTechnology().equals("Spring Controller")).collect(Collectors.toSet());
+                .filter(c -> c.getTechnology().equals(SpringComponentFinderStrategy.SPRING_MVC_CONTROLLER)).collect(Collectors.toSet());
         for (Component controller : controllers) {
             ComponentView view = workspace.getViews().createComponentView(webApplication);
             view.setDescription(controller.getName());
+            view.setKey(controller.getName());
             view.addAllSoftwareSystems();
             view.addAllContainers();
             view.remove(contentUpdater);
@@ -119,14 +120,15 @@ public class CreateViews extends AbstractStructurizrModel {
         SoftwareSystem techTribes = getTechTribesSoftwareSystem();
         techTribes.addTags(TECHTRIBES_JE);
 
-        Configuration configuration = workspace.getViews().getConfiguration();
-        configuration.getStyles().add(new ElementStyle(Tags.ELEMENT, null, null, null, null, null));
-        configuration.getStyles().add(new ElementStyle(TECHTRIBES_JE, null, null, "#041F37", "#ffffff", null));
-        configuration.getStyles().add(new ElementStyle(Tags.SOFTWARE_SYSTEM, null, null, "#A4B7C9", "#000000", null));
-        configuration.getStyles().add(new ElementStyle(Tags.PERSON, null, null, "#728da5", "#ffffff", null));
-        configuration.getStyles().add(new ElementStyle(Tags.CONTAINER, null, null, "#2A4E6E", "#ffffff", null));
-        configuration.getStyles().add(new ElementStyle(Tags.COMPONENT, null, null, "#728DA5", "#ffffff", null));
-        configuration.getStyles().add(new RelationshipStyle(Tags.RELATIONSHIP, null, null, null, null, 500));
+        Styles styles = workspace.getViews().getConfiguration().getStyles();
+        styles.add(new ElementStyle(Tags.ELEMENT, null, null, null, null, null));
+        styles.add(new ElementStyle(TECHTRIBES_JE, null, null, "#041F37", "#ffffff", null));
+        styles.add(new ElementStyle(Tags.SOFTWARE_SYSTEM, null, null, "#A4B7C9", "#000000", null));
+        styles.add(new ElementStyle(Tags.PERSON, 400, null, "#728da5", "#ffffff", null, Shape.Person));
+        styles.add(new ElementStyle(Tags.CONTAINER, null, null, "#2A4E6E", "#ffffff", null));
+        styles.add(new ElementStyle(DATABASE_TAG, null, null, null, null, null, Shape.Cylinder));
+        styles.add(new ElementStyle(Tags.COMPONENT, null, null, "#728DA5", "#ffffff", null));
+        styles.add(new RelationshipStyle(Tags.RELATIONSHIP, null, null, null, null, 500, null));
     }
 
 }

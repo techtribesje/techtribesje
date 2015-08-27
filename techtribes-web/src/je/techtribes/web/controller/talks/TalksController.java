@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.*;
 
+/**
+ * Shows talks by local people.
+ */
 @Controller
 @UsedBy( person = "Anonymous User", description = "uses" )
 public class TalksController extends AbstractController {

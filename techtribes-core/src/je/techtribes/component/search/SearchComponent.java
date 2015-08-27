@@ -7,7 +7,10 @@ import je.techtribes.domain.Tweet;
 import java.util.Collection;
 import java.util.List;
 
-@Component(description = "Search facilities for news feed entries and tweets.")
+/**
+ * Search facilities for news feed entries and tweets.
+ */
+@Component
 public interface SearchComponent {
 
     void addNewsFeedEntries(Collection<NewsFeedEntry> newsFeedEntries);

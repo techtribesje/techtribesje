@@ -19,6 +19,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Shows the summary page, which includes a summary of the number of people, tribes,
+ * blog posts, tweets, etc.
+ */
 @Controller
 @RequestMapping("/summary")
 @UsedBy( person = "Anonymous User", description = "uses" )

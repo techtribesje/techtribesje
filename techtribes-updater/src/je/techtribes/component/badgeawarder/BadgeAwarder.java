@@ -5,7 +5,10 @@ import je.techtribes.domain.*;
 
 import java.util.List;
 
-@Component(description = "Awards badges to people and tribes based upon recent activity.")
+/**
+ * Awards badges to people and tribes based upon recent activity.
+ */
+@Component
 public interface BadgeAwarder {
 
     public void awardBadgesForActivity();

@@ -9,7 +9,10 @@ import je.techtribes.domain.Tribe;
 import java.util.List;
 import java.util.Set;
 
-@Component(description = "Provides access to information about people and tribes.")
+/**
+ * Provides access to information about people and tribes.
+ */
+@Component
 public interface ContentSourceComponent {
 
     void refreshContentSources();
