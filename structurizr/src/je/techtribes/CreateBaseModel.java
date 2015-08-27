@@ -40,6 +40,7 @@ public class CreateBaseModel extends AbstractStructurizrModel {
         Container noSqlStore = techTribes.addContainer("NoSQL Data Store", "Stores content from RSS/Atom feeds (blog posts) and tweets.", "MongoDB 2.2.x");
         noSqlStore.addTags(DATABASE_TAG);
         Container fileSystem = techTribes.addContainer("File System", "Stores search indexes.", "Local disk");
+        fileSystem.addTags(FILE_SYSTEM_TAG);
 
         anonymousUser.uses(webApplication, "View people, tribes (businesses, communities and interest groups), content, events, jobs, etc from the local tech, digital and IT sector.");
         authenticatedUser.uses(webApplication, "Manage user profile and tribe membership.");
