@@ -114,6 +114,17 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="span3">
+                        <a href="https://techtribes.slack.com"><img src="/static/img/slack-logo.png" alt="Join the conversation on Slack" /></a>
+                    </div>
+                    <div class="span9">
+                        In addition to this website, we also host <a href="https://techtribes.slack.com">a collection of Slack channels</a> for real-time discussion.
+                        If you're part of the local digital sector and would like to join the conversation,
+                        please e-mail us at <a href="mailto:slack@techtribes.je">slack@techtribes.je</a> for an invite.
+                    </div>
+                </div>
+
             </div>
 
         </div>
