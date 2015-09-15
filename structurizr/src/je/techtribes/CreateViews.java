@@ -114,6 +114,13 @@ public class CreateViews extends AbstractStructurizrModel {
             view.addAllPeople();
             view.removeElementsWithNoRelationships();
         }
+
+        ComponentView view = workspace.getViews().createComponentView(webApplication);
+        view.setDescription("All components");
+        view.addAllComponents();
+        view.addAllPeople();
+        view.addAllContainers();
+        view.remove(contentUpdater);
     }
 
     private void addStyles() {
