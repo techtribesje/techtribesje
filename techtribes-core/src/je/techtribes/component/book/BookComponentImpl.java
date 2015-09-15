@@ -140,6 +140,16 @@ class BookComponentImpl extends AbstractComponent implements BookComponent {
                     "Leanpub",
                     "March 2015",
                     Book.Role.Author));
+
+            books.add(createBook(14,
+                    "The Art of Visualising Software Architecture",
+                    "Communicating software architecture with sketches, diagrams and the C4 model",
+                    "https://leanpub.com/visualising-software-architecture",
+                    "simonbrown",
+                    "Leanpub",
+                    "September 2015",
+                    Book.Role.Author));
+
         } catch (Exception e) {
             logError(e.getMessage());
             throw new BookException("Error getting list of books", e);
