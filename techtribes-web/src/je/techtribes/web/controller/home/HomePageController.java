@@ -2,6 +2,7 @@ package je.techtribes.web.controller.home;
 
 import com.structurizr.annotation.UsedBy;
 import je.techtribes.component.event.EventComponent;
+import je.techtribes.component.job.JobComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
@@ -11,6 +12,7 @@ import je.techtribes.domain.badge.Badges;
 import je.techtribes.util.DateUtils;
 import je.techtribes.util.PageSize;
 import je.techtribes.web.controller.AbstractController;
+import je.techtribes.web.controller.jobs.JobsController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,13 +35,15 @@ public class HomePageController extends AbstractController {
     private TweetComponent tweetComponent;
     private TalkComponent talkComponent;
     private EventComponent eventComponent;
+    private JobComponent jobComponent;
 
     @Autowired
-    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent) {
+    public HomePageController(NewsFeedEntryComponent newsFeedEntryComponent, TweetComponent tweetComponent, TalkComponent talkComponent, EventComponent eventComponent, JobComponent jobComponent) {
         this.newsFeedEntryComponent = newsFeedEntryComponent;
         this.tweetComponent = tweetComponent;
         this.talkComponent = talkComponent;
         this.eventComponent = eventComponent;
+        this.jobComponent = jobComponent;
     }
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -49,6 +53,7 @@ public class HomePageController extends AbstractController {
         List<? extends ContentItem> newsEntries = newsFeedEntryComponent.getRecentNewsFeedEntries(mediaTribes, 1, 3);
         List<Tweet> tweets = tweetComponent.getRecentTweets(1, 12);
         List<Talk> talks = talkComponent.getUpcomingTalks(PageSize.UPCOMING_TALKS);
+        List<Job> jobs = jobComponent.getRecentJobs(PageSize.RECENT_JOBS);
 
         List<Event> events = eventComponent.getFutureEvents(PageSize.RECENT_EVENTS);
         Collections.reverse(events);
@@ -58,6 +63,7 @@ public class HomePageController extends AbstractController {
         model.addAttribute("tweets", tweets);
         model.addAttribute("talks", talks);
         model.addAttribute("events", events);
+        model.addAttribute("jobs", jobs);
 
         List<String> years = new LinkedList<>();
         int currentYear = DateUtils.getYear();

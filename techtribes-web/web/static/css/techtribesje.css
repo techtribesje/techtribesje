@@ -236,6 +236,14 @@ footer a {
     color: #2C3E50;
 }
 
+.jobsSection {
+    background-color : #390258;
+}
+
+#headerNavigation .jobsLink {
+    color: #390258;
+}
+
 .creationsSection {
     background: #7F8C8D;
 }

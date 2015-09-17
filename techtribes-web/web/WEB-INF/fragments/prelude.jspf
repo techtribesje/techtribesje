@@ -104,7 +104,7 @@
                             <a href="/tweets" class="tweetsLink">Tweets</a>
                             <a href="/code" class="codeLink">Code</a>
                             <a href="/books" class="booksLink">Books</a>
-                            <%--<a href="/creations" class="creationsLink">Creations</a>--%>
+                            <a href="/jobs" class="jobsLink">Jobs</a>
                         </div>
                     </div>
                     <div>
