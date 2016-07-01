@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.creations;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.creation.CreationComponent;
 import je.techtribes.domain.Creation;
 import je.techtribes.web.controller.AbstractController;
@@ -16,7 +16,7 @@ import java.util.List;
  * Shows creations (websites, apps, etc) by local people/businesses.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class CreationsController extends AbstractController {
 
     private CreationComponent creationComponent;

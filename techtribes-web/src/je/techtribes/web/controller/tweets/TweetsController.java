@@ -1,7 +1,7 @@
 package je.techtribes.web.controller.tweets;
 
-import com.structurizr.annotation.ComponentDependency;
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
+import com.structurizr.annotation.UsesComponent;
 import je.techtribes.component.tweet.TweetComponent;
 import je.techtribes.domain.Tweet;
 import je.techtribes.util.PageSize;
@@ -19,10 +19,10 @@ import java.util.List;
  * Shows tweets by local people and tribes.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class TweetsController extends AbstractController {
 
-    @ComponentDependency(description = "Gets tweets from")
+    @UsesComponent(description = "Gets tweets from")
     private TweetComponent tweetComponent;
 
     @Autowired

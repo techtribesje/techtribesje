@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.talks;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Talk;
@@ -19,7 +19,7 @@ import java.util.*;
  * Shows talks by local people.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class TalksController extends AbstractController {
 
     private TalkComponent talkComponent;

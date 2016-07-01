@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.people;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.book.BookComponent;
@@ -36,7 +36,7 @@ import java.util.*;
  * Shows a summary of a person; including contents, tweets, talks, etc.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class PeopleController extends AbstractController {
 
     private BadgeComponent badgeComponent;

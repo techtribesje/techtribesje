@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.news;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.domain.*;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.util.PageSize;
@@ -18,7 +18,7 @@ import java.util.List;
  * Shows recent news.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class NewsController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;

@@ -1,6 +1,6 @@
 package je.techtribes.component.search;
 
-import com.structurizr.annotation.ContainerDependency;
+import com.structurizr.annotation.UsesContainer;
 import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
@@ -31,7 +31,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-@ContainerDependency(target="File System", description = "Reads from and writes to")
+@UsesContainer(name="File System", description = "Reads from and writes to")
 class LuceneSearchComponent extends AbstractComponent implements SearchComponent {
 
     private Analyzer analyzer;

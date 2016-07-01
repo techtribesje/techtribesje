@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.code;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.github.GitHubComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.GitHubRepository;
@@ -18,7 +18,7 @@ import java.util.*;
  * Shows GitHub repositories owned by local coders.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class CodeController extends AbstractController {
 
     private GitHubComponent gitHubComponent;

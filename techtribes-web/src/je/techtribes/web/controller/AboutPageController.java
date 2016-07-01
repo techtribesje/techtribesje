@@ -1,6 +1,6 @@
 package je.techtribes.web.controller;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.talk.TalkComponent;
 import je.techtribes.component.tweet.TweetComponent;
@@ -25,7 +25,7 @@ import java.util.TreeSet;
  */
 @Controller
 @RequestMapping("/about")
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class AboutPageController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;

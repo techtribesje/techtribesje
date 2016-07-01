@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.newsfeed;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.domain.ContentItem;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.util.PageSize;
@@ -19,7 +19,7 @@ import java.util.List;
  * Provides an RSS feed of recent content.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class RssController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;

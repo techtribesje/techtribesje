@@ -393,6 +393,14 @@
             </classpath>
         </java>
 
+        <java classname="je.techtribes.CreateDocumentation" fork="true">
+            <classpath>
+                <fileset dir="${production.lib.dir}" includes="*.jar" />
+                <fileset dir="${software-architecture.dir}/lib" includes="*.jar" />
+                <pathelement location="${software-architecture.build.dir}/classes"/>
+            </classpath>
+        </java>
+
         <java classname="je.techtribes.UploadModel" fork="true">
             <classpath>
                 <fileset dir="${production.lib.dir}" includes="*.jar" />

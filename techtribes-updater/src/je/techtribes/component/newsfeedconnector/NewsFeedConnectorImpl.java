@@ -1,6 +1,6 @@
 package je.techtribes.component.newsfeedconnector;
 
-import com.structurizr.annotation.SoftwareSystemDependency;
+import com.structurizr.annotation.UsesSoftwareSystem;
 import je.techtribes.domain.ContentSourceType;
 import je.techtribes.domain.NewsFeed;
 import je.techtribes.domain.NewsFeedEntry;
@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-@SoftwareSystemDependency(target = "Blogs", description = "Gets blog/news posts from")
+@UsesSoftwareSystem(name = "Blogs", description = "Gets blog/news posts from")
 class NewsFeedConnectorImpl extends AbstractComponent implements NewsFeedConnector {
 
     private NewsFeedInterface newsFeedInterface;

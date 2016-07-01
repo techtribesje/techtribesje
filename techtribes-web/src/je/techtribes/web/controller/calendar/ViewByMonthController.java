@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.calendar;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.component.talk.TalkComponent;
@@ -26,7 +26,7 @@ import java.util.List;
  * Allows users to view a summary of site content by month.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class ViewByMonthController extends AbstractController {
 
     private EventComponent eventComponent;

@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.security;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.web.ProviderSignInUtils;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  * Allows registered users to sign in using their Twitter ID.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class SignInController extends AbstractController {
 
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)

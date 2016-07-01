@@ -1,6 +1,6 @@
 package je.techtribes.component.contentsource;
 
-import com.structurizr.annotation.ContainerDependency;
+import com.structurizr.annotation.UsesContainer;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.ContentSourceType;
@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.*;
 
-@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
+@UsesContainer(name="Relational Database", description = "Reads from and writes to")
 class ContentSourceComponentImpl extends AbstractComponent implements ContentSourceComponent {
 
     private JdbcContentSourceDao contentSourceDao;

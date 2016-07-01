@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.security;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * Allows the user to sign out.
  */
 @Controller
-@UsedBy( person = "Aggregated User", description = "uses" )
+@UsedByPerson( name = "Aggregated User", description = "uses" )
 public class SignOutController extends AbstractController {
 
     @RequestMapping(value = "/signout", method = RequestMethod.GET)

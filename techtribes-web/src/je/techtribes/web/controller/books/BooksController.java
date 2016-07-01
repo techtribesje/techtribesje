@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.books;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.book.BookComponent;
 import je.techtribes.domain.Book;
 import je.techtribes.web.controller.AbstractController;
@@ -16,7 +16,7 @@ import java.util.List;
  * Allows users to view books by local authors.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class BooksController extends AbstractController {
 
     private BookComponent bookComponent;

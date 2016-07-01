@@ -1,13 +1,13 @@
 package je.techtribes.component.githubconnector;
 
-import com.structurizr.annotation.SoftwareSystemDependency;
+import com.structurizr.annotation.UsesSoftwareSystem;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.GitHubRepository;
 import je.techtribes.util.AbstractComponent;
 
 import java.util.List;
 
-@SoftwareSystemDependency(target = "GitHub", description = "Gets the list of public repositories from")
+@UsesSoftwareSystem(name = "GitHub", description = "Gets the list of public repositories from")
 class GitHubConnectorImpl extends AbstractComponent implements GitHubConnector {
 
     private GitHubApi gitHubApi;

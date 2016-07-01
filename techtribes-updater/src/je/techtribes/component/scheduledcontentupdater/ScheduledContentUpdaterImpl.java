@@ -1,6 +1,6 @@
 package je.techtribes.component.scheduledcontentupdater;
 
-import com.structurizr.annotation.ComponentDependency;
+import com.structurizr.annotation.UsesComponent;
 import je.techtribes.component.activityupdater.ActivityUpdater;
 import je.techtribes.component.badgeawarder.BadgeAwarder;
 import je.techtribes.util.AbstractComponent;
@@ -16,34 +16,34 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 class ScheduledContentUpdaterImpl extends AbstractComponent implements ScheduledContentUpdater {
 
-    @ComponentDependency(description = "Gets people and tribes from")
+    @UsesComponent(description = "Gets people and tribes from")
     private ContentSourceComponent contentSourceComponent;
 
-    @ComponentDependency(description = "Updates the list of repositories using")
+    @UsesComponent(description = "Updates the list of repositories using")
     private GitHubComponent gitHubComponent;
 
-    @ComponentDependency(description = "Stores new tweets using")
+    @UsesComponent(description = "Stores new tweets using")
     private TweetComponent tweetComponent;
 
-    @ComponentDependency(description = "Stores new and updated news feed entries using")
+    @UsesComponent(description = "Stores new and updated news feed entries using")
     private NewsFeedEntryComponent newsFeedEntryComponent;
 
-    @ComponentDependency(description = "Recalculates the people/tribe activity rankings using")
+    @UsesComponent(description = "Recalculates the people/tribe activity rankings using")
     private ActivityUpdater activityUpdater;
 
-    @ComponentDependency(description = "Updates the search indexes for new tweets/news feed entries using")
+    @UsesComponent(description = "Updates the search indexes for new tweets/news feed entries using")
     private SearchComponent searchComponent;
 
-    @ComponentDependency(description = "Gets public repositories using the GitHub API")
+    @UsesComponent(description = "Gets public repositories using the GitHub API")
     private GitHubConnector gitHubConnector;
 
-    @ComponentDependency(description = "Downloads RSS/Atom feeds for blogs")
+    @UsesComponent(description = "Downloads RSS/Atom feeds for blogs")
     private NewsFeedConnector newsFeedConnector;
 
-    @ComponentDependency(description = "Refreshes profile information and gets new tweets using the REST and streaming APIs")
+    @UsesComponent(description = "Refreshes profile information and gets new tweets using the REST and streaming APIs")
     private TwitterConnector twitterConnector;
 
-    @ComponentDependency(description = "Awards badges using")
+    @UsesComponent(description = "Awards badges using")
     private BadgeAwarder badgeAwarder;
 
     private NewsFeedUpdater newsFeedUpdater;

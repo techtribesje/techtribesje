@@ -31,16 +31,14 @@ public class CreateViews extends AbstractStructurizrModel {
 
     private void createSystemContextView() {
         SoftwareSystem techTribes = getTechTribesSoftwareSystem();
-        SystemContextView contextView = workspace.getViews().createContextView(techTribes);
-        contextView.setKey("Context");
+        SystemContextView contextView = workspace.getViews().createSystemContextView(techTribes, "Context", null);
         contextView.addAllSoftwareSystems();
         contextView.addAllPeople();
     }
 
     private void createContainerView() {
         SoftwareSystem techTribes = getTechTribesSoftwareSystem();
-        ContainerView containerView = workspace.getViews().createContainerView(techTribes);
-        containerView.setKey("Containers");
+        ContainerView containerView = workspace.getViews().createContainerView(techTribes, "Containers", null);
         containerView.addAllSoftwareSystems();
         containerView.addAllPeople();
         containerView.addAllContainers();
@@ -50,8 +48,7 @@ public class CreateViews extends AbstractStructurizrModel {
         Container contentUpdater = getContentUpdater();
         Container webApplication = getWebApplication();
 
-        ComponentView view = workspace.getViews().createComponentView(contentUpdater);
-        view.setDescription("Updating information from external systems");
+        ComponentView view = workspace.getViews().createComponentView(contentUpdater, "UpdateInformation", "Updating information from external systems");
         view.addAllSoftwareSystems();
         view.addAllContainers();
         view.remove(webApplication);
@@ -63,8 +60,7 @@ public class CreateViews extends AbstractStructurizrModel {
         view.removeElementsWithNoRelationships();
         view.removeElementsThatCantBeReachedFrom(contentUpdater.getComponentWithName("ScheduledContentUpdater"));
 
-        view = workspace.getViews().createComponentView(contentUpdater);
-        view.setDescription("Updating recent activity");
+        view = workspace.getViews().createComponentView(contentUpdater, "RecentActivity", "Updating recent activity");
         view.addAllSoftwareSystems();
         view.addAllContainers();
         view.remove(webApplication);
@@ -78,8 +74,7 @@ public class CreateViews extends AbstractStructurizrModel {
         view.removeElementsWithNoRelationships();
         view.removeElementsThatCantBeReachedFrom(contentUpdater.getComponentWithName("ActivityUpdater"));
 
-        view = workspace.getViews().createComponentView(contentUpdater);
-        view.setDescription("Awarding badges");
+        view = workspace.getViews().createComponentView(contentUpdater, "AwardingBadges", "Awarding badges");
         view.addAllSoftwareSystems();
         view.addAllContainers();
         view.remove(webApplication);
@@ -102,9 +97,7 @@ public class CreateViews extends AbstractStructurizrModel {
         Set<Component> controllers = webApplication.getComponents().stream()
                 .filter(c -> c.getTechnology().equals(SpringComponentFinderStrategy.SPRING_MVC_CONTROLLER)).collect(Collectors.toSet());
         for (Component controller : controllers) {
-            ComponentView view = workspace.getViews().createComponentView(webApplication);
-            view.setDescription(controller.getName());
-            view.setKey(controller.getName());
+            ComponentView view = workspace.getViews().createComponentView(webApplication, controller.getName(), "This diagram shows a slice through the web application, starting at " + controller.getName() + ".");
             view.addAllSoftwareSystems();
             view.addAllContainers();
             view.remove(contentUpdater);
@@ -115,8 +108,7 @@ public class CreateViews extends AbstractStructurizrModel {
             view.removeElementsWithNoRelationships();
         }
 
-        ComponentView view = workspace.getViews().createComponentView(webApplication);
-        view.setDescription("All components");
+        ComponentView view = workspace.getViews().createComponentView(webApplication, "AllComponents", "All components");
         view.addAllComponents();
         view.addAllPeople();
         view.addAllContainers();
@@ -136,7 +128,7 @@ public class CreateViews extends AbstractStructurizrModel {
         styles.add(new ElementStyle(DATABASE_TAG, null, null, null, null, null, Shape.Cylinder));
         styles.add(new ElementStyle(FILE_SYSTEM_TAG, null, null, null, null, null, Shape.Folder));
         styles.add(new ElementStyle(Tags.COMPONENT, null, null, "#728DA5", "#ffffff", null));
-        styles.add(new RelationshipStyle(Tags.RELATIONSHIP, null, null, null, null, 500, null));
+        styles.addRelationshipStyle(Tags.RELATIONSHIP).width(500);
     }
 
 }

@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.userprofile;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.domain.ContentSource;
 import je.techtribes.domain.Person;
 import je.techtribes.domain.Tribe;
@@ -21,7 +21,7 @@ import java.util.Set;
  * Allows the user to view and manage their profile (e.g. GitHub ID).
  */
 @Controller
-@UsedBy( person = "Aggregated User", description = "uses" )
+@UsedByPerson( name = "Aggregated User", description = "uses" )
 public class UserProfileController extends AbstractController {
 
     @RequestMapping(value="/user/profile", method = RequestMethod.GET)

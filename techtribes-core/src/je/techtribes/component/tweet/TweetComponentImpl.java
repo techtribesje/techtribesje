@@ -1,6 +1,6 @@
 package je.techtribes.component.tweet;
 
-import com.structurizr.annotation.ContainerDependency;
+import com.structurizr.annotation.UsesContainer;
 import je.techtribes.component.contentsource.ContentItemFilter;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-@ContainerDependency(target="NoSQL Data Store", description = "Reads from and writes to")
+@UsesContainer(name="NoSQL Data Store", description = "Reads from and writes to")
 class TweetComponentImpl extends AbstractComponent implements TweetComponent {
 
     private ContentSourceComponent contentSourceComponent;

@@ -1,6 +1,6 @@
 package je.techtribes.component.activity;
 
-import com.structurizr.annotation.ContainerDependency;
+import com.structurizr.annotation.UsesContainer;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.log.LoggingComponentFactory;
 import je.techtribes.domain.Activity;
@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.*;
 
-@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
+@UsesContainer(name="Relational Database", description = "Reads from and writes to")
 class ActivityComponentImpl extends AbstractComponent implements ActivityComponent {
 
     private ContentSourceComponent contentSourceComponent;

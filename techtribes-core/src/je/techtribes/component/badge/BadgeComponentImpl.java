@@ -1,6 +1,6 @@
 package je.techtribes.component.badge;
 
-import com.structurizr.annotation.ContainerDependency;
+import com.structurizr.annotation.UsesContainer;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
@@ -10,7 +10,7 @@ import je.techtribes.util.PageSize;
 
 import java.util.List;
 
-@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
+@UsesContainer(name="Relational Database", description = "Reads from and writes to")
 class BadgeComponentImpl extends AbstractComponent implements BadgeComponent {
 
     private JdbcBadgeDao badgeDao;

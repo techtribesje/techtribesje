@@ -1,6 +1,6 @@
 package je.techtribes.component.newsfeedentry;
 
-import com.structurizr.annotation.ContainerDependency;
+import com.structurizr.annotation.UsesContainer;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.component.log.LoggingComponentFactory;
@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-@ContainerDependency(target="NoSQL Data Store", description = "Reads from and writes to")
+@UsesContainer(name="NoSQL Data Store", description = "Reads from and writes to")
 class NewsFeedEntryComponentImpl extends AbstractComponent implements NewsFeedEntryComponent {
 
     private ContentSourceComponent contentSourceComponent;

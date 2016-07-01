@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.activity;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.domain.Activity;
 import je.techtribes.component.badge.BadgeComponent;
@@ -17,7 +17,7 @@ import java.util.List;
  * Shows a summary of the recent activity (number of blog posts, tweets, events, etc).
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class ActivityController extends AbstractController {
 
     private ActivityComponent activityComponent;

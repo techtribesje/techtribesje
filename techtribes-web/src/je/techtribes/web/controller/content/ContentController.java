@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.content;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
 import je.techtribes.domain.ContentItem;
 import je.techtribes.util.PageSize;
@@ -18,7 +18,7 @@ import java.util.List;
  * Show recent content (news and blog posts).
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson(name = "Anonymous User", description = "uses" )
 public class ContentController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;

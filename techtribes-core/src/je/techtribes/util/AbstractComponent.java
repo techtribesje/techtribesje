@@ -1,13 +1,13 @@
 package je.techtribes.util;
 
-import com.structurizr.annotation.ComponentDependency;
+import com.structurizr.annotation.UsesComponent;
 import je.techtribes.component.log.LoggingComponent;
 import je.techtribes.component.log.LoggingComponentFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractComponent {
 
-    @ComponentDependency(description = "Writes logs messages using")
+    @UsesComponent(description = "Writes logs messages using")
     private LoggingComponent loggingComponent;
 
     @Autowired

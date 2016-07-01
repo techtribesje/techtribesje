@@ -1,6 +1,6 @@
 package je.techtribes.component.github;
 
-import com.structurizr.annotation.ContainerDependency;
+import com.structurizr.annotation.UsesContainer;
 import je.techtribes.util.AbstractComponent;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.ContentSource;
@@ -9,7 +9,7 @@ import je.techtribes.util.JdbcDatabaseConfiguration;
 
 import java.util.List;
 
-@ContainerDependency(target="Relational Database", description = "Reads from and writes to")
+@UsesContainer(name="Relational Database", description = "Reads from and writes to")
 class GitHubComponentImpl extends AbstractComponent implements GitHubComponent {
 
     private ContentSourceComponent contentSourceComponent;

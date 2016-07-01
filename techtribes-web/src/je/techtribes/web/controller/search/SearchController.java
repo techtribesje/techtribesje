@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.search;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.search.SearchComponent;
 import je.techtribes.component.search.SearchResult;
 import je.techtribes.component.search.SearchResultType;
@@ -23,7 +23,7 @@ import java.util.List;
  * Allows users to search for content and tweets.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class SearchController extends AbstractController {
 
     private SearchComponent searchService;

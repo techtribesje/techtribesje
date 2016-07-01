@@ -1,6 +1,5 @@
 package je.techtribes.component.newsfeedconnector;
 
-import com.structurizr.annotation.SoftwareSystemDependency;
 import com.sun.syndication.feed.WireFeed;
 import com.sun.syndication.feed.atom.Content;
 import com.sun.syndication.feed.atom.Entry;

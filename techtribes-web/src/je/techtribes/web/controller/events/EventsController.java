@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.events;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.event.EventException;
 import je.techtribes.domain.ContentSourceStatistics;
 import je.techtribes.domain.Event;
@@ -25,7 +25,7 @@ import java.util.List;
  * Shows local business and community events (e.g. meetups, etc).
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class EventsController extends AbstractController {
 
     private EventComponent eventService;

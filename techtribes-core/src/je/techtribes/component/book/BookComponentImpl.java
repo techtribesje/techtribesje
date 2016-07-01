@@ -1,6 +1,5 @@
 package je.techtribes.component.book;
 
-import com.structurizr.annotation.ContainerDependency;
 import je.techtribes.component.contentsource.ContentSourceComponent;
 import je.techtribes.domain.Book;
 import je.techtribes.domain.ContentSource;

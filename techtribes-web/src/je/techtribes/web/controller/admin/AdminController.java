@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.admin;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.domain.*;
 import je.techtribes.web.controller.AbstractController;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ import java.util.Set;
  * Provides some basic administration features related to adding people, tribes, etc.
  */
 @Controller
-@UsedBy( person = "Administration User", description = "uses" )
+@UsedByPerson( name = "Administration User", description = "uses" )
 public class AdminController extends AbstractController {
 
     @RequestMapping(value="/admin/status", method = RequestMethod.GET)

@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.tribes;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.activity.ActivityComponent;
 import je.techtribes.component.badge.BadgeComponent;
 import je.techtribes.component.event.EventComponent;
@@ -35,7 +35,7 @@ import java.util.List;
  * Shows a summary of a tribe; including contents, tweets, talks, etc.
  */
 @Controller
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class TribesController extends AbstractController {
 
     private BadgeComponent badgeComponent;

@@ -1,6 +1,6 @@
 package je.techtribes.web.controller.home;
 
-import com.structurizr.annotation.UsedBy;
+import com.structurizr.annotation.UsedByPerson;
 import je.techtribes.component.event.EventComponent;
 import je.techtribes.component.job.JobComponent;
 import je.techtribes.component.newsfeedentry.NewsFeedEntryComponent;
@@ -28,7 +28,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/")
-@UsedBy( person = "Anonymous User", description = "uses" )
+@UsedByPerson( name = "Anonymous User", description = "uses" )
 public class HomePageController extends AbstractController {
 
     private NewsFeedEntryComponent newsFeedEntryComponent;
