@@ -120,14 +120,14 @@ public class CreateViews extends AbstractStructurizrModel {
         techTribes.addTags(TECHTRIBES_JE);
 
         Styles styles = workspace.getViews().getConfiguration().getStyles();
-        styles.add(new ElementStyle(Tags.ELEMENT, null, null, null, null, null));
-        styles.add(new ElementStyle(TECHTRIBES_JE, null, null, "#041F37", "#ffffff", null));
-        styles.add(new ElementStyle(Tags.SOFTWARE_SYSTEM, null, null, "#A4B7C9", "#000000", null));
-        styles.add(new ElementStyle(Tags.PERSON, null, null, "#728da5", "#ffffff", null, Shape.Person));
-        styles.add(new ElementStyle(Tags.CONTAINER, null, null, "#2A4E6E", "#ffffff", null));
-        styles.add(new ElementStyle(DATABASE_TAG, null, null, null, null, null, Shape.Cylinder));
-        styles.add(new ElementStyle(FILE_SYSTEM_TAG, null, null, null, null, null, Shape.Folder));
-        styles.add(new ElementStyle(Tags.COMPONENT, null, null, "#728DA5", "#ffffff", null));
+        styles.addElementStyle(Tags.ELEMENT).fontSize(22);
+        styles.addElementStyle(TECHTRIBES_JE).background("#041F37").color("#ffffff");
+        styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#A4B7C9").color("#000000");
+        styles.addElementStyle(Tags.PERSON).background("#728da5").color("#ffffff").shape(Shape.Person);
+        styles.addElementStyle(Tags.CONTAINER).background( "#2A4E6E").color("#ffffff");
+        styles.addElementStyle(DATABASE_TAG).shape(Shape.Cylinder);
+        styles.addElementStyle(FILE_SYSTEM_TAG).shape(Shape.Folder);
+        styles.addElementStyle(Tags.COMPONENT).background("#728DA5").color("#ffffff");
         styles.addRelationshipStyle(Tags.RELATIONSHIP).width(500);
     }
 
