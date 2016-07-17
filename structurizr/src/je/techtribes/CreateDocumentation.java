@@ -3,6 +3,7 @@ package je.techtribes;
 import com.structurizr.documentation.Documentation;
 import com.structurizr.documentation.Format;
 import com.structurizr.documentation.Type;
+import com.structurizr.model.Component;
 import com.structurizr.model.Container;
 import com.structurizr.model.SoftwareSystem;
 
@@ -33,6 +34,9 @@ public class CreateDocumentation extends AbstractStructurizrModel {
         documentation.add(techtribesje, Type.Containers, Format.Markdown, new File(documentationRoot, "containers.md"));
         documentation.add(webApplication, Format.Markdown, new File(documentationRoot, "components-web-application.md"));
         documentation.add(contentUpdater, Format.Markdown, new File(documentationRoot, "components-content-updater.md"));
+
+        Component tweetComponent = webApplication.getComponentWithName("TweetComponent");
+        documentation.add(tweetComponent, Format.Markdown, new File(documentationRoot, "code-tweet-component.md"));
 
         documentation.add(techtribesje, Type.InfrastructureArchitecture, Format.Markdown, new File(documentationRoot, "infrastructure-architecture.md"));
         documentation.add(techtribesje, Type.Deployment, Format.Markdown, new File(documentationRoot, "deployment.md"));
