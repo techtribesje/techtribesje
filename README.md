@@ -11,11 +11,11 @@ techtribes.je is built using Java, Spring (core, MVC, Social), Apache Lucene, My
 
 You'll need the following in order to build and run the techtribes.je website:
 
-- [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [Java 15](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Apache Ant 1.9](http://ant.apache.org)
-- [Apache Tomcat 7](http://tomcat.apache.org)
-- [MySQL 5.5](http://www.mysql.com)
-- [MongoDB 2.4](http://www.mongodb.org)
+- [Apache Tomcat 8.5.58](http://tomcat.apache.org)
+- [MySQL 8.0.20](http://www.mysql.com)
+- [MongoDB 4.0](http://www.mongodb.org)
 
 ## Software Guidebook
 
